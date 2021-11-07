@@ -13,10 +13,6 @@ plugins:
   - jekyll-redirect-from
   - jekyll-feed
 
-asciidoc:
-  processor: asciidoctor
-  ext: asciidoc,adoc,ad
-
 asciidoctor:
   attributes:
     - icons=font
