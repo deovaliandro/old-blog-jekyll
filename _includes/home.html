@@ -1,0 +1,7 @@
+<!-- {% assign thepost = site.posts | where:"title","Home" %}
+{% for post in thepost %}
+    {{ post.content }}
+{% endfor %} -->
+
+{% capture my_include %}{% include_relative _posts/home.markdown %}{% endcapture %}
+{{ my_include | markdownify }}

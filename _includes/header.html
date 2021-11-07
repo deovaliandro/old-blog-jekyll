@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>λ> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"/>
+    <link rel="stylesheet" href="{{ '/assets/css/syntax.css' }}"/>
+
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/icon.png' | relative_url }}">
+</head>
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="/">deo</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/resume.html">Resume</a></li>
+        </ul>
+        <hr/>
+    </nav>

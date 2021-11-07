@@ -1,0 +1,28 @@
+title: 0.0.0.0
+description: >- 
+  soliter
+baseurl: ""
+url: "https://deovaliandro.github.io"
+footer: "&copy;
+        Deo Valiandro. M 2016 -- 2021 \\|
+        [Github](https://github.com/deovaliandro) \\|
+        [Twitter](https://twitter.com/deovaliandro)"
+
+plugins:
+  - jekyll-asciidoc
+  - jekyll-redirect-from
+  - jekyll-feed
+
+asciidoc:
+  processor: asciidoctor
+  ext: asciidoc,adoc,ad
+
+asciidoctor:
+  attributes:
+    - icons=font
+    - source-highlighter=rouge
+    - source-linenums-option=_
+    - sectanchors=_
+    - experimental=_
+    - rouge-style=github
+    - stylesdir=css

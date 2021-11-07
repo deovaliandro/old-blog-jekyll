@@ -1,0 +1,14 @@
+= Resume
+:layout: default
+:page-permalink: /resume.html
+
+== Personal Details
+
+[source]
+----
+name         : Deo Valiandro. M
+github       : @deovaliandro
+gear         : asus-a455lf
+os           : arch-linux
+de           : KDE-5.87.0
+----
