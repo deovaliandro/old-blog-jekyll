@@ -1,29 +1,31 @@
 = Aljabar
-:author: Deo Valiandro. M - deo@gnuweeb.org
 :page-category: kriptografi
 
-== Set dan Fungsi
+[.center]
+Author by Deo Valiandro. M <valiandrod@gmail.com>
 
-1. Set bilangan real = stem:[\mathbb{R}],
-2. Set bilangan bulat = $ \mathbb{Z} $,
-3. Set bilangan rasional = $ \mathbb{Q} $,
-4. Set bilangan asli = $ \mathbb{N} $, $ \mathbb{Z}^+ $ atau $ \mathbb{Z}_{>0} $,
-5. Set kosong = $ \emptyset $ atau $ {} $.
+== I. Set dan Fungsi
+
+. Set bilangan real = stem:[\mathbb{R}],
+. Set bilangan bulat = stem:[\mathbb{Z}],
+. Set bilangan rasional = stem:[\mathbb{Q}],
+. Set bilangan asli = stem:[\mathbb{N}], stem:[\mathbb{Z}^+] atau stem:[\mathbb{Z}_{>0}],
+. Set kosong = stem:[\emptyset] atau stem:[{}].
 
 **Kardinalitas** adalah banyaknya anggota dari suatu set dengan notasi $ \|S\| $.
 
 Himpunan matrix $ m \times n $ dengan entry bilangan real, diberi notasi
 $ M^{m,n}(\mathbb{R}) $.
 
-== Hasil Kali Kartesius
+== II. Hasil Kali Kartesius
 
 Hasil kali dua himpunan tak kosong $ A $ dan $ B $ didefinisikan:
 
-$$ A \times B = \{(a, b)|a \in A \space dan \space b \in B\} $$
+stem:[A \times B = \{(a, b) \|a \in A, b \in B\}]
 
 dengan kardinalitas $ A \times b $ adalah $ \|A \times B\| = \|A\|\times \|B\|$.
 
-== Relasi Ekuvalensi
+== III. Relasi Ekuvalensi
 
 Misalnya terdapat himpunan tak kosong $ A $, suatu subhimpunan $ R \subset A^2 $
 disebut relasi ekivalen pada $ A $ jika memenuhi:
@@ -52,11 +54,11 @@ Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah r
 1. Sifat saling lepas, $\forall i, j \in \{ 1, 2, ..., n \}: A_i \cap A_j = \emptyset$,
 2. Sifat partisi lengkap, $A_1 \cup A_2 \cup ... \cup A_n = A$
 
-== Modulo
+== IV. Modulo
 
 1. stem:[a^n \mod b = a^k \cdot a^l \mod b], dimana stem:[k+l=m].
 
-== Aljabar Abstrak
+== V. Aljabar Abstrak
 
 === Grup
 
