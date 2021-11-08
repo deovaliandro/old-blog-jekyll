@@ -1,4 +1,5 @@
 = Katekismus Heidelberg
+:page-category: christianity
 
 Sumber dari Sabda https://reformed.sabda.org/node/128
 

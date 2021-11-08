@@ -1,8 +1,5 @@
-:title: Aljabar
+= Aljabar
 :author: Deo Valiandro. M - deo@gnuweeb.org
-:date: '2021-07-23'
-:slug: algebra
-:page-layout: default
 
 == Set dan Fungsi
 
