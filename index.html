@@ -2,33 +2,30 @@
 layout: default
 ---
 
-
 {% for post in site.categories.main %}
-    <h1>{{ post.title }}</h1>
-    <main>
-      {{ post.content }}
-      </main>
+<h1>{{ post.title }}</h1>
+<main>
+  {{ post.content }}
+</main>
 {% endfor %}
 
-<ul>
-{% assign posts = site.posts | where_exp:"post","post.categories != 'home'" %}
-{% for post in posts %}
+<!-- {% assign posts = site.posts | where_exp:"post","post.categories != 'main'" %} -->
+<h3>Kriptografi</h3>
+<ol>
+{% for post in site.categories.kriptografi reversed %}
+  <li>
+    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+  </li>
+{% endfor %}
+</ol>
+
+<h3>Kristen</h3>
+<ol>
+  {% for post in site.categories.christianity reversed %}
+  {% if post.url %}
     <li>
-        <a
-            href="{{ post.url }}"
-            title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}">{{ post.title }}</a>
     </li>
-{% endfor %}
-
-</ul>
-
-
-<p>Posts in category "Christianity" are:</p>
-
-<ul>
-  {% for post in site.categories.christianity %}
-    {% if post.url %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endif %}
+  {% endif %}
   {% endfor %}
-</ul>
+</ol>

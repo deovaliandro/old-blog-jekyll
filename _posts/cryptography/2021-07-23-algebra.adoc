@@ -1,5 +1,6 @@
 = Aljabar
 :author: Deo Valiandro. M - deo@gnuweeb.org
+:page-category: kriptografi
 
 == Set dan Fungsi
 

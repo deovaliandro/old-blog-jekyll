@@ -1,7 +1,10 @@
 = Katekismus Heidelberg
 :page-category: christianity
 
-Sumber dari Sabda https://reformed.sabda.org/node/128
+[#img-zhacarias-olevianus]
+.Zacharias Ursinus & Caspar Olevianus
+[link=https://www.christianstudylibrary.org/files/pub/styles/rsc_library_article_image/public/library/20090084.6.png?itok=OdcaNg5h] 
+image::https://www.christianstudylibrary.org/files/pub/styles/rsc_library_article_image/public/library/20090084.6.png?itok=OdcaNg5h[Zacharias Ursinus & Caspar Olevianus, 500] 
 
 . _Pert. Apakah satu-satunya penghiburan Saudara, baik pada masa hidup maupun pada waktu mati?_
 +
@@ -193,3 +196,5 @@ Jaw. Oleh kekuatan pengorbanan dan kematian itu, manusia lama kita ikut disalibk
 . _Pert. Mengapa ditambahkan kata-kata turun ke dalam kerajaan maut?_
 +
 Jaw. Supaya dalam godaan-godaan yang paling sengit sekalipun, aku mendapat keyakinan dan hiburan yang sungguh-sungguh bahwa Tuhanku Yesus Kristus telah melepaskan aku dari ketakutan dan kesakitan neraka (a), oleh ketakutan, nestapa, kegentaran, dan siksa neraka yang tidak terkatakan yang telah diderita-Nya selama masa sengsara-Nya, teristimewa di kayu salib (b).
+
+Sumber: https://reformed.sabda.org/node/128[sabda.org]
