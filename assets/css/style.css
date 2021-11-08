@@ -3,7 +3,6 @@
 body {
   max-width: 800px;
   margin: auto;
-  /* font-family: "EB Garamond", serif; */
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Noto Serif CJK SC', 'Songti SC', 'Microsoft YaHei', serif;
   font-size: 20px;
   text-align: justify;
@@ -40,10 +39,6 @@ h3{
 h4{
   font-size: 20px;
   font-weight: bold;
-}
-
-p {
-  /* font-size: 20px; */
 }
 
 p :not(footer){
