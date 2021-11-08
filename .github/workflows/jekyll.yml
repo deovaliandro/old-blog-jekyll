@@ -1,22 +1,25 @@
-name: Jekyll site CI
-
+name: CI
 on:
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
+    branches:
+    - main
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
+  CI:
+    runs-on: ubuntu-20.04
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
-    - name: asciidoctor-ghpages
-      uses: manoelcampos/asciidoctor-ghpages-action@v2.1.2
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: '2.7'
+
+    - run: bundle install && bundle exec jekyll build
+
+    - name: GitHub Pages action
+      uses: peaceiris/actions-gh-pages@v3.7.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: _site
+        force_orphan: true
