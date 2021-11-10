@@ -17,4 +17,3 @@ kemudian mengaktifkan font awesome untuk membuat icon checkbox aktif,
 Sumber:
 
 * link:https://docs.asciidoctor.org/asciidoc/latest/lists/checklist/[asciidoctor.org]
-* Ini sumber
