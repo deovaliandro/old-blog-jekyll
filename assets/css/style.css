@@ -3,13 +3,8 @@
 body {
   max-width: 800px;
   margin: auto;
-  font-family: Palatino, "Palatino Linotype", "Palatino LT STD", 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Noto Serif CJK SC', 'Songti SC', 'Microsoft YaHei', serif;
-  font-size: 20px;
-  font-style: normal;
-  font-variant-caps: normal;
-  font-weight: normal;
-  font-stretch: normal;
-  font-size: 125%;
+  font-family: "EB Garamond", serif;
+  font-size: 22px;
   text-align: justify;
   line-height: 1.5em;
 }
@@ -25,6 +20,10 @@ body {
     margin-right: 5%;
   }
 } 
+
+ul {
+  list-style-type: circle;
+}
 
 h1{
   text-align: center;
