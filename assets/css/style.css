@@ -5,7 +5,26 @@ body {
   margin: auto;
   font-family: Palatino, "Palatino Linotype", "Palatino LT STD", 'source-han-serif-sc', 'Source Han Serif SC', 'Source Han Serif CN', 'Source Han Serif TC', 'Source Han Serif TW', 'Source Han Serif', 'Noto Serif CJK SC', 'Songti SC', 'Microsoft YaHei', serif;
   font-size: 20px;
+  font-style: normal;
+font-variant-caps: normal;
+font-weight: normal;
+font-stretch: normal;
+font-size: 125%;
+line-height: 1.4;
+/* font-family: muli, sans-serif, muli, avenir, helvetica neue, helvetica, ubuntu, roboto, noto, segoe ui, arial, sans-serif; */
+font-size-adjust: none;
+font-kerning: auto;
+font-optical-sizing: auto;
+font-variant-alternates: normal;
+font-variant-east-asian: normal;
+font-variant-ligatures: normal;
+font-variant-numeric: normal;
+font-variant-position: normal;
+font-language-override: normal;
+font-feature-settings: normal;
+font-variation-settings: normal;
   text-align: justify;
+  line-height: 1.5em;
 }
 
 .center{
@@ -46,18 +65,6 @@ p :not(footer){
   text-align: justify;
 }
 
-/* code */
-pre {
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #eee;
-  padding: 1em;
-  overflow-x: auto;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-}
-code { background: #f9f9f9; }
-pre code { background: none; }
-
 a {
     cursor: pointer;
     color: #0a58ca;
@@ -85,16 +92,6 @@ hr {
   color: #ddd;
 }
 
-/* code */
-pre {
-  border: 1px solid #ddd;
-  box-shadow: 5px 5px 5px #eee;
-  padding: 1em;
-  overflow-x: auto;
-}
-code { background: #f9f9f9; }
-pre code { background: none; }
-
 /* misc elements */
 img, iframe, video {
   max-width: 100%;
@@ -115,11 +112,52 @@ blockquote {
   padding: 3px 1em 3px;
 }
 
-table {
+table.linenotable {
+  border-collapse: separate;
+  border: 0;
+  margin-bottom: 0;
+  background: none;
+}
+table.linenotable td.linenos {
+  border-right: 1px solid currentColor;
+  opacity: .35;
+  padding-right: .5em;
+}
+table.linenotable td.code {
+  padding-left: .75em;
+}
+
+code, .listingblock>.content>pre:not(.highlight) {
+  font-variant-ligatures: none;
+  color: rgba(0, 0, 0, .9);
+  font-size: 0.75em;
+  line-height: 1.125em;
+}
+
+table:not(.linenotable) {
   margin: auto;
   border-top: 1px solid #666;
   border-bottom: 1px solid #666;
 }
-table thead th { border-bottom: 1px solid #ddd; }
+table:not(.linenotable) thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
+
+ul.checklist {
+  list-style-type: none;
+}
+
+code,
+pre {
+    font-family: "JetBrains Mono", monospace;
+    line-height: 1.5em;
+}
+code, .listingblock>.content>pre:not(.highlight) {
+    font-variant-ligatures: none;
+    color: rgba(0, 0, 0, .9);
+    font-size: 0.75em;
+    line-height: 1.125em;
+}
+p>code {
+  white-space: nowrap;
+}

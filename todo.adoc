@@ -1,0 +1,8 @@
+= TODO
+
+== Checklist
+ 
+.Shopping cart
+- [x] Milk  // Checked with x
+- [ ] Sugar  // Unchecked
+- [*] Chocolate  // Checked with *

@@ -1,5 +1,5 @@
 = Aljabar
-:page-category: kriptografi
+:page-category: cryptography
 
 [.center]
 Author by Deo Valiandro. M <valiandrod@gmail.com>
@@ -9,21 +9,24 @@ Author by Deo Valiandro. M <valiandrod@gmail.com>
 . Set bilangan real = stem:[\mathbb{R}],
 . Set bilangan bulat = stem:[\mathbb{Z}],
 . Set bilangan rasional = stem:[\mathbb{Q}],
-. Set bilangan asli = stem:[\mathbb{N}], stem:[\mathbb{Z}^+] atau stem:[\mathbb{Z}_{>0}],
+. Set bilangan asli = stem:[\mathbb{N}], stem:[\mathbb{Z}^+] atau
+stem:[\mathbb{Z}_{>0}],
 . Set kosong = stem:[\emptyset] atau stem:[{}].
 
-**Kardinalitas** adalah banyaknya anggota dari suatu set dengan notasi $ \|S\| $.
+**Kardinalitas** adalah banyaknya anggota dari suatu set dengan notasi
+stem:[\|S\|].
 
 Himpunan matrix $ m \times n $ dengan entry bilangan real, diberi notasi
-$ M^{m,n}(\mathbb{R}) $.
+stem:[M^{m,n}(\mathbb{R})].
 
 == II. Hasil Kali Kartesius
 
 Hasil kali dua himpunan tak kosong $ A $ dan $ B $ didefinisikan:
 
+[.center]
 stem:[A \times B = \{(a, b) \|a \in A, b \in B\}]
 
-dengan kardinalitas $ A \times b $ adalah $ \|A \times B\| = \|A\|\times \|B\|$.
+dengan stem:[\|A \times B\| = \|A\|\times \|B\|].
 
 == III. Relasi Ekuvalensi
 

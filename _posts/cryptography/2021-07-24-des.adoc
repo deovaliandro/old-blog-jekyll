@@ -1,6 +1,8 @@
 = Data Encryption Standard (DES)
-:author: Deo Valiandro. M - deo@gnuweeb.org
-:page-category: kriptografi
+:page-category: cryptography
+
+[.center]
+Author by Deo Valiandro. M <valiandrod@gmail.com>
 
 Algoritma DES dikembangkan di IBM dibawah kepemimpinan W.L. Tuchman pada tahun
 1972. Algoritma ini didasarkan pada algoritma Lucifer yang dibuat oleh Horst

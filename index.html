@@ -12,7 +12,7 @@ layout: default
 <!-- {% assign posts = site.posts | where_exp:"post","post.categories != 'main'" %} -->
 <h3>Kriptografi</h3>
 <ol>
-{% for post in site.categories.kriptografi reversed %}
+{% for post in site.categories.cryptography reversed %}
   <li>
     <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
   </li>
@@ -22,6 +22,17 @@ layout: default
 <h3>Kristen</h3>
 <ol>
   {% for post in site.categories.christianity reversed %}
+  {% if post.url %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endif %}
+  {% endfor %}
+</ol>
+
+<h3>Artikel</h3>
+<ol>
+  {% for post in site.categories.article reversed %}
   {% if post.url %}
     <li>
       <a href="{{ post.url }}">{{ post.title }}</a>

@@ -1,0 +1,13 @@
+= Asciidoc Checkbox
+:page-category: article
+
+Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
+
+[source, asciidoc]
+* [*] checked
+* [x] also checked
+* [ ] not checked
+
+
+
+link:https://docs.asciidoctor.org/asciidoc/latest/lists/checklist/[asciidoctor.org]
