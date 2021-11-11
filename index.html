@@ -30,6 +30,17 @@ layout: default
   {% endfor %}
 </ol>
 
+<h3>Algoritma</h3>
+<ol>
+  {% for post in site.categories.algorithm reversed %}
+  {% if post.url %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endif %}
+  {% endfor %}
+</ol>
+
 <h3>Artikel</h3>
 <ol>
   {% for post in site.categories.article reversed %}
