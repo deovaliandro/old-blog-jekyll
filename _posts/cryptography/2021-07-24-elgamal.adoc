@@ -1,27 +1,18 @@
----
-title: "EL Gamal"
-author: Deo Valiandro. M - deo@gnuweeb.org
-date: '2021-07-24'
-slug: elgamal
-layout: default
-category: kriptografi
----
+= EL-Gamal
+:page-category: cryptography
 
-- [ ] tes
-- [x] las
+== Properties
 
-## Properties
+* stem:[n], stem:[a] prime number (not secret)
+* stem:[g], primitive root of stem:[n] (not secret)
+* stem:[x], stem:[a] random number
+* stem:[y = g^x \mod p]
+* stem:[m], message
+* stem:[a] and stem:[b], pair of ciphertext
 
-*   n, a prime number (not secret)
-*   g, primitive root of n (not secret)
-*   x, a random number
-*   y = g^x mod p
-*   m, message
-*   a and b, pair of ciphertext
+== Result
 
-Result
-
-Alice's key: private key = x, publick key = (y, g, p). Ciphertext = (a, b).
+Alice's key: private key = stem:[x], publick key = stem:[(y, g, p)]. Ciphertext = stem:[(a, b)].
 
 usage: `python elgamal.py`
 
