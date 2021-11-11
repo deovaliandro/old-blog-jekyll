@@ -1,6 +1,9 @@
 = Asciidoc Checkbox
 :page-category: article
 
+[.center]
+_Deo Valiandro. M <mdv16h@student.unhas.ac.id>_
+
 Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
 
 [source, asciidoc]

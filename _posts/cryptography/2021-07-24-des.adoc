@@ -2,7 +2,7 @@
 :page-category: cryptography
 
 [.center]
-Author by Deo Valiandro. M <valiandrod@gmail.com>
+_Deo Valiandro. M <mdv16h@student.unhas.ac.id>_
 
 Algoritma DES dikembangkan di IBM dibawah kepemimpinan W.L. Tuchman pada tahun
 1972. Algoritma ini didasarkan pada algoritma Lucifer yang dibuat oleh Horst

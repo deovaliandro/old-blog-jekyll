@@ -1,6 +1,9 @@
 = EL-Gamal
 :page-category: cryptography
 
+[.center]
+_Deo Valiandro. M <mdv16h@student.unhas.ac.id>_
+
 == Properties
 
 * stem:[n], stem:[a] prime number (not secret)
