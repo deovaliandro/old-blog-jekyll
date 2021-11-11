@@ -3,3 +3,4 @@
 == Checklist
  
 - [ ] Membaca SICP
+- [ ] Menulis Katekismus Kecil Westminster & Katekismus Besar Westminster
