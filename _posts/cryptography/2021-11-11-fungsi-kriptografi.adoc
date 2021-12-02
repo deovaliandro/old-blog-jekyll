@@ -1,0 +1,51 @@
+= Fungsi dalam Kriptografi
+:page-category: cryptography
+
+Fungsi adalah sebuah relasi khusus pada dua himpunan.
+
+[.center]
+stem:[f: A \to B]
+
+yaitu stem:[f] memetekan stem:[A] ke stem:[B].
+
+Fungsi adalah relasis khusus yang memiliki dua hal penting:
+
+. Tiap elemen di himpunan stem:[A], yang merupakan domain stem:[f], harus
+digunakan oleh prosedur yang mendefinsikan stem:[f],
+. Jika stem:[(a, b) \in f] and stem:[(a, c) \in f], maka stem:[b = c].
+
+Misalnya: stem:[A = {1, 2, 3}] ke stem:[B = {u, v, w}], yang mengasilkan
+stem:[F = {(1, u), (2, v), (3, w)}].
+
+Kriptografi menggunakan fungsi dalam proses enkripsi dan dekripsi, yaitu
+pemetaan plainteks ke cipherteks.
+
+Fungsi enkripsi sebagai: stem:[E(p) = c], dan fungsi dekripsi sebagai
+stem:[D(c) = p]. Dan karena fungsi enkripsi dan dekripsi mengembalikan nilai ke
+nilai awal, maka stem:[D(E(p)) = p] haruslah bernilai benar.
+
+== Fungsi Satu-ke-satu
+
+Fungsi stem:[f] dari set stem:[A] ke set stem:[B] adalah fungsi
+satu-ke-satu/injektif jika tidak ada dua elemen di stem:[A] yang memiliki
+bayangan yang sama.
+
+[.center]
+stem:[ \exists (a, b) \in A \implies f(a) \ne f(b) \iff a \ne b]
+
+Jika stem:[(a, b) \in A], maka stem:[f(a) \ne f(b)], jika stem:[a \ne b].
+
+Misalnya, stem:[f = {(1, w), (2, u), (3, v)}] dari stem:[A = {1, 2, 3}] ke
+stem:[B = {u, v, w, x}].
+
+Contoh lain adalah stem:[f : \mathbb{Z} \to \mathbb{Z}], dengan
+stem:[f(x) = x - 1].
+
+== Fungsi Pada
+
+Fungsi stem:[f] dari set stem:[A] ke set stem:[B] adalah fungsi pada/surjektif
+jika setiap elemen set stem:[B] merupakan bayangan dari satu atau lebih elemen
+set stem:[A].
+
+[.center]
+stem:[\forall b \in B, f(a)]
