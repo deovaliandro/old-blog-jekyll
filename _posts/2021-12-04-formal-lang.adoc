@@ -1,0 +1,68 @@
+= Formal Language
+:page-category: article
+
+Sumber referensi dari buku _Formal Language - A Practical Introduction by Adam
+Brooks Webber_.
+
+== Pendahuluan
+
+. Alfabet adalah finite set simbol, contohnya stem:[\Sigma = {a, b}] adalah set
+simbol dari stem:[a] dan stem:[b],
+
+. String adalah urutan rangkaian simbol (kosong sampai infinity simbol),
+contohnya stem:[aaaa] dan stem:[10001]. Dengan stem:[|ab| = 2], stem:[|\epsilon|
+= 0], 'zero' ("the string of no symbols"). stem:[{} \neq {\epsilon}].
++
+stem:[x^n = x\x...x], n times +
+stem:[x^0 = \epsilon] +
+stem:[x^1 = x] +
+stem:[x^2 = x\x], etc.
+
+. Languages adalah set string atas fixed alfabet, dengan stem:[\Sigma^{\ast}]
+adalah set semua string atas stem:[\Sigma] (_Kleene closure_), contohnya
+stem:[{a^{\ast}} = {\epsilon, a, aa, aaa, ...}]. Dengan menggunakan
+stem:[x \elem \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
++
+Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
+
+== Finite Automata
+
+> "One way to define a language is to construct an automaton—a kind
+> of abstract computer that takes a string as input and produces a
+> yes-or-no answer. The language it defines is the set of all strings for
+> which it says yes.
+> 
+> _Formal Language - A Practical Introduction by Adam Brooks Webber_
+
+== Deterministic Finite Automata (DFA)
+
+DFA stem:[M = (Q, \Sigma, \delta, q_0, F)], dimana:
+
+. stem:[Q] adalah set semua state (finite),
+. stem:[\Sigma] adalah alfabet/ input (finite set symbols),
+. stem:[\delta \in (Q xx \Sigma \to Q)] adalah fungsi transisi,
+. stem:[q_0 \in Q] adalah start state,
+. stem:[F \subseteq Q] adalah set state final (_accepting state_).
+
+Contohnya: stem:[Q = {A, B}], stem:[\Sigma = {a, b}], stem:[F = {B}] dan
+stem:[\delta] = +
+stem:[\delta(A, a) = B] +
+stem:[\delta(A, b) = A] +
+stem:[\delta(B, a) = B] +
+stem:[\delta(A, b) = A]
+
+digambarkan dengan:
+
+[#img-dfa] 
+.A simple DFA
+[link=/assets/img/Screenshot_20211204_211458.png]
+image::/assets/img/Screenshot_20211204_211458.png[DFA]
+
+String stem:[x \in \Sigma^{\ast}] akan di terima oleh DFA stem:[M = (Q, \Sigma,
+\delta, q_0, F) \iff \delta^{\ast}(q_0, x) \in F].
+
+Untuk DFA stem:[M = (Q, \Sigma, \delta, q_0, F)], stem:[L(M)] adalah language
+yang bisa diterima oleh stem:[M], di mana stem:[L(M) = {x \in \Sigma^{\ast} |
+\delta^{\ast}(q_0, x) \in F}].
+
+Sebuah regular language adalah stem:[L(M)] untuk suatu DFA stem:[M].
