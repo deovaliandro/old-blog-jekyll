@@ -4,7 +4,7 @@
 Sumber referensi dari buku _Formal Language - A Practical Introduction by Adam
 Brooks Webber_.
 
-== Pendahuluan
+== I. Pendahuluan
 
 . Alfabet adalah finite set simbol, contohnya stem:[\Sigma = {a, b}] adalah set
 simbol dari stem:[a] dan stem:[b],
@@ -25,7 +25,7 @@ stem:[x \elem \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
 +
 Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
 
-== Finite Automata
+== II. Finite Automata
 
 > "One way to define a language is to construct an automaton—a kind
 > of abstract computer that takes a string as input and produces a
@@ -34,7 +34,7 @@ Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
 > 
 > _Formal Language - A Practical Introduction by Adam Brooks Webber_
 
-== Deterministic Finite Automata (DFA)
+=== a. Deterministic Finite Automata (DFA)
 
 DFA stem:[M = (Q, \Sigma, \delta, q_0, F)], dimana:
 
@@ -66,3 +66,22 @@ yang bisa diterima oleh stem:[M], di mana stem:[L(M) = {x \in \Sigma^{\ast} |
 \delta^{\ast}(q_0, x) \in F}].
 
 Sebuah regular language adalah stem:[L(M)] untuk suatu DFA stem:[M].
+
+Sifat DFA:
+
+. closed under complement, jika stem:[L] adalah language dari stem:[\Sigma],
+maka komplemen dari stem:[L], stem:[\overline{L} = {x \in \Sigma^{\ast} | x
+\notin L}], jika stem:[L] adalah regular language, maka stem:[\overline{L}] juga
+adalah regular language.
+
+. closed under intersection, jika stem:[L_1] dan stem:[L_2] adalah language,
+intersection (irisan) dari stem:[L_1] dan stem:[L_2] adalah stem:[L_1 \cap L_2
+= {x | x \in L_1 \and x \in L_2}], jika stem:[L_1] dan stem:[L_2] adalah
+regular language, maka stem:[L_1 \cap L_2] juga adalah merupakan regular
+language.
+
+. closed under union, jika stem:[L_1] dan stem:[L_2] adalah language,
+union (gabungan) dari stem:[L_1] dan stem:[L_2] adalah stem:[L_1 \cup L_2
+= {x | x \in L_1 \or x \in L_2, \text{atau keduanya}}], jika stem:[L_1] dan
+stem:[L_2] adalah regular language, maka stem:[L_1 \cup L_2] juga adalah
+merupakan regular language.
