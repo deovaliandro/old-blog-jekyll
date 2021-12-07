@@ -42,7 +42,7 @@ DFA stem:[M = (Q, \Sigma, \delta, q_0, F)], dimana:
 . stem:[\Sigma] adalah alfabet/ input (finite set symbols),
 . stem:[\delta \in (Q xx \Sigma \to Q)] adalah fungsi transisi,
 . stem:[q_0 \in Q] adalah start state,
-. stem:[F \subseteq Q] adalah set state final (_accepting state_).
+. stem:[F \subseteq Q] adalah set state final (__accepting state__).
 
 Contohnya: stem:[Q = {A, B}], stem:[\Sigma = {a, b}], stem:[F = {B}] dan
 stem:[\delta] = +
@@ -85,3 +85,33 @@ union (gabungan) dari stem:[L_1] dan stem:[L_2] adalah stem:[L_1 \cup L_2
 = {x | x \in L_1 \or x \in L_2, \text{atau keduanya}}], jika stem:[L_1] dan
 stem:[L_2] adalah regular language, maka stem:[L_1 \cup L_2] juga adalah
 merupakan regular language.
+
+
+=== b. Nondeterministic Finite Automata
+
+NFA stem:[M = (Q, \Sigma, \delta, q_0, F)] dimana:
+
+. stem:[Q] adalah set semua state (finite),
+. stem:[\Sigma] adalah alfabet/ input (finite set symbols),
+. stem:[\delta \in (Q xx (\Sigma \cup {\epsilon}) \to P(Q))] adalah fungsi transisi,
+. stem:[q_0 \in Q] adalah start state,
+. stem:[F \subseteq Q] adalah set state final (__accepting state__).
+
+Contohnya: stem:[Q = {q_0, q_1, q_2}], stem:[\Sigma = {a, b}], stem:[F = {q_2}] dan
+stem:[\delta] = +
+stem:[\delta(q_0, a) = {q_0, q_1}] +
+stem:[\delta(q_0, b) = {q_0}] +
+stem:[\delta(q_0, \epsilon) = {q_2}] +
+stem:[\delta(q_1, a) = {}] +
+stem:[\delta(q_1, b) = {q_2}] +
+stem:[\delta(q_1, \epsilon) = {}] +
+stem:[\delta(q_2, a) = {}] +
+stem:[\delta(q_2, b) = {}] +
+stem:[\delta(q_2, \epsilon) = {}]
+
+digambarkan dengan:
+
+[#img-nfa] 
+.A simple NFA
+[link=/assets/img/Screenshot_20211207_113854.png]
+image::/assets/img/Screenshot_20211207_113854.png[NFA]
