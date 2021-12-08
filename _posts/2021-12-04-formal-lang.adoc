@@ -1,8 +1,10 @@
 = Formal Language
 :page-category: article
 
-Sumber referensi dari buku _Formal Language - A Practical Introduction by Adam
-Brooks Webber_.
+Sumber referensi dari buku:
+
+. Formal Language - A Practical Introduction by Adam Brooks Webber
+. Introduction to the theory of computation - Michael Sipser
 
 == I. Pendahuluan
 
@@ -93,12 +95,13 @@ NFA stem:[M = (Q, \Sigma, \delta, q_0, F)] dimana:
 
 . stem:[Q] adalah set semua state (finite),
 . stem:[\Sigma] adalah alfabet/ input (finite set symbols),
-. stem:[\delta \in (Q xx (\Sigma \cup {\epsilon}) \to P(Q))] adalah fungsi transisi,
+. stem:[\delta \in (Q xx (\Sigma \cup {\epsilon}) \to P(Q))] adalah fungsi
+transisi,
 . stem:[q_0 \in Q] adalah start state,
 . stem:[F \subseteq Q] adalah set state final (__accepting state__).
 
-Contohnya: stem:[Q = {q_0, q_1, q_2}], stem:[\Sigma = {a, b}], stem:[F = {q_2}] dan
-stem:[\delta] = +
+Contohnya: stem:[Q = {q_0, q_1, q_2}], stem:[\Sigma = {a, b}], stem:[F = {q_2}]
+dan stem:[\delta] = +
 stem:[\delta(q_0, a) = {q_0, q_1}] +
 stem:[\delta(q_0, b) = {q_0}] +
 stem:[\delta(q_0, \epsilon) = {q_2}] +
