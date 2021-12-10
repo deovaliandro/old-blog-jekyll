@@ -67,9 +67,18 @@ Untuk DFA stem:[M = (Q, \Sigma, \delta, q_0, F)], stem:[L(M)] adalah language
 yang bisa diterima oleh stem:[M], di mana stem:[L(M) = {x \in \Sigma^{\ast} |
 \delta^{\ast}(q_0, x) \in F}].
 
-Sebuah regular language adalah stem:[L(M)] untuk suatu DFA stem:[M].
+Regular language adalah language yang diterima oleh sebuah finite automata, atau
+sebuah regular language adalah stem:[L(M)] untuk suatu DFA stem:[M].
 
-Sifat DFA:
+__Regular operation__ adalah operasi pada language. Misalnya A dan B adalah
+language, maka operasinya:
+
+. union, stem:[A \cap B = {x | x \in A or x \in B}],
+. concatenation, stem:[A \cdot B = {xy | x \in A and y \in B}],
+. star, stem:[A^{\ast} = {x_1 x_2 \cdots x_k | k \geq 0 \and, \forall x_i \in
+A}].
+
+Sifat rl:
 
 . closed under complement, jika stem:[L] adalah language dari stem:[\Sigma],
 maka komplemen dari stem:[L], stem:[\overline{L} = {x \in \Sigma^{\ast} | x
@@ -87,6 +96,8 @@ union (gabungan) dari stem:[L_1] dan stem:[L_2] adalah stem:[L_1 \cup L_2
 = {x | x \in L_1 \or x \in L_2, \text{atau keduanya}}], jika stem:[L_1] dan
 stem:[L_2] adalah regular language, maka stem:[L_1 \cup L_2] juga adalah
 merupakan regular language.
+
+. closed under concate
 
 
 === b. Nondeterministic Finite Automata
