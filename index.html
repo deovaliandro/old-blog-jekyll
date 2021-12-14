@@ -40,14 +40,3 @@ layout: default
   {% endif %}
   {% endfor %}
 </ol>
-
-<h3>Artikel</h3>
-<ol>
-  {% for post in site.categories.article reversed %}
-  {% if post.url %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endif %}
-  {% endfor %}
-</ol>

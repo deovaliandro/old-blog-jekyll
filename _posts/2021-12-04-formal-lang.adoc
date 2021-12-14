@@ -97,9 +97,6 @@ union (gabungan) dari stem:[L_1] dan stem:[L_2] adalah stem:[L_1 \cup L_2
 stem:[L_2] adalah regular language, maka stem:[L_1 \cup L_2] juga adalah
 merupakan regular language.
 
-. closed under concate
-
-
 === b. Nondeterministic Finite Automata
 
 NFA stem:[M = (Q, \Sigma, \delta, q_0, F)] dimana:
@@ -129,3 +126,22 @@ digambarkan dengan:
 .A simple NFA
 [link=/assets/img/Screenshot_20211207_113854.png]
 image::/assets/img/Screenshot_20211207_113854.png[NFA]
+
+=== conver NFA to DFA
+
+lorem
+
+
+=== minimization of DFA
+
+Myhill Nerode Theorem for minimization DFA
+
+=== Regular Expression
+
+=== Mealy and Moore Machine
+==== convert Melay to Moore and the opposite
+
+=== stem:[\epsilon] NFA
+==== stem:[\epsilon] NFA to NFA
+
+=== Nonregular Languages

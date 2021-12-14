@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<h3 align="center">Kategori</h3>
+
+<ul>
+    {% for category in site.categories %}
+    <li>
+        <a name="{{ category | first }}">{{ category | first }}</a>
+        <ol>
+            {% for post in category.last %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ol>
+    </li>
+    {% endfor %}
+</ul>

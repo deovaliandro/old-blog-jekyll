@@ -14,6 +14,8 @@ plugins:
   - jekyll-redirect-from
   - jekyll-feed
 
+# permalink: /:title:output_ext
+
 asciidoctor:
   attributes:
     - icons=font
