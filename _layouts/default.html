@@ -2,10 +2,16 @@
 
 <h1>{{ page.title }}</h1>
 {% if post.author %}
-    <p><i>{{ author }}</i></p>
+<p><i>{{ author }}</i></p>
+
 {% endif %}
-<main>
+{% if page.tags.size > 0 %}
+    <p align="center">tag{% if page.tags.size > 1 %}s{% endif %}:
+        {{ page.tags | sort | join: ", " }}</p>
+{% endif %}
+
 {{ content }}
+<main>
 </main>
 
 {%- include footer.html -%}

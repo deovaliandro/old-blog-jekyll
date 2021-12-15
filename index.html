@@ -2,31 +2,31 @@
 layout: default
 ---
 
-{% for post in site.categories.main %}
-<h1>{{ post.title }}</h1>
-<main>
-  {{ post.content }}
-</main>
-{% endfor %}
+<h1>hay 👋, saya Deo</h1>
+<p>Blog untuk tempat mencatat hal-hal yang pernah dipelajari, semoga bermanfaat kedepannya.</p>
+<p>Import my publick-key:</p>
 
-<!-- {% assign posts = site.posts | where_exp:"post","post.categories != 'main'" %} -->
+<div class="listingblock">
+  <div class="content">
+  <pre class="rouge highlight"><code data-lang="bash"><table class="linenotable"><tbody><tr><td class="linenos gl"><pre class="lineno">1</pre></td><td class="code"><pre>curl <span class="nt">-s</span> https://github.com/deovaliandro.gpg | gpg <span class="nt">--import</span></pre></td></tr></tbody></table></code></pre>
+  </div>
+  </div>
+
+<ol>
+  {% for post in site.posts %}
+  <li>
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> on {{ post.category }}
+    {% endfor %}
+  </li>
+</ol>
+
 <h3>Kriptografi</h3>
 <ol>
-{% for post in site.categories.cryptography reversed %}
+  {% for post in site.categories.cryptography reversed %}
   <li>
     <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
   </li>
-{% endfor %}
-</ol>
-
-<h3>Kristen</h3>
-<ol>
-  {% for post in site.categories.christianity reversed %}
-  {% if post.url %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endif %}
   {% endfor %}
 </ol>
 
@@ -34,9 +34,9 @@ layout: default
 <ol>
   {% for post in site.categories.algorithm reversed %}
   {% if post.url %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+  </li>
   {% endif %}
   {% endfor %}
 </ol>

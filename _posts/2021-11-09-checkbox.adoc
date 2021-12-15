@@ -1,5 +1,6 @@
 = Asciidoc Checkbox
 :page-category: article
+:page-tags: [tutorial, asciidoc]
 
 [.center]
 _Deo Valiandro. M <mdv16h@student.unhas.ac.id>_

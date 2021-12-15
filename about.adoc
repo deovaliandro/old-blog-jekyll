@@ -1,3 +1,16 @@
-== Hay
-
 Nama saya Deo, dan ini adalah tempat bermainku.
+
+[#me]
+.saya pada Binkas GMKI Komisarit FMIPA Unhas, 2017
+[link=/assets/img/me.jpg]
+image::/assets/img/me.jpg[me, 600]
+
+[#panlos]
+.Di Pantai Losari, 2017
+[link=/assets/img/panlos.jpg]
+image::/assets/img/panlos.jpg[panlos, 600]
+
+[#motor]
+.Motor tercinta dalam perjalanan ke Makassar, 2017
+[link=/assets/img/motor.jpg]
+image::/assets/img/motor.jpg[motor, 300]

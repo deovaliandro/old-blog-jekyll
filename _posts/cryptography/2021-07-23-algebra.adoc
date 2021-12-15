@@ -1,5 +1,6 @@
 = Aljabar
 :page-category: cryptography
+:page-tags: [crypto, man]
 
 [.center]
 _Deo Valiandro. M <mdv16h@student.unhas.ac.id>_
