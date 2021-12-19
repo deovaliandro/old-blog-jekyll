@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>λ> {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"/>
     <link rel="stylesheet" href="{{ '/assets/css/syntax.css' }}"/>
 
-    <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/img/icon.png' | relative_url }}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400italic,700,700italic%7COpen+Sans:300">
@@ -21,6 +21,7 @@
             <li><a href="/about.html">&#x1F468; Me</a></li>
             <li><a href="/todo.html">&#x1F4DD; TODO</a></li>
             <li><a href="/jurnal.html">&#x1F4D2; Journal</a></li>
+            <li><a href="/link.html">&#x1F517; Link</a></li>
         </ul>
         <hr/>
     </nav>

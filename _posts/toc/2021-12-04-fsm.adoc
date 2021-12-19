@@ -1,33 +1,7 @@
-= Formal Language
+= Finite State Machine
 :page-category: article
 
-Sumber referensi dari buku:
-
-. Formal Language - A Practical Introduction by Adam Brooks Webber
-. Introduction to the theory of computation - Michael Sipser
-
-== I. Pendahuluan
-
-. Alfabet adalah finite set simbol, contohnya stem:[\Sigma = {a, b}] adalah set
-simbol dari stem:[a] dan stem:[b],
-
-. String adalah urutan rangkaian simbol (kosong sampai infinity simbol),
-contohnya stem:[aaaa] dan stem:[10001]. Dengan stem:[|ab| = 2], stem:[|\epsilon|
-= 0], 'zero' ("the string of no symbols"). stem:[{} \neq {\epsilon}].
-+
-stem:[x^n = x\x...x], n times +
-stem:[x^0 = \epsilon] +
-stem:[x^1 = x] +
-stem:[x^2 = x\x], etc.
-
-. Languages adalah set string atas fixed alfabet, dengan stem:[\Sigma^{\ast}]
-adalah set semua string atas stem:[\Sigma] (_Kleene closure_), contohnya
-stem:[{a^{\ast}} = {\epsilon, a, aa, aaa, ...}]. Dengan menggunakan
-stem:[x \elem \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
-+
-Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
-
-== II. Finite Automata
+== Finite Automata
 
 > "One way to define a language is to construct an automaton—a kind
 > of abstract computer that takes a string as input and produces a

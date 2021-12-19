@@ -1,0 +1,5 @@
+= Link yang berguna
+
+Kumpulan link yang berguna untuk pelajaran:
+
+. Kompresi Data : http://mattmahoney.net/dc/dce.html

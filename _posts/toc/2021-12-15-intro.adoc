@@ -1,0 +1,39 @@
+= chap0 - intro
+:page-category: toc
+:page-tags: [tekom, intro]
+
+== Latar belakang
+
+Sebenarnya, dari tahun 2019 saya sudah ingin mempelajari tentang teori
+komputasi. Hal ini bermula saat teman-teman Ilkom'16 mengambil matkul tekom,
+namun saya sendiri tidak sempat mengambil matkul tersebut akibat banyaknya
+matkul yang saya ambil pada semester itu.
+
+Sehingga saya memutuskan untuk belajar tekom secara mandiri melalui buku dan
+youtube. Buku yang saya baca adalah:
+
+. *Formal Language - A Practical Introduction* oleh Adam Brooks Webber
+. *Introduction to the theory of computation* oleh Michael Sipser
+
+dan dari beberapa channel youtube seperti Neso Academy.
+
+== Materi
+
+. Alfabet adalah finite set simbol, contohnya stem:[\Sigma = {a, b}] adalah set
+simbol dari stem:[a] dan stem:[b],
+
+. String adalah urutan rangkaian simbol (kosong sampai infinity simbol),
+contohnya stem:[aaaa] dan stem:[10001]. Dengan stem:[|ab| = 2], stem:[|\epsilon|
+= 0], 'zero' ("the string of no symbols"). stem:[{} \neq {\epsilon}].
++
+stem:[x^n = x\x...x], n times +
+stem:[x^0 = \epsilon] +
+stem:[x^1 = x] +
+stem:[x^2 = x\x], etc.
+
+. Languages adalah set string atas fixed alfabet, dengan stem:[\Sigma^{\ast}]
+adalah set semua string atas stem:[\Sigma] (_Kleene closure_), contohnya
+stem:[{a^{\ast}} = {\epsilon, a, aa, aaa, ...}]. Dengan menggunakan
+stem:[x \elem \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
++
+Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
