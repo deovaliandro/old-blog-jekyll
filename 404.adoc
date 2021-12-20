@@ -1,0 +1,6 @@
+:page-title: 404
+:page-layout: default
+
+[.center]
+*Page not found &#x1F614;* +
+The requested page could not be found.
