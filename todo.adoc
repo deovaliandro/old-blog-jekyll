@@ -4,4 +4,4 @@
  
 - [ ] Membaca SICP
 - [ ] Teori Komputasi
-- [ ] Menulis Katekismus Kecil Westminster & Katekismus Besar Westminster
+- [ ] Backup semua link

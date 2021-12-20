@@ -2,4 +2,21 @@
 
 Kumpulan link yang berguna untuk pelajaran:
 
-. Kompresi Data : http://mattmahoney.net/dc/dce.html
+
+. Data Compression
+.. http://mattmahoney.net/dc/dce.html
+
+. Theory of Computation
+.. https://cs-people.bu.edu/sofya/cs332/
+.. https://www.comp.nus.edu.sg/~fstephan/theoryofcomputation.html
+.. https://cs-people.bu.edu/mbun/courses/332_S20/
+.. https://www.cs.rochester.edu/u/nelson/courses/csc_173/
+
+. Database
+.. https://sqlbolt.com/
+
+. Metaprogramming
+.. https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/
+
+. Others
+.. https://web.eecs.umich.edu/~cpeikert/
