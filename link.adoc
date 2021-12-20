@@ -2,9 +2,8 @@
 
 Kumpulan link yang berguna untuk pelajaran:
 
-
-. Data Compression
-.. http://mattmahoney.net/dc/dce.html
+. Intro to CS
+.. https://introtcs.org/public/index.html
 
 . Theory of Computation
 .. https://cs-people.bu.edu/sofya/cs332/
@@ -12,8 +11,11 @@ Kumpulan link yang berguna untuk pelajaran:
 .. https://cs-people.bu.edu/mbun/courses/332_S20/
 .. https://www.cs.rochester.edu/u/nelson/courses/csc_173/
 
-. Intro to CS
-.. https://introtcs.org/public/index.html
+. Algorithm
+.. https://cp-algorithms.com/
+
+. Data Compression
+.. http://mattmahoney.net/dc/dce.html
 
 . Information and Coding Theory
 .. https://people.montefiore.uliege.be/lwh/Info/
@@ -23,6 +25,13 @@ Kumpulan link yang berguna untuk pelajaran:
 
 . Metaprogramming
 .. https://lexi-lambda.github.io/blog/2021/03/25/an-introduction-to-typeclass-metaprogramming/
+
+. CTF
+.. https://ctf101.org/
+.. https://jaimelightfoot.com/blog/so-you-want-to-ctf-a-beginners-guide/
+
+. CP
+.. https://www.dcc.fc.up.pt/~pribeiro/aulas/pc1920/awesome/index.html#awesome-reference-materials
 
 . Others
 .. https://web.eecs.umich.edu/~cpeikert/
