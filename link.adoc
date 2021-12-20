@@ -33,5 +33,13 @@ Kumpulan link yang berguna untuk pelajaran:
 . CP
 .. https://www.dcc.fc.up.pt/~pribeiro/aulas/pc1920/awesome/index.html#awesome-reference-materials
 
+. FP
+.. https://kongkowitmedan.github.io/kulgram-16-9-2017-monad-intro/kulgram.html
+
+. Security
+.. http://www.ilmuhacking.com/
+
 . Others
 .. https://web.eecs.umich.edu/~cpeikert/
+.. https://www.wilfred.me.uk/
+.. http://stepanovpapers.com/
