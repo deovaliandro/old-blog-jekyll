@@ -12,6 +12,12 @@ Kumpulan link yang berguna untuk pelajaran:
 .. https://cs-people.bu.edu/mbun/courses/332_S20/
 .. https://www.cs.rochester.edu/u/nelson/courses/csc_173/
 
+. Intro to CS
+.. https://introtcs.org/public/index.html
+
+. Information and Coding Theory
+.. https://people.montefiore.uliege.be/lwh/Info/
+
 . Database
 .. https://sqlbolt.com/
 
