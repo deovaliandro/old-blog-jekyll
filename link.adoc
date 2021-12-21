@@ -14,6 +14,9 @@ Kumpulan link yang berguna untuk pelajaran:
 . Algorithm
 .. https://cp-algorithms.com/
 
+. Cryptography
+.. https://infosecwriteups.com/breaking-down-sha-1-algorithm-c152ed353de2
+
 . Data Compression
 .. http://mattmahoney.net/dc/dce.html
 
@@ -29,6 +32,7 @@ Kumpulan link yang berguna untuk pelajaran:
 . CTF
 .. https://ctf101.org/
 .. https://jaimelightfoot.com/blog/so-you-want-to-ctf-a-beginners-guide/
+.. https://ctf101.org/forensics/what-are-file-formats/
 
 . CP
 .. https://www.dcc.fc.up.pt/~pribeiro/aulas/pc1920/awesome/index.html#awesome-reference-materials
@@ -43,3 +47,4 @@ Kumpulan link yang berguna untuk pelajaran:
 .. https://web.eecs.umich.edu/~cpeikert/
 .. https://www.wilfred.me.uk/
 .. http://stepanovpapers.com/
+.. https://martin.ankerl.com/2007/10/04/optimized-pow-approximation-for-java-and-c-c/
