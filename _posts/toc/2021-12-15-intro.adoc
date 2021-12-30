@@ -2,6 +2,9 @@
 :page-category: toc
 :page-tags: [tekom, intro]
 
+[.center]
+_Deo Valiandro. M <mdv16h@gmail.com>_
+
 == Latar belakang
 
 Sebenarnya, dari tahun 2019 saya sudah ingin mempelajari tentang teori

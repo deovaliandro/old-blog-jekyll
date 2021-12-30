@@ -1,10 +1,10 @@
 {%- include header.html -%}
 
 <h1>{{ page.title }}</h1>
-{% if page.author %}
+{% if post.author %}
 <p><i>{{ author }}</i></p>
-{% endif %}
 
+{% endif %}
 {% if page.tags.size > 0 %}
     <p align="center">tag{% if page.tags.size > 1 %}s{% endif %}:
         {{ page.tags | sort | join: ", " }}</p>
@@ -14,13 +14,8 @@
 {{ content }}
 </main>
 
-<hr>
-
-<p>Dapat dikutip:</p>
-<p class="ref">{{ site.author }} (2020). {{ page.title }}. {{ site.url }}{{ page.url }}</p>
-
-<hr>
-
-<p>{{ site.license | markdownify }}</p>
+{% if post.author %}
+<p>{{ author }} ({{ site.time | date: '%y' }})</p>
+{% endif %}
 
 {%- include footer.html -%}

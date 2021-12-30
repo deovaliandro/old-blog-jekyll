@@ -191,3 +191,11 @@ p>code {
     align-items: center;
     text-align: center;
 }
+
+.ref {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 80%;
+    text-align: left;
+    border: 1px dashed grey;
+    padding: 10px 10px 5px 10px;
+}

@@ -6,7 +6,9 @@ _Deo Valiandro. M <mdv16h@gmail.com>_
 
 == Pendahuluan
 
-Bubble Sort adalah algoritma pengurutan paling sederhana yang bekerja dengan menukar elemen yang berdekatan secara bergantian. Bubble sort akan memuat iterasi atau perulangan sebanyak n-1, dimana n adalah jumlah elemen.
+Bubble Sort adalah algoritma pengurutan paling sederhana yang bekerja dengan
+menukar elemen yang berdekatan secara bergantian. Bubble sort akan memuat
+iterasi atau perulangan sebanyak n-1, dimana n adalah jumlah elemen.
 
 == Cara Kerja
 

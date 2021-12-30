@@ -8,13 +8,16 @@ footer: "&copy;
         [Github](https://github.com/deovaliandro) \\|
         [Twitter](https://twitter.com/deovaliandro) \\|
         [RSS](/feed.xml)"
+author: Deo Valiandro. M
+license: >
+    Text and figures are licensed under [Creative Commons Attribution CC BY
+    4.0](https://creativecommons.org/licenses/by/4.0/). The source code is
+    licensed under MIT.
 
 plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
-
-# permalink: /:title:output_ext
 
 asciidoctor:
   attributes:
