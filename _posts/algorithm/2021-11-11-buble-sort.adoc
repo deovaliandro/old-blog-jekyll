@@ -2,7 +2,7 @@
 :page-category: algorithm
 
 [.center]
-_Deo Valiandro. M <mdv16h@student.unhas.ac.id>_
+_Deo Valiandro. M <mdv16h@gmail.com>_
 
 == Pendahuluan
 

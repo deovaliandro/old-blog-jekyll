@@ -1,6 +1,9 @@
 = Fungsi dalam Kriptografi
 :page-category: cryptography
 
+[.center]
+_Deo Valiandro. M <mdv16h@gmail.com>_
+
 Fungsi adalah sebuah relasi khusus pada dua himpunan.
 
 [.center]

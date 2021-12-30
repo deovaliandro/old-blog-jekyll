@@ -2,7 +2,7 @@
 :page-category: article
 
 [.center]
-_Deo Valiandro. M <mdv16h@student.unhas.ac.id>_
+_Deo Valiandro. M <mdv16h@gmail.com>_
 
 .Tata krama mahasiswa
 [link=/assets/img/tata-krama-mahasiswa.jpeg] 
