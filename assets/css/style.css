@@ -1,52 +1,43 @@
 body {
     max-width: 800px;
     margin: auto;
-    font-size: 22px;
-    text-align: justify;
     line-height: 1.5em;
-}
-
-.center {
-    text-align: center;
-    align-items: center;
-}
-
-@media only screen and (max-width:600px) {
-    body {
-        margin-left: 5%;
-        margin-right: 5%
-    }
+    font-family: Verdana,sans-serif;
 }
 
 h1 {
     text-align: center;
     font-size: 32px;
-    font-weight: 700;
 }
 
 h2 {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 24px;
 }
 
 h3 {
-    font-weight: 700;
+    font-size: 18.72px;
 }
 
 h4 {
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 16px;
 }
 
-p :not(footer) {
+h5 {
+    font-size: 13.28px;
+}
+
+h6 {
+    font-size: 10.72px;
+}
+
+p :not(footer),
+main {
     hyphens: auto;
-    text-align: justify;
 }
 
 a {
     cursor: pointer;
     color: #0a58ca;
-    text-decoration: underline;
 }
 
 a:hover {
@@ -67,6 +58,7 @@ a:hover {
     border-radius: 5px;
 }
 
+.center,
 .article-meta,
 .menu,
 footer {
@@ -105,10 +97,6 @@ video {
     margin-bottom: 2em;
 }
 
-main {
-    hyphens: auto;
-}
-
 blockquote {
     background: #f9f9f9;
     border-left: 5px solid #ccc;
@@ -132,7 +120,7 @@ table.linenotable td.code {
     padding-left: .75em;
 }
 
-.listingblock>.content>pre:not(.highlight),
+.listingblock > .content > pre:not(.highlight),
 code {
     font-variant-ligatures: none;
     color: rgba(0, 0, 0, .9);
@@ -171,7 +159,7 @@ pre {
     line-height: 1.5em;
 }
 
-.listingblock>.content>pre:not(.highlight),
+.listingblock > .content > pre:not(.highlight),
 code {
     font-variant-ligatures: none;
     color: rgba(0, 0, 0, .9);
@@ -179,11 +167,11 @@ code {
     line-height: 1.125em;
 }
 
-p>code {
+p > code {
     white-space: nowrap;
 }
 
-.menu>li>a {
+.menu > li > a {
     text-decoration: none;
 }
 

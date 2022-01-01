@@ -1,21 +1,21 @@
 <footer>
-    <hr/>
+    <hr />
     {{ site.footer | markdownify }}
 </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-MML-AM_CHTML-full"></script>
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
-     jax: ['input/AsciiMath', "output/HTML-CSS"],
-     displayAlign:"center",
-     extensions: ['asciimath2jax.js'],
-     tex2jax: {
-      inlineMath: [["$","$"],["\\(","\\)"]],
-      displayMath: [['$$','$$'], ["\\[","\\]"]],
-     },
-     asciimath2jax: {
-      delimiters: [['\\$','\\$'], ['`','`']]
-     }
+        jax: ['input/AsciiMath', "output/HTML-CSS"],
+        displayAlign:"center",
+        extensions: ['asciimath2jax.js'],
+        tex2jax: {
+            inlineMath: [["$","$"],["\\(","\\)"]],
+            displayMath: [['$$','$$'], ["\\[","\\]"]],
+        },
+        asciimath2jax: {
+            delimiters: [['\\$','\\$'], ['`','`']]
+        }
     });
    </script>
 </html>
