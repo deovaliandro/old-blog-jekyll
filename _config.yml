@@ -18,6 +18,7 @@ plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-katex
 
 asciidoctor:
   attributes:
@@ -33,3 +34,9 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
+  math_engine: mathjax
+
+katex:
+  rendering_options:
+    throw_error: true
+    error_color: "#cc0000"

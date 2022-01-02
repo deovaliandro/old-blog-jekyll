@@ -1,29 +1,42 @@
 :page-category: article
 :page-tags: [tutorial, asciidoc]
 
+\(A_2\)
+
+\(2 + 2\)
+
+\(\hat{x}\ \vec{x}\ \ddot{x}\)
+
+\(\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\)
+
 Untuk menggunakan LaTeX align:
 
 [source, latex]
-\begin{align}
+\begin{aligned}
 a_1 &= \beta_0 \\
     &= \beta_1 \\
 c_1 &= \beta_2 \\
 d_1 &= \beta_3
-\end{align}
+\end{aligned}
 
 Hasilnya sebagai berikut:
 
-\begin{align}
+\[\begin{aligned}
 a_1 &= \beta_0 \\
     &= \beta_1 \\
 c_1 &= \beta_2 \\
 d_1 &= \beta_3
-\end{align}
+\end{aligned}\]
 
+\[\begin{aligned}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{aligned}\]
 
-\begin{align}
+\[\begin{aligned}
 a_2 &=(X'X)^{-1} \\
  &=(X'X)^{-1} \\
  &=(X'X)^{-1} \\
  &=(X'X)^{-1}
-\end{align}
+\end{aligned}\]

@@ -52,3 +52,5 @@ Kumpulan link yang berguna untuk pelajaran:
 .. https://www.wilfred.me.uk/
 .. http://stepanovpapers.com/
 .. https://martin.ankerl.com/2007/10/04/optimized-pow-approximation-for-java-and-c-c/
+.. https://gendignoux.com/
+.. https://beegass.dev/
