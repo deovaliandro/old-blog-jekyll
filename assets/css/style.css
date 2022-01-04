@@ -17,6 +17,10 @@ p {
     line-height: 1.5;
 }
 
+.katex {
+    font-size: 0.5em;
+}
+
 h1 {
     text-align: center;
 }
