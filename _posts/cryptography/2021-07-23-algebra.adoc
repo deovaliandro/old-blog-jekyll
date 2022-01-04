@@ -1,6 +1,6 @@
 = Aljabar
 :page-category: cryptography
-:page-tags: [crypto, man]
+:page-tags: [crypto]
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_
@@ -17,7 +17,7 @@ stem:[\mathbb{Z}_{>0}],
 **Kardinalitas** adalah banyaknya anggota dari suatu set dengan notasi
 stem:[\|S\|].
 
-Himpunan matrix $ m \times n $ dengan entry bilangan real, diberi notasi
+Himpunan matrix \$ m \times n \$ dengan entry bilangan real, diberi notasi
 stem:[M^{m,n}(\mathbb{R})].
 
 == II. Hasil Kali Kartesius
