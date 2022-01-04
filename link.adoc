@@ -19,6 +19,7 @@ Kumpulan link yang berguna untuk pelajaran:
 
 . Cryptography
 .. https://infosecwriteups.com/breaking-down-sha-1-algorithm-c152ed353de2
+.. https://mit6875.github.io/
 
 . Data Compression
 .. http://mattmahoney.net/dc/dce.html

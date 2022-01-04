@@ -34,7 +34,7 @@ satu-ke-satu/injektif jika tidak ada dua elemen di stem:[A] yang memiliki
 bayangan yang sama.
 
 [.center]
-stem:[ \exists (a, b) \in A \implies f(a) \ne f(b) \iff a \ne b]
+stem:[\exists (a, b) \in A \Rightarrow f(a) \ne f(b) \Leftrightarrow a \ne b]
 
 Jika stem:[(a, b) \in A], maka stem:[f(a) \ne f(b)], jika stem:[a \ne b].
 

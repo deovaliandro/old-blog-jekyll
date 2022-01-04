@@ -1,6 +1,13 @@
 :page-category: article
 :page-tags: [tutorial, asciidoc]
 
+```bash
+missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=' ' -f2
+```
+
+[quote]
+Quote or excerpt text
+
 \(A_2\)
 
 \(2 + 2\)
@@ -35,8 +42,8 @@ d_1 &= \beta_3
 \end{aligned}\]
 
 \[\begin{aligned}
-a_2 &=(X'X)^{-1} \\
- &=(X'X)^{-1} \\
- &=(X'X)^{-1} \\
- &=(X'X)^{-1}
+a_2 & = (X\'X)^{-1} \\
+    & =(X\'X)^{-1} \\
+    & =(X\'X)^{-1} \\
+    & =(X\'X)^{-1}
 \end{aligned}\]

@@ -12,6 +12,7 @@ layout: dashboard
   </div>
 </div>
 
+<h1>tulisanku</h1>
 
 <ol>
   {% for post in site.posts %}
@@ -20,24 +21,4 @@ layout: dashboard
     <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> on {{ post.category }}
     {% endfor %}
   </li>
-</ol>
-
-<h3>Kriptografi</h3>
-<ol>
-  {% for post in site.categories.cryptography reversed %}
-  <li>
-    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endfor %}
-</ol>
-
-<h3>Algoritma</h3>
-<ol>
-  {% for post in site.categories.algorithm reversed %}
-  {% if post.url %}
-  <li>
-    <a href="{{ post.url }}">{{ post.title }}</a>
-  </li>
-  {% endif %}
-  {% endfor %}
 </ol>
