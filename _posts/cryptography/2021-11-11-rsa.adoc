@@ -46,7 +46,7 @@ bahan-bahan dasar sebagai berikut :
 . stem:[p] dan stem:[q], 2 bilangan prima yang dirahasiakan
 . stem:[n], dari hasil stem:[p \cdot q]
 . stem:[e], dengan ketentuan stem:[gcd (\phi(n), e) = 1]
-. stem:[d], stem:[e^-1 (\mod \phi(n))]
+. stem:[d, e^{-1} (\mod \phi(n))]
 
 == Skenario
 

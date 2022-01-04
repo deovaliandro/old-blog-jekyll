@@ -8,7 +8,6 @@ body {
     font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
     margin: 0;
     overflow-y: scroll;
-    /* text-align: justify; */
 }
 
 p {
@@ -18,7 +17,7 @@ p {
 }
 
 .katex {
-    font-size: 0.5em;
+    font-size: 15px !important;
 }
 
 h1 {
