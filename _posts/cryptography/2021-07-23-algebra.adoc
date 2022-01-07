@@ -35,32 +35,35 @@ Misalnya terdapat himpunan tak kosong $ A $, suatu subhimpunan $ R \subset A^2 $
 disebut relasi ekivalen pada $ A $ jika memenuhi:
 
 - $ \forall a \in A \Rightarrow (a, a) \in R $
-- $ \forall a_1, a_2 \in A: (a_1, a_2) \in R \iff (a_2, a_1) \in R $
+- $ \forall a_1, a_2 \in A: (a_1, a_2) \in R \Leftrightarrow (a_2, a_1) \in R $
 - $ \forall a_1,a_2,a_3 \in A: ((a_1,a_2) \wedge (a_2,a_3)) \Rightarrow (a_1,a_3) $
 
 Relasi ekivalensi sering diberi lambang $ \sim $, sehingga $ (a, b) \in R $ sering ditulis $ aRb $ atau $ a \sim b $.
 
 Contohnya:
 
-$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \iff \exists k \in \mathbb{Z} : a - b = 4k $
+$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow \exists k \in \mathbb{Z} : a - b = 4k $
 
-> fyi: $ \mathbb{Z}^2 $ is standard notation for the Cartesian square of the Integers; the set of all pairs of integers.
-> 
-> $$ \mathbb{Z}^2 = \\{ (x,y): x \in \mathbb{Z}, y \in \mathbb{Z} \\} $$
-> from: [https://math.stackexchange.com](https://math.stackexchange.com/questions/2187233/what-means-a-set-in-z2)
+[quote]
+____
+fyi: $ \mathbb{Z}^2 $ is standard notation for the Cartesian square of the Integers; the set of all pairs of integers. 
+
+\$ \mathbb{Z}^2 = { (x,y): x \in \mathbb{Z}, y \in \mathbb{Z} } \$
+from: link:https://math.stackexchange.com/questions/2187233/what-means-a-set-in-z2[https://math.stackexchange.com]
+____
 
 Karena $ 5 \sim 17 $ dan $ 17 \sim -3 $, maka $ 5 \sim -3 $ (transitif), $ 17 \sim 5 $ dan $ -3 \sim 17 $ (sifat simetri).
 
 **Teorema**
 
-Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah relasi ekuivalen pada $A$, maka terdapat bilangan asli $n$ dan sub-subhimpunan $A_1, A_2, A_3, ...,A_n$ yang memenuhi sifat:
+Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah relasi ekuivalen pada $A$, maka terdapat bilangan asli $n$ dan sub-subhimpunan $A_1, A_2, A_3, \cdots,A_n$ yang memenuhi sifat:
 
-1. Sifat saling lepas, $\forall i, j \in \{ 1, 2, ..., n \}: A_i \cap A_j = \emptyset$,
-2. Sifat partisi lengkap, $A_1 \cup A_2 \cup ... \cup A_n = A$
+1. Sifat saling lepas, $\forall i, j \in \{ 1, 2, \cdots, n \}: A_i \cap A_j = \emptyset$,
+2. Sifat partisi lengkap, $A_1 \cup A_2 \cup \cdots \cup A_n = A$
 
 == IV. Modulo
 
-1. stem:[a^n \mod b = a^k \cdot a^l \mod b], dimana stem:[k+l=m].
+1. stem:[a^n \bmod b = a^k \cdot a^l \bmod b], dimana stem:[k+l=m].
 
 == V. Aljabar Abstrak
 

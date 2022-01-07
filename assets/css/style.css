@@ -16,10 +16,6 @@ p {
     line-height: 1.5;
 }
 
-.katex {
-    font-size: 15px !important;
-}
-
 h1 {
     text-align: center;
 }
@@ -72,7 +68,7 @@ nav {
 }
 
 nav>a {
-    font-family: 'Fira Mono', monospace;
+    font-family: Hack, monospace;
     font-weight: 400;
     color: #eee;
     text-decoration: none;
@@ -94,7 +90,7 @@ footer {
 blockquote {
     background: #f9f9f9;
     border-left: 5px solid #ccc;
-    padding: 3px 1em 3px;
+    padding: 1em;
 }
 
 table.linenotable {
@@ -142,7 +138,7 @@ ul.checklist {
 
 code,
 pre {
-    font-family: "JetBrains Mono", monospace;
+    font-family: Hack, monospace;
     line-height: 1.5em;
     overflow-x: auto;
 }
