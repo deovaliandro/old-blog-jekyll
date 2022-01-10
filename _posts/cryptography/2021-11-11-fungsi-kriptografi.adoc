@@ -1,5 +1,5 @@
 = Fungsi dalam Kriptografi
-:page-category: cryptography
+:page-category: kriptografi
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_

@@ -1,5 +1,6 @@
 = RSA
-:page-category: cryptography
+:page-category: kriptografi
+:page-tags: [kriptografi, kriptografi kunci publik]
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_
