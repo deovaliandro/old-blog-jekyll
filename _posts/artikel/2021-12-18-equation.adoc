@@ -1,20 +1,6 @@
-:page-category: article
+:page-title: Persamaan KaTeX
+:page-category: tutorial
 :page-tags: [tutorial, asciidoc]
-
-```bash
-missing:~$ curl --head --silent google.com | grep --ignore-case content-length | cut --delimiter=' ' -f2
-```
-
-[quote]
-Quote or excerpt text
-
-\(A_2\)
-
-\(2 + 2\)
-
-\(\hat{x}\ \vec{x}\ \ddot{x}\)
-
-\(\left( \sum_{k=1}^n a_k b_k \right)^2 \leq \left( \sum_{k=1}^n a_k^2 \right) \left( \sum_{k=1}^n b_k^2 \right)\)
 
 Untuk menggunakan LaTeX align:
 

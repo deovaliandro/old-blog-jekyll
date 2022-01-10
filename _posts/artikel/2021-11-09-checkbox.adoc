@@ -1,5 +1,5 @@
 = Asciidoc Checkbox
-:page-category: article
+:page-category: tutorial
 :page-tags: [tutorial, asciidoc]
 
 [.center]
