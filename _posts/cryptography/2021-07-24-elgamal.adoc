@@ -1,20 +1,39 @@
-:page-title: EL-Gamal
+:page-title: ELGamal
 :page-category: kriptografi
 :page-tags: [kripto, asimetris]
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_
 
-== Properties
+== Pendahuluan
+
+ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
+pada persoalan logaritma diskrit, yaitu jika stem:[p \in \mathbb{P}, \{g, y\} \in \mathbb{Z}], maka temukan stem:[x: g^{x} \equiv y (\bmod p)].
+
+== Variabel
 
 * stem:[n], stem:[a] prime number (not secret)
 * stem:[g], primitive root of stem:[n] (not secret)
 * stem:[x], stem:[a] random number
-* stem:[y = g^x \mod p]
-* stem:[m], message
+* stem:[y = g^x \mod p], kunci publik (tidak rahasia)
+* stem:[m], plaintext/ pesan (rahasia)
 * stem:[a] and stem:[b], pair of ciphertext
 
-== Result
+== Fungsi Enkripsi dan Dekripsi
+
+== Skenario
+
+== Pembangkitan Kunci
+
+== Enkripsi Pesan
+
+== Dekripsi Pesan
+
+== Penutup
+
+== Reference
+
+== Lampiran
 
 Alice's key: private key = stem:[x], publick key = stem:[(y, g, p)]. Ciphertext = stem:[(a, b)].
 
@@ -22,23 +41,11 @@ usage: `python elgamal.py`
 
 ```python
 def is_relative_prime(prime, data):
-    """
-    Prime is relative prime with data in primitive root
-    :param prime: int
-    :param data: int
-    :return: int
-    """
     while data != 0:
         prime, data = data, prime % data
     return prime
 
 def is_primitive_root(prime, root):
-    """
-    Root is primitive root from prime
-    :param prime: int
-    :param root: int
-    :return: int
-    """
     primitive_root = []
     for i in range(prime - 1):
         primitive_root.append(pow(root, i + 1) % prime)
@@ -62,9 +69,6 @@ def is_primitive_root(prime, root):
 
 
 def key_builder():
-    """
-    Count public and private key
-    """
     print("Input prime number, root and secret key (x)")
     prime, root, secret_key = [int(x) for x in input().split(" ")]
 
@@ -76,10 +80,6 @@ def key_builder():
 
 
 def encryption():
-    """
-    Encryption message with public key
-    """
-
     # message is one character, string will be add later
     print("Input message")
     message = input()
@@ -99,9 +99,6 @@ def encryption():
 
 
 def decryption():
-    """
-    Decryption message
-    """
     a, b, x, p = [int(x) for x in input().split(" ")]
     m = pow(a, (p-1-x)) * b % p
     print(f"Message %c" % m)
@@ -110,17 +107,3 @@ key_builder()
 encryption()
 decryption()
 ```
-
-Contoh:
-
-Input prime number, root and secret key (x) = 2273, 3 and 243
-
-Public Key 461 3 2273
-Private key 243
-
-Message = a
-k = 1463
-
-Ciphertext (1439, 2004)
-
-with decryption(), message = a
