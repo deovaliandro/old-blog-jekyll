@@ -1,5 +1,6 @@
-= EL-Gamal
-:page-category: cryptography
+:page-title: EL-Gamal
+:page-category: kriptografi
+:page-tags: [kripto, asimetris]
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_
@@ -105,9 +106,13 @@ def decryption():
     m = pow(a, (p-1-x)) * b % p
     print(f"Message %c" % m)
 
+key_builder()
+encryption()
+decryption()
+```
 
-"""
-Example:
+Contoh:
+
 Input prime number, root and secret key (x) = 2273, 3 and 243
 
 Public Key 461 3 2273
@@ -119,8 +124,3 @@ k = 1463
 Ciphertext (1439, 2004)
 
 with decryption(), message = a
-"""
-key_builder()
-encryption()
-decryption()
-```

@@ -1,11 +1,11 @@
-= Aljabar
-:page-category: cryptography
-:page-tags: [crypto]
+:page-title: Aljabar
+:page-category: kriptografi
+:page-tags: [kripto]
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_
 
-== I. Set dan Fungsi
+== Set dan Fungsi
 
 . Set bilangan real = stem:[\mathbb{R}],
 . Set bilangan bulat = stem:[\mathbb{Z}],
@@ -20,7 +20,7 @@ stem:[\|S\|].
 Himpunan matrix \$ m \times n \$ dengan entry bilangan real, diberi notasi
 stem:[M^{m,n}(\mathbb{R})].
 
-== II. Hasil Kali Kartesius
+=== Hasil Kali Kartesius
 
 Hasil kali dua himpunan tak kosong $ A $ dan $ B $ didefinisikan:
 
@@ -29,7 +29,7 @@ stem:[A \times B = \{(a, b) \|a \in A, b \in B\}]
 
 dengan stem:[\|A \times B\| = \|A\|\times \|B\|].
 
-== III. Relasi Ekuvalensi
+=== Relasi Ekuvalensi
 
 Misalnya terdapat himpunan tak kosong $ A $, suatu subhimpunan $ R \subset A^2 $
 disebut relasi ekivalen pada $ A $ jika memenuhi:
@@ -61,11 +61,11 @@ Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah r
 1. Sifat saling lepas, $\forall i, j \in \{ 1, 2, \cdots, n \}: A_i \cap A_j = \emptyset$,
 2. Sifat partisi lengkap, $A_1 \cup A_2 \cup \cdots \cup A_n = A$
 
-== IV. Modulo
+=== Modulo
 
 1. stem:[a^n \bmod b = a^k \cdot a^l \bmod b], dimana stem:[k+l=m].
 
-== V. Aljabar Abstrak
+== Aljabar Abstrak
 
 === Grup
 

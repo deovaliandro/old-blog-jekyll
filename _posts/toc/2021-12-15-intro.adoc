@@ -1,6 +1,6 @@
-= chap0 - intro
+:page-title: ToC - intro
 :page-category: toc
-:page-tags: [tekom, intro]
+:page-tags: [tekom, part1]
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_
@@ -28,15 +28,17 @@ simbol dari stem:[a] dan stem:[b],
 . String adalah urutan rangkaian simbol (kosong sampai infinity simbol),
 contohnya stem:[aaaa] dan stem:[10001]. Dengan stem:[|ab| = 2], stem:[|\epsilon|
 = 0], 'zero' ("the string of no symbols"). stem:[{} \neq {\epsilon}].
-+
-stem:[x^n = x\x...x], n times +
-stem:[x^0 = \epsilon] +
-stem:[x^1 = x] +
-stem:[x^2 = x\x], etc.
+
+\[\begin{aligned}
+x^n &= xx \cdots x, \text{n times} \\
+x^0 &= \epsilon \\
+x^1 &= x \\
+x^2 &= xx
+\end{aligned}\]
 
 . Languages adalah set string atas fixed alfabet, dengan stem:[\Sigma^{\ast}]
 adalah set semua string atas stem:[\Sigma] (_Kleene closure_), contohnya
 stem:[{a^{\ast}} = {\epsilon, a, aa, aaa, ...}]. Dengan menggunakan
-stem:[x \elem \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
+stem:[x \in \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
 +
 Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
