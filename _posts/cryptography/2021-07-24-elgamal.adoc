@@ -12,12 +12,8 @@ pada persoalan logaritma diskrit, yaitu jika stem:[p \in \mathbb{P}, \{g, y\} \i
 
 == Variabel
 
-* stem:[n], stem:[a] prime number (not secret)
-* stem:[g], primitive root of stem:[n] (not secret)
-* stem:[x], stem:[a] random number
-* stem:[y = g^x \mod p], kunci publik (tidak rahasia)
-* stem:[m], plaintext/ pesan (rahasia)
-* stem:[a] and stem:[b], pair of ciphertext
+. stem:[p \in \mathbb{P}] (tidak rahasia),
+. stem:[]
 
 == Fungsi Enkripsi dan Dekripsi
 

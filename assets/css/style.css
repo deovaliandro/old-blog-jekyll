@@ -18,6 +18,10 @@ body {
     line-height: 1.5;
 }
 
+ol.arabic > li > p {
+    margin: 0 !important;
+}
+
 main {
     max-width: 35rem;
     margin: auto;
@@ -35,8 +39,10 @@ nav>a {
     font-weight: 400;
     color: var(--rev);
     text-decoration: none;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+}
+
+nav>a:not(:first-child) {
+    margin-left: 1em;
 }
 
 nav>a:hover {
@@ -52,9 +58,9 @@ h2 {
     margin: 0;
 }
 
-p {
+/* p:not(ol>li>p) {
     margin-bottom: 1rem;
-}
+} */
 
 a {
     color: var(--main);
