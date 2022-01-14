@@ -4,6 +4,7 @@ description: >-
 baseurl: ""
 url: "https://deovaliandro.github.io"
 author: Deo Valiandro. M
+permalink: /:year/:month/:day/:title:output_ext
 
 plugins:
   - jekyll-asciidoc
