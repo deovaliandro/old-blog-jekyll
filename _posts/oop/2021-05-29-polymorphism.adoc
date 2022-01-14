@@ -1,11 +1,7 @@
----
-title       : Polymorphism
-author      : Deo Valiandro. M
-date        : '2021-05-29'
-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-layout      : default
-category    : oop
----
+:page-title       : Polymorphism
+:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout      : default
+:page-category    : Pemrograman Berorientasi Objek
 
 Polymorphism adalah kemampuan dari suatu objek untuk merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan untuk merujuk ke inheritance objek class.
 

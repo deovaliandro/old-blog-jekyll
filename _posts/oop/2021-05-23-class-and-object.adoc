@@ -1,7 +1,7 @@
 :page-title       : Class dan Object
 :page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout      : default
-:page-category    : oop
+:page-category    : Pemrograman Berorientasi Objek
 
 Bagian ini adalah bagian pertama dari seri pemrograman berorientasi objek.
 
