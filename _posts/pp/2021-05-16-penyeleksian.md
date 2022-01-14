@@ -3,6 +3,7 @@ title: Penyeleksian Kondisi
 author: Deo Valiandro
 date: '2021-05-16'
 layout: default
+category: pp
 ---
 
 Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu.

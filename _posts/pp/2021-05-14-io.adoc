@@ -1,9 +1,7 @@
----
-title: Input dan Output
-author: Deo Valiandro
-date: '2021-05-14'
-layout: default
----
+:page-title     : Input dan Output
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Pengantar Pemrograman dengan Java
 
 IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
 bagaimana mengeluarkan hasil dari program tersebut.
@@ -11,13 +9,14 @@ bagaimana mengeluarkan hasil dari program tersebut.
 Meskipun pengertian i/o secara lebih luas lebih dari hal tersebut, namun disini
 kita akan menggunakan terbatas pada input dan output di terminal.
 
-## Input
+== Input
 
 Input di Java dapat menggunakan 2 cara (yang umum digunakan).
 
-### Scanner
+=== Dengan menggunakan Scanner
 
-```java
+[source, java]
+----
 import java.util.Scanner;
 
 class Main{
@@ -26,11 +25,12 @@ class Main{
         int i = scan.nextInt();
     }
 }
-```
+----
 
-### BufferReader
+=== Dengan menggunakan BufferReader
 
-```java
+[source, java]
+----
 import java.io.BufferedReader;
 import java.io.StreamReader;
 
@@ -40,35 +40,37 @@ class Main{
         int a = Integer.parseInt(b.readLine());
     }
 }
-```
+----
 
-## Output
+== Output
 
 Output di Java dapat menggunakan 2 cara (yang umum digunakan).
 
-### System.out.print()
+=== System.out.print()
 
 Fungsi print() meskipun kita menuliskan kodenya dua baris namun hasil atau
 outputnya tidak menjadi dua baris, solusinya kita bisa menggunakan fungsi yang
 kedua yaitu println() dimana dengan fungsi tersebut dapat menambahkan baris baru
 pada outputnya.
 
-```java
+[source, java]
+----
 class Main{
     public static void main(String args[]){
         System.out.println("Hello world");
         System.out.print("Hello world");
     }
 }
-```
+----
 
-### System.out.printf
+=== System.out.printf
 
-```java
+[source, java]
+----
 class Main{
     public static void main(String args[]){
         String data = "Hello world";
         System.out.printf("%s", data);
     }
 }
-```
+----

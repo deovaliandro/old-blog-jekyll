@@ -3,6 +3,7 @@ title: Perulangan
 author: Deo Valiandro
 date: '2021-05-17'
 layout: default
+category: pp
 ---
 
 Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama

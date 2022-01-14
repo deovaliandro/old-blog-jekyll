@@ -2,6 +2,7 @@
 
 == Checklist
  
+- [x] Ubah semua dokumen ke asciidoc
 - [ ] Membaca SICP
 - [ ] Teori Komputasi
 - [ ] Backup semua link

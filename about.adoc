@@ -1,4 +1,14 @@
+:page-title: about me
+
 Nama saya Deo, dan ini adalah tempat bermainku.
+
+Blog untuk tempat mencatat hal-hal yang pernah dipelajari, semoga bermanfaat
+kedepannya.
+
+Kontak deo@duck.com dengan kunci publik:
+
+[source, bash]
+curl -s https://github.com/deovaliandro.gpg | gpg --import
 
 Temukan saya di https://github.com/deovaliandro atau https://twitter.com/deovaliandro
 

@@ -3,6 +3,7 @@ title: Jump Statement
 author: Deo Valiandro
 date: '2021-05-18'
 layout: default
+category: pp
 ---
 
 Jump statement adalah perintah untuk memindahkan alur program ke program yang

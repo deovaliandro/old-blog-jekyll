@@ -1,27 +1,29 @@
----
-title: Operasi Dasar
-author: Deo Valiandro
-date: '2021-05-15'
-layout: default
----
+:page-title: Operasi Dasar
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Pengantar Pemrograman dengan Java
 
-## Operator Aritmatika
+== Operator Aritmatika
 
-{:.table}
-|           Hasil           | Operator |
-| :-----------------------: | :------: |
-|        Additional         |    +     |
-|        Subtraction        |    -     |
-|      Multiplication       |    *     |
-|         Division          |    /     |
-|          Modulus          |    %     |
-|         Increment         |    ++    |
-|         Decrement         |    --    |
-|   Additional assignment   |    +=    |
-|  Subtraction assignment   |    -=    |
-| Multiplication assignment |    *=    |
-|    Division assignment    |    /=    |
-|    Modulus asignement     |    %=    |
+Operator aritmatika yang dapat dilakukan adalah:
+
+[.center]
+|===
+| Hasil | Operator
+
+| Additional                |    +
+| Subtraction               |    -
+| Multiplication            |    *
+| Division                  |    /
+| Modulus                   |    %
+| Increment                 |    ++
+| Decrement                 |    --
+| Additional assignment     |    +=
+| Subtraction assignment    |    -=
+| Multiplication assignment |    *=
+| Division assignment       |    /=
+| Modulus asignement        |    %=
+|===
 
 Operator ini hanya bisa digunakan pada tipe data angka, tidak bisa digunakan
 pada data `boolean`, tetapi dapat digunakan pada tipe data `char`, karena `char`
@@ -29,7 +31,8 @@ pada dasarnya adalah `int` di dalama Java.
 
 Contoh:
 
-```java
+[source, java]
+----
 public class OperatorAritmatika {
  
     public static void main(String[] args) {
@@ -62,19 +65,23 @@ public class OperatorAritmatika {
         System.out.println("Hasil 9 % 2 = " + hasilSisaLain);
     }
 }
-```
+----
 
-## Operator pembanding
+== Operator pembanding
 
-{:.table}
-|          Hasil           | Operator |
-| :----------------------: | :------: |
-|         Equal to         |    ==    |
-|       Not equal to       |    !=    |
-|       Greater than       |    >     |
-|        Less than         |    <     |
-| Greater than or equal to |    >=    |
-|  Less than or equal to   |    <=    |
+Operator pembanding yan dapat dilakukan:
+
+[.center]
+|===
+|          Hasil           | Operator
+
+|         Equal to         |    ==
+|       Not equal to       |    !=
+|       Greater than       |    >
+|        Less than         |    <
+| Greater than or equal to |    >=
+|  Less than or equal to   |    <=
+|===
 
 Hasil operator ini adalah nilai boolean, bisa berupa true atau false.
 
@@ -85,7 +92,8 @@ characters.
 
 Contoh:
 
-```java
+[source, java]
+----
 int i = 12, b = 3;
 
 if (i < b) {
@@ -93,24 +101,29 @@ if (i < b) {
 } else if (i == b) {
     System.out.println("Equal");
 }
-```
+----
 
-## Operator Logika
+== Operator Logika
 
-{:.table}
-| Hasil | Operator |
-| :---: | :------: |
-|  AND  |    &&    |
-|  OR   |   \|\|   |
-|  XOR  |    ^     |
-|  NOT  |    !     |
+Operator logika yang bisa digunakan:
+
+[.center]
+|===
+| Hasil | Operator
+
+|  AND  |    &&
+|  OR   |   \|\|
+|  XOR  |    ^
+|  NOT  |    !
+|===
 
 Digunakan logika digunakan pada tipe data boolean untuk menyelesaikan
 permasalahan yang membutuhkan nilai-nilai logika.
 
 Contoh penggunaan:
 
-```java
+[source, java]
+----
 boolean a = true;
 int b = 12;
 
@@ -119,4 +132,4 @@ if (a == true && b < 20) {
 } else {
     System.out.println("False");
 }
-```
+----

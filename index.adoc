@@ -1,10 +1,1 @@
-:page-title: hola 👋
 :page-layout: dashboard
-
-Blog untuk tempat mencatat hal-hal yang pernah dipelajari, semoga bermanfaat
-kedepannya.
-
-Kontak deo@duck.com dengan kunci publik:
-
-[source, bash]
-curl -s https://github.com/deovaliandro.gpg | gpg --import
