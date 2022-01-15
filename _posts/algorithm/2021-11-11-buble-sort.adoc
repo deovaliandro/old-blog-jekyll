@@ -1,8 +1,7 @@
-= Buble Sort
-:page-category: algorithm
-
-[.center]
-_Deo Valiandro. M <mdv16h@gmail.com>_
+:page-title     : Buble Sort
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Algoritma
 
 == Pendahuluan
 
@@ -26,10 +25,15 @@ Dalam program, kita dapat menggunakan logika untuk menukar/swap index,
 
 Misalkan kita mempunyai a = 10 dan b = 20.
 
-[source, bash]
+[source, c]
 temp    = a (temp = 10)
 a       = b (a = 20)
 b       = temp (b = 10)
+
+atau
+
+[source, python]
+a, b = b, a
 
 Referensi
 

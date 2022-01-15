@@ -1,6 +1,7 @@
-= Asciidoc Checkbox
-:page-category: tutorial
-:page-tags: [tutorial, asciidoc]
+:page-title       : Asciidoc Checkbox
+:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout      : default
+:page-category    : Tutorial
 
 [.center]
 _Deo Valiandro. M <mdv16h@gmail.com>_

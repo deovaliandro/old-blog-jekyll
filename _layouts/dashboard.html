@@ -5,7 +5,7 @@
     {% for post in site.posts %}
     <li>
       {% capture category_name %}{{ category | first }}{% endcapture %}
-      <span class="meta">{{ post.category }}, ditulis pada {{ post.date | date: "%-d %B %Y" }}</span>
+      <span class="meta">{{ post.category }}, {{ post.date | date: "%-d %B %Y" }}</span>
       <h2><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
       {% endfor %}
     </li>

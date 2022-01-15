@@ -33,6 +33,7 @@ nav {
 nav>a {
     font-family: "Source Code Pro", "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
     font-weight: 400;
+    /* padding-top: 0.2em; */
     color: var(--rev);
     text-decoration: none;
 }
@@ -48,7 +49,9 @@ nav>a:hover {
 
 h1 {
     text-align: center;
-    font-weight: 400;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
 }
 
 h2 {
@@ -62,7 +65,7 @@ h3 {
 
 a {
     color: var(--main);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .tableblock {
@@ -70,8 +73,9 @@ a {
 }
 
 a:hover {
-    color: var(--rev);
-    background-color: var(--main);
+    /* color: var(--rev); */
+    /* background-color: var(--main); */
+    text-decoration: underline;
 }
 
 img,
