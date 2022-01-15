@@ -190,6 +190,7 @@ p>code {
 
 .center {
     text-align: center;
+    overflow-x: auto;
 }
 
 .title {
