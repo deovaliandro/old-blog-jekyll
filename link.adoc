@@ -48,6 +48,12 @@ Kumpulan link yang berguna untuk pelajaran:
 . Security
 .. http://www.ilmuhacking.com/
 
+. OOP
+.. https://abdullahsurati.github.io/bscit/oop.html
+.. http://danmoser.github.io/notes/index.html
+.. https://choimon.github.io/software/oop/
+.. https://redi-school.github.io/intermediate-java/introduction/
+
 . Others
 .. https://web.eecs.umich.edu/~cpeikert/
 .. https://www.wilfred.me.uk/
@@ -55,3 +61,5 @@ Kumpulan link yang berguna untuk pelajaran:
 .. https://martin.ankerl.com/2007/10/04/optimized-pow-approximation-for-java-and-c-c/
 .. https://gendignoux.com/
 .. https://beegass.dev/
+.. https://uva-cs.github.io/pdr/tutorials/index.html
+.. http://jamesmcm.github.io/blog/2020/07/25/intro-dod/

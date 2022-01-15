@@ -1,5 +1,7 @@
-= Finite State Machine
-:page-category: article
+:page-title     : Finite State Machine
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Teori Komputasi
 
 == Finite Automata
 
