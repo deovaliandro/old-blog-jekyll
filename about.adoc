@@ -1,16 +1,17 @@
 :page-title: whoami
 
-Nama saya Deo, dan ini adalah tempat bermainku.
+hay, saya Deo. Blog ini untuk mencatat hal-hal yang pernah dipelajari, semoga bermanfaat kedepannya.
 
-Blog untuk tempat mencatat hal-hal yang pernah dipelajari, semoga bermanfaat
-kedepannya.
+Media sosial:
+
+. https://github.com/deovaliandro,
+. https://twitter.com/deovaliandro
 
 Kontak deo@duck.com dengan kunci publik:
 
 [source, bash]
 curl -s https://github.com/deovaliandro.gpg | gpg --import
 
-Temukan saya di https://github.com/deovaliandro atau https://twitter.com/deovaliandro
 
 [#me]
 .saya pada Binkas GMKI Komisarit FMIPA Unhas, 2017

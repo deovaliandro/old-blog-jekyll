@@ -1,9 +1,7 @@
 = RSA
 :page-category: kriptografi
 :page-tags: [kriptografi, kriptografi kunci publik]
-
-[.center]
-_Deo Valiandro. M <mdv16h@gmail.com>_
+:page-desc: RSA adalah salah satu algoritma kriptografi kunci publik. Algoritma ini bisa digunakan untuk enkripsi-dekripsi pesan maupun sebagai digital signature.
 
 == Pendahuluan
 

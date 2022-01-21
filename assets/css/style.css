@@ -1,6 +1,7 @@
 :root {
-    --main: #086E7D;
+    --main: #54008c;
     --rev: #fff;
+    --grey: #515151;
 }
 
 @media(min-width: 480px) {
@@ -16,6 +17,7 @@ body {
     margin: 0;
     overflow-y: scroll;
     line-height: 1.5;
+    color: var(--grey);
 }
 
 main {
@@ -55,6 +57,7 @@ h1 {
 
 h2 {
     margin: 0;
+    font-size: 32px;
     font-weight: 300;
 }
 
@@ -67,13 +70,16 @@ a {
     text-decoration: none;
 }
 
+.desc {
+    margin-top: 0;
+    color: #515151;
+}
+
 .tableblock {
     margin: 0;
 }
 
 a:hover {
-    /* color: var(--rev); */
-    /* background-color: var(--main); */
     text-decoration: underline;
 }
 
@@ -104,7 +110,7 @@ hr {
     padding-left: 0;
 }
 
-.post > li {
+.post>li {
     margin-top: 1em;
 }
 

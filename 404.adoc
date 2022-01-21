@@ -1,6 +1,5 @@
 :page-title: 404
-:page-layout: default
+:page-layout: empty
 
-[.center]
-*Page not found &#x1F614;* +
-The requested page could not be found.
+[.img-center]
+image::https://http.cat/404.jpg[]
