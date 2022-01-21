@@ -33,7 +33,6 @@ nav {
 nav>a {
     font-family: "Source Code Pro", "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
     font-weight: 400;
-    /* padding-top: 0.2em; */
     color: var(--rev);
     text-decoration: none;
 }

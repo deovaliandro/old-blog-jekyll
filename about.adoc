@@ -1,4 +1,4 @@
-:page-title: about me
+:page-title: whoami
 
 Nama saya Deo, dan ini adalah tempat bermainku.
 
