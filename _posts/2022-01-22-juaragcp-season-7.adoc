@@ -1,0 +1,31 @@
+:page-title: juaragcp-season-7
+:page-category: Fun
+
+// Pass: 2134
+
+== 1/24
+
+- [ ] Automating Infrastructure on Google Cloud with Terraform              5
+- [ ] Build and Secure Networks in Google Cloud                             6
+- [ ] Cloud Architecture: Design, Implement, and Manage                     6
+- [ ] Create and Manage Cloud Resources                                     7
+- [ ] Deploy and Manage Apigee X                                            5
+- [ ] Deploy and Manage Cloud Environments with Google Cloud                5
+- [x] Ensure Access & Identity in Google Cloud                              8
+- [ ] Implement DevOps in Google Cloud                                      7
+- [ ] Perform Foundational Infrastructure Tasks in Google Cloud             10
+- [ ] Serverless Cloud Run Development                                      5
+- [ ] Serverless Firebase Development                                       5
+- [ ] Set Up and Configure a Cloud Environment in Google Cloud              6
+- [ ] Google Cloud Essentials                                               5
+- [ ] Google Cloud's Operations Suite                                       6
+- [ ] Optimizing Your Google Cloud Costs                                    15
+- [ ] Google Cloud Run Serverless Workshop                                  4
+- [ ] Build Apps & Websites with Firebase                                   4
+- [ ] Understanding Your Google Cloud Costs                                 15
+- [ ] Using the Cloud SDK Command Line                                      5
+- [ ] Cloud Development                                                     9
+- [ ] Cloud Logging                                                         5
+- [ ] Managing Cloud Infrastructure with Terraform                          6
+- [ ] Google Cloud Solutions I: Scaling Your Infrastructure                 7
+- [ ] Network Performance and Optimization                                  7

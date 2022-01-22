@@ -1,7 +1,8 @@
-= RSA
-:page-category: kriptografi
-:page-tags: [kriptografi, kriptografi kunci publik]
-:page-desc: RSA adalah salah satu algoritma kriptografi kunci publik. Algoritma ini bisa digunakan untuk enkripsi-dekripsi pesan maupun sebagai digital signature.
+:page-title     : RSA
+:page-category  : kriptografi
+:page-tags      : [kriptografi, kriptografi kunci publik]
+:page-desc      : RSA adalah salah satu algoritma kriptografi kunci publik. Algoritma ini bisa digunakan untuk enkripsi-dekripsi pesan maupun sebagai digital signature.
+
 
 == Pendahuluan
 
@@ -19,8 +20,7 @@ Algoritma RSA adalah sebuah aplikasi dari sekian banyak teori seperti link:https
 == Kriptografi Kunci Publik
 
 Konsep fundamental dari kriptografi kunci publik atau asymmetric cryptography
-ditemukan oleh Whitfield Diffie dan link:https://ee.stanford.edu/~hellman/[Martin Hellman],
-dan secara terpisah oleh Ralph Merkle.
+ditemukan oleh Whitfield Diffie dan link:https://ee.stanford.edu/~hellman/[Martin Hellman], dan secara terpisah oleh Ralph Merkle.
 
 Konsep dasar public-key cryptography terletak pada pemahaman bahwa kunci/ key
 selalu berpasangan: encryption key dan decryption key. Juga perlu diingat bahwa
@@ -40,7 +40,9 @@ stem:[e].
 
 Syarat nilai stem:[e] dan stem:[d] ini adalah stem:[gcd(d,e)=1] (relatif prima).
 
+
 == Variabel
+
 RSA membutuhkan beberapa variabel:
 
 . stem:[p] dan stem:[q], 2 bilangan prima yang dirahasiakan,

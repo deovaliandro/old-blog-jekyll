@@ -1,9 +1,9 @@
-:page-title: ELGamal
-:page-category: kriptografi
-:page-tags: [kripto, asimetris]
-
-[.center]
-_Deo Valiandro. M <mdv16h@gmail.com>_
+:page-title     : ELGamal
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Kriptografi
+:page-tags      : [kripto, asimetris]
+:page-desc      : ElGamal adalah asymmetric key encryption algorithm yang menggunakan persoalan logaritma diskrit, algoritma ini didasarkan pada Diffie–Hellman key exchange.
 
 == Pendahuluan
 
