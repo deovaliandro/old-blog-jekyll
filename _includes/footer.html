@@ -1,16 +1,55 @@
 <footer>
-    <p>&copy; 2016 - 2022 Deo Valiandro. M, Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a></p>
+    <p>&copy; 2016 - 2022 Deo Valiandro. M, Licensed under <a
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA.</a></p>
 </footer>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+
 <script>
-    renderMathInElement(document.body,{delimiters: [
-        {left: "\\$$", right: "\\$$", display: true},
-        {left: "\\(", right: "\\)", display: true},
-        {left: "\\[", right: "\\]", display: true},
-        {left: "\\$", right: "\\$", display: false},
-        {left: "$", right: "$", display: false}
-]});
+    $(function () {
+        var fonts =
+            'https://fonts.googleapis.com/css2?family=Open+Sans&display=swap';
+        if (document.createStyleSheet) document.createStyleSheet(fonts);
+        else $("head").append($("<link rel='stylesheet' href='" + fonts +
+            "' type='text/css' media='screen' />"));
+    });
+</script>
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"
+    integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous">
+</script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js"
+    integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous">
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    renderMathInElement(document.body, {
+        delimiters: [{
+                left: "\\$$",
+                right: "\\$$",
+                display: true
+            },
+            {
+                left: "\\(",
+                right: "\\)",
+                display: true
+            },
+            {
+                left: "\\[",
+                right: "\\]",
+                display: true
+            },
+            {
+                left: "\\$",
+                right: "\\$",
+                display: false
+            },
+            {
+                left: "$",
+                right: "$",
+                display: false
+            }
+        ]
+    });
+});
 </script>
 </html>
