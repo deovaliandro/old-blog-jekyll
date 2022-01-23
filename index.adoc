@@ -1,1 +1,3 @@
 :page-layout: dashboard
+
+hay, saya Deo. Blog ini untuk mencatat hal-hal yang pernah dipelajari, semoga bermanfaat kedepannya.

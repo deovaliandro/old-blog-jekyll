@@ -1,7 +1,13 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
+
 :root {
     --main: #54008c;
+    --link: #3273dc;
     --rev: #fff;
-    --grey: #515151;
+    --grey: #444;
+    --font: 'Open Sans', sans-serif;
+    --mono: "Source Code Pro", "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
 }
 
 @media(min-width: 480px) {
@@ -11,11 +17,11 @@
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    margin: 0;
-    overflow-y: scroll;
+    font-family: var(--font);
     line-height: 1.5;
+    margin: 0;
     color: var(--grey);
+    overflow-y: scroll;
 }
 
 main {
@@ -31,7 +37,7 @@ nav {
 }
 
 nav>a {
-    font-family: "Source Code Pro", "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+    font-family: var(--mono);
     font-weight: 400;
     color: var(--rev);
     text-decoration: none;
@@ -66,6 +72,19 @@ h3 {
 a {
     color: var(--main);
     text-decoration: none;
+    background-color: transparent;
+}
+
+.post {
+    font-weight: 400;
+}
+
+ol.post li {
+    display: flex;
+}
+
+ol.post li span {
+    flex: 0 0 130px;
 }
 
 .desc {
@@ -108,15 +127,10 @@ hr {
     padding-left: 0;
 }
 
-.post>li {
-    margin-top: 1em;
-}
-
 .meta {
     color: #828282;
-    font-family: "Open Sans", sans-serif;
-    margin-top: -.5em;
-    padding-bottom: 1.5em;
+    font-family: var(--font);
+    font-weight: 400;
 }
 
 footer {
@@ -174,13 +188,9 @@ ul.checklist {
     list-style-type: none;
 }
 
-code {
-    background-color: #eee;
-}
-
 code,
 pre {
-    font-family: "Source Code Pro", "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
+    font-family: var(--mono);
     line-height: 1.5em;
     overflow-x: auto;
 }
@@ -206,4 +216,40 @@ p>code {
     font-style: italic;
     padding-top: 0.5em;
     margin-bottom: 1em;
+}
+
+.medsos {
+    margin-top: 1em;
+}
+
+.medsos>a:hover {
+    text-decoration: none;
+}
+
+.icon {
+    width: 37px;
+    height: 37px;
+    margin-right: 1em;
+    display: inline-block;
+    opacity: 0.7;
+}
+
+.me {
+    font-size: 2.5rem;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+.email {
+    font-size: 20px;
+    font-family: "Source Code Pro";
+    margin: 0;
+}
+
+.sub {
+    margin: 0;
+}
+
+.back {
+    font-size: 1em;
 }

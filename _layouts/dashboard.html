@@ -1,15 +1,41 @@
 {%- include header.html -%}
 <main>
-  <h1>{{ page.title }}</h1>
-  <ol class="post">
-    {% for post in site.posts %}
-    <li>
-      {% capture category_name %}{{ category | first }}{% endcapture %}
-      <h2><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
-      <span class="meta">{{ post.category }}, {{ post.date | date: "%-d %B %Y" }}</span>
-      <p class="desc">{{ post.desc }}</p>
-      {% endfor %}
-    </li>
-  </ol>
-  {%- include footer.html -%}
+    <h1 class="me">Deo Valiandro. M</h1>
+    <p class="sub">Computer Science</p>
+    <a href="mailto:mdv16h@gmail.com" class="email">mdv16h@gmail.com</a>
+    <div class="medsos">
+        <a target="_blank" class="icon-url" title="GitHub" href="https://github.com/deovaliandro">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub">
+        </a><a target="_blank" class="icon-url" title="LinkedIn" href="https://id.linkedin.com/in/deo-valiandro-m-99a603138">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg" alt="LinkedIn">
+        </a><a target="_blank" class="icon-url" title="Keybase" href="https://keybase.io/jjgo">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/keybase.svg" alt="Keybase">
+        </a><a target="_blank" class="icon-url" title="Twitter" href="https://twitter.com/deovaliandro">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/twitter.svg" alt="Twitter">
+        </a>
+        <a target="_blank" href="https://t.me/aheeemm">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg" alt="Telegram">
+        </a>
+        <a target="_blank" href="https://www.linkedin.com/in/jonhoo">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="Gitlab">
+        </a>
+        <a target="_blank" href="https://github.com/deovaliandro.gpg">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gnuprivacyguard.svg" alt="GPG">
+        </a>
+    </div>
+    <a href="/todo.html" class="email">/todo</a>
+    <a href="/link.html" class="email">/link</a>
+    {{ content }}
+    <ol class="post">
+        {% for post in site.posts %}
+        <!-- on {{ post.category }} -->
+        <li>
+            {% capture category_name %}{{ category | first }}{% endcapture %}
+            <span class="meta">{{ post.date | date_to_string }}</span>
+            <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+            <!-- <p class="desc">{{ post.desc }}</p> -->
+            {% endfor %}
+        </li>
+    </ol>
+    {%- include footer.html -%}
 </main>

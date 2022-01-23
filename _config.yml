@@ -26,20 +26,9 @@ markdown: kramdown
 kramdown:
   input: GFM
   hard_wrap: false
-  # math_engine: mathjax
   math_engine: katex
 
 katex:
   rendering_options:
     throw_error: true
     error_color: "#cc0000"
-
-# compress_html:
-#     clippings: []
-#     comments: []
-#     endings: []
-#     blanklines: false
-#     profile: false
-#     startings: []
-#     ignore:
-#       envs: [pre, code]
