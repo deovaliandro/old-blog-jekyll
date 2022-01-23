@@ -253,3 +253,24 @@ p>code {
 .back {
     font-size: 1em;
 }
+
+li>p {
+    margin: 0;
+}
+
+.checklist {
+    padding-left: 0.5em;
+}
+
+ol.dash {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+}
+
+ol.dash>li:before {
+    display: inline-block;
+    content: "-";
+    width: 1em;
+    margin-left: -1em;
+}

@@ -6,7 +6,8 @@
     <div class="medsos">
         <a target="_blank" class="icon-url" title="GitHub" href="https://github.com/deovaliandro">
             <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/github.svg" alt="GitHub">
-        </a><a target="_blank" class="icon-url" title="LinkedIn" href="https://id.linkedin.com/in/deo-valiandro-m-99a603138">
+        </a><a target="_blank" class="icon-url" title="LinkedIn"
+            href="https://id.linkedin.com/in/deo-valiandro-m-99a603138">
             <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg" alt="LinkedIn">
         </a><a target="_blank" class="icon-url" title="Keybase" href="https://keybase.io/deovaliandro">
             <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/keybase.svg" alt="Keybase">
@@ -20,7 +21,8 @@
             <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gitlab.svg" alt="Gitlab">
         </a>
         <a target="_blank" href="https://github.com/deovaliandro.gpg">
-            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gnuprivacyguard.svg" alt="GPG">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/gnuprivacyguard.svg"
+                alt="GPG">
         </a>
     </div>
     <a href="/todo.html" class="email">/todo</a>
@@ -28,14 +30,25 @@
     {{ content }}
     <ol class="post">
         {% for post in site.posts %}
-        <!-- on {{ post.category }} -->
+        {% if post.category != "pbo" %}
         <li>
             {% capture category_name %}{{ category | first }}{% endcapture %}
             <span class="meta">{{ post.date | date_to_string }}</span>
             <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-            <!-- <p class="desc">{{ post.desc }}</p> -->
-            {% endfor %}
         </li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+    
+    <h2>PBO dengan Java:</h2>
+
+    <ol class="dash post">
+        {% for post in site.categories.pbo reversed %}
+        {% if post.url %}
+        <li><span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+        {% endfor %}
     </ol>
     {%- include footer.html -%}
 </main>
