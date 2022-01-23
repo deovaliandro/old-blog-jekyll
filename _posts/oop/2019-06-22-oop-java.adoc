@@ -159,4 +159,4 @@ Lorem
 
 ## Mengembalikan Objek
 
-Lorem
+Lorem ipsum
