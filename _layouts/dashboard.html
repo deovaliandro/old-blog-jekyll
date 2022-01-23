@@ -28,12 +28,12 @@
     <a href="/todo.html" class="email">/todo</a>
     <a href="/link.html" class="email">/link</a>
     {{ content }}
-    <ol class="post">
+    <ol class="dash post">
         {% for post in site.posts %}
         {% if post.category != "pbo" %}
         <li>
             {% capture category_name %}{{ category | first }}{% endcapture %}
-            <span class="meta">{{ post.date | date_to_string }}</span>
+            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span>
             <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endif %}
