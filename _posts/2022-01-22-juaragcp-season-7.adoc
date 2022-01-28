@@ -3,7 +3,7 @@
 
 // Pass: 2134
 
-== 1/24
+== 3/24
 
 - [ ] Automating Infrastructure on Google Cloud with Terraform              5
 - [ ] Build and Secure Networks in Google Cloud                             6
@@ -20,8 +20,8 @@
 - [ ] Google Cloud Essentials                                               5
 - [ ] Google Cloud's Operations Suite                                       6
 - [ ] Optimizing Your Google Cloud Costs                                    15
-- [ ] Google Cloud Run Serverless Workshop                                  4
-- [ ] Build Apps & Websites with Firebase                                   4
+- [x] Google Cloud Run Serverless Workshop                                  4
+- [x] Build Apps & Websites with Firebase                                   4
 - [ ] Understanding Your Google Cloud Costs                                 15
 - [ ] Using the Cloud SDK Command Line                                      5
 - [ ] Cloud Development                                                     9

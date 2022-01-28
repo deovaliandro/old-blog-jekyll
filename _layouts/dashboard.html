@@ -28,9 +28,10 @@
     <a href="/todo.html" class="email">/todo</a>
     <a href="/link.html" class="email">/link</a>
     {{ content }}
+    <h3>Catatan:</h3>
     <ol class="dash post">
         {% for post in site.posts %}
-        {% if post.category != "pbo" %}
+        {% if post.category != "pbo" and post.category != "pp" %}
         <li>
             {% capture category_name %}{{ category | first }}{% endcapture %}
             <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span>
@@ -40,8 +41,19 @@
         {% endfor %}
     </ol>
     
-    <h2>PBO dengan Java:</h2>
+    <h3 id="pp">Pengantar pemrograman dengan Java:</h3>
+    <p>Java merupakan sebuah bahasa pemrograman yang dijadikan sebagai bahan pembelajaran mata kuliah pengantar pemrograman di Ilmu Komputer Universitas Hasanuddin.</p>
+    <ol class="dash post">
+        {% for post in site.categories.pp reversed %}
+        {% if post.url %}
+        <li><span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>
+        <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ol>
 
+    <h3>PBO dengan Java:</h3>
+    <p>Pemrograman berorientasi objek (PBO) atau Object-oriented programming (OOP) adalah sebuah paradikma pemrograman yang didasarkan pada sebuah objek yang bisa memiliki data (atribut) dan perilaku (prosedur atau method).<sup> <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia</a></sup>. PBO adalah materi lanjutan dari <a href="#pp">Pengantar Pemrograman</a>.</p>
     <ol class="dash post">
         {% for post in site.categories.pbo reversed %}
         {% if post.url %}

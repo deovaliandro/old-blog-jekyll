@@ -1,7 +1,7 @@
 :page-title     : Input dan Output
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : Pengantar Pemrograman dengan Java
+:page-category  : pp
 
 IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
 bagaimana mengeluarkan hasil dari program tersebut.
