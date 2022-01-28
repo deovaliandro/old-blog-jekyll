@@ -1,10 +1,7 @@
----
-title: Penyeleksian Kondisi
-author: Deo Valiandro
-date: '2021-05-16'
-layout: default
-category: pp
----
+:page-title     : Penyeleksian Kondisi
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : pp
 
 Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu.
 
