@@ -1,10 +1,7 @@
----
-title: Array
-author: Deo Valiandro
-date: '2021-05-19'
-layout: default
-category: pp
----
+:page-title     : Array
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : pp
 
 Array adalah kelompok data dengan tipe yang sama.
 
