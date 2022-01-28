@@ -14,6 +14,7 @@ adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
 perlu tahu fakta ini footnote:[Dari blog https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/]). Kode Java selalu ditulis didalam sebuah
 class dan objek.
 
+
 == Struktur program
 
 Struktur dasar sebuah bahasa pemrograman Java adalah sebagai berikut:
@@ -32,6 +33,7 @@ Misalnya: `Main`, `Utama`, dsb-nya.
 `public static void main(String args[])` adalah kode utama yang akan dijalankan
 ketika kita menjalankan sebuah program Java.
 
+
 == Aturan Penamaan
 
 Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
@@ -43,9 +45,10 @@ dalam Java yang harus dipatuhi seperti:
 4. boleh diawali dengan underscore atau symbol $, dan
 5. nama variable tidak boleh mengandung spasi.
 
-Menurut Convention over configuration Java penulisan nama variable menggunakan
-lower camel case (misalnya namaVariabel), dan penulisan nama class menggunakan
-upper camel case (misalnya Main).
+Menurut _Convention over configuration Java_, penulisan nama variable 
+menggunakan lowerCamel case (misalnya `namaVariabel`), dan penulisan nama class 
+menggunakan UpperCamel case (misalnya `Main``).
+
 
 == Menjalankan program
 
