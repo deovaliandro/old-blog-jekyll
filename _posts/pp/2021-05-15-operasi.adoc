@@ -1,4 +1,4 @@
-:page-title: Operasi Dasar
+:page-title     : Operasi Dasar
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
