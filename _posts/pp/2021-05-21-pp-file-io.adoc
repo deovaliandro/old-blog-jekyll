@@ -12,7 +12,8 @@ Contoh kasusnya, menyalin suatu isi file ke file lain. Disini kita akan
 menggunakan `FileReader` untuk membaca isi file tersebut, lalu kita akan menulis
 dengan menggunakan `FileWriter` kepada file lainnya.
 
-```java
+[source, java]
+----
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -39,8 +40,4 @@ public class Main {
         }
     }
 }
-```
-
-Hasilnya:
-
-![file-io](/img/Screenshot_20210921_204112.png)
+----
