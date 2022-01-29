@@ -4,12 +4,11 @@
 :page-category  : pp
 
 Jump statement adalah perintah untuk memindahkan alur program ke program yang
-lain.
-
-Java mengenal tiga buah perintah tersebut yaitu `break`, `continue` dan
+lain. Java mengenal tiga buah perintah tersebut yaitu `break`, `continue` dan
 `return`.
 
-## Break
+
+== Break
 
 Break merupakan perintah yang dapat digunakan untuk menghentikan proses
 perulangan dengan paksa.
@@ -19,7 +18,8 @@ nilai i = 2.
 
 Contoh:
 
-```java
+[source, java]
+----
 int n = 10;
 int i = 0;
 
@@ -31,9 +31,10 @@ while (i<n) {
         break;
     }
 }
-```
+----
 
-## Continue
+
+== Continue
 
 Continue adalah perintah yang dapat digunakan untuk meloncati proses perulangan.
 
@@ -43,7 +44,8 @@ tersebut.
 
 Contoh:
 
-```java
+[source, java]
+----
 for (int i=0; i<10; i++) {
     if (i == 5) {
         continue;
@@ -51,15 +53,15 @@ for (int i=0; i<10; i++) {
 
     System.out.println(i);
 }
-```
+----
 
 Program di atas akan menampilkan bilangan mulai dari 0 sampai 10, tetapi angka 5
 tidak akan ditampilkan karena ketika nilai i = 5 maka perintah `continue` akan
 dijalankan.
 
-## Return
+== Return
 
 Return adalah perintah dalam java yang digunakan di dalam method. Return akan
 mengembalikan suatu nilai dari sebuah method yang dipanggil.
 
-Return akan dibahas di pembahasan tentang method.
+Return akan dibahas di pembahasan tentang link:{/2021/05/19/pp-method.html}[Method].
