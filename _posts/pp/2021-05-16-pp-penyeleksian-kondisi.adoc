@@ -19,37 +19,38 @@ mendapat nilai ini.
 
 Dalam Java terdapat dua macam penyeksian kondisi yaitu "If-else" dan "Switch".
 
-## If-Else
+
+== If-Else
 
 Bentuk if-else adalah bentuk jika-maka, jika memenuhi syarat ini, lakukan ini,
 jika tidak maka cek ke syarat berikutnya.
 
 Bentuk umumnya adalah:
 
-```java
+[source, java]
 if ( syarat1 ) {
-    //statement yang akan dijalankan ketika syarat1 = true
+    //dijalankan ketika syarat1 = true
 } if else ( syarat2 ) {
-    //statement yang akan dijalankan ketika syarat2 = true
+    //dijalankan ketika syarat2 = true
 } else {
-    //statement yang akan dijalankan ketika semua syarat false
+    //dijalankan ketika semua syarat false
 }
-```
 
 Aturannya:
 
 Berikut ini hal yang harus diketahui ketika menggunakan "If-else":
 
-1.  If statement bisa tidak memiliki "else" statement, "else" statement harus
-    terletak setelah semua "else If" statement (jika ada).
-2.  If statement bisa memiliki banyak "else if" statement dan semuanya harus
-    terletak sebelum "else" statement.
-3.  Ketika salah satu "else if" statement dijalankan, tidak ada "else if"
-    lainnya yang akan dijalankan.
+. If statement bisa tidak memiliki "else" statement, "else" statement harus
+terletak setelah semua "else If" statement (jika ada).
+. If statement bisa memiliki banyak "else if" statement dan semuanya harus
+terletak sebelum "else" statement.
+. Ketika salah satu "else if" statement dijalankan, tidak ada "else if" lainnya
+yang akan dijalankan.
 
 Contoh:
 
-```java
+[source, java]
+----
 int nilai = 50;
 
 if (nilai <= 50) {
@@ -61,9 +62,10 @@ if (nilai <= 50) {
 } else {
     System.out.println("Eror");
 }
-```
+----
 
-## Switch
+
+== Switch
 
 Pada switch terdapat syarat yang digunakan untuk pengujian terhadap daftar nilai
 yang ada.
@@ -74,7 +76,7 @@ ke `default`.
 
 Bentuk umumnya:
 
-```java
+[source, java]
 switch ( test_variable) {
     case value :
         //statement
@@ -85,7 +87,6 @@ switch ( test_variable) {
     default :
         //statement
 }
-```
 
 Switch memerlukan `break` untuk menghentikan pengujian ketika pengujian itu
 sudah memenuhi persyaratan yang diberikan.
@@ -95,7 +96,7 @@ memenuhi (Baca bagian [Jump Statement](/2021/05/18/jump-statement.html)).
 
 Contoh penggunaan:
 
-```java
+[source, java]
 int a = 5;
 switch (a) {
     case 1:
@@ -116,5 +117,3 @@ switch (a) {
     default:
         System.out.println("Invalid Choice");
 }
-```
-
