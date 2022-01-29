@@ -31,8 +31,8 @@ byte n = 12;
 [source, java]
 short n = 1200;
 
-. int, tipe data yang menampung angka 32 bit dengan range -2,147,483,648
-- 2,147,483,647 (stem:[2^{32}]). Tipe data byte memiliki nilai default `0`.
+. int, tipe data yang menampung angka 32 bit dengan range -2,147,483,648 -
+2,147,483,647 (stem:[2^{32}]). Tipe data byte memiliki nilai default `0`.
 +
 [source, java]
 int n = 289000;
