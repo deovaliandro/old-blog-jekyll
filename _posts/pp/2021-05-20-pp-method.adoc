@@ -9,28 +9,26 @@ Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).
 
 Method pada Java memiliki bentuk umum seperti berikut ini:
 
-```java
+[source, java]
 return-type methodName(parameter-list) {
     //body of method
 }
-```
 
 dimana:
 
-1. `return-type` adalah jenis nilai yang akan dikembalikan oleh method
+. `return-type` adalah jenis nilai yang akan dikembalikan oleh method
 tersebut.
-2. methodName adalah nama method
-3. parameter-list adalah daftar nilai yang dikirim ke method tersebut.
+. methodName adalah nama method
+. parameter-list adalah daftar nilai yang dikirim ke method tersebut.
 
 Contohnya:
 
 sebuah method yang berfungsi untuk menghitung hasil perkalian dua buah bilangan.
 
-```java
+[source, java]
 public int multipication(int a, int b) {
     return a*b;
 }
-```
 
 `int` adalah tipe data yang akan dikembalikan oleh method tersebut, yaitu hasil
 perkalian a dengan b. `multipication` adalah nama method tersebut, `int a` dan
@@ -44,9 +42,8 @@ Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan
 menggunakan namanya, misalnya kita akan memanggil method yang telah kita buat
 diatas:
 
-```java
+[source, java]
 int hasil = multipication(12, 14);
-```
 
 12 dan 14 disini adalah argumen yang dikirim.
 
@@ -54,8 +51,8 @@ int hasil = multipication(12, 14);
 
 Sebuah method juga dapat mengembalikan object. Misalnya:
 
-```java
-
+[source, java]
+----
 class Demo{
     int a;
     double b;
@@ -80,9 +77,9 @@ class MethodDemo4{
         System.out.println("Addition = " + ans.c); 
     } 
 }
-  
-```
-Sumber: ![https://www.studytonight.com](https://www.studytonight.com/java/methods-in-java.php)
+----
+
+Sumber: link:{https://www.studytonight.com/java/methods-in-java.php}[https://www.studytonight.com]
 
 > Java menggunakan call-by-value bukan call-by-reference
 
