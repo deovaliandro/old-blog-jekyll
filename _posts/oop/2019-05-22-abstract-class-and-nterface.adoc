@@ -3,17 +3,24 @@
 :page-layout      : default
 :page-category    : pbo
 
-## Abstract method vs Overriding
 
-Abstract method adalah method yang ditulis untuk diimplementasikan nantinya (harus diimplementasikan).
-Abstract method ini sebagai perjanjian bahwa method-method yang diberi tanda `abstract` merupakan method yang penting sehingga harus diimplementasikan.
-Manfaatnya, digunakan sebagai jembatan antar class.
+== Abstract method vs Overriding
 
-Perbedaan abstract method dengan overriding - Abstract harus di implementasikan sedangkan overriding itu opsional
+Abstract method adalah method yang ditulis untuk diimplementasikan nantinya
+(harus diimplementasikan).Abstract method ini sebagai perjanjian bahwa
+method-method yang diberi tanda `abstract` merupakan method yang penting
+sehingga harus diimplementasikan. Manfaatnya, digunakan sebagai jembatan antar
+class.
 
-Untuk menggunakan abstract class didalam sebuah class, digunakan keyword `abstract`, dan untuk mengimplementasikannya pada class menggunakan keyword `implement`.
+Perbedaan abstract method dengan overriding - Abstract harus di implementasikan
+sedangkan overriding itu opsional
 
-```java
+Untuk menggunakan abstract class didalam sebuah class, digunakan keyword
+`abstract`, dan untuk mengimplementasikannya pada class menggunakan keyword
+`implement`.
+
+[source, java]
+----
 class One{
     One(){
         ...
@@ -25,13 +32,15 @@ class One{
 class Main implement One {
     ...
 }
-```
+----
 
-## Interface
+
+== Interface
 
 Interface adalah kumpulan abstract method yang digabung menjadi satu class.
 
-```java
+[source, java]
+----
 interface Orang{
     abstract void makan();
     abstract void suara();
@@ -111,4 +120,4 @@ class Ibu extends Manusia implements Orang {
         System.out.println("Ibu berjalan");
     }
 }
-```
+----
