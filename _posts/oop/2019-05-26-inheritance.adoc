@@ -90,6 +90,7 @@ class Ayah extends Manusia implements Orang {
 ----
 
 Keuntungan dari inheritance adalah:
+
 . Reusability dari code, kita tidak perlu menulis kode berulang-ulang.
 . Mendukung polimorphisme dengan adanya method overriding (dibahas pada bab
 polimorphisme)
@@ -102,6 +103,7 @@ mengubah juga class child. Hal ini membuat adanya saling ketergantungan.
 == Jenis Inheritance
 
 Java hanya mendukung 3 jenis inheritance berikut:
+
 . Single inheritance
 . Multilevel inheritance
 . Heirarchical inheritance
@@ -109,7 +111,7 @@ Java hanya mendukung 3 jenis inheritance berikut:
 Java tidak mendukung multiple inheritance dengan alasan keamanan dari masalah
 `Deadly Diamond of Death`.
 
-image::https://static.studytonight.com/java/images/types-of-inheritance.png
+image::https://static.studytonight.com/java/images/types-of-inheritance.png[Types of Inheritance]
 
 
 === Single inheritance
@@ -205,10 +207,11 @@ Multiple inheritance adalah inheritance sebuah class, misalnya class C yang
 mempunyai 2 buah parent, misalnya class B dan class A.
 
 Mengapa multiple inheritance tidak didukung, karena:
-1. Untuk menghilangkan ambiguitas,
-2. Untuk mempermudah review code dan clear design.
 
-image::https://static.studytonight.com/java/images/multiple-inheritance-problem.jpg
+. Untuk menghilangkan ambiguitas,
+. Untuk mempermudah review code dan clear design.
+
+image::https://static.studytonight.com/java/images/multiple-inheritance-problem.jpg[Multiple Inheritance]
 
 
 == Overriding Method
