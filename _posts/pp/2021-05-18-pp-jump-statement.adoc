@@ -65,4 +65,4 @@ Return adalah perintah dalam java yang digunakan di dalam method. Return akan
 mengembalikan suatu nilai dari sebuah method yang dipanggil.
 
 Return akan dibahas di pembahasan tentang
-link:{/2021/05/19/pp-method.html}[Method].
+link:/2021/05/19/pp-method.html[Method].
