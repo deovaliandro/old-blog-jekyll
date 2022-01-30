@@ -10,7 +10,8 @@ dipanggil. Sebuah `class` tanpa konstruktor akan otomatis dibuatkan konstruktor
 Constructor adalah method tanpa return type dan nama methodnya sama dengan nama
 classnya.
 
-```java
+[source, java]
+----
 class Manusia {
     int umur;
     String nama, jenisKelamin;
@@ -26,13 +27,14 @@ class Manusia {
         jenisKelamin = "L";
     }
 }
-```
+----
 
 Ketika dibuat sebuah objek dari class di atas dengan statement
 `Employee emp = new Employee();` maka nilai attribute `name = Shelena`
 dan nilai attribute `salary = 0`.
 
-```java
+[source, java]
+----
 class Manusia {
     int umur;
     String nama, jenisKelamin;
@@ -57,7 +59,7 @@ public class Main {
         System.out.println("Jenis Kelamin = "+ manusia.jenisKelamin);
     }
 }
-```
+----
 
 Java memperbolehkan sebuah class memiliki banyak constructor dengan ketentuan:
 
@@ -71,7 +73,9 @@ Java memperbolehkan sebuah class memiliki banyak constructor dengan ketentuan:
 > nama yang sama, namun dibedakan dengan paramater yang berbeda.
 
 Contoh:
-```java
+
+[source, java]
+----
 class Manusia {
     int umur;
     String nama, jenisKelamin;
@@ -106,10 +110,11 @@ public class Main {
         System.out.println("Nama 3 = "+ manusia3.nama);
     }
 }
+----
 
-// Output
-/*  Nama 1 = A 
-*   Nama 2 = B
-*   Nama 3 = C
-*/
-```
+Output:
+
+[source, java]
+Nama 1 = A 
+Nama 2 = B
+Nama 3 = C
