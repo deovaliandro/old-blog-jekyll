@@ -3,11 +3,15 @@
 :page-layout      : default
 :page-category    : pbo
 
-Polymorphism adalah kemampuan dari suatu objek untuk merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan untuk merujuk ke inheritance objek class.
+Polymorphism adalah kemampuan dari suatu objek untuk merepresentasikan satu
+bentuk ke dalam banyak bentuk. Penggunaan paling umum dari polymorphism pada OOP
+terjadi ketika reference superclass digunakan untuk merujuk ke inheritance objek
+class.
 
 Method ini menggunakan override yang dituliskan dalam bentuk keyword `@Override`.
 
-```java
+[source, java]
+----
 //Superclass
 public class Manusia {
     void makan(){
@@ -56,4 +60,4 @@ public class Asisten extends Manusia {
         System.out.println("Asisten bergerak");
     }
 }
-```
+----
