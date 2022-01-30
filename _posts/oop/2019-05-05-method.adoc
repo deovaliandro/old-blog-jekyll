@@ -13,11 +13,10 @@ Misalnya kita mempunya class `Manusia`, maka methodnya bisa seperti
 
 Bentuk umumnya adalah:
 
-```java
+[source, java]
 return-type methodName(parameter-list){
     //body of method
 }
-```
 
 - `return-type` artinya tipe data dari nilai yang akan dikembalikan dari method
   itu.

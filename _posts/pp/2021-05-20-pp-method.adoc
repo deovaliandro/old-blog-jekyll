@@ -35,8 +35,8 @@ perkalian a dengan b. `multipication` adalah nama method tersebut, `int a` dan
 `int b` adalah 2 jenis parameter yang diterima oleh method tersebut, parameter
 ini akan berguna sebagai nilai yang akan diolah oleh method tersebut.
 
-`public` adalah access modifier, akan di diskusikan di
-![materi PBO](https://github.com/deovaliandro/pbo-java).
+`public` adalah
+link:/2019/05/19/encapsulation.html#access-modifier[access modifier].
 
 Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan
 menggunakan namanya, misalnya kita akan memanggil method yang telah kita buat
