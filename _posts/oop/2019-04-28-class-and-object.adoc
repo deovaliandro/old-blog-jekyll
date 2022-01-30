@@ -3,20 +3,11 @@
 :page-layout      : default
 :page-category    : pbo
 
-Bagian ini adalah bagian pertama dari seri pemrograman berorientasi objek.
-
-- [x] Objek
-- [ ] Method
-- [ ] Constructor
-- [ ] Encapsulation
-- [ ] Abstract Class dan Interface
-- [ ] Inheritance
-- [ ] Polymorphism
-
 Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan
 sebuah objek real kedalam bahasa bahasa pemrograman.
 
-## Objek (object)
+
+== Objek (object)
 
 Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan
 (KBBI, 2018). Misalnya seorang manusia, seekor kucing, seekor anjing atau benda
@@ -39,7 +30,8 @@ ukuran, warna, berat, keterangan, dan semacamnya.
 Sedangkan tingkah laku/behaviour adalah kumpulan perintah yang melakukan suatu
 kegiatan spesifik.
 
-## Class
+
+== Class
 
 Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek.
 Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah
@@ -61,12 +53,11 @@ Aturan untuk `class` Java:
 
 Bentuk umum:
 
-```java
+[source, java]
 class  ClassName {
      field;
      method;
 }
-```
 
 Misalnya seorang anak yang baru lahir, pastilah dia akan memiliki nama, namun
 kita belum memberikannya nama. Kenyataan bahwa dia akan memiliki nama, itu
@@ -77,7 +68,8 @@ Misalnya blueprintnya:
 1. Perilaku: bernafas, makan, bergerak, melihat, ... dst.
 2. Atribut: nama, umur, jenis kelamin, ... dsb.
 
-```java
+[source, java]
+----
 class Manusia {
     int umur;
     String nama, jenisKelamin;
@@ -86,14 +78,13 @@ class Manusia {
     void makan() {}
     void berbicara() {}
 }
-```
+----
 
 Untuk menggunakan cetakan ini untuk seorang manusia, maka dapat menggunakan
 perintah:
 
-```java
+[source, java]
 Manusia deo = new Manusia();
-```
 
 maka akan muncul sebuah objek baru, dengan nama objek `deo`, dan memiliki nama,
 umur, jenis kelamin, bernafas, dll.
@@ -109,8 +100,7 @@ tersebut.
 Tapi, datanya belum diisi, dan masih sebatas sebuah template sehingga defaultnya
 nilainya `0`/`null`/`false`, kita dapat mengisinya dengan menggunakan perintah:
 
-```java
+[source, java]
 deo.nama = "Deo";
 deo.umur = 22;
 deo.jenisKelamin = "Laki-laki";
-```
