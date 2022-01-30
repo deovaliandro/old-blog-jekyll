@@ -7,6 +7,85 @@ Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
 Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa
 karakter (char).
 
-String sendiri sebenarnya merupakan sebuah class yang terdapat
-dalam library Java dan digunakan untuk memanipulasi karakter. Contoh sintaks
-untuk mendeklarasikan sebuah string:
+String sendiri sebenarnya merupakan sebuah class yang terdapat dalam library
+Java dan digunakan untuk memanipulasi karakter. Contoh sintaks untuk
+mendeklarasikan sebuah string:
+
+[source, java]
+String str = "Hay";
+
+String adalah tipe data immutable; ketika objek `String` dibuat, maka kontennya
+tidak bisa diubah lagi.
+
+Untuk menggabungkan beberapa string, Java menggunakan `+`, misalnya:
+
+[source, java]
+String nama = "John " + "Doe";
+System.out.println(nama);
+
+menghasilkan:
+
+[source, bash]
+John Doe
+
+
+== Menthod dalam class String
+
+Ada beberapa method yang ada di dalam class `String`:
+
+
+=== equals()
+
+Digunakan untuk menentukan apakah dua buah `String` adalah sama, misalnya:
+
+[source, java]
+----
+String str0 = "Kamu";
+String str1 = "Kami";
+
+if(str0.equal(str1)) {
+    System.out.println("Sama");
+} else {
+    System.out.println("Tidak sama");
+}
+----
+
+`str1` menunjukkan bahwa `str1` adalah nilai yang dijadikan pembanding.
+
+`equals()` menghasilkan nilai `boolean`.
+
+
+=== length()
+
+Digunakan untuk menentukan panjangnya suatu string, misalnya:
+
+[source, java]
+----
+String str = "Nona manis";
+int l = str.length();
+
+System.out.println(l);
+----
+
+`length()` menghasilkan nilai `int`.
+
+
+=== charAt()
+
+Digunakan untuk menentukan `char` pada posisi tertentu pada sebuah `String`,
+misalnya:
+
+[source, java]
+----
+String nama = "Deo Valiandro"
+char p2 = nama.charAt(2);
+
+System.out.println(p2);
+----
+
+angka 2 menunjukkan index char yang diinginkan dalam sebuah `String`.
+
+`charAt()` mengahasilkan nilai `char`.
+
+
+Dan masih banyak lagi method-method lainnya.
