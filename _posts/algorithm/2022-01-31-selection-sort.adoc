@@ -1,0 +1,42 @@
+:page-title     : Selection Sort
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Algoritma
+
+[source, c]
+----
+#include "stdio.h"
+
+void swap(int a[], int i, int j)
+{
+    int tmp;
+    tmp = a[j];
+    a[j] = a[i];
+    a[i] = tmp;
+}
+
+void selection_sort(int arr[])
+{
+    int i, j, min;
+    for (i = 0; i < 4; i++) {
+        min = i;
+        for (j = i; j < 4; j++) {
+            if (arr[j] < arr[min]) {
+                min = j;
+            }
+        }
+        swap(arr, i, min);
+    }
+
+    for (int k = 0; k < 4; k++) {
+        printf("%d ", arr[k]);
+    }
+    printf("\n");
+}
+
+int main()
+{
+    int arr[] = {3, 4, 2, 1};
+    selection_sort(arr);
+}
+----
