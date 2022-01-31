@@ -2,10 +2,10 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 :root {
-    --main: #4B4B4B;
+    --main: #54008c;
     --link: #3273dc;
     --rev: #fff;
-    --grey: #444;
+    --grey: #4B4B4B;
     --font: 'Open Sans', sans-serif;
     --mono: "Source Code Pro", "Menlo", "DejaVu Sans Mono", "Lucida Console", monospace;
 }
@@ -20,36 +20,13 @@ body {
     font-family: var(--font);
     line-height: 1.5;
     margin: 0;
-    color: var(--main);
+    color: var(--grey);
     overflow-y: scroll;
 }
 
 main {
     max-width: 35rem;
     margin: auto;
-}
-
-nav {
-    margin: 0;
-    text-align: center;
-    padding: 0.2em;
-    background-color: var(--main);
-}
-
-nav>a {
-    font-family: var(--mono);
-    font-weight: 400;
-    color: var(--rev);
-    text-decoration: none;
-}
-
-nav>a:not(:first-child) {
-    margin-left: 1em;
-}
-
-nav>a:hover {
-    background-color: var(--rev);
-    color: var(--main);
 }
 
 h1 {
