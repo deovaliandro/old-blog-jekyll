@@ -2,7 +2,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 
 :root {
-    --main: #54008c;
+    --main: #4B4B4B;
     --link: #3273dc;
     --rev: #fff;
     --grey: #444;
@@ -20,7 +20,7 @@ body {
     font-family: var(--font);
     line-height: 1.5;
     margin: 0;
-    color: var(--grey);
+    color: var(--main);
     overflow-y: scroll;
 }
 
