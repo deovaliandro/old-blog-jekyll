@@ -35,6 +35,7 @@ body {
     margin: 0;
     overflow-y: scroll;
     background-color: var(--bg);
+    text-rendering: optimizeLegibility;
 }
 
 main {
@@ -64,6 +65,10 @@ a {
     color: var(--link);
     text-decoration: none;
     background-color: transparent;
+}
+
+a.bare {
+    word-break: break-all;
 }
 
 .post {
