@@ -1,17 +1,53 @@
 {%- include header.html -%}
 <main>
-    <h1>{{ page.title }}</h1>
-    {% if page.author %}
-    <p><i>{{ author }}</i></p>
-    {% endif %}
-    {% if page.tags.size > 0 %}
-    <p align="center">tag{% if page.tags.size > 1 %}s{% endif %}:
-        {{ page.tags | sort | join: ", " }}</p>
-    {% endif %}
-    {% if page.signed-by %}
-    <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
-    {% endif %}
-    {{ content }}
-    <hr>
-    {%- include footer.html -%}
+  <label class="switch" for="checkbox">
+    <input type="checkbox" id="checkbox" />
+    <div class="slider round"></div>
+  </label>
+
+  <h1>{{ page.title }}</h1>
+  {% if page.author %}
+  <p><i>{{ author }}</i></p>
+  {% endif %}
+  {% if page.tags.size > 0 %}
+  <p align="center">tag{% if page.tags.size > 1 %}s{% endif %}:
+    {{ page.tags | sort | join: ", " }}</p>
+  {% endif %}
+  {% if page.signed-by %}
+  <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
+  {% endif %}
+  {{ content }}
+  <hr>
+  {%- include footer.html -%}
 </main>
+<script>
+  const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+  if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+      toggleSwitch.checked = true;
+      stylesheet.setAttribute('href', '/assets/css/gruvbox.min.css');
+    }
+  }
+
+  function switchTheme(e) {
+    var stylesheet = document.getElementById("stylesheet");
+    
+    if (e.target.checked) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      stylesheet.setAttribute('href', '/assets/css/gruvbox.min.css');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+      stylesheet.setAttribute('href', '/assets/css/syntax.css');
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  toggleSwitch.addEventListener('change', switchTheme, false);
+</script>
+</body>
+</html>
