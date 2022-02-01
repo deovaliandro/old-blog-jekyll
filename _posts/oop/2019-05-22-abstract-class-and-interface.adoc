@@ -38,6 +38,8 @@ class Main implement One {
 == Interface
 
 Interface adalah kumpulan abstract method yang digabung menjadi satu class.
+Interface digunakan untuk menjembatani berbagai jenis class untuk dapat saling
+berkomunikasi satu dengan yang lain.
 
 [source, java]
 ----
@@ -121,3 +123,6 @@ class Ibu extends Manusia implements Orang {
     }
 }
 ----
+
+Bacaan menarik tentang interface
+https://medium.com/@Dewey92/oop-interface-what-ca16de0359af
