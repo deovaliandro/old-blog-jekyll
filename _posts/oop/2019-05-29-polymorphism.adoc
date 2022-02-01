@@ -8,6 +8,16 @@ untuk  merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling
 umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan
 untuk merujuk ke inheritance objek class.
 
+Hal ini memungkinkan perubahan perilaku program secara dinamis saat program
+berjalan, tanpa suatu modul tahu bahwa modul yang lain sudah berubah.
+
+Polymorphism menyederhanakan dan menghilangkan if-else, di saat-saat di mana
+penggunaannya menjadi tidak praktis lagi. Kode-kode yang tersebar di mana-mana
+dengan if-else yang selalu sama, akhirnya semuanya di masukkan ke dalam
+kelas-kelas masing-masing. Ditaruhlah interface di depan kelas-kelas itu,
+sehingga sekarang kode yang baru terasa lebih mudah dibaca
+footnote:[https://jekjektuanakal.my.id/posts/peta-jalan-pejuang-cpp/].
+
 Polymorphism terbagi menjadi dua, yaitu *compiled time polymorphism* dan
 *runtime polymorphism*.
 
@@ -63,7 +73,7 @@ public class NewOperation extends Operasi {
 }
 ----
 
-== Overriding vs Overloadingfootnote:[https://www.journaldev.com/32182/overriding-vs-overloading-in-java]
+== Overriding vs Overloading
 
 . Overriding mengimplementasikan Runtime Polymorphism, Overloading
     mengimplementasikan Compile time polymorphism,
@@ -75,4 +85,4 @@ public class NewOperation extends Operasi {
     ketika runtime objek yang ditentukan.
 . Jika Overriding breaks, akan berakibat fatar karena efeknya akan terlihat pada
     saat runtime, namun jika Overloading breaks, akan muncul compile-time error
-    dan lebih mudah untuk memperbaikinya.
+    dan lebih mudah untuk memperbaikinyafootnote:[https://www.journaldev.com/32182/overriding-vs-overloading-in-java].
