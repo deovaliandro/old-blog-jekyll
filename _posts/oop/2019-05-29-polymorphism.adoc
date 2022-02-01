@@ -3,61 +3,76 @@
 :page-layout      : default
 :page-category    : pbo
 
-Polymorphism adalah kemampuan dari suatu objek untuk merepresentasikan satu
-bentuk ke dalam banyak bentuk. Penggunaan paling umum dari polymorphism pada OOP
-terjadi ketika reference superclass digunakan untuk merujuk ke inheritance objek
-class.
+Polimorfiesme (bahasa Inggris polymorphims) adalah kemampuan dari suatu objek
+untuk  merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling
+umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan
+untuk merujuk ke inheritance objek class.
 
-Method ini menggunakan override yang dituliskan dalam bentuk keyword `@Override`.
+Polymorphism terbagi menjadi dua, yaitu *compiled time polymorphism* dan
+*runtime polymorphism*.
+
+
+== Compiled time polymorphims/static polymorphims
+
+Polimorfiesme yang berjalan ketika kompilasi. Misalnya:
+
+. Method overloading,
+. Constructor overloading,
+
+Contoh:
+
+[source, java]
+----
+class Arithmetic {
+    public int add(int i, int j) {
+        return i + j;
+    }
+
+    public long add(int i, int j) {
+        return i + j;
+    }
+
+    public long add(int i, int j, int k) {
+        return i + j + k;
+    }
+}
+----
+
+
+== Runtime polymorphism
+
+Polimorfiesme yang berjalan ketika runtime. Menggunakan override yang dituliskan
+dalam bentuk keyword `@Override`. Misalnya:
+
+. Method overloading,
 
 [source, java]
 ----
 //Superclass
-public class Manusia {
-    void makan(){
-        System.out.println("Manusia makan");
-    }
-
-    void tidur(){
-        System.out.println("Manusia tidur");
-    }
-
-    void bergerak(){
-        System.out.println("Manusia bergerak");
+public class Operasi {
+    void op(int i, int j){
+        System.out.println(i + j);
     }
 }
 
-public class Mahasiswa extends Manusia {
+public class NewOperation extends Operasi {
     @Override
-    void makan(){
-        System.out.println("Mahasiswa makan");
-    }
-
-    @Override
-    void tidur(){
-        System.out.println("Mahasiswa tidur");
-    }
-
-    @Override
-    void bergerak(){
-        System.out.println("Mahasiswa bergerak");
-    }
-}
-
-public class Asisten extends Manusia {
-    @Override
-    void makan(){
-        System.out.println("Asisten makan");
-    }
-    
-    @Override
-    void tidur(){
-        System.out.println("Asisten tidur");
-    }
-
-    @Override
-    void bergerak(){
-        System.out.println("Asisten bergerak");
+    void op(int i, int j){
+        System.out.println(i * j);
     }
 }
 ----
+
+== Overriding vs Overloadingfootnote:[https://www.journaldev.com/32182/overriding-vs-overloading-in-java]
+
+. Overriding mengimplementasikan Runtime Polymorphism, Overloading
+    mengimplementasikan Compile time polymorphism,
+. Overriding terjadi antara superclass dan subclass, Overloading terjadi antara
+    metode di kelas yang sama.
+. Overriding memiliki tanda yang sama yaitu nama dan argumen yang sama,
+    Overloading memiliki nama yang sama namun parameter berbeda.
+. Overloading, method dipanggil ketika compile-time, Overriding, dipanggil
+    ketika runtime objek yang ditentukan.
+. Jika Overriding breaks, akan berakibat fatar karena efeknya akan terlihat pada
+    saat runtime, namun jika Overloading breaks, akan muncul compile-time error
+    dan lebih mudah untuk memperbaikinya.

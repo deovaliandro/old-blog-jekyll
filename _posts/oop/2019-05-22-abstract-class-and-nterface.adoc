@@ -7,7 +7,7 @@
 == Abstract method vs Overriding
 
 Abstract method adalah method yang ditulis untuk diimplementasikan nantinya
-(harus diimplementasikan).Abstract method ini sebagai perjanjian bahwa
+(harus diimplementasikan). Abstract method ini sebagai perjanjian bahwa
 method-method yang diberi tanda `abstract` merupakan method yang penting
 sehingga harus diimplementasikan. Manfaatnya, digunakan sebagai jembatan antar
 class.
