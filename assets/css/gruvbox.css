@@ -7,9 +7,11 @@ pre.rouge, pre.rouge .w {
 pre.rouge .err {
   color: #fb4934;
   background-color: #282828;
+  font-weight: bold;
 }
 pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cm, pre.rouge .cpf, pre.rouge .c1, pre.rouge .cs {
   color: #928374;
+  font-style: italic;
 }
 pre.rouge .cp {
   color: #8ec07c;
@@ -49,12 +51,15 @@ pre.rouge .kd {
 }
 pre.rouge .s, pre.rouge .sb, pre.rouge .sc, pre.rouge .dl, pre.rouge .sd, pre.rouge .s2, pre.rouge .sh, pre.rouge .sx, pre.rouge .s1 {
   color: #b8bb26;
+  font-style: italic;
 }
 pre.rouge .si {
   color: #b8bb26;
+  font-style: italic;
 }
 pre.rouge .sr {
   color: #b8bb26;
+  font-style: italic;
 }
 pre.rouge .sa {
   color: #fb4934;
