@@ -28,7 +28,7 @@
 
     if (currentTheme === 'dark') {
       toggleSwitch.checked = true;
-      stylesheet.setAttribute('href', '/assets/css/gruvbox.min.css');
+      stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
     }
   }
 
@@ -37,7 +37,7 @@
     
     if (e.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
-      stylesheet.setAttribute('href', '/assets/css/gruvbox.min.css');
+      stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
       localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.setAttribute('data-theme', 'light');
