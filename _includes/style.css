@@ -29,7 +29,6 @@
 body {
     font-family: var(--font);
     color: var(--font-color);
-    line-height: 1.5rem;
     background-color: var(--bg);
     text-rendering: geometricPrecision;
     max-width: 35rem;
@@ -53,6 +52,10 @@ h2 {
 h3 {
     font-size: 1.5rem;
     font-weight: 700;
+}
+
+p {
+    line-height: 1.5rem;
 }
 
 a {
