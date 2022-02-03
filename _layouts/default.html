@@ -1,9 +1,11 @@
 {%- include header.html -%}
 <main>
-  <label class="switch" for="checkbox">
-    <input type="checkbox" id="checkbox" />
-    <div class="slider round"></div>
-  </label>
+  <nav>
+    <a href="/" class="email">/home</a>
+    <a href="/todo.html" class="email">/todo</a>
+    <a href="/link.html" class="email">/link</a>
+    <a href="#" onclick="switchTheme();" class="email" id="changeTheme"></a>
+  </nav>
   <h1>{{ page.title }}</h1>
   {% if page.author %}
   <p><i>{{ author }}</i></p>
@@ -19,34 +21,5 @@
   <hr>
   {%- include footer.html -%}
 </main>
-<script>
-  const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
-  const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-  if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-      toggleSwitch.checked = true;
-      stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
-    }
-  }
-
-  function switchTheme(e) {
-    var stylesheet = document.getElementById("stylesheet");
-    
-    if (e.target.checked) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light');
-      stylesheet.setAttribute('href', '/assets/css/github.css');
-      localStorage.setItem('theme', 'light');
-    }
-  }
-
-  toggleSwitch.addEventListener('change', switchTheme, false);
-</script>
 </body>
 </html>
