@@ -1,9 +1,8 @@
-title: deo
+title: Deo Valiandro. M
 description: >- 
-  soliter
+  Hamba yang tidak berguna di tangan Allah yang penuh hikmat.
 baseurl: ""
-url: "https://deovaliandro.github.io"
-author: Deo Valiandro. M
+url: "https://deo.or.id"
 permalink: /:year/:month/:day/:title:output_ext
 
 plugins:
