@@ -51,9 +51,11 @@
             </svg>
         </a>
     </div>
-    <a href="/todo.html" class="email">/todo</a>
-    <a href="/link.html" class="email">/link</a>
-    <a href="#" onclick="switchTheme();" class="email" id="changeTheme"></a>
+    <div class="navigation">
+        <a href="/todo.html" class="email">/todo</a>
+        <a href="/link.html" class="email">/link</a>
+        <a href="#" onclick="switchTheme();" class="email" id="changeTheme"></a>
+    </div>
     {{ content }}
     <h3>Catatan:</h3>
     <ol class="dash post">
@@ -93,6 +95,7 @@
         {% endif %}
         {% endfor %}
     </ol>
+    <hr>
     {%- include footer.html -%}
 </main>
 </body>

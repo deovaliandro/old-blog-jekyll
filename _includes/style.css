@@ -9,6 +9,7 @@
     --meta: #828282;
     --link: #54008c;
     --font: 'Open Sans', sans-serif;
+    --mono: 'Inconsolata',monospace;
 }
 
 [data-theme="dark"] {
@@ -30,7 +31,6 @@ body {
     font-family: var(--font);
     color: var(--font-color);
     background-color: var(--bg);
-    text-rendering: geometricPrecision;
     max-width: 35rem;
     margin: auto;
     word-break: break-word;
@@ -192,6 +192,10 @@ hr {
 .center {
     text-align: center;
     overflow-x: auto;
+}
+
+.navigation {
+    margin-top: 0.8em;
 }
 
 .medsos>a:hover {
