@@ -9,7 +9,8 @@
     --meta: #828282;
     --link: #54008c;
     --font: 'Open Sans', sans-serif;
-    --mono: 'Inconsolata',monospace;
+    /* --mono: 'Inconsolata',monospace; */
+    --mono: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
 
 [data-theme="dark"] {
@@ -219,7 +220,7 @@ hr {
 }
 
 .email {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     font-family: var(--mono);
     margin: 0;
 }
