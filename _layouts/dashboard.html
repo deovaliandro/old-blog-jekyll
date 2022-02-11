@@ -57,13 +57,13 @@
         <a href="#" onclick="switchTheme();" class="email" id="changeTheme"></a>
     </div>
     {{ content }}
-    <h3>Catatan:</h3>
+    <h3>Catatan: </h3>
     <ol class="dash post">
         {% for post in site.posts %}
         {% if post.category != "pbo" and post.category != "pp" %}
         <li>
             {% capture category_name %}{{ category | first }}{% endcapture %}
-            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span>
+            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span>, &nbsp;
             <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endif %}
@@ -76,7 +76,8 @@
     <ol class="dash post">
         {% for post in site.categories.pp reversed %}
         {% if post.url %}
-        <li><span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>
+        <li>
+            <span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>, &nbsp;
             <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
         {% endfor %}
@@ -90,7 +91,8 @@
     <ol class="dash post">
         {% for post in site.categories.pbo reversed %}
         {% if post.url %}
-        <li><span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>
+        <li>
+            <span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>, &nbsp;
             <a href="{{ post.url }}">{{ post.title }}</a></li>
         {% endif %}
         {% endfor %}

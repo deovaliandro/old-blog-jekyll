@@ -1,0 +1,6 @@
+:page-title       : Monoid
+:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout      : default
+:page-category    : fp
+
+Lorem

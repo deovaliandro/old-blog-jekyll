@@ -1,6 +1,10 @@
 = TODO
 
-== Checklist
++++
+<p>
+<i class="fa-duotone fa-list-check"></i>> Daftar hal yang belum dan akan dilakukan:
+</p>
++++
  
 - [x] Ubah semua dokumen ke asciidoc
 - [ ] Membaca SICP
