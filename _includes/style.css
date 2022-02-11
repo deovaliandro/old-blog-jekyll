@@ -80,14 +80,6 @@ blockquote {
     padding: 1em;
 }
 
-/* ol.post li {
-    display: flex;
-}
-
-ol.post li span {
-    flex: 0 0 130px;
-} */
-
 ol.dash {
     list-style: none;
     margin-left: 0;
@@ -182,7 +174,7 @@ video {
 hr {
     position: relative;
     border: 0;
-    border-top: 1px solid var(--hr);
+    border-top: 2px solid var(--hr);
     border-bottom: 1px solid var(--bg);
 }
 
