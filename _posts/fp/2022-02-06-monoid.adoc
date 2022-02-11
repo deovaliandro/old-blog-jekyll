@@ -9,4 +9,6 @@ $\cdot$ adalah monoid jika memenuhi:
 . $\forall a, b, c \in S, (a \cdot b) \cdot c = a \cdot (b \cdot c)$
 (asosiatif),
 . $\exists e \in S$, sehingga $a \in S$, berlaku $e \cdot a = a$ dan
-$a \cdot e = a$ (element identitas)
+$a \cdot e = a$ (element identitas).
+
+Denga artian, monoid adalah semigroup dengan tambahan identitas.
