@@ -26,7 +26,7 @@ ditemukan oleh Whitfield Diffie dan
 link:https://ee.stanford.edu/~hellman/[Martin Hellman], dan secara terpisah oleh 
 Ralph Merkle.
 
-Konsep dasar public-key cryptography terletak pada pemahaman bahwa kunci/ key
+Konsep dasar public-key cryptography terletak pada pemahaman bahwa kunci/key
 selalu berpasangan: encryption key dan decryption key. Juga perlu diingat bahwa
 sebuah key tidak dapat digenerate dari key lainnya. Pemahaman encryption dan
 decryption key sering disebut sebagai public dan private key. Seseorang harus
@@ -35,24 +35,24 @@ Decryption hanya terjadi jika seseorang mempunyai private key.
 
 Penggunaan algoritma ini harus memenuhi kriteria berikut.
 
-. Memungkinkan untuk mencari nilai stem:[e], stem:[d], stem:[n] sedemikian rupa
-sehingga stem:[M^e] atau stem:[M^d \bmod n = M, \forall M < n].
-. Relatif mudah untuk menghitung nilai stem:[M^e \bmod n] dan stem:[C^d \bmod n
-\forall M < n].
-. Tidak memungkinkan mencari nilai stem:[d] jika diberikan nilai stem:[n] dan
-stem:[e].
+. Memungkinkan untuk mencari nilai $e$, $d$, $n$ sedemikian rupa
+sehingga $M^e$ atau $M^d \bmod n = M, \forall M < n$.
+. Relatif mudah untuk menghitung nilai $M^e \bmod n$ dan $C^d \bmod n
+\forall M < n$.
+. Tidak memungkinkan mencari nilai $d$ jika diberikan nilai $n$ dan
+$e$.
 
-Syarat nilai stem:[e] dan stem:[d] ini adalah stem:[gcd(d,e)=1] (relatif prima).
+Syarat nilai $e$ dan $d$ ini adalah $gcd(d,e)=1$ (relatif prima).
 
 
 == Variabel
 
 RSA membutuhkan beberapa variabel:
 
-. stem:[p] dan stem:[q], 2 bilangan prima yang dirahasiakan,
-. stem:[n], dari hasil stem:[p \cdot q],
-. kunci publik stem:[e], dengan ketentuan stem:[gcd (\phi(n), e) = 1],
-. kunci privat stem:[d = e^{-1} (\bmod \phi(n))].
+. $p$ dan $q$, 2 bilangan prima yang dirahasiakan,
+. $n$, dari hasil $p \cdot q$,
+. kunci publik $e$, dengan ketentuan $gcd (\phi(n), e) = 1$,
+. kunci privat $d = e^{-1} (\bmod \phi(n))$.
 
 
 == Skenario
@@ -78,11 +78,11 @@ M = C^d mod n (fungsi dekripsi)
 
 dimana:
 
-- stem:[C] = Cipherteks
-- stem:[M] = Message/plainteks
-- stem:[e] = kunci publik
-- stem:[d] = kunci privat
-- stem:[n] = modulo pembagi (akan dijelaskan lebih lanjut)
+- $C$ = Cipherteks
+- $M$ = Message/plainteks
+- $e$ = kunci publik
+- $d$ = kunci privat
+- $n$ = modulo pembagi (akan dijelaskan lebih lanjut)
 
 
 == Pembangkitan Kunci
@@ -91,28 +91,28 @@ Misalkan Alice ingin Bob mengirimnya sebuah pesan melalui jalur yang aman.
 Alice akan memberikan public keynya kepada Bob dan menyimpan private key
 untuk dirinya.
 
-. Pilih 2 bilangan prima, misalnya stem:[p = 17] dan stem:[q = 11].
+. Pilih 2 bilangan prima, misalnya $p = 17$ dan $q = 11$.
 
-. Hitung stem:[n = p \cdot q = 17 \times 11 = 187].
+. Hitung $n = p \cdot q = 17 \times 11 = 187$.
 
-. Hitung stem:[ \phi(n) = (p - 1)(q - 1) = 16 \times 10 = 160].
+. Hitung $ \phi(n) = (p - 1)(q - 1) = 16 \times 10 = 160$.
 
-. Pilih nilai stem:[e] sedemikian sehingga relatif prima terhadap stem:[\phi(n)
-= 160], stem:[e < \phi(n)]; misalnya stem:[e = 7].
+. Pilih nilai $e$ sedemikian sehingga relatif prima terhadap $\phi(n) = 160$,
+$e < \phi(n)$; misalnya $e = 7$.
 
-. Hitung stem:[d] sedemikian sehingga stem:[d \cdot e \equiv 1 (\bmod 160)] dan
-stem:[d < 160]. Nilai yang didapatkan stem:[d = 23],karena
-stem:[23 \times 7 = 161 = (1 \times 160) + 1]; stem:[d] dapat dihitung dengan
+. Hitung $d$ sedemikian sehingga $d \cdot e \equiv 1 (\bmod 160)$ dan
+$d < 160$. Nilai yang didapatkan $d = 23$,karena
+$23 \times 7 = 161 = (1 \times 160) + 1$; $d$ dapat dihitung dengan
 Extended Euclidean Algorithm.
 
 Nah, nilai e dan d inilah yang kita sebut sebagai _public key (e)_ dan _private
-key (d)_.  Pasangan Kunci publiknya = stem:[\{7,187\}] dan kunci privatnya = 
-stem:[\{23, 187\}]
+key (d)_.  Pasangan Kunci publiknya = $\{7,187\}$ dan kunci privatnya = 
+$\{23, 187\}$
 
 
 == Enkripsi Pesan
 
-Misalkan Bob ingin mengirim sebuah pesan stem:[88] kepada Alice.
+Misalkan Bob ingin mengirim sebuah pesan $88$ kepada Alice.
 
 Alice harus membuat keynya; sehingga ia memiliki private dan public keys.
 
@@ -122,10 +122,9 @@ public key  = (M,e)
 
 Untuk proses enkripsi, kita akan menghitung
 
-[.center]
-stem:[c = 88^7 \bmod 187 = 408 \cdots \bmod 187 = 11]
+$c = 88^7 \bmod 187 = 408 \cdots \bmod 187 = 11$
 
-Nah, kita mendapatkan nilai stem:[c = 11].
+Nah, kita mendapatkan nilai $c = 11$.
 
 Untuk melakukannya, kita dapat menggunakan python:
 
@@ -139,10 +138,10 @@ dekripsi menggunakan private keynya.
 
 == Dekripsi Pesan
 
-Misalkan Alice menerima sebuah pesan terencrypt yaitu stem:[11], ia akan mendecryptnya.
+Misalkan Alice menerima sebuah pesan terencrypt yaitu $11$, ia akan
+men-decrypt-nya.
 
-[.center]
-stem:[m = 11^{23} \bmod 187 = 895... \bmod 187 = 88]
+$m = 11^{23} \bmod 187 = 895... \bmod 187 = 88$
 
 Alice menerima pesan yang telah didekripsi yaitu 88.
 
@@ -165,7 +164,7 @@ Proses decryption sengaja dibuat sulit agar seseorang, walaupun menggunakan Cray
 supercomputers dan ribuan tahun, tidak dapat mendecrypt pesan tanpa mempunyai
 private key. 
 
-Perlu diingat juga bahwa pemilihan stem:[p \cdot q = M] haruslah sebuah bilangan
+Perlu diingat juga bahwa pemilihan $p \cdot q = M$ haruslah sebuah bilangan
 yang sangat besar sehingga sulit dicari eksponen decoding-nya karena sulit
 melakukan pemfaktoran bilangan prima.
 
