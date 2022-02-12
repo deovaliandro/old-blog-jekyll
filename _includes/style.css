@@ -234,3 +234,10 @@ li>p {
 .checklist {
     padding-left: 0.5em;
 }
+
+ol.post li {
+    display: flex;
+}
+ol.post li span {
+    flex: 0 0 100px;
+}

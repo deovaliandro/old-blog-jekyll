@@ -66,7 +66,7 @@
         {% if post.category != "pbo" and post.category != "pp" %}
         <li>
             {% capture category_name %}{{ category | first }}{% endcapture %}
-            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span>, &nbsp;
+            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span>
             <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
         </li>
         {% endif %}
