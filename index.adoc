@@ -1,4 +1,4 @@
 :page-layout: dashboard
 
-Hay, saya Deo. Blog ini untuk mencatat hal-hal yang pernah dipelajari, semoga
-bermanfaat kedepannya +++&#9749;+++.
+Hay, saya Deo. Blog ini untuk mencatat pelajaran kuliah, semoga bermanfaat
+kedepannya +++&#9749;+++.

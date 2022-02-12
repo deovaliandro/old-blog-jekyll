@@ -1,24 +1,20 @@
-:page-title: Aljabar
-:page-category: kriptografi
-:page-tags: [kripto]
-
-[.center]
-_Deo Valiandro. M <mdv16h@gmail.com>_
+:page-title       : Landasan Matematika Kriptografi
+:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout      : default
+:page-category    : Kriptografi
 
 == Set dan Fungsi
 
-. Set bilangan real = stem:[\mathbb{R}],
-. Set bilangan bulat = stem:[\mathbb{Z}],
-. Set bilangan rasional = stem:[\mathbb{Q}],
-. Set bilangan asli = stem:[\mathbb{N}], stem:[\mathbb{Z}^+] atau
-stem:[\mathbb{Z}_{>0}],
-. Set kosong = stem:[\emptyset] atau stem:[{}].
+. Set bilangan real = $\mathbb{R}$,
+. Set bilangan bulat = $\mathbb{Z}$,
+. Set bilangan rasional = $\mathbb{Q}$,
+. Set bilangan asli = $\mathbb{N}$, $\mathbb{Z}^+$ atau $\mathbb{Z}_{>0}$,
+. Set kosong = $\emptyset$ atau ${}$.
 
-**Kardinalitas** adalah banyaknya anggota dari suatu set dengan notasi
-stem:[\|S\|].
+**Kardinalitas** adalah banyaknya anggota dari suatu set dengan notasi $\|S\|$.
 
-Himpunan matrix \$ m \times n \$ dengan entry bilangan real, diberi notasi
-stem:[M^{m,n}(\mathbb{R})].
+Himpunan matrix $m \times n$ dengan entry bilangan real, diberi notasi
+$M^{m,n}(\mathbb{R})$.
 
 === Hasil Kali Kartesius
 
@@ -67,44 +63,51 @@ Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah r
 
 == Aljabar Abstrak
 
+Aljabar abstrak digunakan untuk mempelajari struktur aljabar dan sifatnya.
+
 === Grup
 
-Grup $ (G, \ast) $ merupakan himpunan $G$ dengan operasi biner
-$ \ast $ pada $ G $ yang memenuhi:
+Grup $(G, \ast)$ merupakan himpunan $G$ dengan operasi biner $\ast$ pada $G$
+yang memenuhi:
 
-1.  $\forall a, b \in G, a \ast b \in G$,
-2.  $\exists a, b, c \in G, (a \ast b) \ast c = a \ast (b \ast c)$,
-3.  $\exists e \ni \forall a \in G \to e \ast a = a \ast e = a$,
-4.  $\forall a \in G, \exists a' \in G \ni a \ast a' = a' \ast a = e$,
+* $\forall a, b \in G, a \ast b \in G$,
+* $\exists a, b, c \in G, (a \ast b) \ast c = a \ast (b \ast c)$,
+* $\exists e \ni \forall a \in G \to e \ast a = a \ast e = a$,
+* $\forall a \in G, \exists a' \in G \ni a \ast a' = a' \ast a = e$,
 
-Misalnya $(\mathbb{Z}, +)$, $(\mathbb{R}, +)$, $(\mathbb{Z}_2, \oplus)$, $(\mathbb{Z}_3, \oplus)$, $(\mathbb{Z}_n, \oplus)$, $(\mathbb{Z}_p, \oplus)$, $(\mathbb{Z}_p^\ast, \otimes)$.
+Misalnya $(\mathbb{Z}, +)$, $(\mathbb{R}, +)$, $(\mathbb{Z}_2, \oplus)$,
+$(\mathbb{Z}_3, \oplus)$, $(\mathbb{Z}_n, \oplus)$, $(\mathbb{Z}_p, \oplus)$,
+$(\mathbb{Z}_p^\ast, \otimes)$.
 
-Grup dikatakan **grup abelian** jika memenuhi sifat komutatif,
+Grup dikatakan __grup abelian__ jika memenuhi sifat komutatif,
 $\exists a, b \in G, a \ast b = b \ast a$.
 
 Misalnya $(\mathbb{G}, +)$, $(\mathbb{Z}\_2, \oplus)$, $(\mathbb{Z}_3, \oplus)$.
 
 === Ring
 
-Ring $(R, +, \times)$ merupakan himpunan $R$, dengan operasi biner
-$+$ dan $\times$ yang memenuhi:
+Ring $(R, \+, \times)$ merupakan himpunan $R$, dengan operasi biner $\+$ dan
+$\times$ yang memenuhi:
 
-1.  $\exists e = 0$ untuk $(R, +)$ yang merupakan grup abelian,
-2.  $\exists a, b, c \in R, a \times (b \times c) = (a \times b) \times c,$,
-3.  $\exists e = 1, 1 \ne 0$ untuk $(R, \times) \ni 1 \times a = a, \times 1 = a \forall a \in R$,
-4.  operasi $\times$ distributif pada penjumlahan:
-
-*   $a \times (b + c) = (a \times b ) + (a \times c)$,
-*   $(b + c) \times a = (b \times a ) + (c \times a)$.
+* $\exists e = 0$ untuk $(R, +)$ yang merupakan grup abelian,
+* $\exists a, b, c \in R, a \times (b \times c) = (a \times b) \times c,$,
+* $\exists e = 1, 1 \ne 0$ untuk
+$(R, \times) \ni 1 \times a = a, \times 1 = a \forall a \in R$,
+* operasi $\times$ distributif pada penjumlahan:
+** $a \times (b + c) = (a \times b ) + (a \times c)$,
+** $(b + c) \times a = (b \times a ) + (c \times a)$.
 
 Contohnya $(\mathbb{Z}, +, \times)$.
 
-Ring dikatakan **commutative ring** jika $\exists a, b \in R, a \times b = b \times a$.
+Ring dikatakan __commutative ring__ jika
+$\exists a, b \in R, a \times b = b \times a$.
 
 === Field
 
-Field F adalah sebuah commutative ring dimana $\forall a \ne 0 \in F, \exists a^{-1} \in F \ni a \times a^{-1} = 1$.
+Field F adalah sebuah commutative ring dimana
+$\forall a \ne 0 \in F, \exists a^{-1} \in F \ni a \times a^{-1} = 1$.
 
 Misalnya $(\mathbb{Q}, \times, +)$, $(\mathbb{R}, \times, +)$.
 
-Field dikatakan **finite field** jika himpunannya terhingga (orde n, dinotasikan $F_n$). Sebaliknya, elemen tidak terbatas adalah _infinity field_.
+Field dikatakan __finite field__ jika himpunannya terhingga (orde n, dinotasikan
+$F_n$). Sebaliknya, elemen tidak terbatas adalah __infinity field__.
