@@ -2,22 +2,43 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
-:page-tags      : [kripto, asimetris]
-:page-desc      : ElGamal adalah asymmetric key encryption algorithm yang menggunakan persoalan logaritma diskrit, algoritma ini didasarkan pada Diffie–Hellman key exchange.
 
 == Pendahuluan
 
 ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
-pada persoalan logaritma diskrit, yaitu jika stem:[p \in \mathbb{P}, \{g, y\} \in \mathbb{Z}], maka temukan stem:[x: g^{x} \equiv y (\bmod p)].
+pada persoalan logaritma diskrit, yaitu $p \in \mathbb{P}, \{g, y\} \in
+\mathbb{Z}, \exists x | g^{x} \equiv y (\bmod p)$. Menemukan nilai $x$ akan
+sangat susah.
 
 == Variabel
 
-. stem:[p \in \mathbb{P}] (tidak rahasia),
-. stem:[]
+. $p \in \mathbb{P}$ (tidak rahasia),
+. $g \in \mathbb{Z}$, $g$ adalah akar primitif dari $p$ (tidak rahasia),
+. $x$, bilangan acak (rahasia),
+. $y = g^x \bmod p$ (tidak rahasia, kunci publik),
+. $m$, plaintext (rahasia),
+. $a, b$, ciphertext (tidak rahasia).
 
 == Fungsi Enkripsi dan Dekripsi
 
+Fungsi enkripsi dinyatakan dengan:
+
+- $a = g^x \bmod p$
+- $b = y^k m \bmod p$
+
+Pasangan $a, b$ adalah ciphertext yang berukuran $2 \times m$.
+
 == Skenario
+
+Bagian ini menjelaskan skenario bagaimana kriptografi kunci publik bekerja.
+Kita akan menggunakan partisipan klasik Alice dan Bob sebagai dua pihak  yang
+melakukan pertukaran informasi.
+
+. Alice dan Bob setuju untuk menggunakan public-key cryptosystem.
+. Bob mengirimkan public key-nya kepada Alice.
+. Alice meng-encrypt pesan yang dibuatkan dengan menggunakan public key milik
+Bob dan mengirimkan pesan yang sudah di-encrypt kepada Bob.
+. Bob men-decrypt pesan dari Alice menggunakan private key miliknya.
 
 == Pembangkitan Kunci
 
@@ -31,11 +52,15 @@ pada persoalan logaritma diskrit, yaitu jika stem:[p \in \mathbb{P}, \{g, y\} \i
 
 == Lampiran
 
-Alice's key: private key = stem:[x], publick key = stem:[(y, g, p)]. Ciphertext = stem:[(a, b)].
+Alice's key: private key = $x$, publick key = $(y, g, p)$. Ciphertext = $(a, b)$.
 
-usage: `python elgamal.py`
+usage: 
 
-```python
+[source, bash]
+python elgamal.py
+
+[source, python]
+----
 def is_relative_prime(prime, data):
     while data != 0:
         prime, data = data, prime % data
@@ -102,4 +127,4 @@ def decryption():
 key_builder()
 encryption()
 decryption()
-```
+----

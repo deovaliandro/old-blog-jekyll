@@ -70,16 +70,18 @@ Bob dan mengirimkan pesan yang sudah di-encrypt kepada Bob.
 
 == Fungsi Enkripsi dan Dekripsi
 
-Fungsi enkripsi dan dekripsi dari RSA, yaitu :
+Fungsi enkripsi yaitu :
 
-[source, bash]
-C = M^e mod n (fungsi enkripsi)
-M = C^d mod n (fungsi dekripsi)
+$$c = m^e \bmod n$
+
+Fungsi dekripsi yaitu:
+
+$$m = c^d \bmod n$
 
 dimana:
 
-- $C$ = Cipherteks
-- $M$ = Message/plainteks
+- $c$ = Cipherteks
+- $m$ = Message/plainteks
 - $e$ = kunci publik
 - $d$ = kunci privat
 - $n$ = modulo pembagi (akan dijelaskan lebih lanjut)
