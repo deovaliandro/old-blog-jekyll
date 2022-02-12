@@ -78,6 +78,7 @@ blockquote {
     background: var(--blockquote);
     border-left: 5px solid var(--hr);
     padding: 1em;
+    margin-left: 0;
 }
 
 ol.dash {

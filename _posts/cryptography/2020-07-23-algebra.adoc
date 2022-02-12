@@ -26,15 +26,15 @@ dengan $\|A \times B\| = \|A\|\times \|B\|$.
 
 === Relasi Ekuvalensi
 
-Misalnya terdapat himpunan tak kosong $ A $, suatu subhimpunan $ R \subset A^2 $
-disebut relasi ekivalen pada $ A $ jika memenuhi:
+Misalnya terdapat himpunan tak kosong $A $, suatu subhimpunan $ R \subset A^2$
+disebut relasi ekivalen pada $A$ jika memenuhi:
 
-- $ \forall a \in A \Rightarrow (a, a) \in R $
-- $ \forall a_1, a_2 \in A: (a_1, a_2) \in R \Leftrightarrow (a_2, a_1) \in R $
-- $ \forall a_1,a_2,a_3 \in A: ((a_1,a_2) \wedge (a_2,a_3)) \Rightarrow (a_1,a_3) $
+- $\forall a \in A \Rightarrow (a, a) \in R$
+- $\forall a_1, a_2 \in A: (a_1, a_2) \in R \Leftrightarrow (a_2, a_1) \in R$
+- $\forall a_1,a_2,a_3 \in A:((a_1,a_2) \wedge (a_2,a_3)) \Rightarrow (a_1,a_3)$
 
-Relasi ekivalensi sering diberi lambang $ \sim $, sehingga $ (a, b) \in R $
-sering ditulis $ aRb $ atau $ a \sim b $.
+Relasi ekivalensi sering diberi lambang $\sim$, sehingga $(a, b) \in R$ sering
+ditulis $aRb$ atau $a \sim b$.
 
 Contohnya:
 
@@ -131,3 +131,17 @@ tidak memiliki aplikasi dalam kriptografi.
 GF adalah finite field dengan $p^{n}$ elemen, $p \in P, n \geq 1$.
 
 Dinotasikan dengan: $$GF(p^{2})$
+
+. $GF(p)$
++
+Bila $n=1$, maka $GF(p) = F_{p}$ dan elemennya $Z_{p} = \{0, 1, 2, ... , p-1\}$,
+operasi penjumlahan dan perkalian dilakukan dalam $\bmod \space p$.
+
+. $GF(p^{n})$
++
+Operasi penjumlahan dan perkalian dilakukan dalam polinom derajat $n$ (bentuk
+$f(x)$).
+
+== Reference
+
+. Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.
