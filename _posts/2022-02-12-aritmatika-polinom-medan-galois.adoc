@@ -20,7 +20,8 @@ $GF(2^{n})$ memiliki $2^n$ elemen, setiap elemen direpresentasikan sebagai
 polinom berderajat $n-1$ atau kurang, dengan koefisien-koefisiennya adalah
 elemen $\{0, 1\}$:
 
-$$GF(p^{n}) = \{a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_{1}x + a_{0} | a_{i} \in \{0, 1\}\}$
+$$GF(p^{n}) = \{a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_{1}x + a_{0} |
+a_{i} \in \{0, 1\}\}$
 
 Contohnya:
 $GF(2^{3}) = \{a_{2}x^{2} + a_{1}x^{1} + a_{0} | a_{i} \in \{0, 1\}\}$, memiliki
@@ -72,10 +73,10 @@ misalnya, $a = x^2 + x, b = x + 1, a, b \in GF(2^4)$,
 
 $\begin{aligned}
 a \cdot b & = (x^2 + x)(x + 1) \bmod 2 \\
-          & = (x^2 \cdot x) + (x^2 \cdot 1) + (x \cdot x) + (x \cdot 1) \bmod 2 \\
-          & = x^3 + x^2 + + x^2 + x \bmod 2 \\
-          & = x^3 + 2(x^2) + x \bmod 2 \\
-          & = x^3 + x
+        & = (x^2 \cdot x) + (x^2 \cdot 1) + (x \cdot x) + (x \cdot 1) \bmod 2 \\
+        & = x^3 + x^2 + + x^2 + x \bmod 2 \\
+        & = x^3 + 2(x^2) + x \bmod 2 \\
+        & = x^3 + x
 \end{aligned}$
 
 Jika menghasilkan polinom $\geq n - 1$, maka direduksi dengan membagi secara
