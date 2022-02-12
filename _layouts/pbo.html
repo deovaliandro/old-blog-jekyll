@@ -1,0 +1,30 @@
+{%- include header.html -%}
+<main>
+    <div class="navigation">
+        [<a href="/" class="email">/home</a>]
+        [<a href="/todo.html" class="email">/todo</a>]
+        [<a href="/link.html" class="email">/link</a>]
+        [<a href="/pp.html" class="email">/pp</a>]
+        [<a href="/pbo.html" class="email">/pbo</a>]
+        [<a href="#" onclick="switchTheme();" class="email" id="changeTheme"></a>]
+      </div>
+    {{ content }}
+    <h3>PBO dengan Java:</h3>
+    <p>Pemrograman berorientasi objek (PBO) atau Object-oriented programming (OOP) adalah sebuah paradikma pemrograman
+        yang didasarkan pada sebuah objek yang bisa memiliki data (atribut) dan perilaku (prosedur atau method)<sup><a
+                href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia</a></sup>. PBO adalah materi
+        lanjutan dari <a href="#pp">Pengantar Pemrograman</a>.</p>
+    <ol class="dash post">
+        {% for post in site.categories.pbo reversed %}
+        {% if post.url %}
+        <li>
+            <span class="meta">{{ post.date | date: "%d/%m/%y"}}</span>, &nbsp;
+            <a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+        {% endfor %}
+    </ol>
+    <hr>
+    {%- include footer.html -%}
+</main>
+</body>
+</html>
