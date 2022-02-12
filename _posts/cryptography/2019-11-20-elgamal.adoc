@@ -3,6 +3,8 @@
 :page-layout    : default
 :page-category  : Kriptografi
 
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
 == Pendahuluan
 
 ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
@@ -23,10 +25,20 @@ sangat susah.
 
 Fungsi enkripsi dinyatakan dengan:
 
-- $a = g^x \bmod p$
-- $b = y^k m \bmod p$
+$$a = g^x \bmod p$
+
+$$b = y^k m \bmod p$
 
 Pasangan $a, b$ adalah ciphertext yang berukuran $2 \times m$.
+
+Fungsi dekripsi dinyatakan dengan:
+
+$$\begin{aligned}
+m & = (b/a^{x}) \bmod p\\
+  & = b(a^{x} )^{-1} \bmod p
+\end{aligned}$
+
+Dengan: $(a^{x} )^{-1} = a^{p-1-x} \bmod p$ (invers modulo).
 
 == Skenario
 
@@ -41,6 +53,13 @@ Bob dan mengirimkan pesan yang sudah di-encrypt kepada Bob.
 . Bob men-decrypt pesan dari Alice menggunakan private key miliknya.
 
 == Pembangkitan Kunci
+
+Alice dan Bob menyepakati $p \in \mathbb{P}, a \in \mathbb{Z}$, kemudian:
+
+. Alice memilih $x, x < x < p-1$ (acak),
+. Alice menghitung $y = g^x \bmod p$.
+
+Mengasilkan kunci publik: $(y, g, p)$ dan kunci private $(x)$.
 
 == Enkripsi Pesan
 
