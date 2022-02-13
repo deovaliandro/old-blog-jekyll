@@ -74,6 +74,8 @@ $m < p-1$.
 
 Misalnya $m = 07001114$, $m_1 = 0700, m_2 = 1114, \forall m_i < 2273 - 1$.
 
+=== Enkripsi Pesan
+
 Untuk enkripsi blok $m_1$, dipilih $k = 1463 \in [0, 2273-1]$.
 
 $\begin{aligned}
@@ -102,13 +104,45 @@ b   & = y^k m_1 \bmod p \\
 
 Cihpertext untuk $c_1 = (1220, 1682)$.
 
-=== Enkripsi Pesan
-
-
-
 === Dekripsi Pesan
 
+Untuk mendekripsi blok $c_1$,
+
+$\begin{aligned}
+c_1 & = (1439, 74) \\
+(a^x)^{-1} & = a^{p-1-x} \bmod p \\
+    & = 1439^{2029} \bmod 2273 \\
+    & = 1791 \\
+m_1 & = b/a^x \bmod p \\
+    & = b(a^x)^{-1} \bmod p \\
+    & = 74 \cdot 1791 \bmod 2273 \\
+    & = 700
+    & = 0700
+\end{aligned}$
+
+Untuk mendekripsi blok $c_2$,
+
+$\begin{aligned}
+c_1 & = (1220, 1682) \\
+(a^x)^{-1} & = a^{p-1-x} \bmod p \\
+    & = 1220^{2029} \bmod 2273 \\
+    & = 1125 \\
+m_1 & = b/a^x \bmod p \\
+    & = b(a^x)^{-1} \bmod p \\
+    & = 1682 \cdot 1125 \bmod 2273 \\
+    & = 1114
+\end{aligned}$
+
+Pesan berhasil di dekripsi kemabali, yaitu $07001114$.
+
 == Penutup
+
+ElGamal pada awalnya diciptakan untuk __digital signature__ yang kemudian
+dimodifikasi untuk digunakan untuk enkripsi dan dekripsi. Kekuatan ElGamal
+terletak pada sukarnya menghitung logaritma diskrit.
+
+ElGamal seperti algoritma asimetrik lainnya, digunakan untuk enkripsi dan
+dekripsi kunci algoritma simetrik.
 
 == Reference
 
