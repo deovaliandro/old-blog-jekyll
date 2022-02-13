@@ -181,3 +181,180 @@ Canada, 1996.
 
 . Rivest R.L., Shamir A., Adleman L. "A Method for Obtaining Digital
 Signatures and Public-Key Cryptosystems. MIT: Massachusetts. 1977.
+
+== Lampiran
+
+[source, cpp]
+----
+#include <bits/stdc++.h>
+using namespace std;
+
+string plainteks, cipherteks;
+long int p, q, n, e, d, totient, temp[100];
+
+int apakahPrime(long int x)
+{
+    long int i, j;
+    j = sqrt(x);
+
+    for(i=2; i<=j; i++){
+        if(x%i == 0){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+int hitung_d(long int e, long int totient)
+{
+    long int k, h, d;
+
+    k = 1;
+    while(1){
+        d = k*e;
+        h = d%totient;
+
+        if(h == 1){
+            cout << "Kunci privat (d) : " << k << endl;
+            return k;
+        }else{
+            k = k + 1;
+        }
+    }
+}
+
+int gcd(long int a, long int b)
+{
+    long int r, temp;
+
+    if(a < b){
+        temp = a;
+        a = b;
+        b = temp;
+    }
+
+    while (b != 0){
+        r = a % b;
+        a = b;
+        b = r;
+    }
+
+    return a;
+}
+
+void pembangkitanKunci()
+{
+    int test;
+
+    cout << "Kunci  p: "; cin >> p;
+    test = apakahPrime(p);
+
+    if(test==0){
+        cout << "Not prime" << endl;
+        exit(0);
+    }
+
+    cout << "Kunci  q: "; cin >> q;
+    test = apakahPrime(q);
+
+    if(test==0){
+        cout << "Not prime" << endl;
+        exit(0);
+    }
+
+    n = p * q;
+    totient = (p-1) * (q-1);
+
+    cout << "Kunci publik (e): ";
+    cin >> e;
+
+    cout << "Hasil" << endl;
+    cout << "Totient = " << totient << endl;
+    test = gcd(e, totient);
+
+    if(test == 1){
+        d = hitung_d(e, totient);
+    }else{
+        cout << "e tidak relatif prima";
+        exit(0);
+    }
+}
+
+void enkripsi()
+{
+    int panjang;
+    long int hasil, m, i, j;
+    char c;
+
+    cout << "Input m: ";
+    cin.ignore();
+    getline(cin, plainteks);
+    panjang = plainteks.length();
+    cipherteks = "";
+
+    for(i=0; i<panjang; i++){
+        m = plainteks[i];
+        m = m - 96;
+        hasil = 1;
+
+        for(j=0; j<e; j++){
+            hasil = hasil * m;
+            hasil = hasil % n;
+        }
+
+        temp[i] = hasil;
+        c = hasil + 96;
+        cipherteks = cipherteks + c;
+    }
+
+    cout << "Cipherteks: " << cipherteks << endl;
+}
+
+void dekripsi()
+{
+    int panjang;
+    long int c, hasil, i, j;
+    char m;
+
+    panjang = cipherteks.length();
+    plainteks = "";
+
+    for(i=0; i<panjang; i++){
+        c = temp[i];
+        hasil = 1;
+
+        for(j=0; j<d; j++){
+            hasil = hasil * c;
+            hasil = hasil % n;
+        }
+
+        m = hasil + 96;
+        plainteks = plainteks + m;
+    }
+
+    cout << "Plainteks: " << plainteks << endl;
+}
+
+int main()
+{
+    bool stop;
+    int pil;
+
+    stop = false;
+    while(!stop){
+        cout << "1. Pembangkitan kunci" << endl;
+        cout << "2. Enkripsi" << endl;
+        cout << "3. Dekripsi" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Pilihan: ";
+        cin >> pil;
+
+        switch(pil){
+            case 1: pembangkitanKunci(); break;
+            case 2: enkripsi(); break;
+            case 3: dekripsi(); break;
+            case 4: stop = true; break;
+        }
+    }
+}
+----
