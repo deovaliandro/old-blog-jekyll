@@ -146,14 +146,22 @@ dekripsi kunci algoritma simetrik.
 
 == Reference
 
+. ElGamal. T. "A Public-Key Cryptosystem and a Signature Scheme Based on
+Discrete Logarithms". IEEE Transactions on Information Theory. 1985
+
+. Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.
+
+. Schneier, B. Applied Cryptography, 2nd Ed. John Wiley & Sons, Inc:
+Canada, 1996.
+
 == Lampiran
 
-Alice's key: private key = $x$, publick key = $(y, g, p)$. Ciphertext = $(a, b)$.
-
-usage: 
+Penggunaan: 
 
 [source, bash]
 python elgamal.py
+
+Code:
 
 [source, python]
 ----
