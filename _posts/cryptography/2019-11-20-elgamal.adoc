@@ -110,25 +110,25 @@ Untuk mendekripsi blok $c_1$,
 
 $\begin{aligned}
 c_1 & = (1439, 74) \\
-(a^x)^{-1} & = a^{p-1-x} \bmod p \\
+(a^{x} )^{-1} & = a^{p-1-x} \bmod p \\
     & = 1439^{2029} \bmod 2273 \\
     & = 1791 \\
-m_1 & = b/a^x \bmod p \\
-    & = b(a^x)^{-1} \bmod p \\
+m_1 & = b/a^{x} \bmod p \\
+    & = b(a^{x} )^{-1} \bmod p \\
     & = 74 \cdot 1791 \bmod 2273 \\
-    & = 700
+    & = 700 \\
     & = 0700
 \end{aligned}$
 
 Untuk mendekripsi blok $c_2$,
 
 $\begin{aligned}
-c_1 & = (1220, 1682) \\
-(a^x)^{-1} & = a^{p-1-x} \bmod p \\
+c_2 & = (1220, 1682) \\
+(a^{x} )^{-1} & = a^{p-1-x} \bmod p \\
     & = 1220^{2029} \bmod 2273 \\
     & = 1125 \\
-m_1 & = b/a^x \bmod p \\
-    & = b(a^x)^{-1} \bmod p \\
+m_2 & = b/a^{x} \bmod p \\
+    & = b(a^{x} )^{-1} \bmod p \\
     & = 1682 \cdot 1125 \bmod 2273 \\
     & = 1114
 \end{aligned}$
