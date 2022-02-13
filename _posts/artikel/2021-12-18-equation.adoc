@@ -1,35 +1,51 @@
-:page-title: Persamaan KaTeX
-:page-category: tutorial
-:page-tags: [tutorial, asciidoc]
+:page-title       : Persamaan KaTeX
+:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout      : default
+:page-category    : Tutorial
 
 Untuk menggunakan LaTeX align:
 
 [source, latex]
-\begin{aligned}
+$$\begin{aligned}
 a_1 &= \beta_0 \\
     &= \beta_1 \\
 c_1 &= \beta_2 \\
 d_1 &= \beta_3
-\end{aligned}
+\end{aligned}$
 
 Hasilnya sebagai berikut:
 
-\[\begin{aligned}
+$$\begin{aligned}
 a_1 &= \beta_0 \\
     &= \beta_1 \\
 c_1 &= \beta_2 \\
 d_1 &= \beta_3
-\end{aligned}\]
+\end{aligned}$
 
-\[\begin{aligned}
+[source, latex]
+$$\begin{aligned}
 \dot{x} & = \sigma(y-x) \\
 \dot{y} & = \rho x - y - xz \\
 \dot{z} & = -\beta z + xy
-\end{aligned}\]
+\end{aligned}$
 
-\[\begin{aligned}
+$$\begin{aligned}
+\dot{x} & = \sigma(y-x) \\
+\dot{y} & = \rho x - y - xz \\
+\dot{z} & = -\beta z + xy
+\end{aligned}$
+
+[source, latex]
+$\begin{aligned}
 a_2 & = (X\'X)^{-1} \\
     & =(X\'X)^{-1} \\
     & =(X\'X)^{-1} \\
     & =(X\'X)^{-1}
-\end{aligned}\]
+\end{aligned}$
+
+$\begin{aligned}
+a_2 & = (X\'X)^{-1} \\
+    & =(X\'X)^{-1} \\
+    & =(X\'X)^{-1} \\
+    & =(X\'X)^{-1}
+\end{aligned}$

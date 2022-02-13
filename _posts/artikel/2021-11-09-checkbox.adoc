@@ -3,9 +3,6 @@
 :page-layout      : default
 :page-category    : Tutorial
 
-[.center]
-_Deo Valiandro. M <mdv16h@gmail.com>_
-
 Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
 
 [source, asciidoc]
