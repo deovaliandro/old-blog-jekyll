@@ -3,8 +3,6 @@
 :page-layout    : default
 :page-category  : Kriptografi
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
 == Pendahuluan
 
 ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
@@ -61,9 +59,54 @@ Alice dan Bob menyepakati $p \in \mathbb{P}, a \in \mathbb{Z}$, kemudian:
 
 Mengasilkan kunci publik: $(y, g, p)$ dan kunci private $(x)$.
 
-== Enkripsi Pesan
+Misalhnya:
 
-== Dekripsi Pesan
+$p = 2273$, $g = 3, x = 243$, Alice kemudian menghitung:
+
+$y = g^x \bmod p = 3^{243} \bmod 2273 = 461$
+
+Menghasilkan kunci publik $(461, 3, 2273)$ dan kunci privat $(243)$.
+
+== Contoh
+
+Pesan $m, 0 > m < p-1$, dapat dibagi kedalam blok $m_1, m_2, \cdots$, sehingga
+$m < p-1$.
+
+Misalnya $m = 07001114$, $m_1 = 0700, m_2 = 1114, \forall m_i < 2273 - 1$.
+
+Untuk enkripsi blok $m_1$, dipilih $k = 1463 \in [0, 2273-1]$.
+
+$\begin{aligned}
+m_1 & = 0700 \\
+a   & = g^k \bmod p \\
+    & = 3^{1463} \bmod 2273 \\
+    & = 1439 \\
+b   & = y^k m_1 \bmod p \\
+    & = 461^{1463} \cdot 700 \bmod 2273 \\
+    & = 74
+\end{aligned}$
+
+Cihpertext untuk $c_1 = (1439, 74)$.
+
+Untuk enkripsi blok $m_2$, dipilih $k = 2001 \in [0, 2273-1]$.
+
+$\begin{aligned}
+m_1 & = 1114 \\
+a   & = g^k \bmod p \\
+    & = 3^{20001} \bmod 2273 \\
+    & = 1220 \\
+b   & = y^k m_1 \bmod p \\
+    & = 461^{20001} \cdot 1114 \bmod 2273 \\
+    & = 1682
+\end{aligned}$
+
+Cihpertext untuk $c_1 = (1220, 1682)$.
+
+=== Enkripsi Pesan
+
+
+
+=== Dekripsi Pesan
 
 == Penutup
 
