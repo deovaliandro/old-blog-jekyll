@@ -1,23 +1,24 @@
 {%- include header.html -%}
 <main>
-  <div class="navigation">
-    [<a href="/" class="email">/home</a>]
-    {%- include nav.html -%}
-  </div>
-  <h1>{{ page.title }}</h1>
-  {% if page.author %}
-  <p><i>{{ author }}</i></p>
-  {% endif %}
-  {% if page.tags.size > 0 %}
-  <p align="center">tag{% if page.tags.size > 1 %}s{% endif %}:
-    {{ page.tags | sort | join: ", " }}</p>
-  {% endif %}
-  {% if page.signed-by %}
-  <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
-  {% endif %}
-  {{ content }}
-  <hr>
-  {%- include footer.html -%}
+    <div class="navigation">
+        [<a href="/" class="email">/home</a>]
+        {%- include nav.html -%}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.author %}
+    <p><i>{{ author }}</i></p>
+    {% endif %}
+    {% if page.tags.size > 0 %}
+    <p align="center">tag{% if page.tags.size > 1 %}s{% endif %}:
+        {{ page.tags | sort | join: ", " }}</p>
+    {% endif %}
+    {% if page.signed-by %}
+    <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
+    {% endif %}
+    {{ content }}
+    <hr>
+    {%- include footer.html -%}
 </main>
 </body>
+
 </html>
