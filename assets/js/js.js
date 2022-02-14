@@ -2,9 +2,9 @@ const toggleSwitch = document.getElementById("changeTheme");
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
 
 if (currentTheme === 'dark') {
-    toggleSwitch.innerHTML = "/light";
+    toggleSwitch.innerHTML = "😎";
 } else {
-    toggleSwitch.innerHTML = "/dark";
+    toggleSwitch.innerHTML = "😳";
 }
 
 if (currentTheme) {
@@ -23,11 +23,11 @@ toggleSwitch.onclick = function() {
         document.documentElement.setAttribute('data-theme', 'light');
         stylesheet.setAttribute('href', '/assets/css/github.css');
         localStorage.setItem('theme', 'light');
-        toggleSwitch.innerHTML = "/dark";
+        toggleSwitch.innerHTML = "😳";
     } else {
         document.documentElement.setAttribute('data-theme', 'dark');
         stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
         localStorage.setItem('theme', 'dark');
-        toggleSwitch.innerHTML = "/light";
+        toggleSwitch.innerHTML = "😎";
     }
 };
