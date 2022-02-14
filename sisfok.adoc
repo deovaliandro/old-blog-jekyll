@@ -1,9 +1,0 @@
-:page-layout: default
-
-== Team SisfoK
-
-. Deo Valiandro. M (deo@duck.com),
-// . Sony Lembang (https://github.com/yukiao),
-// . Truly (https://github.com/trulyroselyne),
-// . Michiko (https://github.com/Michikow10),
-// . John (https://github.com/Jons1104),
