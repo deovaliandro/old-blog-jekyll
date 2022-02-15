@@ -64,3 +64,4 @@ Kumpulan link yang berguna untuk pelajaran:
 .. https://uva-cs.github.io/pdr/tutorials/index.html
 .. http://jamesmcm.github.io/blog/2020/07/25/intro-dod/
 .. https://pabloinsente.github.io/
+.. https://blog.regehr.org/

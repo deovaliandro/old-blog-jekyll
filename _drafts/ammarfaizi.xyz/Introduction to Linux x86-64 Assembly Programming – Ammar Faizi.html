@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html class="js" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://ammarfaizi.xyz/xmlrpc.php">
+		
+	<title>Introduction to Linux x86-64 Assembly Programming – Ammar Faizi</title>
+<meta name="robots" content="max-image-preview:large">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<link rel="dns-prefetch" href="https://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Ammar Faizi » Feed" href="https://ammarfaizi.xyz/feed/">
+<link rel="alternate" type="application/rss+xml" title="Ammar Faizi » Comments Feed" href="https://ammarfaizi.xyz/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Ammar Faizi » Introduction to Linux x86-64 Assembly Programming Comments Feed" href="https://ammarfaizi.xyz/2021/11/18/part-1-introduction-to-linux-x86-64-assembly-programming/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ammarfaizi.xyz\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.8.2"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/style_002.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="mediaelement-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/mediaelementplayer-legacy.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-mediaelement-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/wp-mediaelement.css" type="text/css" media="all">
+<link rel="stylesheet" id="blogstream-style-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/style.css" type="text/css" media="all">
+<style id="blogstream-style-inline-css" type="text/css">
+body { font-family: "Roboto", Arial, sans-serif; }
+
+</style>
+<link rel="stylesheet" id="blogstream-responsive-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/responsive.css" type="text/css" media="all">
+<link rel="stylesheet" id="blogstream-font-awesome-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/all.css" type="text/css" media="all">
+<link rel="stylesheet" id="roboto-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/jquery_002.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/jquery-migrate.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/slick.js" id="blogstream-slick-js"></script>
+<link rel="https://api.w.org/" href="https://ammarfaizi.xyz/wp-json/"><link rel="alternate" type="application/json" href="https://ammarfaizi.xyz/wp-json/wp/v2/posts/8"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ammarfaizi.xyz/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ammarfaizi.xyz/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.8.2">
+<link rel="canonical" href="https://ammarfaizi.xyz/2021/11/18/part-1-introduction-to-linux-x86-64-assembly-programming/">
+<link rel="shortlink" href="https://ammarfaizi.xyz/?p=8">
+<link rel="alternate" type="application/json+oembed" href="https://ammarfaizi.xyz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fammarfaizi.xyz%2F2021%2F11%2F18%2Fpart-1-introduction-to-linux-x86-64-assembly-programming%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://ammarfaizi.xyz/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fammarfaizi.xyz%2F2021%2F11%2F18%2Fpart-1-introduction-to-linux-x86-64-assembly-programming%2F&amp;format=xml">
+<style type="text/css">img#wpstats{display:none}</style>
+		<style id="kirki-inline-styles"></style><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+
+<body class="post-template-default single single-post postid-8 single-format-standard col-2cl full-width logged-out" cz-shortcut-listen="true">
+
+
+<a class="skip-link screen-reader-text" href="#page">Skip to content</a>
+
+<div id="wrapper">
+
+	<div class="sticky-element-placeholder" style="width: 0px; height: 0px; margin: 0px; padding: 0px;"></div><div id="header-sticky" class="sticky-element-original sticky-element-not-sticky sticky-element-active" style="">
+		<header id="header" class="hide-on-scroll-down nav-menu-dropdown-left">
+
+			<div class="pad group">
+
+				<p class="site-title"><a href="https://ammarfaizi.xyz/" rel="home">Ammar Faizi</a></p>
+									<p class="site-description">(Ice Tea)</p>
+								
+																	
+			</div>
+			
+		</header><!--/#header-->
+	</div><!--/#header-sticky-->
+
+	<div id="header-bottom" class="group">
+	
+				
+				
+					<div class="search-trap-focus">
+				<button class="toggle-search" data-target=".search-trap-focus">
+					<svg class="svg-icon" id="svg-search" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"><path d="M38.710696,48.0601792 L43,52.3494831 L41.3494831,54 L37.0601792,49.710696 C35.2632422,51.1481185 32.9839107,52.0076499 30.5038249,52.0076499 C24.7027226,52.0076499 20,47.3049272 20,41.5038249 C20,35.7027226 24.7027226,31 30.5038249,31 C36.3049272,31 41.0076499,35.7027226 41.0076499,41.5038249 C41.0076499,43.9839107 40.1481185,46.2632422 38.710696,48.0601792 Z M36.3875844,47.1716785 C37.8030221,45.7026647 38.6734666,43.7048964 38.6734666,41.5038249 C38.6734666,36.9918565 35.0157934,33.3341833 30.5038249,33.3341833 C25.9918565,33.3341833 22.3341833,36.9918565 22.3341833,41.5038249 C22.3341833,46.0157934 25.9918565,49.6734666 30.5038249,49.6734666 C32.7048964,49.6734666 34.7026647,48.8030221 36.1716785,47.3875844 C36.2023931,47.347638 36.2360451,47.3092237 36.2726343,47.2726343 C36.3092237,47.2360451 36.347638,47.2023931 36.3875844,47.1716785 Z" transform="translate(-20 -31)"></path></svg>
+					<svg class="svg-icon" id="svg-close" aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 16 16"><polygon fill="" fill-rule="evenodd" points="6.852 7.649 .399 1.195 1.445 .149 7.899 6.602 14.352 .149 15.399 1.195 8.945 7.649 15.399 14.102 14.352 15.149 7.899 8.695 1.445 15.149 .399 14.102"></polygon></svg>
+				</button>
+				<div class="search-expand">
+					<div class="search-expand-inner">
+						<form method="get" class="searchform themeform" action="https://ammarfaizi.xyz/">
+	<div>
+		<input type="text" class="search" name="s" onblur="if(this.value=='')this.value='To search type and hit enter';" onfocus="if(this.value=='To search type and hit enter')this.value='';" value="To search type and hit enter">
+	</div>
+</form>					</div>
+				</div>
+			</div>
+				
+	</div><!--/#header-bottom-->
+
+	<div id="wrapper-inner">
+
+				
+		<div class="container" id="page">
+			<div class="container-inner">			
+				<div class="main">
+					<div class="main-inner group">
+
+<div class="content">
+	
+	<div class="entry-wrap">
+	
+			<article id="post-8" class="wrap-entry-line post-8 post type-post status-publish format-standard hentry category-uncategorized">	
+			
+			<div class="entry-line">
+				<div class="entry-line-inner">
+					<div class="entry-line-bullet">
+						<div class="entry-line-bullet-inner"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="post-wrapper entry-line-entry group">
+				<header class="entry-header group">
+					<h1 class="entry-title">Introduction to Linux x86-64 Assembly Programming</h1>
+				</header>
+				<div class="entry-media">
+																				</div>
+				<div class="entry-content">
+					<div class="entry themeform">	
+						<h2 id="0-introduction">0. Introduction</h2>
+<p>The x86 instruction set architecture is at the heart of CPUs that 
+power our home computers and remote servers for over two decades. Being 
+able to read and write code in low-level assembly language is a powerful
+ skill to have. It enables you to write faster code, use machine 
+features unavailable in C, and reverse-engineer compiled code.</p>
+<p>But starting out can be a daunting task. The official documentation 
+manuals from Intel are well over a thousand pages long. Twenty years of 
+continual evolution with backward compatibility have produced a 
+landscape with clashing design principles from different eras, 
+deprecated features occupying space, layers upon layers of mode 
+switches, and an exception to every pattern.</p>
+<p>In this tutorial, I will help you gain a solid understanding of the x86 <abbr title="instruction set architecture">ISA</abbr> from basic principles. I will focus more on <em>building a clear mental model</em>
+ of what’s happening, rather than giving every detail precisely (which 
+would be long and boring to read). If you want to make use of this 
+knowledge, you should simultaneously refer to another tutorial that 
+shows you how to write and compile a simple function, and also have a 
+list of CPU instructions open for referencing. My tutorial will start 
+out in familiar territory and slowly add complexity in manageable steps –
+ unlike other documentation that tend to lay out the information all at 
+once.</p>
+<p>The prerequisites to reading this tutorial are working with binary 
+numbers, moderate experience programming in an imperative language 
+(C/C++/Java/Python/etc.), and the concept of memory pointers (C/C++). 
+You do not need to know how CPUs work internally or have prior exposure 
+to assembly language.</p>
+<h2 id="1-tools-and-testing">1. Tools and testing</h2>
+<p>When reading this tutorial, it’s helpful to write and test your own 
+assembly language programs. This is most easily done on Linux (harder 
+but possible on Windows). Here is a sample function in assembly 
+language:</p>
+<pre>.globl myfunc
+myfunc:
+    retl</pre>
+<p>Save it in a file called my-asm.s, and compile it with the command: <tt>gcc -m32 -c -o my-asm.o my-asm.s</tt>.
+ There is no way to run the code at the moment, because it would require
+ either interfacing with a C program or writing boilerplate code for 
+interacting with the <abbr title="operating system">OS</abbr> to handle 
+the starting/printing/stopping/etc. At the very least, being able to 
+compile code gives you a way to verify that your assembly programs are 
+syntactically correct.</p>
+<p>Note that my tutorial uses the AT&amp;T assembly language syntax 
+instead of Intel syntax. The underlying concepts are still the same in 
+both cases, but the notation is a bit different. It’s possible to 
+mechanically translate from one syntax to the other, so there is no need
+ for much concern.</p>
+<h2 id="2-basic-execution-environment">2. Basic execution environment</h2>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/cpu-model.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/cpu-model.svg" alt=""></a></div>
+<p>An x86 CPU has eight 32-bit general-purpose registers. For historical reasons, the registers are named {<code>eax</code>, <code>ecx</code>, <code>edx</code>, <code>ebx</code>, <code>esp</code>, <code>ebp</code>, <code>esi</code>, <code>edi</code>}. (Other CPU architectures would simply name them <code>r0</code>, <code>r1</code>, …, <code>r7</code>.)
+ Each register can hold any 32-bit integer value. The x86 architecture 
+actually has over a hundred registers, but we will only cover specific 
+ones when needed.</p>
+<p>As a first approximation, a CPU executes a list of instructions 
+sequentially, one by one, in the order listed in the source code. Later 
+on, we will see how the code path can go non-linearly, covering concepts
+ like if-then, loops, and function calls.</p>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/register-aliasing.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/register-aliasing.svg" alt=""></a></div>
+<p>There are actually eight 16-bit and eight 8-bit registers that are 
+subparts of the eight 32-bit general-purpose registers. These features 
+come from the 16-bit era of x86 CPUs, but still have some occasional use
+ in 32-bit mode. The 16-bit registers are named {<code>ax</code>, <code>cx</code>, <code>dx</code>, <code>bx</code>, <code>sp</code>, <code>bp</code>, <code>si</code>, <code>di</code>} and represent the bottom 16 bits of the corresponding 32-bit registers {<code>eax</code>, <code>ecx</code>, …, <code>edi</code>} (the prefix “e” stands for “extended”). The 8-bit registers are named {<code>al</code>, <code>cl</code>, <code>dl</code>, <code>bl</code>, <code>ah</code>, <code>ch</code>, <code>dh</code>, <code>bh</code>} and represent the low and high 8 bits of the registers {<code>ax</code>, <code>cx</code>, <code>dx</code>, <code>bx</code>}.
+ Whenever the value of a 16-bit or 8-bit register is modified, the upper
+ bits belonging to the full 32-bit register will remain unchanged.</p>
+<h2 id="3-basic-arithmetic-instructions">3. Basic arithmetic instructions</h2>
+<p>The most basic x86 arithmetic instructions operate on two 32-bit 
+registers. The first operand acts as a source, and the second operand 
+acts as both a source and destination. For example: <code>addl %ecx, %eax</code> – in C notation, this means: <code>eax = eax + ecx;</code>, where <code>eax</code> and <code>ecx</code> have the type <code>uint32_t</code>. Many instructions fit this important schema – for example:</p>
+<ul>
+<li><code>xorl %esi, %ebp</code> means <code>ebp = ebp ^ esi;</code>.</li>
+<li><code>subl %edx, %ebx</code> means <code>ebx = ebx - edx;</code>.</li>
+<li><code>andl %esp, %eax</code> means <code>eax = eax &amp; esp;</code>.</li>
+</ul>
+<p>A few arithmetic instructions take only one register as an argument, for example:</p>
+<ul>
+<li><code>notl %eax</code> means <code>eax = ~eax;</code>.</li>
+<li><code>incl %ecx</code> means <code>ecx = ecx + 1;</code>.</li>
+</ul>
+<p>The bit shifting and rotation instructions take a 32-bit register for the value to be shifted, and the fixed 8-bit register <code>cl</code> for the shift count. For example: <code>shll %cl, %ebx</code> means <code>ebx = ebx &lt;&lt; cl;</code>.</p>
+<p>Many arithmetic instructions can take an immediate value as the first
+ operand. The immediate value is fixed (not variable), and is coded into
+ the instruction itself. Immediate values are prefixed with <code>$</code>. For example:</p>
+<ul>
+<li><code>movl $0xFF, %esi</code> means <code>esi = 0xFF;</code>.</li>
+<li><code>addl $-2, %edi</code> means <code>edi = edi + (-2);</code>.</li>
+<li><code>shrl $3, %edx</code> means <code>edx = edx &gt;&gt; 3;</code>.</li>
+</ul>
+<p>Note that the <code>movl</code> instruction copies the value from the
+ first argument to the second argument (it does not strictly “move”, but
+ this is the customary name). In the case of registers, like <code>movl %eax, %ebx</code>, this means to copy the value of the <code>eax</code> register into <code>ebx</code> (which overwrites <code>ebx</code>’s previous value).</p>
+<h3>An aside</h3>
+<p>Now is a good time to talk about one principle in assembly 
+programming: Not every desirable operation is directly expressible in 
+one instruction. In typical programming languages that most people use, 
+many constructs are composable and adaptable to different situations, 
+and arithmetic can be nested. In assembly language however, you can only
+ write what the instruction set allows. To illustrate with examples:</p>
+<ul>
+<li>You can’t add two immediate constants together, even though you can 
+in C. In assembly you’d either compute the value at compile time, or 
+express it as a sequence of instructions.</li>
+<li>You can add two 32-bit registers in one instruction, but you can’t 
+add three 32-bit registers – you’d need to break it up into two 
+instructions.</li>
+<li>You can’t add a 16-bit register to a 32-bit register. You’d need to 
+write one instruction to perform a 16-to-32-bit widening conversion, and
+ another instruction to perform the addition.</li>
+<li>When performing bit shifting, the shift count must be either a hard-coded immediate value or the register <code>cl</code>. It cannot be any other register. If the shift count was in another register, then the value needs to be copied to <code>cl</code> first.</li>
+</ul>
+<p>The takeaway messages are that you shouldn’t try to guess or invent syntaxes that don’t exist (such as <code>addl %eax, %ebx, %ecx</code>);
+ also that if you can’t find a desired instruction in the long list of 
+supported instructions then you need to manually implement it as a 
+sequence of instructions (and possibly allocate some temporary registers
+ to store intermediate values).</p>
+<h2 id="4-flags-register-and-comparisons">4. Flags register and comparisons</h2>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/eflags-register.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/eflags-register.svg" alt=""></a></div>
+<p>There is a 32-bit register named <code>eflags</code> which is <em>implicitly</em>
+ read or written in many instructions. In other words, its value plays a
+ role in the instruction execution, but the register is not mentioned in
+ the assembly code.</p>
+<p>Arithmetic instructions such as <code>addl</code> usually update <code>eflags</code>
+ based on the computed result. The instruction would set or clear flags 
+like carry (CF), overflow (OF), sign (SF), parity (PF), zero (ZF), etc. 
+Some instructions read the flags – for example <code>adcl</code> adds two numbers and uses the carry flag as a third operand: <code>adcl %ebx, %eax</code> means <code>eax = eax + ebx + cf;</code>. Some instructions set a register based on a flag – for example <code>setz %al</code> sets the 8-bit register <code>al</code> to 0 if ZF is clear or 1 if ZF is set. Some instructions directly affect a single flag bit, such as <code>cld</code> clearing the direction flag (DF).</p>
+<p>Comparison instructions affect <code>eflags</code> without changing any general-purpose registers. For example, <code>cmpl %eax, %ebx</code>
+ will compare the two registers’ value by subtracting them in an unnamed
+ temporary place and set the flags according to the result, so that you 
+can tell whether <code>eax &lt; ebx</code> or <code>eax == ebx</code> or <code>eax &gt; ebx</code> in either unsigned mode or signed mode. Similarly, <code>testl %eax, %ebx</code> computes <code>eax &amp; ebx</code>
+ in a temporary place and sets the flags accordingly. Most of the time, 
+the instruction after a comparison is a conditional jump (covered 
+later).</p>
+<p>So far, we know that some flag bits are related to arithmetic 
+operations. Other flag bits are concerned with how the CPU behaves – 
+such as whether to accept hardware interrupts, virtual 8086 mode, and 
+other system management stuff that is mostly of concern to OS 
+developers, not to application developers. For the most part, the <code>eflags</code>
+ register is largely ignorable. The system flags are definitely 
+ignorable, and the arithmetic flags can be forgotten except for 
+comparisons and bigint arithmetic operations.</p>
+<h2 id="5-memory-addressing-reading-writing">5. Memory addressing, reading, writing</h2>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/ram-as-byte-array.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/ram-as-byte-array.svg" alt=""></a></div>
+<p>The CPU by itself does not make a very useful computer. Having only 8
+ data registers severely limits what computations you can do because you
+ can’t store much information. To augment the CPU, we have <abbr title="random access memory">RAM</abbr> as a large system memory. Basically, RAM is an enormous array of bytes – for example, 128 <abbr title="mebibytes">MiB</abbr> of RAM is 134&nbsp;217&nbsp;728 bytes that you can store any values to.</p>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/little-endian.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/little-endian.svg" alt=""></a></div>
+<p>When storing a value longer than a byte, the value is encoded in 
+little endian. For example if a 32-bit register contained the value 
+0xDEADBEEF and this register needs to be stored in memory starting at 
+address 10, then the byte value 0xEF goes into RAM address 10, 0xBE into
+ address 11, 0xAD into address 12, and finally 0xDE into address 13. 
+When reading values from memory, the same rule applies – the bytes at 
+lower memory addresses get loaded into the lower parts of a register.</p>
+<p>It should go without saying that the CPU has instructions to read and
+ write memory. Specifically, you can load or store one or more bytes at 
+any memory address you choose. The simplest thing you can do with memory
+ is to read or write a single byte:</p>
+<ul>
+<li><code>movb (%ecx), %al</code> means <code>al = *ecx;</code>. (this reads the byte at memory address <code>ecx</code> into the 8-bit <code>al</code> register)</li>
+<li><code>movb %bl, (%edx)</code> means <code>*edx = bl;</code>. (this writes the byte in <code>bl</code> to the byte at memory address <code>edx</code>)</li>
+<li>(In the illustrative C code, <code>al</code> and <code>bl</code> have the type <code>uint8_t</code>, and <code>ecx</code> and <code>edx</code> are being cast from <code>uint32_t</code> to <code>uint8_t*</code>.)</li>
+</ul>
+<p>Next, many arithmetic instructions can take one memory operand (never two). For example:</p>
+<ul>
+<li><code>addl (%ecx), %eax</code> means <code>eax = eax + (*ecx);</code>. (this reads 32 bits from memory)</li>
+<li><code>addl %ebx, (%edx)</code> means <code>*edx = (*edx) + ebx;</code>. (this reads and writes 32 bits in memory)</li>
+</ul>
+<h3>Addressing modes</h3>
+<p>When we write code that has loops, often one register holds the base 
+address of an array and another register holds the current index being 
+processed. Although it’s possible to manually compute the address of the
+ element being processed, the x86 <abbr title="instruction set architecture">ISA</abbr>
+ provides a more elegant solution – there are memory addressing modes 
+that let you add and multiply certain registers together. This is 
+probably easier to illustrate than describe:</p>
+<ul>
+<li><code>movb (%eax,%ecx), %bh</code> means <code>bh = *(eax + ecx);</code>.</li>
+<li><code>movb -10(%eax,%ecx,4), %bh</code> means <code>bh = *(eax + (ecx * 4) - 10);</code>.</li>
+</ul>
+<p>The address format is <code><var>offset</var>(<var>base</var>, <var>index</var>, <var>scale</var>)</code>, where <code><var>offset</var></code> is an integer constant (can be positive, negative, or zero), <code><var>base</var></code> and <code><var>index</var></code> are 32-bit registers (but a few combinations are disallowed), and <code><var>scale</var></code> is either {1,2,4,8}. For example if an array holds a series of 64-bit integers, we would use <code><var>scale</var></code> = 8 because each element is 8 bytes long.</p>
+<p>The memory addressing modes are valid wherever a memory operand is permitted. Thus if you can write <code>sbbl %eax, (%eax)</code>, then you can certainly write <code>sbbl %eax, (%eax,%eax,2)</code>
+ if you need the indexing capability. Also note that the address being 
+computed is a temporary value that is not saved in any register. This is
+ good because if you wanted to compute the address explicitly, you would
+ need to allocate a register for it, and having only 8 <abbr title="general-purpose registers">GPRs</abbr> is rather tight when you want to store other variables.</p>
+<p>There is one special instruction that uses memory addressing but does not actually access memory. The <code>leal</code>
+ (load effective address) instruction computes the final memory address 
+according to the addressing mode, and stores the result in a register. 
+For example, <code>leal 5(%eax,%ebx,8), %ecx</code> means <code>ecx = eax + ebx*8 + 5;</code>. Note that this is entirely an arithmetic operation and does not involve dereferencing a memory address.</p>
+<p>&nbsp;</p>
+<h2 id="6-jumps-labels-machine-code">6. Jumps, labels, and machine code</h2>
+<p>Each assembly language instruction can be prefixed by zero or more 
+labels. These labels will be useful when we need to jump to a certain 
+instruction. Examples:</p>
+<pre>foo:  /* A label */
+negl %eax  /* Has one label */
+
+addl %eax, %eax  /* Zero labels */
+
+bar: qux: sbbl %eax, %eax  /* Two labels */</pre>
+<p>The <code>jmp</code> instruction tells the CPU to go to a labelled 
+instruction as the next instruction to execute, instead of going to the 
+next instruction below by default. Here is a simple infinite loop:</p>
+<pre>top: incl %ecx
+jmp top</pre>
+<p>Although <code>jmp</code> is unconditional, it has sibling instructions that look at the state of <code>eflags</code>,
+ and either jumps to the label if the condition is met or otherwise 
+advances to the next instruction below. Conditional jump instructions 
+include: <code>ja</code> (jump if above), <code>jle</code> (jump if less than or equal), <code>jo</code> (jump if overflow), <code>jnz</code> (jump if non-zero), et cetera. There are 16 of them in all, and some have synonyms – e.g. <code>jz</code> (jump if zero) is the same as <code>je</code> (jump if equal), <code>ja</code> (jump if above) is the same as <code>jnbe</code> (jump if not below or equal). An example of using conditional jump:</p>
+<pre>jc skip  /* If carry flag is on, then jump away */
+/* Otherwise CF is off, then execute this stuff */
+notl %eax
+/* Implicitly fall into the next instruction */
+skip:
+adcl %eax, %eax</pre>
+<p>Label addresses are fixed in the code when it is compiled, but it is 
+also possible to jump to an arbitrary memory address computed at run 
+time. In particular, it is possible to jump to the value of a register: <code>jmp *%ecx</code> essentially means to copy <code>ecx</code>’s value into <code>eip</code>, the instruction pointer register.</p>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/machine-code.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/machine-code.svg" alt=""></a></div>
+<p>Now is a perfect time to discuss a concept that was glossed over in 
+section 1 about instructions and execution. Each instruction in assembly
+ language is ultimately translated into 1 to 15 bytes of machine code, 
+and these machine instructions are strung together to create an 
+executable file. The CPU has a 32-bit register named <code>eip</code> 
+(extended instruction pointer) which, during program execution, holds 
+the memory address of the current instruction being executed. Note that 
+there are very few ways to read or write the <code>eip</code> register, 
+hence why it behaves very differently from the 8 main general-purpose 
+registers. Whenever an instruction is executed, the CPU knows how many 
+bytes long it was, and advances <code>eip</code> by that amount so that it points to the next instruction.</p>
+<p>While we’re on this note about machine code, assembly language is not
+ actually the lowest level that a programmer can go; raw binary machine 
+code is the lowest level. (Intel insiders have access to even lower 
+levels, such as pipeline debugging and microcode – but ordinary 
+programmers can’t go there.) Writing machine code by hand is very 
+unpleasant (I mean, assembly language is unpleasant enough already), but
+ there are a couple of minor capabilities gained. By writing machine 
+code, you can encode some instructions in alternate ways (e.g. a longer 
+byte sequence that has the same effect when executed), and you can 
+deliberately generate invalid instructions to test the CPU’s behavior 
+(not every CPU handles errors the same way).</p>
+<h2 id="7-the-stack">7. The stack</h2>
+<p>The stack is conceptually a region of memory addressed by the <code>esp</code>
+ register. The x86 ISA has a number of instructions for manipulating the
+ stack. Although all of this functionality can be achieved with <code>movl</code>, <code>addl</code>, etc. and with registers other than <code>esp</code>, using the stack instructions is more idiomatic and concise.</p>
+<p>In x86, the stack grows downward, from larger memory addresses toward
+ smaller ones. For example, “pushing” a 32-bit value onto the stack 
+means to first decrement <code>esp</code> by 4, then take the 4-byte value and store it starting at address <code>esp</code>. “Popping” a value performs the reverse operations – load 4 bytes starting at address <code>esp</code> (either into a given register or discarded), then increment <code>esp</code> by 4.</p>
+<p>The stack is important for function calls. The <code>call</code> instruction is like <code>jmp</code>,
+ except that before jumping it first pushes the next instruction address
+ onto the stack. This way, it’s possible to go back by executing the <code>retl</code> instruction, which pops the address into <code>eip</code>. Also, the standard C calling convention puts some or all the function arguments on the stack.</p>
+<p>Note that stack memory can be used to read/write the <code>eflags</code> register, and to read the <code>eip</code> register. Accessing these two registers is awkward because they cannot be used in typical <code>movl</code> or arithmetic instructions.</p>
+<h2 id="8-calling-convention">8. Calling convention</h2>
+<p>When we compile C code, it is translated into assembly code and 
+ultimately machine code. A calling convention defines how C functions 
+receive arguments and return a value, by putting values on the stack 
+and/or in registers. The calling convention applies to a C function 
+calling another C function, a piece of assembly code calling a C 
+function, or a C function calling an assembly function. (It does not 
+apply to a piece of assembly code calling an arbitrary piece of assembly
+ code; there are no restrictions in this case.)</p>
+<p>On 32-bit x86 on Linux, the calling convention is named <a title="Wikipedia: x86 calling conventions - cdecl" href="https://en.wikipedia.org/wiki/X86_calling_conventions#cdecl">cdecl</a>.
+ The function caller (parent) pushes the arguments from right to left 
+onto the stack, calls the target function (callee/child), receives the 
+return value in <code>eax</code>, and pops the arguments. For example:</p>
+<pre>int main(int argc, char **argv) {
+  print("Hello", argc);
+  /*
+  The above call to print() would translate
+  into assembly code like this:
+  
+  pushl %registerContainingArgc
+  pushl $ADDRESS_OF_HELLO_STRING_CONSTANT
+  call print
+  // Receive result in %eax
+  popl %ecx  // Discard argument str
+  popl %ecx  // Discard argument foo
+  */
+}
+
+int print(const char *str, int foo) {
+  ....
+  /*
+  In assembly language, these 32-bit values exist on the stack:
+    0(%esp) has the address of the caller's next instruction.
+    4(%esp) has the value of the argument str (char pointer).
+    8(%esp) has the value of the argument foo (signed integer).
+  Before the function executes retl, it needs to
+  put some number into %eax as the return value.
+  */
+}</pre>
+<h2 id="9-repeatable-string-instructions">9. Repeatable string instructions</h2>
+<p>A handful of instructions make it easier to process long sequences of
+ bytes/words, and this class is informally known as “string” 
+instructions. Each instruction in this class uses the <code>esi</code> and <code>edi</code> registers as memory addresses, and automatically increments/decrements them after the instruction. For example, <code>movsb %esi, %edi</code> means <code>*edi = *esi; esi++; edi++;</code> (copies one byte). (Actually, <code>esi</code> and <code>edi</code> increment if the direction flag is 0; otherwise they decrement if DF is 1.) Examples of other string instructions include <code>cmpsb</code>, <code>scasb</code>, <code>stosb</code>.</p>
+<p>A string instruction can be modified with the <code>rep</code> prefix (see also <code>repe</code> and <code>repne</code>) so that it gets executed <code>ecx</code> times (with <code>ecx</code> decrementing automatically). For example, <code>rep movsb %esi, %edi</code> means:</p>
+<pre>while (ecx &gt; 0) {
+  *edi = *esi;
+  esi++;
+  edi++;
+  ecx--;
+}</pre>
+<p>These string instructions and the <code>rep</code> prefixes bring some iterated compound operations into assembly language. They represent some of the mindset of the <abbr title="complex instruction set computing">CISC</abbr>
+ design, where it is normal for programmers to code directly in 
+assembly, so it provides higher level features to make the work easier. 
+(But the modern solution is to write in C or an even higher level 
+language, and rely on a compiler to generate the tedious assembly code.)</p>
+<h2 id="10-floating-point-and-simd">10. Floating-point and <abbr title="single instruction, multiple data">SIMD</abbr></h2>
+<p>The x87 math coprocessor has eight 80-bit floating-point registers 
+(but all x87 functionality has been incorporated into the main x86 CPU 
+now), and the x86 CPU also has eight 128-bit <code>xmm</code> registers for <abbr title="Streaming SIMD Extensions">SSE</abbr>
+ instructions. I do not have much experience with FP/x87, and you should
+ refer to other guides available on the web. The way the x87 FP stack 
+works is a bit weird, and these days it’s better to do floating-point 
+arithmetic using <code>xmm</code> registers and SSE/SSE2 scalar instructions instead.</p>
+<p>As for SSE, a 128-bit <code>xmm</code> register can be interpreted in
+ many ways depending on the instruction being executed: as sixteen byte 
+values, as eight 16-bit words, as four 32-bit doublewords or 
+single-precision floating-point numbers, or as two 64-bit quadwords or 
+double-precision floating-point numbers. For example, one SSE 
+instruction would copy 16 bytes (128 bits) from memory into an <code>xmm</code> register, and one SSE instruction would add two <code>xmm</code>
+ registers together treating each one as eight 16-bit words in parallel.
+ The idea behind SIMD is to execute one instruction to operate on many 
+data values at once, which is faster than operating on each value 
+individually because fetching and executing every instruction incurs a 
+certain amount of overhead.</p>
+<p>It should go without saying that all SSE/SIMD operations can be 
+emulated more slowly using basic scalar operations (e.g. the 32-bit 
+arithmetic covered in section 3). A cautious programmer might choose to 
+prototype a program using scalar operations, verify its correctness, and
+ gradually convert it to use the faster SSE instructions while ensuring 
+it still computes the same results.</p>
+<h2 id="11-virtual-memory">11. Virtual memory</h2>
+<p>Up to now, we assumed that when an instruction requests to read from 
+or write to a memory address, it will be exactly the address handled by 
+the RAM. But if we introduce a translation layer in between, we can do 
+some interesting things. This concept is known as virtual memory, 
+paging, and other names.</p>
+<p>The basic idea is that there is a page table, which describes what 
+each page (block) of 4096 bytes of the 32-bit virtual address space is 
+mapped to. For example, if a page is mapped to nothing then trying to 
+read/write a memory address in that page will trigger a 
+trap/interrupt/exception. Or for example, the same virtual address 
+0x08000000 could be mapped to a different page of physical RAM in each 
+application process that is running. Also, each process could have its 
+own unique set of pages, and never see the contents of other processes 
+or the operating system kernel. The concept of paging is mostly of 
+concern to OS writers, but its behavior sometimes affects the 
+application programmer so they should be aware of its existence.</p>
+<p>Note that the address mapping need not be 32 bits to 32 bits. For 
+example, 32 bits of virtual address space can be mapped onto 36 bits of 
+physical memory space (<abbr title="Physical Address Extension">PAE</abbr>). Or a 64-bit virtual address space can be mapped onto 32 bits of physical memory space on a computer with only 1 <abbr title="gibibyte">GiB</abbr> of RAM.</p>
+<h2 id="12-64bit-mode">12. 64-bit mode</h2>
+<div class="container floatright clearright"><a href="https://www.nayuki.io/res/a-fundamental-introduction-to-x86-assembly-programming/64bit-registers.svg"><img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/64bit-registers.svg" alt=""></a></div>
+<p>Here I will only talk a little about the x86-64 mode and give a 
+sketch of what has changed. Elsewhere on the web there are plenty of 
+articles and reference materials to explain all the differences in 
+detail.</p>
+<p>Obviously, the 8 general-purpose registers have been extended to 64 bits long. The new registers are named {<code>rax</code>, <code>rcx</code>, <code>rdx</code>, <code>rbx</code>, <code>rsp</code>, <code>rbp</code>, <code>rsi</code>, <code>rdi</code>}, and the old 32-bit registers {<code>eax</code>, …, <code>edi</code>} occupy the low 32 bits of the aforementioned 64-bit registers. There are also 8 new 64-bit registers {<code>r8</code>, <code>r9</code>, <code>r10</code>, <code>r11</code>, <code>r12</code>, <code>r13</code>, <code>r14</code>, <code>r15</code>}, bringing the total to 16 <abbr title="general-purpose register">GPR</abbr>s
+ now. This largely alleviates the register pressure when working with 
+many variables. The new registers have subregisters too – for example 
+the 64-bit register <code>r9</code> contains the 32-bit <code>r9d</code>, the 16-bit <code>r9w</code>, and the 8-bit <code>r9l</code>. Also, the low byte of {<code>rsp</code>, <code>rbp</code>, <code>rsi</code>, <code>rdi</code>} are addressable now as {<code>spl</code>, <code>bpl</code>, <code>sil</code>, <code>dil</code>}.</p>
+<p>Arithmetic instructions can operate on 8-, 16-, 32-, or 64-bit 
+registers. When operating on 32-bit registers, the upper 32 bits are 
+cleared to zero – but narrower operand widths will leave all the high 
+bits unchanged. Many niche instructions are removed from the 64-bit 
+instruction set, such as <abbr title="binary-coded decimal">BCD</abbr>-related ones, most instructions involving 16-bit segment registers, and pushing/poping 32-bit values on the stack.</p>
+<p>For the application programmer, there isn’t much to say about x86-64 
+programming versus the old x86-32. Generally speaking, the experience is
+ better because there are more registers to work with, and a few minor 
+unnecessary features have been removed. All memory pointers must be 64 
+bits (this takes some time to get accustomed to), whereas data values 
+can be 32 bits, 64 bits, 8 bits, etc. depending on the situation (you 
+are not forced to use 64 bits for data). The revised calling convention 
+makes it much easier to retrieve function arguments in assembly code, 
+because the first 6 or so arguments are placed in registers instead of 
+on the stack. Other than these points, the experience is quite similar. 
+(Though for systems programmers, x86-64 introduces new modes, new 
+features, new problems to worry about, and new cases to handle.)</p>
+<h2 id="13-compared-to-other-architectures">13. Compared to other architectures</h2>
+<p><abbr title="Reduced instruction set computing">RISC</abbr> CPU 
+architectures do a couple of things differently from x86. Only explicit 
+load/store instructions touch memory; ordinary arithmetic ones do not. 
+Instructions have a fixed length such as 2 or 4 bytes each. Memory 
+operations usually need to be aligned, e.g. loading a 4-byte word must 
+have a memory address that is a multiple of 4. In comparison, the x86 <abbr title="instruction set architecture">ISA</abbr>
+ has memory operations embedded in arithmetic instructions, encodes 
+instructions as variable-length byte sequences, and almost always allows
+ unaligned memory accesses. Additionally, while x86 features a full 
+suite of 8-, 16-, and 32-bit arithmetic operations due to its 
+backward-compatible design, RISC architectures are usually purely 
+32-bit. For them to operate on narrower values, they load a byte or word
+ from memory and extend the value into a full 32-bit register, do the 
+arithmetic operations in 32 bits, and finally store the low 8 or 16 bits
+ to memory. Popular RISC ISAs include ARM, MIPS, and RISC-V.</p>
+<p><abbr title="Very long instruction word">VLIW</abbr> architectures allow you to explicitly execute multiple sub-instructions in parallel; for example you might write <code>add a, b; sub c, d</code>
+ on one line because the CPU has two independent arithmetic units that 
+work at the same time. x86 CPUs can execute multiple instructions at 
+once too (known as superscalar processing), but instructions are not 
+explicitly coded this way – the CPU internally analyzes the parallelism 
+in the instruction stream and dispatches acceptable instructions to 
+multiple execution units.</p>
+<h2 id="14-summary">14. Summary</h2>
+<p>We began the discussion of the x86 CPU by treating it as a simple 
+machine that has a couple of registers and follows a list of 
+instructions sequentially. We covered the basic arithmetic operations 
+that can be performed on these registers. Then we learned about jumping 
+to different places in the code, comparisons, and conditional jumps. 
+Next we visited the concept of RAM as a huge addressable data storage, 
+and how the x86 addressing modes can be used to compute addresses 
+concisely. Finally we looked briefly at the stack, calling convention, 
+advanced instructions, virtual memory address translation, and 
+differences in the x86-64 mode.</p>
+<p>I hope this tutorial was sufficient to get you oriented with how the 
+x86 instruction set architecture generally works. There are countless 
+details I could not cover in this introductory-level article – such as a
+ full walkthrough on writing a basic function, debugging common 
+mistakes, using SSE/AVX effectively, working with segmentation, covering
+ system data structures like page tables and interrupt descriptors, 
+discussing privileges and security, and so much more. But with a solid 
+mental model of how an x86 CPU operates, you are now in a good position 
+to seek more advanced tutorial texts, try writing some code with an 
+awareness of what happens and why it works that way, and maybe even try 
+scanning through Intel’s extremely detailed thousand-page CPU manuals.</p>
+<h2 id="more-info">15. More info</h2>
+<ul>
+<li><a href="https://www.cs.virginia.edu/~evans/cs216/guides/x86.html">University of Virginia CS216: x86 Assembly Guide</a></li>
+<li><a href="https://en.wikipedia.org/wiki/X86_instruction_listings">Wikipedia: x86 instruction listings</a></li>
+<li><a href="https://software.intel.com/content/www/us/en/develop/articles/intel-sdm.html">Intel® 64 and IA-32 Architectures Software Developer Manuals</a></li>
+<li><a href="https://www.cs.cmu.edu/afs/cs/academic/class/15213-f20/www/lectures/05-machine-basics.pdf">Carnegie Mellon University: Introduction to Computer Systems: Machine-Level Programming I: Basics</a></li>
+<li><a href="https://www.cs.cmu.edu/afs/cs/academic/class/15213-f20/www/lectures/06-machine-control.pdf">Carnegie Mellon University: Introduction to Computer Systems: Machine-Level Programming II: Control</a></li>
+</ul>
+												<div class="clear"></div>
+																		
+					</div><!--/.entry-->
+				</div>
+				
+			</div>
+			
+			<div class="entry-meta group">
+				<div class="entry-meta-inner">
+					<span class="posted-on">November 18, 2021</span>
+					<span class="byline">by <span class="author"><a href="https://ammarfaizi.xyz/author/ammarfaizi2/" title="Posts by ammarfaizi2" rel="author">ammarfaizi2</a></span></span>
+					<span class="entry-category"><a href="https://ammarfaizi.xyz/category/uncategorized/" rel="category tag">Uncategorized</a></span>
+											<a class="entry-comments" href="https://ammarfaizi.xyz/2021/11/18/part-1-introduction-to-linux-x86-64-assembly-programming/#respond"><i class="fas fa-comment"></i><span>0</span></a>
+									</div>
+			</div>
+			
+			<div class="post-wrapper entry-line-entry group">
+				<div class="entry-footer group">
+
+										
+					
+					
+
+<h4 class="heading">
+	<i class="fas fa-hand-point-right"></i>You may also like...</h4>
+
+<ul class="related-posts group">
+	
+		<li class="related">
+		<article class="related-post">
+
+			<div class="related-thumbnail">
+				<a href="https://ammarfaizi.xyz/2022/01/25/about-me/">
+											<img src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/thumb-medium.png" alt="About Me">
+																								</a>
+			</div><!--/.post-thumbnail-->
+			
+			<div class="related-inner">
+				
+				<h4 class="related-title">
+					<a href="https://ammarfaizi.xyz/2022/01/25/about-me/" rel="bookmark">About Me</a>
+				</h4><!--/.post-title-->
+			
+			</div><!--/.related-inner-->
+
+		</article>
+	</li><!--/.related-->
+		
+</ul><!--/.post-related-->
+
+					
+					
+<div id="comments" class="themeform">
+	
+	
+					<!-- comments open, no comments -->
+			
+		
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://ammarfaizi.xyz/2021/11/18/part-1-introduction-to-linux-x86-64-assembly-programming/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://ammarfaizi.xyz/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" size="30" maxlength="245" required="required"></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" size="30" maxlength="100" aria-describedby="email-notes" required="required"></p>
+<p class="comment-form-url"><label for="url">Website</label> <input id="url" name="url" type="text" size="30" maxlength="200"></p>
+<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="8" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p></form>	</div><!-- #respond -->
+	
+</div><!--/#comments-->					
+				</div>
+			</div>
+
+		</article><!--/.post-->
+		
+	</div>
+	
+</div><!--/.content-->
+
+
+	<div class="sidebar s1">
+
+		<div class="sidebar-content">
+		
+						
+				<ul class="post-nav group">
+		<li class="next"><a href="https://ammarfaizi.xyz/2022/01/25/about-me/" rel="next"><i class="fas fa-chevron-right"></i><strong>Next</strong> <span>About Me</span></a></li>
+		<li class="previous"></li>
+	</ul>
+
+			<div id="block-2" class="widget widget_block widget_search"><form role="search" method="get" action="https://ammarfaizi.xyz/" class="wp-block-search__button-outside wp-block-search__text-button wp-block-search"><label for="wp-block-search__input-1" class="wp-block-search__label">Search</label><div class="wp-block-search__inside-wrapper"><input type="search" id="wp-block-search__input-1" class="wp-block-search__input" name="s" placeholder="" required=""><button type="submit" class="wp-block-search__button ">Search</button></div></form></div><div id="block-3" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Posts</h2><ul class="wp-block-latest-posts__list wp-block-latest-posts"><li><a href="https://ammarfaizi.xyz/2022/01/25/about-me/">About Me</a></li>
+<li><a href="https://ammarfaizi.xyz/2021/11/18/part-1-introduction-to-linux-x86-64-assembly-programming/">Introduction to Linux x86-64 Assembly Programming</a></li>
+</ul></div></div></div><div id="block-4" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Recent Comments</h2><div class="no-comments wp-block-latest-comments">No comments to show.</div></div></div></div><div id="block-5" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Archives</h2><ul class=" wp-block-archives-list wp-block-archives">	<li><a href="https://ammarfaizi.xyz/2022/01/">January 2022</a></li>
+	<li><a href="https://ammarfaizi.xyz/2021/11/">November 2021</a></li>
+</ul></div></div></div><div id="block-6" class="widget widget_block"><div class="wp-block-group"><div class="wp-block-group__inner-container"><h2>Categories</h2><ul class="wp-block-categories-list wp-block-categories">	<li class="cat-item cat-item-1"><a href="https://ammarfaizi.xyz/category/uncategorized/">Uncategorized</a>
+</li>
+</ul></div></div></div>			
+		</div><!--/.sidebar-content-->
+		
+	</div><!--/.sidebar-->
+	
+
+					</div><!--/.main-inner-->
+				</div><!--/.main-->	
+			</div><!--/.container-inner-->
+		</div><!--/.container-->
+		
+		<footer id="footer">
+		
+							
+						
+						
+			<div id="footer-bottom">
+				
+				<a id="back-to-top" href="#"><i class="fas fa-angle-up"></i></a>
+					
+				<div class="pad group">
+					
+					<div class="grid one-full">
+						
+												
+						<div id="copyright">
+															<p>Ammar Faizi © 2022. All Rights Reserved.</p>
+													</div><!--/#copyright-->
+						
+												<div id="credit">
+							<p>Powered by <a href="https://wordpress.org/" rel="nofollow">WordPress</a>. Theme by <a href="http://alx.media/" rel="nofollow">Alx</a>.</p>
+						</div><!--/#credit-->
+												
+					</div>
+					
+					<div class="grid one-full">	
+																								</div>
+				
+				</div><!--/.pad-->
+
+			</div><!--/#footer-bottom-->
+
+		</footer><!--/#footer-->
+	
+	</div><!--/#wrapper-inner-->
+</div><!--/#wrapper-->
+
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/jquery.js" id="blogstream-fitvids-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/jq-sticky-anything.js" id="blogstream-jq-sticky-anything-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/scripts.js" id="blogstream-scripts-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/comment-reply.js" id="comment-reply-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/nav.js" id="blogstream-nav-script-js"></script>
+<script type="text/javascript" src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/wp-embed.js" id="wp-embed-js"></script>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<script src="Introduction%20to%20Linux%20x86-64%20Assembly%20Programming%20%E2%80%93%20Ammar%20Faizi_files/e-202207.js" defer="defer"></script>
+<script>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:10.3',blog:'200109206',post:'8',tz:'0',srv:'ammarfaizi.xyz'} ]);
+	_stq.push([ 'clickTrackerInit', '200109206', '8' ]);
+</script>
+
+</body></html>
