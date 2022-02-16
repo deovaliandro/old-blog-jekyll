@@ -16,6 +16,12 @@ kemudian mengaktifkan font awesome untuk membuat icon checkbox aktif,
 <link rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 
+Contoh hasil:
+
+* [*] checked
+* [x] also checked
+* [ ] not checked
+
 Sumber:
 
 * link:https://docs.asciidoctor.org/asciidoc/latest/lists/checklist/[asciidoctor.org]
