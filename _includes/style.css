@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --bg: #fff;
@@ -7,7 +7,7 @@
     --blockquote: #f9f9f9;
     --meta: #828282;
     --link: #54008c;
-    --font: sans-serif;
+    --font: "Fira Sans", Helvetica, Arial, sans-serif;
     --mono: monospace;
 }
 
@@ -236,8 +236,10 @@ li>p {
 
 ol.post li {
     display: flex;
+    padding-bottom: 0.3em;
 }
 ol.post li span {
+    font-family: sans-serif;
     flex: 0 0 95px;
 }
 
