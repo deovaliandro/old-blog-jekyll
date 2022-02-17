@@ -11,6 +11,8 @@ plugins:
   - jekyll-feed
   - jekyll-katex
 
+author: Deo Valiandro. M
+
 asciidoctor:
   attributes:
     - icons=font
