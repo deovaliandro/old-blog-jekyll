@@ -57,6 +57,7 @@ h3 {
 
 p {
     line-height: 1.5rem;
+    text-align: justify;
 }
 
 a {
@@ -70,9 +71,12 @@ a.bare {
 }
 
 footer {
-    text-align: center;
     font-size: 0.8em;
     padding: 1em;
+}
+
+footer > p {
+    text-align: center;
 }
 
 blockquote {
@@ -248,4 +252,14 @@ ol.post li span {
 button {
     background-color: transparent;
     border: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
