@@ -20,7 +20,8 @@ https://www.youtube.com/c/cvladfp, kemudian saya mulai mengenal lebih dalam.
 
 Tulisan ini saya tulis untuk mengawali pelajaran tentang fp.
 
-## Haskell
+
+== Haskell
 
 Contoh fungsi dasar Haskell,
 

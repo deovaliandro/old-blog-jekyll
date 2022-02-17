@@ -14,6 +14,7 @@ Kompleksitasnya $O(\sqrt{n})$, sehingga tidak efektif.
 
 Terdapat algoritma lain yang lebih efektif,
 
+
 == Algoritma Lehmann
 
 . Bangkitkan bilangan acak $p$ sepanjang $n$ angka,
@@ -31,6 +32,7 @@ berbeda), jika hasil hitung langkah kedua algoritma Lehmann sama dengan 1 atau
 kesalahan tidak lebih dari $1/2^{t}$.
 
 Jumlah pengujian yang disarankan adalah lima kalifootnote:[Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.].
+
 
 == Algoritma Rabin-Miller
 

@@ -9,6 +9,7 @@ Bubble Sort adalah algoritma pengurutan paling sederhana yang bekerja dengan
 menukar elemen yang berdekatan secara bergantian. Bubble sort akan memuat
 iterasi atau perulangan sebanyak n-1, dimana n adalah jumlah elemen.
 
+
 == Cara Kerja
 
 Misalkan kita mempunyai 4 elemen, yaitu {50, 20, 10}
