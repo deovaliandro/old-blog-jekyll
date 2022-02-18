@@ -33,3 +33,6 @@ katex:
   rendering_options:
     throw_error: true
     error_color: "#cc0000"
+
+feed:
+  posts_limit: 1000
