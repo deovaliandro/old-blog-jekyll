@@ -39,7 +39,6 @@ GEM
     jekyll-katex (1.0.0)
       execjs (~> 2.7)
       jekyll (>= 3.6, < 5.0)
-    jekyll-paginate (1.1.0)
     jekyll-redirect-from (0.16.0)
       jekyll (>= 3.3, < 5.0)
     jekyll-sass-converter (2.1.0)
@@ -84,10 +83,9 @@ DEPENDENCIES
   jekyll-asciidoc
   jekyll-feed (~> 0.12)
   jekyll-katex
-  jekyll-paginate
   jekyll-redirect-from
   kramdown-math-katex
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.2.33
+   2.3.7

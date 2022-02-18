@@ -60,7 +60,7 @@ p {
 
 a {
     color: var(--link);
-    text-decoration: none;
+    /* text-decoration: none; */
     background-color: transparent;
 }
 
@@ -68,8 +68,13 @@ a.bare {
     word-break: break-all;
 }
 
+a:hover {
+    color: var(--bg);
+    background-color: var(--link);
+}
+
 footer {
-    font-size: 0.8em;
+    /* font-size: 0.8em; */
     padding: 1em;
 }
 
@@ -156,10 +161,6 @@ p>code {
     margin: 0;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 img,
 video {
     display: block;
@@ -193,6 +194,7 @@ hr {
 }
 
 .navigation {
+    font-family: var(--mono);
     margin-top: 0.8em;
 }
 
@@ -207,6 +209,15 @@ hr {
     margin-right: 1em;
     margin-top: 1em;
     display: inline-block;
+    text-decoration: none;
+}
+
+.icon-url {
+    text-decoration: none;
+}
+
+.icon-url:hover {
+    background-color: transparent;
 }
 
 .me {
@@ -218,7 +229,6 @@ hr {
 
 .email {
     margin: 0;
-    font-family: var(--mono);
 }
 
 .sub {
@@ -253,11 +263,10 @@ button {
 }
 
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }

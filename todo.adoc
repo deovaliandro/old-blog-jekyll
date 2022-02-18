@@ -10,3 +10,7 @@
 - [ ] Membaca SICP
 - [ ] Teori Komputasi
 - [ ] Backup semua link
+
++++
+<script src="https://kit.fontawesome.com/c42de40267.js" crossorigin="anonymous" defer></script>
++++
