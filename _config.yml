@@ -12,6 +12,7 @@ plugins:
   - jekyll-katex
 
 author: Deo Valiandro. M
+layout: compress
 
 asciidoctor:
   attributes:

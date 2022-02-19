@@ -65,3 +65,17 @@ Kumpulan link yang berguna untuk pelajaran:
 .. http://jamesmcm.github.io/blog/2020/07/25/intro-dod/
 .. https://pabloinsente.github.io/
 .. https://blog.regehr.org/
+.. http://aalhour.com/awesome-compilers/
+.. https://www.slideshare.net/olvemaudal/deep-c
+.. http://programming-motherfucker.com/
+.. https://dev.to/vaidehijoshi/a-gentle-introduction-to-graph-theory
+.. https://0xax.gitbooks.io/linux-insides/content/Booting/linux-bootstrap-1.html
+.. https://www.wikiwand.com/en/List_of_algorithms
+.. https://arjunsreedharan.org/post/82710718100/kernel-101-lets-write-a-kernel
+.. https://sourcemaking.com/
+.. https://matt.might.net/articles/what-cs-majors-should-know/
+.. https://cs.fit.edu/~mmahoney/cse2050/how2cpp.html
+.. https://github.com/jamiebuilds/the-super-tiny-compiler
+.. https://cs.fit.edu/~mmahoney/
+.. https://sijinjoseph.com/programmer-competency-matrix/
+.. http://ezyang.com/
