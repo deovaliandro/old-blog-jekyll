@@ -8,7 +8,7 @@ dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
 object-oriented language karena masih mendukung primitive data types seperti
 int, char, dll. 
 
-Sintaks Java mirip dengna C/C++, tetapi Java tidak mensupport low-level
+Sintaks Java mirip dengan C/C++, tetapi Java tidak mensupport low-level
 programming seperti pointer (sebenarnya Java punya pointer. Semua turunan object
 adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
 perlu tahu fakta inifootnote:[Dari blog https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/]).
