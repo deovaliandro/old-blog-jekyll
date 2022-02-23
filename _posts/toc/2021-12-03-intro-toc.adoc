@@ -3,6 +3,7 @@
 :page-layout    : default
 :page-category  : Teori Komputasi
 
+
 == Latar belakang
 
 Sebenarnya, dari tahun 2019 saya sudah ingin mempelajari tentang teori
@@ -18,25 +19,26 @@ youtube. Buku yang saya baca adalah:
 
 dan dari beberapa channel youtube seperti Neso Academy.
 
+
 == Materi
 
-. Alfabet adalah finite set simbol, contohnya stem:[\Sigma = {a, b}] adalah set
-simbol dari stem:[a] dan stem:[b],
+. Alfabet adalah finite set simbol, contohnya $\Sigma = {a, b}$ adalah set
+simbol dari $a$ dan $b$,
 
 . String adalah urutan rangkaian simbol (kosong sampai infinity simbol),
-contohnya stem:[aaaa] dan stem:[10001]. Dengan stem:[|ab| = 2], stem:[|\epsilon|
-= 0], 'zero' ("the string of no symbols"). stem:[{} \neq {\epsilon}].
+contohnya $aaaa$ dan $10001$. Dengan $|ab| = 2$, $|\epsilon| = 0$, 'zero' ("the
+string of no symbols") ${} \neq {\epsilon}$.
 
-\[\begin{aligned}
+$$\begin{aligned}
 x^n &= xx \cdots x, \text{n times} \\
 x^0 &= \epsilon \\
 x^1 &= x \\
 x^2 &= xx
-\end{aligned}\]
+\end{aligned}$
 
-. Languages adalah set string atas fixed alfabet, dengan stem:[\Sigma^{\ast}]
-adalah set semua string atas stem:[\Sigma] (_Kleene closure_), contohnya
-stem:[{a^{\ast}} = {\epsilon, a, aa, aaa, ...}]. Dengan menggunakan
-stem:[x \in \Sigma^{\ast}] adalah stem:[x] atas alfabet stem:[\Sigma].
-+
-Kecuali stem:[\Sigma = {}], Kleene closure atas alfabet adalah infinity set.
+. Languages adalah set string atas fixed alfabet, dengan $\Sigma^{\ast}$
+adalah set semua string atas $\Sigma$ (_Kleene closure_), contohnya
+${a^{\ast}} = {\epsilon, a, aa, aaa, \cdots}$. Dengan menggunakan $x \in
+\Sigma^{\ast}$ adalah $x$ atas alfabet $\Sigma$.
+
+Kecuali $\Sigma = \{\}$, Kleene closure atas alfabet adalah infinity set.
