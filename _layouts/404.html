@@ -53,9 +53,7 @@
 {{ content }}
 </body>
 <script>
-
 const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
 
 if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -75,6 +73,6 @@ toggleSwitch.onclick = function() {
         localStorage.setItem('theme', 'dark');
     }
 };
-
 </script>
+
 </html>
