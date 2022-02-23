@@ -40,7 +40,7 @@ Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
 dalam Java yang harus dipatuhi seperti:
 
 1. tidak boleh diawali dengan angka,
-2. tidak boleh disertai symbol khusus seperti @,!,*,#,
+2. tidak boleh disertai symbol khusus seperti `@`,`!`,`*`,`#`,
 3. tidak boleh menggunakan reserved word sebagai nama variable,
 4. boleh diawali dengan underscore atau symbol $, dan
 5. nama variable tidak boleh mengandung spasi.
