@@ -42,7 +42,7 @@ dalam Java yang harus dipatuhi seperti:
 1. tidak boleh diawali dengan angka,
 2. tidak boleh disertai symbol khusus seperti `@`,`!`,`*`,`#`,
 3. tidak boleh menggunakan reserved word sebagai nama variable,
-4. boleh diawali dengan underscore atau symbol $, dan
+4. boleh diawali dengan underscore atau symbol `$`, dan
 5. nama variable tidak boleh mengandung spasi.
 
 Menurut _Convention over configuration Java_, penulisan nama variable 
@@ -67,3 +67,20 @@ java NamaFile
 
 perhatikan, untuk menjalankan, tidak perlu menggunakan `NamaFile.class`, cukup
 dengan menggunakan `NamaFile` saja.
+
+Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
+perlu mengcompilenya terlebih dahulufootnote:[https://openjdk.java.net/jeps/330].
+
+Misalnya:
+
+[source, java]
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
+}
+
+dapat langsung dijalankan dengan:
+
+[source, bash]
+java NamaFile.java
