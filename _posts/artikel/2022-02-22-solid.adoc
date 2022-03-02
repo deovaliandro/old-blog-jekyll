@@ -1,0 +1,42 @@
+:page-title     : SOLID
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : artikel
+
+Ini adalah rangkuman tentang SOLID yang saya pelajari di Dicoding.
+
+
+== Single Responsibility Principle (SRP)
+
+Sebuah class hanya melalukan satu tugas tertentu. Jika terdapat satu class yang
+memiliki dua tugas, maka sebaiknya dibuat dalam dua class yang berbeda.
+
+
+== Open/Close Principle (OCP)
+
+Sebuah sistem dapat ditambahkan dengan fungsi yang baru, tetapi tanpa mengubah
+yang sudah ada, hal ini dilakukan dengan menambahkan tanpa mengahapus yang sudah
+ada. Dilakukan dengan `abstract class` atau `interface`.
+
+
+== Liskov Substitution Principle (LSP)
+
+Sebuah subclass seharusnya bisa melaksanakan apa yang ada di superclassnya.
+
+
+== Interface Segregation Principle (ISP)
+
+Sebuah class tidak seharusnya diberi tugas yang tidak merupakan tugasnya.
+
+
+== Dependency Inversion Principle (DIP)
+
+Low-level modules bertanggung jawab untuk tugas yang mendetail, high-level
+modules menggunakan low-level modules untuk mencapai tugas yang mendetail.
+
+High-level modules adalah kelas-kelas yang berurusan dengan kumpulan-kumpulan
+fungsionalitas. Pada hirarki tertinggi terdapat kelas-kelas yang
+mengimplementasikan aturan bisnis sesuai dengan desain yang telah ditentukan.
+Low-level modules bertanggung jawab pada operasi yang lebih detail. Pada level
+terendah memungkinkan modul ini untuk bertanggung jawab dalam menulis informasi
+ke database atau menyampaikan pesan ke sistem operasi. 
