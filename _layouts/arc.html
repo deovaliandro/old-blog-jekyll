@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+</head>
+<body>
+<style>
+:root {
+    --bg: #fff;
+    --hr: #eee;
+    --font-color: #4B4B4B;
+    --blockquote: #f9f9f9;
+    --meta: #828282;
+    --link: #54008c;
+    --mono: monospace;
+}
+
+[data-theme="dark"] {
+    --bg: #282828;
+    --hr: #d79921;
+    --font-color: #ebdbb2;
+    --blockquote: #504945;
+    --meta: #d5c4a1;
+    --link: #d79921;
+}
+
+body {
+	font-family: monospace;
+	font-size: 16px;
+	max-width: 720px;
+	color: var(--font-color);
+    background-color: var(--bg);
+	word-wrap: break-word;
+}
+
+a {
+    color: var(--link);
+    background-color: transparent;
+}
+
+a.bare {
+    word-break: break-all;
+}
+
+a:hover {
+    color: var(--bg);
+    background-color: var(--link);
+}
+
+blockquote {
+    background: var(--blockquote);
+    border-left: 5px solid var(--hr);
+    margin-left: 0;
+}
+
+#love {
+    vertical-align: middle;
+    text-decoration: none;
+}
+
+#love:hover {
+    background-color: transparent;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+</style>
+
+<div class="noselect">
+
+<h1>Deo Valiandro. M</h1>
+
+[<a href="mailto:me@deo.or.id">email</a>][<a href="https://github.com/deovaliandro">git</a>][<a href="https://id.linkedin.com/in/deovaliandro">LinkedId</a>][<a href="https://github.com/deovaliandro.gpg">gpg</a>][<a href="https://twitter.com/deovaliandro">Twitter</a>][<a href="https://t.me/aheeemm">Telegram</a>]
+
+<p>Nav</p>
+[<a href="/todo.html" class="nav">/todo</a>][<a href="/link.html" class="nav">/link</a>][<a href="/pp.html" class="nav">/pp</a>][<a href="/pbo.html" class="nav">/pbo</a>][<a onclick="switchTheme();" class="nav" id="changeTheme">/dark</a>]
+
+<h3>Catatan: </h3>
+<ol class="dash post">
+	{% for post in site.posts %}
+	{% if post.category != "pbo" and post.category != "pp" %}
+	<li>
+		{% capture category_name %}{{ category | first }}{% endcapture %}
+		<span class="meta">{{ post.date | date: "%d/%m/%y" }},</span>
+		<a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+	</li>
+	{% endif %}
+	{% endfor %}
+</ol>
+
+</div>
+
+<h3>Signature</h3>
+
+<pre>
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+I truly claim that this website (https://deo.or.id/) is mine.
+
+The most trusted my public keys source is on my GitHub profile:
+https://github.com/deovaliandro
+
+    Deo Valiandro. M
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEzmHPkxOP5DbMF00Qyuz46Kw72b0FAmIi9O4ACgkQyuz46Kw7
+2b3AOhAAiY4JckwBMApo2IxMnsyAzY7tM4PdmMxiG8NYUWW2GtV0H9N4iiseFbtJ
+ob1BtUTEXPnkUt1QoRgNfvHzUCtVlvOAT4whd25es30U3aat/YHdcZ1Qy56oy5Uk
+RmIXQYKLoRDEP48iuqg10owvCNlybKxu0Yp5iQ2A2DytJyXlglfeiomJmYwCstiI
+L6WgFAExIi2dsn91Q29zmq/QL/f8zTyBJRn/PLX3FynMPDD7D5bMQmEZtk/jTaOc
+6i2felEtYGweNr1d9v5QFG8lL9vawkZDC05TBPQpETr8Zm21ZoBAMLS1ZoxYbd/e
+LgK0RbMyO3NgZERMDPo+2+FrIGZcS/7v1E+ccgVKGuRIw5F0rVrwiivZV9yP+nbP
++pnMkqbhYPE7IxkuLN2QYf0qACJp7MeJRHtLzKB7bWZ5FW+ypRu1BWKry1qs7vxh
+YSJaBSMD3PIzwHaPtgoVIUQmL4tvaE4bwwQYMJnKz94EuDU+1yioxIfDrClAbSr0
+fbBECjnEindU7qEMu10eoDGKfpidVDaQ13f6ZAYrjshZcZYg0OGNreRU8l6S/x9u
+bok45WSoCsasiZVLYi5yOm/UK6VOo65yqwRMF53hzIHgAPVNqGBOkZlPIYKcYkOm
+ObwNpJCrgNfkqGyi4ytrDvf/lxPrVkbQkLp6dSWQSmxpTkRJdso=
+=gMEX
+-----END PGP SIGNATURE-----
+</pre>
+
+<footer>
+    <p>
+        [<a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}">edit</a>][<a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a>]
+    </p>
+    <p>&copy; 2016 - 2022 Dibuat dengan <a id="love">❤️️</a>, dilisensikan dengan <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.</p>
+</footer>
+
+</body>
+
+<script>
+const toggleSwitch = document.getElementById("changeTheme");
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme === 'dark') {
+    toggleSwitch.innerHTML = "/light";
+} else {
+    toggleSwitch.innerHTML = "/dark";
+}
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        // stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+    }
+}
+
+toggleSwitch.onclick = function() {
+    var stylesheet = document.getElementById("stylesheet");
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        // stylesheet.setAttribute('href', '/assets/css/github.css');
+        localStorage.setItem('theme', 'light');
+        toggleSwitch.innerHTML = "/dark";
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        // stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+        localStorage.setItem('theme', 'dark');
+        toggleSwitch.innerHTML = "/light";
+    }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$',display:true},{left:'$',right:'$',display:false}],throwOnError:true,trust:true});});</script>
+
+</html>
