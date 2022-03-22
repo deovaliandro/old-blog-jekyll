@@ -12,7 +12,6 @@ plugins:
   - jekyll-katex
 
 author: Deo Valiandro. M
-layout: compress
 
 asciidoctor:
   attributes:
@@ -25,11 +24,14 @@ asciidoctor:
     - stylesdir=css
 
 markdown: kramdown
+highlighter: none
 kramdown:
   input: GFM
   hard_wrap: false
   math_engine: katex
-
+  syntax_highlighter_opts:
+        block:
+            line_numbers: false
 katex:
   rendering_options:
     throw_error: true
