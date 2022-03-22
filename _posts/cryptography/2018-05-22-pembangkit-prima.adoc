@@ -23,8 +23,8 @@ mengeliminasi bilangan prima $80%$,
 . kemudian uji $p$ dengan algoritma Lehmann:
 .. bangkitkan bilangan acak $a, a < p$,
 .. hitung $a^{(p-1)/2} \bmod p$,
-.. jika $a^{(p-1)/2} \not\equiv 1$ atau $-1 (\bmod p)$, maka $p$ tidak prima,
-.. jika $a^{(p-1)/2} \equiv 1$ atau $-1 (\bmod p)$, maka peluang $p$ prima
+.. jika $a^{(p-1)/2} \not\equiv 1$ atau $-1 \bmod p$, maka $p$ tidak prima,
+.. jika $a^{(p-1)/2} \equiv 1$ atau $-1 \bmod p$, maka peluang $p$ prima
 adalah $50%$,
 . ulangi pengujian algoritma Lehmann sebanyak $t$ kali (dengan nilai $a$
 berbeda), jika hasil hitung langkah kedua algoritma Lehmann sama dengan 1 atau
