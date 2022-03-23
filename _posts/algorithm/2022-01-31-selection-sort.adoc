@@ -3,7 +3,7 @@
 :page-layout    : default
 :page-category  : Algoritma
 
-[source, c]
+[source, c, noline]
 ----
 #include "stdio.h"
 
