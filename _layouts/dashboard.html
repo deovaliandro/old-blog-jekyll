@@ -19,6 +19,7 @@
 </head>
 <body>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 :root {
     --bg: #fff;
     --hr: #eee;
@@ -26,7 +27,7 @@
     --blockquote: #f9f9f9;
     --meta: #828282;
     --link: #54008c;
-    --mono: monospace;
+    --mono: 'Roboto Mono';
 }
 
 [data-theme="dark"] {
@@ -39,17 +40,24 @@
 }
 
 body {
-    font-family: monospace;
+    max-width: 200px;
+    font-family: var(--mono);
     font-size: 16px;
     color: var(--font-color);
     background-color: var(--bg);
-    max-width: 720px;
-    word-wrap: break-word;
+    max-width: 35rem;
+    margin: auto;
+    word-break: break-word;
 }
 
 a {
     color: var(--link);
     background-color: transparent;
+}
+
+.post-title{
+    font-weight: 700;
+    text-decoration: none;
 }
 
 a.bare {
@@ -85,13 +93,32 @@ blockquote {
             user-select: none;
 }
 
+.meta {
+    font: 400 14px/18px Roboto Mono;
+}
+
+.list-post {
+    padding: .4rem 0;
+}
+
+code, pre {
+    font: 400 15px/18px Roboto Mono;
+}
+
+h1, h2, h3 {
+    border-bottom: 2px dotted #504945;
+}
+
+.title{
+    border: none;
+}
 </style>
 
 <div class="noselect">
 
 [<a href="/todo.html" class="nav">/todo</a>][<a href="/link.html" class="nav">/link</a>][<a href="/pp.html" class="nav">/pp</a>][<a href="/pbo.html" class="nav">/pbo</a>][<a onclick="switchTheme();" class="nav" id="changeTheme">/dark</a>]
 
-<h1>Deo Valiandro. M</h1>
+<h1 class="title">Deo Valiandro. M</h1>
 
 <p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya jika diperlukan kembali.</p>
 
@@ -103,10 +130,12 @@ blockquote {
 <ol class="dash post">
 	{% for post in site.posts %}
 	{% if post.category != "pbo" and post.category != "pp" %}
-	<li>
+	<li class="list-post">
 		{% capture category_name %}{{ category | first }}{% endcapture %}
-		<span class="meta">{{ post.date | date: "%d/%m/%y" }},</span>
-		<a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+        <div>
+            <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+        </div>
+        <span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
 	</li>
 	{% endif %}
 	{% endfor %}
@@ -146,52 +175,8 @@ ObwNpJCrgNfkqGyi4ytrDvf/lxPrVkbQkLp6dSWQSmxpTkRJdso=
 </pre>
 </code>
 
-<footer>
-    <p>
-        [<a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}">edit</a>][<a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a>]
-    </p>
-    <p>&copy; 2016 - 2022 Dibuat dengan <a id="love">❤️️</a>, dilisensikan dengan <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.</p>
-</footer>
+{%- include footer.html -%}
 
 </body>
-
-<script>
-const toggleSwitch = document.getElementById("changeTheme");
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-if (currentTheme === 'dark') {
-    toggleSwitch.innerHTML = "/light";
-} else {
-    toggleSwitch.innerHTML = "/dark";
-}
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        // stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
-    }
-}
-
-toggleSwitch.onclick = function() {
-    var stylesheet = document.getElementById("stylesheet");
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        // stylesheet.setAttribute('href', '/assets/css/github.css');
-        localStorage.setItem('theme', 'light');
-        toggleSwitch.innerHTML = "/dark";
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        // stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
-        localStorage.setItem('theme', 'dark');
-        toggleSwitch.innerHTML = "/light";
-    }
-};
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
-<script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$',display:true},{left:'$',right:'$',display:false}],throwOnError:true,trust:true});});</script>
 
 </html>

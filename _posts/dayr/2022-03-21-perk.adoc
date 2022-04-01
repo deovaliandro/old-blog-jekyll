@@ -1,4 +1,7 @@
-# Perk
+:page-title       : Perk
+:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout      : default
+:page-category    : DayR Game
 
 Catatan perk ini merupakan versi 712, jika suatu saat terdapat perubahan, maka
 akan diperbaiki.
