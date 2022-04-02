@@ -1,41 +1,46 @@
 {%- include header.html -%}
+
 <body>
+	<div class="noselect">
+		[<a href="/todo.html" class="nav">/todo</a>][<a href="/link.html" class="nav">/link</a>][<a href="/pp.html"
+			class="nav">/pp</a>][<a href="/pbo.html" class="nav">/pbo</a>][<a onclick="switchTheme();" class="nav"
+			id="changeTheme">/dark</a>]
 
-<div class="noselect">
+		<p><img src="https://github.com/deovaliandro.png" alt="" class="me-img"></p>
 
-[<a href="/todo.html" class="nav">/todo</a>][<a href="/link.html" class="nav">/link</a>][<a href="/pp.html" class="nav">/pp</a>][<a href="/pbo.html" class="nav">/pbo</a>][<a onclick="switchTheme();" class="nav" id="changeTheme">/dark</a>]
+		<h1 class="title">Deo Valiandro. M</h1>
 
-<p><img src="https://github.com/deovaliandro.png" alt="" class="me-img"></p>
+		<p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya jika
+			diperlukan kembali.</p>
 
-<h1 class="title">Deo Valiandro. M</h1>
+		<p>Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
 
-<p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya jika diperlukan kembali.</p>
+		[<a href="mailto:me@deo.or.id">email</a>][<a href="https://github.com/deovaliandro">git</a>][<a
+			href="https://id.linkedin.com/in/deovaliandro">LinkedId</a>][<a
+			href="https://github.com/deovaliandro.gpg">gpg</a>][<a href="https://twitter.com/deovaliandro">Twitter</a>][<a
+			href="https://t.me/aheeemm">Telegram</a>]
 
-<p>Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
+		<h3>Catatan: </h3>
+		<ol class="dash post">
+			{% for post in site.posts %}
+			{% if post.category != "pbo" and post.category != "pp" %}
+			<li class="list-post">
+				{% capture category_name %}{{ category | first }}{% endcapture %}
+				<div>
+					<a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+				</div>
+				<span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ol>
 
-[<a href="mailto:me@deo.or.id">email</a>][<a href="https://github.com/deovaliandro">git</a>][<a href="https://id.linkedin.com/in/deovaliandro">LinkedId</a>][<a href="https://github.com/deovaliandro.gpg">gpg</a>][<a href="https://twitter.com/deovaliandro">Twitter</a>][<a href="https://t.me/aheeemm">Telegram</a>]
+	</div>
 
-<h3>Catatan: </h3>
-<ol class="dash post">
-	{% for post in site.posts %}
-	{% if post.category != "pbo" and post.category != "pp" %}
-	<li class="list-post">
-		{% capture category_name %}{{ category | first }}{% endcapture %}
-        <div>
-            <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
-        </div>
-        <span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
-	</li>
-	{% endif %}
-	{% endfor %}
-</ol>
+	<h3>Signature</h3>
 
-</div>
-
-<h3>Signature</h3>
-
-<code>
-<pre>
+	<code>
+		<pre>
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
@@ -62,9 +67,9 @@ ObwNpJCrgNfkqGyi4ytrDvf/lxPrVkbQkLp6dSWQSmxpTkRJdso=
 =gMEX
 -----END PGP SIGNATURE-----
 </pre>
-</code>
+	</code>
 
-{%- include footer.html -%}
+	{%- include footer.html -%}
 
 </body>
 
