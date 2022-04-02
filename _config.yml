@@ -1,5 +1,5 @@
 title: Deo Valiandro. M
-description: >- 
+description: >-
   Hamba yang tidak berguna di tangan Allah yang penuh hikmat.
 baseurl: ""
 url: "https://deo.or.id"
@@ -17,7 +17,7 @@ asciidoctor:
   attributes:
     - icons=font
     - source-highlighter=rouge
-    - source-linenums-option=_
+    # - source-linenums-option=none
     - sectanchors=_
     - experimental=_
     - rouge-style=github
@@ -30,8 +30,9 @@ kramdown:
   hard_wrap: false
   math_engine: katex
   syntax_highlighter_opts:
-        block:
-            line_numbers: false
+    block:
+      line_numbers: false
+
 katex:
   rendering_options:
     throw_error: true

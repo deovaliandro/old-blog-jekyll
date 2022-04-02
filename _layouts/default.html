@@ -1,130 +1,140 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
-<link link id="stylesheet" rel="stylesheet" type="text/css" href="/assets/css/github.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css"
+        integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+    <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
 </head>
+
 <body>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-:root {
-    --bg: #fff;
-    --hr: #eee;
-    --font-color: #4B4B4B;
-    --blockquote: #f9f9f9;
-    --meta: #828282;
-    --link: #54008c;
-    --mono: 'Roboto Mono';
-}
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-[data-theme="dark"] {
-    --bg: #282828;
-    --hr: #d79921;
-    --font-color: #ebdbb2;
-    --blockquote: #504945;
-    --meta: #d5c4a1;
-    --link: #d79921;
-}
+        :root {
+            --bg: #fff;
+            --hr: #eee;
+            --font-color: #4B4B4B;
+            --blockquote: #f9f9f9;
+            --meta: #828282;
+            --link: #54008c;
+            --mono: 'Roboto Mono';
+        }
 
-body {
-    max-width: 200px;
-    font-family: var(--mono);
-    font-size: 16px;
-    color: var(--font-color);
-    background-color: var(--bg);
-    max-width: 35rem;
-    margin: auto;
-    word-break: break-word;
-}
+        [data-theme="dark"] {
+            --bg: #282828;
+            --hr: #d79921;
+            --font-color: #ebdbb2;
+            --blockquote: #504945;
+            --meta: #d5c4a1;
+            --link: #d79921;
+        }
 
-a {
-    color: var(--link);
-    background-color: transparent;
-}
+        body {
+            max-width: 200px;
+            font-family: var(--mono);
+            font-size: 16px;
+            color: var(--font-color);
+            background-color: var(--bg);
+            max-width: 35rem;
+            margin: auto;
+            word-break: break-word;
+        }
 
-.post-title{
-    font-weight: 700;
-    text-decoration: none;
-}
+        a {
+            color: var(--link);
+            background-color: transparent;
+        }
 
-a.bare {
-    word-break: break-all;
-}
+        .post-title {
+            font-weight: 700;
+            text-decoration: none;
+        }
 
-a:hover {
-    color: var(--bg);
-    background-color: var(--link);
-}
+        a.bare {
+            word-break: break-all;
+        }
 
-blockquote {
-    background: var(--blockquote);
-    border-left: 5px solid var(--hr);
-    margin-left: 0;
-}
+        a:hover {
+            color: var(--bg);
+            background-color: var(--link);
+        }
 
-#love {
-    vertical-align: middle;
-    text-decoration: none;
-}
+        blockquote {
+            background: var(--blockquote);
+            border-left: 5px solid var(--hr);
+            margin-left: 0;
+        }
 
-#love:hover {
-    background-color: transparent;
-}
+        #love {
+            vertical-align: middle;
+            text-decoration: none;
+        }
 
-.noselect {
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
+        #love:hover {
+            background-color: transparent;
+        }
+
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             user-select: none;
-}
+        }
 
-.meta {
-    font: 400 14px/18px Roboto Mono;
-}
+        .meta {
+            font: 400 14px/18px Roboto Mono;
+        }
 
-.list-post {
-    padding: .4rem 0;
-}
+        .list-post {
+            padding: .4rem 0;
+        }
 
-code, pre {
-    font: 400 15px/18px Roboto Mono;
-}
+        code,
+        pre {
+            font: 400 15px/18px Roboto Mono;
+        }
 
-h1, h2, h3 {
-    border-bottom: 1px dashed #504945;
-}
+        pre {
+            padding: 1em;
+        }
 
-.title{
-    border: none;
-}
+        h1,
+        h2,
+        h3 {
+            border-bottom: 1px dashed #504945;
+        }
 
-hr {
-    position: relative;
-    border: 0;
-    border-top: 2px solid var(--hr);
-    border-bottom: 1px solid var(--bg);
-}
-</style>
-<main>
-    <div class="navigation noselect">
-        [<a href="/" class="nav">/home</a>]
-        {%- include nav.html -%}
-    </div>
-    <h1>{{ page.title }}</h1>
-    {% if page.signed-by %}
-    <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
-    {% endif %}
-    {{ content }}
-    <hr>
-    {%- include footer.html -%}
-</main>
+        .title {
+            border: none;
+        }
+
+        hr {
+            position: relative;
+            border: 0;
+            border-top: 2px solid var(--hr);
+            border-bottom: 1px solid var(--bg);
+        }
+    </style>
+    <main>
+        <div class="navigation noselect">
+            [<a href="/" class="nav">/home</a>]
+            {%- include nav.html -%}
+        </div>
+        <h1>{{ page.title }}</h1>
+        {% if page.signed-by %}
+        <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
+        {% endif %}
+        {{ content }}
+        <hr>
+        {%- include footer.html -%}
+    </main>
 </body>
 
 </html>

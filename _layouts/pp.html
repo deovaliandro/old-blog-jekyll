@@ -11,9 +11,11 @@
     <ol class="dash post">
         {% for post in site.categories.pp reversed %}
         {% if post.url %}
-        <li>
-            <span class="meta">{{ post.date | date: "%d/%m/%y"}},</span>
-            <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li class="list-post">
+            <div>
+                <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+            </div>
+            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span></li>
         {% endif %}
         {% endfor %}
     </ol>

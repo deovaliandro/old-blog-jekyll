@@ -1,11 +1,16 @@
 = TODO
 
+Daftar hal yang belum dan akan dilakukan
+
 +++
-<p>
-<i class="fa-duotone fa-list-check"></i>> Daftar hal yang belum dan akan dilakukan:
-</p>
+<style>
+.checklist {
+    list-style: none;
+    padding-left: 0px;
+}
+</style>
 +++
- 
+
 - [x] Ubah semua dokumen ke asciidoc
 - [ ] Membaca SICP
 - [ ] Teori Komputasi
