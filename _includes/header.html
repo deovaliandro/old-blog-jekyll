@@ -51,14 +51,24 @@ body {
     word-break: break-word;
 }
 
+h1,
+h2,
+h3 {
+    border-bottom: 1px dashed #504945;
+}
+
+code,
+pre {
+    font: 400 15px/18px Roboto Mono;
+}
+
+pre {
+    padding: 1em;
+}
+
 a {
     color: var(--link);
     background-color: transparent;
-}
-
-.post-title {
-    font-weight: 700;
-    text-decoration: none;
 }
 
 a.bare {
@@ -68,6 +78,18 @@ a.bare {
 a:hover {
     color: var(--bg);
     background-color: var(--link);
+}
+
+hr {
+    position: relative;
+    border: 0;
+    border-top: 2px solid var(--hr);
+    border-bottom: 1px solid var(--bg);
+}
+
+.post-title {
+    font-weight: 700;
+    text-decoration: none;
 }
 
 blockquote {
@@ -102,31 +124,9 @@ blockquote {
     padding: .4rem 0;
 }
 
-code,
-pre {
-    font: 400 15px/18px Roboto Mono;
-}
-
-pre {
-    padding: 1em;
-}
-
-h1,
-h2,
-h3 {
-    border-bottom: 1px dashed #504945;
-}
-
 .title {
     border: none;
     text-align: center;
-}
-
-hr {
-    position: relative;
-    border: 0;
-    border-top: 2px solid var(--hr);
-    border-bottom: 1px solid var(--bg);
 }
 
 .me-img {
