@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
+:page-tags      : [math]
 
 Galois Field (GF) yang banyak digunakan dalam kriptografi adalah $GF(2^n)$
 karena setiap baris text direpresentasikan sebagai barisan bit 0 dan 1 sepanjang

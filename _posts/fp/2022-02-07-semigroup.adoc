@@ -2,6 +2,7 @@
 :page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout      : default
 :page-category    : fp
+:page-tags        : [math]
 
 Sebuah set S yang mempunyai operasi binary $S \times S \to S$, dengan operasi
 $\cdot$ adalah semigroup jika memenuhi:

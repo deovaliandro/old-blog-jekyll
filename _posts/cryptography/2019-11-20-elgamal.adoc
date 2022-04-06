@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
+:page-tags      : [math]
 
 == Pendahuluan
 

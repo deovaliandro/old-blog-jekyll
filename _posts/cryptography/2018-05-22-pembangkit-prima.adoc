@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
+:page-tags      : [math]
 
 Metode untuk pengujian bilangan prima yang paling sederhana adalah
 __brute force__, yaitu membagi $n$ dengan $p \in \mathbb{P}, p \leq \sqrt{n}$.

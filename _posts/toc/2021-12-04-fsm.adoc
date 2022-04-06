@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Teori Komputasi
+:page-tags      : [math]
 
 == Finite Automata
 

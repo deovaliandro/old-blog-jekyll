@@ -1,7 +1,8 @@
-:page-title       : Landasan Matematika Kriptografi
-:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout      : default
-:page-category    : Kriptografi
+:page-title     : Landasan Matematika Kriptografi
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Kriptografi
+:page-tags      : [math]
 
 == Set dan Fungsi
 
