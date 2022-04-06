@@ -3,13 +3,12 @@ description: >-
   Hamba yang tidak berguna di tangan Allah yang penuh hikmat.
 baseurl: ""
 url: "https://deo.or.id"
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /:year/:month/:title:output_ext
 
 plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
-  - jekyll-katex
 
 author: Deo Valiandro. M
 
@@ -28,15 +27,9 @@ highlighter: none
 kramdown:
   input: GFM
   hard_wrap: false
-  math_engine: katex
   syntax_highlighter_opts:
     block:
       line_numbers: false
-
-katex:
-  rendering_options:
-    throw_error: true
-    error_color: "#cc0000"
 
 feed:
   posts_limit: 1000
