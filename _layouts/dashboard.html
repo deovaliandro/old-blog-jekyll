@@ -1,45 +1,41 @@
 {%- include header.html -%}
 
 <body>
-	<div class="noselect">
-		[<a href="/todo.html" class="nav">/todo</a>][<a href="/link.html" class="nav">/link</a>][<a href="/pp.html"
-			class="nav">/pp</a>][<a href="/pbo.html" class="nav">/pbo</a>][<a onclick="switchTheme();" class="nav"
-			id="changeTheme">/dark</a>]
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$',display:true},{left:'$',right:'$',display:false}],throwOnError:true,trust:true});});</script>
+    <div class="noselect">
+        [<a href="/todo.html" class="nav">/todo</a>][<a href="/link.html" class="nav">/link</a>][<a href="/pp.html" class="nav">/pp</a>][<a href="/pbo.html" class="nav">/pbo</a>][<a onclick="switchTheme();" class="nav" id="changeTheme">/dark</a>]
 
-		<p><img src="https://github.com/deovaliandro.png" alt="" class="me-img"></p>
+        <p><img src="https://github.com/deovaliandro.png" alt="" class="me-img"></p>
 
-		<h1 class="title">Deo Valiandro. M</h1>
+        <h1 class="title">Deo Valiandro. M</h1>
 
-		<p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya jika
-			diperlukan kembali.</p>
+        <p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya jika diperlukan kembali.</p>
 
-		<p>Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
+        <p>Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
 
-		[<a href="mailto:me@deo.or.id">email</a>][<a href="https://github.com/deovaliandro">git</a>][<a
-			href="https://id.linkedin.com/in/deovaliandro">LinkedId</a>][<a
-			href="https://github.com/deovaliandro.gpg">gpg</a>][<a href="https://twitter.com/deovaliandro">Twitter</a>][<a
-			href="https://t.me/aheeemm">Telegram</a>]
+        [<a href="mailto:me@deo.or.id">email</a>][<a href="https://github.com/deovaliandro">git</a>][<a href="https://id.linkedin.com/in/deovaliandro">LinkedId</a>][<a href="https://github.com/deovaliandro.gpg">gpg</a>][<a href="https://twitter.com/deovaliandro">Twitter</a>][
+        <a href="https://t.me/aheeemm">Telegram</a>]
 
-		<h3>Catatan: </h3>
-		<ol class="dash post">
-			{% for post in site.posts %}
-			{% if post.category != "pbo" and post.category != "pp" %}
-			<li class="list-post">
-				{% capture category_name %}{{ category | first }}{% endcapture %}
-				<div>
-					<a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
-				</div>
-				<span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
-			</li>
-			{% endif %}
-			{% endfor %}
-		</ol>
+        <h3>Catatan: </h3>
+        <ol class="dash post">
+            {% for post in site.posts %} {% if post.category != "pbo" and post.category != "pp" %}
+            <li class="list-post">
+                {% capture category_name %}{{ category | first }}{% endcapture %}
+                <div>
+                    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+                </div>
+                <span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
+            </li>
+            {% endif %} {% endfor %}
+        </ol>
 
-	</div>
+    </div>
 
-	<h3>Signature</h3>
+    <h3>Signature</h3>
 
-	<code>
+    <code>
 		<pre>
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
@@ -69,7 +65,9 @@ ObwNpJCrgNfkqGyi4ytrDvf/lxPrVkbQkLp6dSWQSmxpTkRJdso=
 		</pre>
 	</code>
 
-	{%- include footer.html -%}
+    <hr>
+    
+    {%- include footer.html -%}
 
 </body>
 

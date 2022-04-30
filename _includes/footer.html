@@ -1,11 +1,16 @@
 <footer>
-    <p>[<a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}">edit</a>][<a href="{{ "/feed.xml" | prepend: site.baseurl }}">rss</a>]</p>
-    <p>&copy; 2016 - 2022 Dibuat dengan <a id="love">❤️️</a>, dilisensikan dengan <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA</a>.</p>
+    <p class="center">[<a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}">edit</a>][<a href="{{ " /feed.xml " | prepend: site.baseurl }}">rss</a>]</p>
+
+    <hr>
+
+    <div id="lic">
+        <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg"><br>&copy; 2016 - 2022 Dibuat dengan <a id="love">❤️️</a>, dilisensikan dengan <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International</a>.
+    </div>
 </footer>
 <script>
     const toggleSwitch = document.getElementById("changeTheme");
     const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    
+
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
 
@@ -14,7 +19,7 @@
             toggleSwitch.innerHTML = "/light";
         } else {
             stylesheet.setAttribute('href', '/assets/css/github.css');
-           toggleSwitch.innerHTML = "/dark";
+            toggleSwitch.innerHTML = "/dark";
         }
     }
 
