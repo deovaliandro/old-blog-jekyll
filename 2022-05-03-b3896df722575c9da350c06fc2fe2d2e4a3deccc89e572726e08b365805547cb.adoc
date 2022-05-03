@@ -1,0 +1,7 @@
+:page-title     : testing
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : ...
+:page-time      : 2022-05-03T22:33:08
+:page-update    : 2022-05-03T22:33:08
+:page-idn       : b3896df722575c9da350c06fc2fe2d2e4a3deccc89e572726e08b365805547cb

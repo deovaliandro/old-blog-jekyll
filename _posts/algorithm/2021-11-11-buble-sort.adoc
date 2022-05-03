@@ -2,6 +2,10 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Algoritma
+:page-time      : 2021-11-11T00:00:00
+:page-update    : 2022-05-03T22:33:08
+:page-idn       : d338ce1edfc50c333ce70d149e7dadaac6edf4f6c63b7d72f60c56856494be0c
+
 
 == Pendahuluan
 

@@ -2,9 +2,15 @@
 
 read title
 
-dt=$(TZ='Asia/Singapore' date +"%Y-%m-%dT%T")
-tl=$(TZ='Asia/Singapore' date +"%Y-%m-%dT%T" | sha256sum | cut -c1-32)
+dt=$(date +"%Y-%m-%dT%T")
+tl=$(date +"%Y-%m-%dT%T-$title" | sha256sum | cut -c1-64)
 
 touch "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
 
-echo -e ":page-title     : `echo "$title"`\n:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>\n:page-layout    : default\n:page-category  : Struktur Data\n:page-date      : `echo "$dt"`\n" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-title     : `echo "$title"`" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-layout    : default" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-category  : ..." >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-time      : `echo "$dt"`" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-update    : `echo "$dt"`" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
+echo ":page-idn       : `echo "$tl"`" >> "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"

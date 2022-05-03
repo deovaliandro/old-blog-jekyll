@@ -6,30 +6,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <meta name="description"
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
     <meta name="author" content="{{ site.title }}">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}"
+        href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
     <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
 </head>
 <style>
-     :root {
+    :root {
         --bg: #fff;
         --hr: #cccccc;
         --font-color: #4B4B4B;
         --blockquote: #f9f9f9;
         --meta: #828282;
         --link: #54008c;
-        --font: system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,pt sans,open sans,fira sans,droid sans,helvetica neue,Helvetica,Arial,sans-serif;
+        --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
         /* --mono: 'Roboto Mono'; */
     }
-    
+
     [data-theme="dark"] {
         --bg: #282828;
         --hr: #d79921;
@@ -38,9 +44,9 @@
         --meta: #d5c4a1;
         --link: #d79921;
     }
-    
+
     body {
-        width: 50rem;
+        width: 60rem;
         font-family: var(--font);
         color: var(--font-color);
         background-color: var(--bg);
@@ -50,7 +56,7 @@
         word-break: break-word;
         overflow-y: scroll;
     }
-    
+
     h2 {
         border-bottom: 1px dotted #504945;
     }
@@ -58,38 +64,38 @@
     .nobottom {
         border-bottom: none;
     }
-    
+
     code,
     pre {
         font: 400 14px/18px Roboto Mono;
     }
-    
+
     pre {
         padding: 1em;
     }
-    
+
     a {
         color: var(--link);
         background-color: transparent;
         font-family: var(--font);
     }
-    
+
     a.bare {
         word-break: break-all;
     }
-    
+
     a:hover {
         color: var(--bg);
         background-color: var(--link);
     }
-    
+
     hr {
         position: relative;
         border: 0;
         border-top: 1px solid var(--hr);
         /* border-bottom: 1px solid var(--bg); */
     }
-    
+
     .post-title {
         font-weight: 500;
         text-decoration: none;
@@ -110,20 +116,20 @@
         margin-right: .5em;
         margin-bottom: .25em;
     }
-    
+
     blockquote {
         background: var(--blockquote);
         border-left: 5px solid var(--hr);
         margin-left: 0;
     }
-    
+
     footer {
         margin-bottom: 2em;
     }
 
     .dash {
-        padding-left: 10px;
-        padding-right: 10px;
+        padding-left: 1rem;
+        padding-right: 1rem;
         border: 1px dotted #4B4B4B;
     }
 
@@ -138,16 +144,16 @@
     .sub {
         margin-top: 0;
     }
-    
+
     #love {
         vertical-align: middle;
         text-decoration: none;
     }
-    
+
     #love:hover {
         background-color: transparent;
     }
-    
+
     .noselect {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -156,20 +162,20 @@
         -ms-user-select: none;
         user-select: none;
     }
-    
+
     .meta {
         font: 400 14px/18px Roboto Mono;
     }
-    
+
     .list-post {
         padding: .1rem 0;
     }
-    
+
     .title {
         border: none;
         text-align: center;
     }
-    
+
     .me-img {
         /* display: block; */
         float: right;
@@ -179,12 +185,34 @@
         margin-right: auto;
         width: 150px;
     }
-    
+
     #lic {
         text-align: center;
     }
-    
+
     .center {
         text-align: center;
+    }
+
+    #footnotes {
+        padding-bottom: 1em;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+    }
+
+    .post-title-pl {
+        padding-left: .5rem;
+    }
+
+    tr:nth-child(even) {
+        background-color: #ececec;
     }
 </style>

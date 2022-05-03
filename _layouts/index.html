@@ -3,45 +3,37 @@
 <body>
     <main>
         <h2 class="nobottom name">Deo Valiandro. M</h2>
-        <p class="sub">My log</p>
+        <p class="sub"><code>/var/log/</code></p>
         <nav class="noselect">
             <ul>
-                <li><a href="/todo.html" class="nav">todo</a></li>
-                <li><a href="/link.html" class="nav">link</a></li>
-                <li><a href="/pp.html" class="nav">pp</a></li>
-                <li><a href="/pbo.html" class="nav">pbo</a></li>
-                <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
+                <li>home</li>
+                <li><a href="/todo.html">todo</a></li>
+                <li><a href="/link.html">link</a></li>
+                <li><a href="/pp.html">pp</a></li>
+                <li><a href="/pbo.html">pbo</a></li>
+                <li><a onclick="switchTheme();"id="changeTheme"></a></li>
             </ul>
         </nav>
 
         <p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya
             jika diperlukan kembali. Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
 
-        <h3 class="nobottom name">Contact</h3>
-        <p class="sub">Here is how you can reach me.</p>
-        <ul>
-            <li>GitHub: <a href="https://github.com/deovaliandro">https://github.com/deovaliandro</a></li>
-            <li>Email: <a href="mailto:me@deo.or.id">me@deo.or.id</a></li>
-            <li>Twitter: <a href="https://twitter.com/deovaliandro">https://twitter.com/deovaliandro</a></li>
-            <li>Telegram: <a href="https://t.me/aheeemm">https://t.me/aheeemm</a></li>
-        </ul>
-
         <h3>Catatan: </h3>
-
-        <!-- This loops through the paginated posts -->
-        <ol class="post">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Action</th>
+            </tr>
             {% for post in paginator.posts %}
-            <li class="list-post">
-                {% capture category_name %}{{ category | first }}{% endcapture %}
-                <div>
-                    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}"
-                        class="post-title">{{ post.title }}</a>
-                    <br>
-                    <span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
-                </div>
-            </li>
+            {% capture category_name %}{{ category | first }}{% endcapture %}
+            <tr>
+                <td class="center"><code>{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
+                <td class="post-title-pl"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></td>
+                <td class="center"><a href="http://">view</a> | <a href="http://">download</a> | <a href="http://">raw</a></td>
+            </tr>
             {% endfor %}
-        </ol>
+        </table>
 
         <!-- Pagination links -->
         {% if paginator.total_pages > 1 %}
@@ -70,8 +62,16 @@
         </div>
         {% endif %}
 
-        <h3>Signature</h3>
+        <h3 class="nobottom name">Contact</h3>
+        <p class="sub">Here is how you can reach me.</p>
+        <ul>
+            <li>GitHub: <a href="https://github.com/deovaliandro">https://github.com/deovaliandro</a></li>
+            <li>Email: <a href="mailto:me@deo.or.id">me@deo.or.id</a></li>
+            <li>Twitter: <a href="https://twitter.com/deovaliandro">https://twitter.com/deovaliandro</a></li>
+            <li>Telegram: <a href="https://t.me/aheeemm">https://t.me/aheeemm</a></li>
+        </ul>
 
+        <h3 class="nobottom name">Signature</h3>
         <code>
             <pre>
 -----BEGIN PGP SIGNED MESSAGE-----

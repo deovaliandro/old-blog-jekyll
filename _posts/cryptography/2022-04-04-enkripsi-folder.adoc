@@ -2,6 +2,9 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
+:page-time      : 2021-11-11T12:10:12
+:page-update    : 2022-05-03T22:48:35
+:page-idn       : c6a041e28dc650b3fc609a80681251a7200d5aa2999793a0bf2f95f867b2d9c5
 
 
 == Kompresi dan Enkripsi
