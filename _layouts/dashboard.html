@@ -1,9 +1,6 @@
 {%- include header.html -%}
 
 <body>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
-    <script>document.addEventListener("DOMContentLoaded",function(){renderMathInElement(document.body, {delimiters: [{left:'$$',right:'$',display:true},{left:'$',right:'$',display:false}],throwOnError:true,trust:true});});</script>
     <main>
         <h2 class="nobottom name">Deo Valiandro. M</h2>
         <p class="sub">My log</p>
@@ -16,9 +13,9 @@
                 <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
             </ul>
         </nav>
-        <!-- <img src="https://github.com/deovaliandro.png" alt="" class="me-img"> -->
 
-        <p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya jika diperlukan kembali. Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
+        <p>Blog ini adalah tulisan pelajaran yang telah dipelajari sebelumnya, semoga tulisan ini bermanfaat kedepannya
+            jika diperlukan kembali. Tulisan ini berbasis google sana dan google sini, semoga bermanfaat.</p>
 
         <h3 class="nobottom name">Contact</h3>
         <p class="sub">Here is how you can reach me.</p>
@@ -35,17 +32,18 @@
             <li class="list-post">
                 {% capture category_name %}{{ category | first }}{% endcapture %}
                 <div>
-                    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+                    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}"
+                        class="post-title">{{ post.title }}</a>
                 </div>
                 <span class="meta">{{ post.date | date: "%d/%m/%y" }} | {{ post.category }}</span>
             </li>
             {% endif %} {% endfor %}
         </ol>
 
-    <h3>Signature</h3>
+        <h3>Signature</h3>
 
-    <code>
-		<pre>
+        <code>
+            <pre>
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA256
 
@@ -72,12 +70,35 @@ ObwNpJCrgNfkqGyi4ytrDvf/lxPrVkbQkLp6dSWQSmxpTkRJdso=
 =gMEX
 -----END PGP SIGNATURE-----
 		</pre>
-	</code>
+        </code>
 
-    <hr>
-    
-    {%- include footer.html -%}
-</main>
+        <hr>
+
+        {%- include footer.html -%}
+    </main>
 </body>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+    integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous">
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous">
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        renderMathInElement(document.body, {
+            delimiters: [{
+                left: '$$',
+                right: '$',
+                display: true
+            }, {
+                left: '$',
+                right: '$',
+                display: false
+            }],
+            throwOnError: true,
+            trust: true
+        });
+    });
+</script>
 
 </html>
