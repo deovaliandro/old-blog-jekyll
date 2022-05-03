@@ -1,7 +1,8 @@
-:page-title       : Class dan Object
-:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout      : default
-:page-category    : pbo
+:page-title     : Class dan Object
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : pbo
+:page-hidden    : true
 
 Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan
 sebuah objek real kedalam bahasa bahasa pemrograman.

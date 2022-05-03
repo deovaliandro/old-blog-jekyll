@@ -1,8 +1,8 @@
-:page-title       : Abstract Class dan Interface
-:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout      : default
-:page-category    : pbo
-
+:page-title     : Abstract Class dan Interface
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : pbo
+:page-hidden    : true
 
 == Abstract method vs Overriding
 
