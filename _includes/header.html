@@ -17,7 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
 </head>
 <style>
      :root {
@@ -27,7 +26,8 @@
         --blockquote: #f9f9f9;
         --meta: #828282;
         --link: #54008c;
-        --mono: 'Roboto Mono';
+        --font: system-ui,-apple-system,BlinkMacSystemFont,segoe ui,Roboto,Oxygen,Ubuntu,Cantarell,pt sans,open sans,fira sans,droid sans,helvetica neue,Helvetica,Arial,sans-serif;
+        /* --mono: 'Roboto Mono'; */
     }
     
     [data-theme="dark"] {
@@ -38,15 +38,36 @@
         --meta: #d5c4a1;
         --link: #d79921;
     }
+
+    /* body {
+        margin:1.2em;
+        font-size:1rem
+    }
+    @media(max-width:20rem) {
+        body {
+            font-size:calc(1rem + 0.00625 * (100vw - 20rem))
+        }
+    }
+    
+    @media(min-width:40rem) {
+        body {
+            font-size:1.125rem
+        }
+    } */
+
+    @media only screen and (max-width: 500px) {
+        body {
+            margin: 1em 1em 1em 1em;
+        }
+    }
     
     body {
         max-width: 50rem;
-        /* font-family: var(--mono); */
-        font-family: "Ubuntu", Tahoma, "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 16px;
+        font-family: var(--font);
         color: var(--font-color);
         background-color: var(--bg);
-        /* max-width: 35rem; */
+        font-size: calc(1rem + 0.00625 * (100vw - 55rem));
+        line-height: 1.4;
         margin: auto;
         word-break: break-word;
     }
@@ -56,10 +77,14 @@
     h3 {
         border-bottom: 1px dashed #504945;
     }
+
+    .nobottom {
+        border-bottom: none;
+    }
     
     code,
     pre {
-        font: 400 15px/18px Roboto Mono;
+        font: 400 14px/18px Roboto Mono;
     }
     
     pre {
@@ -69,7 +94,7 @@
     a {
         color: var(--link);
         background-color: transparent;
-        font-family: var(--mono);
+        font-family: var(--font);
     }
     
     a.bare {
@@ -92,6 +117,22 @@
         font-weight: 700;
         text-decoration: none;
     }
+
+    nav {
+        margin-top: 1em;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: .5em;
+        margin-bottom: .25em;
+    }
     
     blockquote {
         background: var(--blockquote);
@@ -101,6 +142,18 @@
     
     footer {
         margin-bottom: 2em;
+    }
+
+    .name {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        text-decoration: underline;
+    }
+
+    .sub {
+        margin-top: 0;
     }
     
     #love {
@@ -135,7 +188,8 @@
     }
     
     .me-img {
-        display: block;
+        /* display: block; */
+        float: right;
         border-radius: 50%;
         border: 1px solid whitesmoke;
         margin-left: auto;

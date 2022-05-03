@@ -1,0 +1,9 @@
+:page-title     : Rebase web jadi log
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Struktur Data
+:page-time      : 2022-05-03T13:37:47+0800
+:page-update    : 2022-05-03T13:37:47+0800
+:page-idn       : ad23d58ea00a164d396e22b41babdcbe
+
+Saya tertarik dengan website seseorang, jadi saya mencoba menirunya.

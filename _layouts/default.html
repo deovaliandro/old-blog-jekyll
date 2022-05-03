@@ -2,15 +2,24 @@
 
 <body>
     <main>
-        <div class="navigation noselect">
-            [<a href="/" class="nav">/home</a>]
-            {%- include nav.html -%}
-        </div>
-        <h1>{{ page.title }}</h1>
+        <h2 class="nobottom name">Deo Valiandro. M</h2>
+        <p class="sub">My log</p>
+        <nav class="noselect">
+            <ul>
+                <li><a href="/" class="nav">home</a></li>
+                <li><a href="/todo.html" class="nav">todo</a></li>
+                <li><a href="/link.html" class="nav">link</a></li>
+                <li><a href="/pp.html" class="nav">pp</a></li>
+                <li><a href="/pbo.html" class="nav">pbo</a></li>
+                <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
+            </ul>
+        </nav>
+        <h1 class="center">{{ page.title }}</h1>
         {% if page.signed-by %}
         <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
         {% endif %}
         {{ content }}
+        <p><code>Created: {{ page.time | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}, ID: {{ page.idn }}</code></p>
 
         <hr>
         {%- include footer.html -%}
