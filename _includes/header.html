@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>Deo &mdash; {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,35 +38,13 @@
         --meta: #d5c4a1;
         --link: #d79921;
     }
-
-    /* body {
-        margin:1.2em;
-        font-size:1rem
-    }
-    @media(max-width:20rem) {
-        body {
-            font-size:calc(1rem + 0.00625 * (100vw - 20rem))
-        }
-    }
-    
-    @media(min-width:40rem) {
-        body {
-            font-size:1.125rem
-        }
-    } */
-
-    @media only screen and (max-width: 500px) {
-        body {
-            margin: 1em 1em 1em 1em;
-        }
-    }
     
     body {
         max-width: 50rem;
         font-family: var(--font);
         color: var(--font-color);
         background-color: var(--bg);
-        font-size: calc(1rem + 0.00625 * (100vw - 55rem));
+        font-size: calc(1rem + 0.00625 * (80vw - 55rem));
         line-height: 1.4;
         margin: auto;
         word-break: break-word;
