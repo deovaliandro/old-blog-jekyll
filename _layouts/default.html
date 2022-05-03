@@ -14,14 +14,14 @@
                 <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
             </ul>
         </nav>
-        <h1 class="center">{{ page.title }}</h1>
-        {% if page.signed-by %}
-        <p class="center"><code>Signed-off-by: {{ page.signed-by }}</code></p>
-        {% endif %}
-        {{ content }}
-        <p><code>Created: {{ page.time | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}, ID: {{ page.idn }}</code></p>
-
-        <hr>
+        <h2>{{ page.title }}</h2>
+        <div class="dash">
+            {{ content }}
+        </div>
+        <code>Signed-off-by: {{ page.signed-by }}</code><br>
+        <code> Created: {{ page.time | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}</code><br>
+        <code>ID: {{ page.idn }}</code>
+        
         {%- include footer.html -%}
     </main>
 </body>

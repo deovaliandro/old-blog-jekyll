@@ -6,6 +6,7 @@ group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
   gem 'jekyll-asciidoc'
   gem 'jekyll-redirect-from'
+  gem 'jekyll-paginate'
 end
 
 gem "webrick", "~> 1.7"

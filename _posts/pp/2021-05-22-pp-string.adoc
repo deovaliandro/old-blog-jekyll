@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
+:page-hidden    : true
 
 Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
 Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa

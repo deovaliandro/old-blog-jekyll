@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
+:page-hidden    : true
 
 Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
 dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure

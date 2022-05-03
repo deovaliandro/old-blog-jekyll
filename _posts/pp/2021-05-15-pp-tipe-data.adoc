@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
+:page-hidden    : true
 
 Java merupakan bahasa pemrograman yang strongly typed (setiap data harus
 diberikan tipe data), maka kita tidak bisa mengabaikan tipe data. Kita harus

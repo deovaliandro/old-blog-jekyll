@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
+:page-hidden    : true
 
 Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama
 syarat yang diberikan masih memenuhi.

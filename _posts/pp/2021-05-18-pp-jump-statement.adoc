@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
+:page-hidden    : true
 
 Jump statement adalah perintah untuk memindahkan alur program ke program yang
 lain. Java mengenal tiga buah perintah tersebut yaitu `break`, `continue` dan

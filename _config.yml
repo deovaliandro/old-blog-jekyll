@@ -4,11 +4,15 @@ description: >-
 baseurl: ""
 url: "https://deo.or.id"
 permalink: /:year/:month/:title:output_ext
+paginate: 10
+paginate_path: "/:num.html"
+hidden: true
 
 plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-paginate
 
 author: Deo Valiandro. M
 

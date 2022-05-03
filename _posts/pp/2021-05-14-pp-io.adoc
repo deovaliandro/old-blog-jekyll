@@ -2,6 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : pp
+:page-hidden    : true
 
 IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
 bagaimana mengeluarkan hasil dari program tersebut.
