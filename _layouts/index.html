@@ -29,8 +29,8 @@
             {% capture category_name %}{{ category | first }}{% endcapture %}
             <tr>
                 <td class="center"><code>{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
-                <td class="post-title-pl"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></td>
-                <td class="center"><a href="http://">view</a> | <a href="http://">download</a> | <a href="http://">raw</a></td>
+                <td class="post-title-pl">{{ post.title }}</a></td>
+                <td class="center"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">view</a> | <a href="http://">download</a> | <a href="{{ post.date | date: '%Y' }}/{{ post.date | date: '%m' }}/{{ post.idn }}.md">raw</a></td>
             </tr>
             {% endfor %}
         </table>

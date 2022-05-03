@@ -1,9 +1,9 @@
-:page-title     : Rebase web jadi log
+:page-title     : Rebase Web Jadi Log
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : Struktur Data
-:page-time      : 2022-05-03T13:37:47+0800
-:page-update    : 2022-05-03T13:37:47+0800
-:page-idn       : ad23d58ea00a164d396e22b41babdcbe
+:page-category  : log
+:page-time      : 2022-05-03T13:37:47
+:page-update    : 2022-05-03T13:37:47
+:page-idn       : 3f4291d4cd8d4237ad7697c7fbe05a3697e086099ed39cfad921a9a9e7cf6a98
 
 Saya tertarik dengan website seseorang, jadi saya mencoba menirunya.
