@@ -8,3 +8,5 @@
 
 Rencana pindahkan semua git ke GitLab dari Github.
 Entah kenapa lebih nyaman tanpa embel mikocok.
+
+Pelan-pelan akan dipindahkan semua.
