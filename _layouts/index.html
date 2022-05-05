@@ -11,10 +11,10 @@
                 <li><a href="/link.html">link</a></li>
                 <li><a href="/pp.html">pp</a></li>
                 <li><a href="/pbo.html">pbo</a></li>
-                <li><a href="/signature.txt">signature</a></li>
                 <li><a href="/contact.html">contact</a></li>
                 <li><a href="/about.html">about</a></li>
                 <li><a onclick="switchTheme();" id="changeTheme"></a></li>
+                <li><a href="/signature.txt">signature</a></li>
             </ul>
         </nav>
 
@@ -28,7 +28,7 @@
             {% for post in paginator.posts %}
             {% capture category_name %}{{ category | first }}{% endcapture %}
             <tr>
-                <td class="center"><code>{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
+                <td class="center"><code class="er">{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
                 <td class="post-title-pl">{{ post.title }}</a></td>
                 <td class="center"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">view</a></td>
             </tr>

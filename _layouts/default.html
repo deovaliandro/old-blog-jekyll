@@ -34,17 +34,18 @@
     {% endif %}
     <main>
         <h2 class="nobottom name">Deo Valiandro. M</h2>
-        <p class="sub">My log</p>
+        <p class="sub"><code>/var/log/</code></p>
         <nav class="noselect">
             <ul>
                 <li><a href="/" class="nav">home</a></li>
-                <li><a href="/todo.html" class="nav">todo</a></li>
-                <li><a href="/link.html" class="nav">link</a></li>
-                <li><a href="/pp.html" class="nav">pp</a></li>
-                <li><a href="/pbo.html" class="nav">pbo</a></li>
-                <li><a href="/signature.txt">signature</a></li>
+                <li><a href="/todo.html">todo</a></li>
+                <li><a href="/link.html">link</a></li>
+                <li><a href="/pp.html">pp</a></li>
+                <li><a href="/pbo.html">pbo</a></li>
                 <li><a href="/contact.html">contact</a></li>
-                <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
+                <li><a href="/about.html">about</a></li>
+                <li><a onclick="switchTheme();" id="changeTheme"></a></li>
+                <li><a href="/signature.txt">signature</a></li>
             </ul>
         </nav>
         <h2>{{ page.title }}</h2>
@@ -52,10 +53,10 @@
             {{ content }}
         </div>
 
-        <code>Signed-off-by: {{ page.signed-by }}</code><br>
-        <code> Created: {{ page.time | date: "%Y-%m-%dT%T" }}, Last updated:
+        <code class="er">Signed-off-by: {{ page.signed-by }}</code><br>
+        <code class="er"> Created: {{ page.time | date: "%Y-%m-%dT%T" }}, Last updated:
             {{ page.update | date: "%Y-%m-%dT%T" }}</code><br>
-        <code>ID: {{ page.idn }}</code>
+        <code class="er">ID: {{ page.idn }}</code>
 
         {%- include footer.html -%}
     </main>
