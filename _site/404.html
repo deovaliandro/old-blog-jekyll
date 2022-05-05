@@ -1,0 +1,91 @@
+<html>
+<head>
+<title>404</title>
+<style>
+:root {
+    --bg: #fff;
+    --hr: #eee;
+    --font-color: #4B4B4B;
+    --link: #54008c;
+}
+
+[data-theme="dark"] {
+    --bg: #282828;
+    --hr: #d79921;
+    --font-color: #ebdbb2;
+    --link: #d79921;
+}
+
+body {
+    color: var(--font-color);
+    background-color: var(--bg);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+p {
+    font-family: monospace;
+    text-align: center;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+
+<body>
+<div class="listingblock">
+<div class="content">
+<pre>░░██╗██╗░█████╗░░░██╗██╗  ███╗░░██╗░█████╗░████████╗  ███████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
+░██╔╝██║██╔══██╗░██╔╝██║  ████╗░██║██╔══██╗╚══██╔══╝  ██╔════╝██╔══██╗██║░░░██║████╗░██║██╔══██╗
+██╔╝░██║██║░░██║██╔╝░██║  ██╔██╗██║██║░░██║░░░██║░░░  █████╗░░██║░░██║██║░░░██║██╔██╗██║██║░░██║
+███████║██║░░██║███████║  ██║╚████║██║░░██║░░░██║░░░  ██╔══╝░░██║░░██║██║░░░██║██║╚████║██║░░██║
+╚════██║╚█████╔╝╚════██║  ██║░╚███║╚█████╔╝░░░██║░░░  ██║░░░░░╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
+░░░░░╚═╝░╚════╝░░░░░░╚═╝  ╚═╝░░╚══╝░╚════╝░░░░╚═╝░░░  ╚═╝░░░░░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="https://deo.or.id" class="bare">https://deo.or.id</a></p>
+</div>
+</body>
+<script>
+const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+if (currentTheme) {
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+}
+
+toggleSwitch.onclick = function() {
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('theme', 'light');
+    } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+    }
+};
+</script>
+
+</html>

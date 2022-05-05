@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Finite State Machine</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2021/12/fsm.html">
+    <link rel="alternate" type="application/rss+xml" title="Home"
+        href="http://localhost:4000 /feed.xml ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
+</head>
+<style>
+    :root {
+        --bg: #fff;
+        --hr: #cccccc;
+        --font-color: #4B4B4B;
+        --blockquote: #f9f9f9;
+        --meta: #828282;
+        --link: #54008c;
+        --color1: #ececec;
+        --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="dark"] {
+        --bg: #282828;
+        --hr: #d79921;
+        --font-color: #ebdbb2;
+        --blockquote: #504945;
+        --meta: #d5c4a1;
+        --link: #d79921;
+        --color1: #504945;
+    }
+
+    body {
+        width: 60rem;
+        font-family: var(--font);
+        color: var(--font-color);
+        background-color: var(--bg);
+        font-size: calc(1rem + 0.00625 * (80vw - 55rem));
+        line-height: 1.4;
+        margin: 0px auto;
+        word-break: break-word;
+        overflow-y: scroll;
+    }
+
+    h1, h2 {
+        border-bottom: 1px dotted #504945;
+    }
+
+    .nobottom {
+        border-bottom: none;
+    }
+
+    code,
+    pre {
+        font: 400 14px/18px Roboto Mono;
+    }
+
+    pre {
+        padding: 1em;
+    }
+
+    a {
+        color: var(--link);
+        background-color: transparent;
+        font-family: var(--font);
+    }
+
+    a.bare {
+        word-break: break-all;
+    }
+
+    a:hover {
+        color: var(--bg);
+        background-color: var(--link);
+    }
+
+    hr {
+        position: relative;
+        border: 0;
+        border-top: 1px solid var(--hr);
+    }
+
+    .post-title {
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    nav {
+        margin-top: 1em;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: .5em;
+        margin-bottom: .25em;
+    }
+
+    blockquote {
+        background: var(--blockquote);
+        border-left: 5px solid var(--hr);
+        margin-left: 0;
+    }
+
+    .dash {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 1px dotted #4B4B4B;
+    }
+
+    .name {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        text-decoration: underline;
+    }
+
+    .sub {
+        margin-top: 0;
+    }
+
+    #love {
+        vertical-align: middle;
+    }
+
+    .katex {
+        font-size: 1.1em !important;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .meta {
+        font: 400 14px/18px Roboto Mono;
+    }
+
+    .list-post {
+        padding: .1rem 0;
+    }
+
+    .title {
+        border: none;
+        text-align: center;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    #footnotes {
+        padding-bottom: 1em;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+    }
+
+    .post-title-pl {
+        padding-left: .5rem;
+    }
+
+    tr:nth-child(even) {
+        background-color: var(--color1);
+    }
+
+    .pagination {
+        margin-top: 1em;
+    }
+
+    .pag {
+        padding-right: 1em;
+    }
+</style><body>
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+        integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous">
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous">
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [{
+                    left: '$$',
+                    right: '$',
+                    display: true
+                }, {
+                    left: '$',
+                    right: '$',
+                    display: false
+                }],
+                // throwOnError: true,
+                // trust: true
+            });
+        });
+    </script>
+    
+    
+    
+    <main>
+        <h2 class="nobottom name">Deo Valiandro. M</h2>
+        <p class="sub">My log</p>
+        <nav class="noselect">
+            <ul>
+                <li><a href="/" class="nav">home</a></li>
+                <li><a href="/todo.html" class="nav">todo</a></li>
+                <li><a href="/link.html" class="nav">link</a></li>
+                <li><a href="/pp.html" class="nav">pp</a></li>
+                <li><a href="/pbo.html" class="nav">pbo</a></li>
+                <li><a href="/signature.txt">signature</a></li>
+                <li><a href="/contact.html">contact</a></li>
+                <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
+            </ul>
+        </nav>
+        <h2>Finite State Machine</h2>
+        <div class="dash">
+            <div class="sect1">
+<h2 id="finite-automata"><a class="anchor" href="#finite-automata"></a>Finite Automata</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>"One way to define a language is to construct an automaton—a kind
+of abstract computer that takes a string as input and produces a
+yes-or-no answer. The language it defines is the set of all strings for
+which it says yes.</p>
+</div>
+<div class="paragraph">
+<p><em>Formal Language - A Practical Introduction by Adam Brooks Webber</em></p>
+</div>
+</blockquote>
+</div>
+<div class="sect2">
+<h3 id="a-deterministic-finite-automata-dfa"><a class="anchor" href="#a-deterministic-finite-automata-dfa"></a>a. Deterministic Finite Automata (DFA)</h3>
+<div class="paragraph">
+<p>DFA $M = (Q, \Sigma, \delta, q_0, F)$, dimana:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>$Q$ adalah set semua state (finite),</p>
+</li>
+<li>
+<p>$\Sigma$ adalah alfabet/ input (finite set symbols),</p>
+</li>
+<li>
+<p>$\delta \in (Q xx \Sigma \to Q)$ adalah fungsi transisi,</p>
+</li>
+<li>
+<p>$q_0 \in Q$ adalah start state,</p>
+</li>
+<li>
+<p>$F \subseteq Q$ adalah set state final (<em>accepting state</em>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contohnya: $Q = {A, B}$, $\Sigma = {a, b}$, $F = {B}$ dan
+$\delta$ =<br>
+$\delta(A, a) = B$<br>
+$\delta(A, b) = A$<br>
+$\delta(B, a) = B$<br>
+$\delta(A, b) = A$</p>
+</div>
+<div class="paragraph">
+<p>digambarkan dengan:</p>
+</div>
+<div id="img-dfa" class="imageblock">
+<div class="content">
+<a class="image" href="/assets/img/Screenshot_20211204_211458.png"><img src="/assets/img/Screenshot_20211204_211458.png" alt="DFA"></a>
+</div>
+<div class="title">Figure 1. A simple DFA</div>
+</div>
+<div class="paragraph">
+<p>String $x \in \Sigma^{\ast}$ akan di terima oleh DFA $M = (Q, \Sigma,
+\delta, q_0, F) \iff \delta^{\ast}(q_0, x) \in F$.</p>
+</div>
+<div class="paragraph">
+<p>Untuk DFA $M = (Q, \Sigma, \delta, q_0, F)$, $L(M)$ adalah language
+yang bisa diterima oleh $M$, di mana $L(M) = {x \in \Sigma^{\ast} |
+\delta^{\ast}(q_0, x) \in F}$.</p>
+</div>
+<div class="paragraph">
+<p>Regular language adalah language yang diterima oleh sebuah finite automata, atau
+sebuah regular language adalah $L(M)$ untuk suatu DFA $M$.</p>
+</div>
+<div class="paragraph">
+<p><em>Regular operation</em> adalah operasi pada language. Misalnya A dan B adalah
+language, maka operasinya:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>union, $A \cap B = {x | x \in A or x \in B}$,</p>
+</li>
+<li>
+<p>concatenation, $A \cdot B = {xy | x \in A and y \in B}$,</p>
+</li>
+<li>
+<p>star, $A^{\ast} = \{x_1, x_2, \cdots, x_k | k \geq 0, \forall x_i \in A\}$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Sifat rl:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>closed under complement, jika $L] adalah language dari $\Sigma],
+maka komplemen dari $L$, $\overline{L} = {x \in \Sigma^{\ast} | x
+\notin L}$, jika $L$ adalah regular language, maka $\overline{L}$ juga
+adalah regular language.</p>
+</li>
+<li>
+<p>closed under intersection, jika $L_1$ dan $L_2$ adalah language, intersection
+(irisan) dari $L_1$ dan $L_2$ adalah
+$L_1 \cap L_2 = {x | x \in L_1, x \in L_2}$, jika $L_1$ dan $L_2$ adalah
+regular language, maka $L_1 \cap L_2$ juga adalah merupakan regular language.</p>
+</li>
+<li>
+<p>closed under union, jika $L_1$ dan $L_2$ adalah language, union (gabungan)
+dari $L_1$ dan $L_2$ adalah
+$L_1 \cup L_2 = \{x | x \in L_1 \text{atau} x \in L_2, \text{atau keduanya}\}$,
+jika $L_1$ dan $L_2$ adalah regular language, maka $L_1 \cup L_2$ juga adalah
+merupakan regular language.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="b-nondeterministic-finite-automata"><a class="anchor" href="#b-nondeterministic-finite-automata"></a>b. Nondeterministic Finite Automata</h3>
+<div class="paragraph">
+<p>NFA $M = (Q, \Sigma, \delta, q_0, F)$ dimana:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>$Q$ adalah set semua state (finite),</p>
+</li>
+<li>
+<p>$\Sigma$ adalah alfabet/ input (finite set symbols),</p>
+</li>
+<li>
+<p>$\delta \in (Q \times (\Sigma \cup {\epsilon}) \to P(Q))$ adalah fungsi
+transisi,</p>
+</li>
+<li>
+<p>$q_0 \in Q$ adalah start state,</p>
+</li>
+<li>
+<p>$F \subseteq Q$ adalah set state final (<em>accepting state</em>).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contohnya: $Q = {q_0, q_1, q_2}$, $\Sigma = {a, b}$, $F = {q_2}$
+dan $\delta$ =</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+    \delta(q_0, a)      &amp; = {q_0, q_1} \\
+    \delta(q_0, b)      &amp; = {q_0} \\
+    \delta(q_0, \epsilon) &amp; = {q_2} \\
+    \delta(q_1, a)      &amp; = \{\} \\
+    \delta(q_1, b)      &amp; = {q_2} \\
+    \delta(q_1, \epsilon) &amp; = \{\} \\
+    \delta(q_2, a)      &amp; = \{\} \\
+    \delta(q_2, b)      &amp; = \{\} \\
+    \delta(q_2, \epsilon) &amp; = \{\}
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>digambarkan dengan:</p>
+</div>
+<div id="img-nfa" class="imageblock">
+<div class="content">
+<a class="image" href="/assets/img/Screenshot_20211207_113854.png"><img src="/assets/img/Screenshot_20211207_113854.png" alt="NFA"></a>
+</div>
+<div class="title">Figure 2. A simple NFA</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="conver-nfa-to-dfa"><a class="anchor" href="#conver-nfa-to-dfa"></a>conver NFA to DFA</h3>
+<div class="paragraph">
+<p>lorem</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="minimization-of-dfa"><a class="anchor" href="#minimization-of-dfa"></a>minimization of DFA</h3>
+<div class="paragraph">
+<p>Myhill Nerode Theorem for minimization DFA</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="regular-expression"><a class="anchor" href="#regular-expression"></a>Regular Expression</h3>
+
+</div>
+<div class="sect2">
+<h3 id="mealy-and-moore-machine"><a class="anchor" href="#mealy-and-moore-machine"></a>Mealy and Moore Machine</h3>
+<div class="sect3">
+<h4 id="convert-melay-to-moore-and-the-opposite"><a class="anchor" href="#convert-melay-to-moore-and-the-opposite"></a>convert Melay to Moore and the opposite</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="epsilon-nfa"><a class="anchor" href="#epsilon-nfa"></a>$\epsilon$ NFA</h3>
+<div class="sect3">
+<h4 id="epsilon-nfa-to-nfa"><a class="anchor" href="#epsilon-nfa-to-nfa"></a>$\epsilon$ NFA to NFA</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="nonregular-languages"><a class="anchor" href="#nonregular-languages"></a>Nonregular Languages</h3>
+
+</div>
+</div>
+</div>
+        </div>
+
+        <code>Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>
+        <code> Created: , Last updated:
+            </code><br>
+        <code>ID: </code><footer class="noselect">
+    <nav>
+       <ul>
+           <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/toc/2021-12-04-fsm.adoc">edit</a></li>
+           <li><a href=" /feed.xml ">rss</a></li>
+       </ul> 
+    </nav>
+
+    <div class="center">
+        &copy; Deo Valiandro. M, 2016 - 2022 dibuat dengan <span id="love">❤️️</span> dari localhost.
+    </div>
+</footer>
+<script>
+    const toggleSwitch = document.getElementById("changeTheme");
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+            toggleSwitch.innerHTML = "light";
+        } else {
+            stylesheet.setAttribute('href', '/assets/css/github.css');
+            toggleSwitch.innerHTML = "dark";
+        }
+    }
+
+    toggleSwitch.onclick = function() {
+        var stylesheet = document.getElementById("stylesheet");
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            stylesheet.setAttribute('href', '/assets/css/github.css');
+            localStorage.setItem('theme', 'light');
+            toggleSwitch.innerHTML = "dark";
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+            localStorage.setItem('theme', 'dark');
+            toggleSwitch.innerHTML = "light";
+        }
+    };
+</script></main>
+</body>
+
+</html>

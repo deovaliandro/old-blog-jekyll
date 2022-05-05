@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <title>Deo &mdash; {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>Deo &mdash; Tata Krama Mahasiswa</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="{{ site.title }}">
+        content="">
+    <meta name="author" content="Home">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}"
-        href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="canonical" href="http://localhost:4000/2021/11/tata-krama-mahasiswa.html">
+    <link rel="alternate" type="application/rss+xml" title="Home"
+        href="http://localhost:4000 /feed.xml ">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -210,4 +210,87 @@
     .pag {
         padding-right: 1em;
     }
-</style>
+</style><body>
+    
+    <main>
+        <h2 class="nobottom name">Deo Valiandro. M</h2>
+        <p class="sub">My log</p>
+        <nav class="noselect">
+            <ul>
+                <li><a href="/" class="nav">home</a></li>
+                <li><a href="/todo.html" class="nav">todo</a></li>
+                <li><a href="/link.html" class="nav">link</a></li>
+                <li><a href="/pp.html" class="nav">pp</a></li>
+                <li><a href="/pbo.html" class="nav">pbo</a></li>
+                <li><a href="/signature.txt">signature</a></li>
+                <li><a href="/contact.html">contact</a></li>
+                <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
+            </ul>
+        </nav>
+        <h2>Tata Krama Mahasiswa</h2>
+        <div class="dash">
+            <div class="imageblock">
+<div class="content">
+<a class="image" href="/assets/img/tata-krama-mahasiswa.jpeg"><img src="/assets/img/tata-krama-mahasiswa.jpeg" alt="Tata krama mahasiswa"></a>
+</div>
+<div class="title">Figure 1. Tata krama mahasiswa</div>
+</div>
+<div class="paragraph">
+<p>Bagaimana mahasiswa dapat berkomunikasi dengan baik dengan dosennya.</p>
+</div>
+<div class="paragraph">
+<p>sumber:
+<a href="https://akcdn.detik.net.id/community/media/visual/2017/10/06/17629eb5-4188-4fe4-8f8a-3e566f3b4ec1.jpeg?w=700&amp;q=90">detik.net.id</a></p>
+</div>
+        </div>
+
+        <code>Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>
+        <code> Created: , Last updated:
+            </code><br>
+        <code>ID: </code><footer class="noselect">
+    <nav>
+       <ul>
+           <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/artikel/2021-11-11-tata-krama-mahasiswa.adoc">edit</a></li>
+           <li><a href=" /feed.xml ">rss</a></li>
+       </ul> 
+    </nav>
+
+    <div class="center">
+        &copy; Deo Valiandro. M, 2016 - 2022 dibuat dengan <span id="love">❤️️</span> dari localhost.
+    </div>
+</footer>
+<script>
+    const toggleSwitch = document.getElementById("changeTheme");
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+            toggleSwitch.innerHTML = "light";
+        } else {
+            stylesheet.setAttribute('href', '/assets/css/github.css');
+            toggleSwitch.innerHTML = "dark";
+        }
+    }
+
+    toggleSwitch.onclick = function() {
+        var stylesheet = document.getElementById("stylesheet");
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            stylesheet.setAttribute('href', '/assets/css/github.css');
+            localStorage.setItem('theme', 'light');
+            toggleSwitch.innerHTML = "dark";
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+            localStorage.setItem('theme', 'dark');
+            toggleSwitch.innerHTML = "light";
+        }
+    };
+</script></main>
+</body>
+
+</html>

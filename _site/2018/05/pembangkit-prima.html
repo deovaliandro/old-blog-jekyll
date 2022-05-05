@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Pembangkit Bilangan Prima</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2018/05/pembangkit-prima.html">
+    <link rel="alternate" type="application/rss+xml" title="Home"
+        href="http://localhost:4000 /feed.xml ">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
+</head>
+<style>
+    :root {
+        --bg: #fff;
+        --hr: #cccccc;
+        --font-color: #4B4B4B;
+        --blockquote: #f9f9f9;
+        --meta: #828282;
+        --link: #54008c;
+        --color1: #ececec;
+        --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
+    }
+
+    [data-theme="dark"] {
+        --bg: #282828;
+        --hr: #d79921;
+        --font-color: #ebdbb2;
+        --blockquote: #504945;
+        --meta: #d5c4a1;
+        --link: #d79921;
+        --color1: #504945;
+    }
+
+    body {
+        width: 60rem;
+        font-family: var(--font);
+        color: var(--font-color);
+        background-color: var(--bg);
+        font-size: calc(1rem + 0.00625 * (80vw - 55rem));
+        line-height: 1.4;
+        margin: 0px auto;
+        word-break: break-word;
+        overflow-y: scroll;
+    }
+
+    h1, h2 {
+        border-bottom: 1px dotted #504945;
+    }
+
+    .nobottom {
+        border-bottom: none;
+    }
+
+    code,
+    pre {
+        font: 400 14px/18px Roboto Mono;
+    }
+
+    pre {
+        padding: 1em;
+    }
+
+    a {
+        color: var(--link);
+        background-color: transparent;
+        font-family: var(--font);
+    }
+
+    a.bare {
+        word-break: break-all;
+    }
+
+    a:hover {
+        color: var(--bg);
+        background-color: var(--link);
+    }
+
+    hr {
+        position: relative;
+        border: 0;
+        border-top: 1px solid var(--hr);
+    }
+
+    .post-title {
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    nav {
+        margin-top: 1em;
+    }
+
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline-block;
+        margin-right: .5em;
+        margin-bottom: .25em;
+    }
+
+    blockquote {
+        background: var(--blockquote);
+        border-left: 5px solid var(--hr);
+        margin-left: 0;
+    }
+
+    .dash {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        border: 1px dotted #4B4B4B;
+    }
+
+    .name {
+        margin-bottom: 0;
+    }
+
+    .nav {
+        text-decoration: underline;
+    }
+
+    .sub {
+        margin-top: 0;
+    }
+
+    #love {
+        vertical-align: middle;
+    }
+
+    .katex {
+        font-size: 1.1em !important;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .meta {
+        font: 400 14px/18px Roboto Mono;
+    }
+
+    .list-post {
+        padding: .1rem 0;
+    }
+
+    .title {
+        border: none;
+        text-align: center;
+    }
+
+    .center {
+        text-align: center;
+    }
+
+    #footnotes {
+        padding-bottom: 1em;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+    }
+
+    .post-title-pl {
+        padding-left: .5rem;
+    }
+
+    tr:nth-child(even) {
+        background-color: var(--color1);
+    }
+
+    .pagination {
+        margin-top: 1em;
+    }
+
+    .pag {
+        padding-right: 1em;
+    }
+</style><body>
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
+        integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
+        integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous">
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
+        integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous">
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                delimiters: [{
+                    left: '$$',
+                    right: '$',
+                    display: true
+                }, {
+                    left: '$',
+                    right: '$',
+                    display: false
+                }],
+                // throwOnError: true,
+                // trust: true
+            });
+        });
+    </script>
+    
+    
+    
+    <main>
+        <h2 class="nobottom name">Deo Valiandro. M</h2>
+        <p class="sub">My log</p>
+        <nav class="noselect">
+            <ul>
+                <li><a href="/" class="nav">home</a></li>
+                <li><a href="/todo.html" class="nav">todo</a></li>
+                <li><a href="/link.html" class="nav">link</a></li>
+                <li><a href="/pp.html" class="nav">pp</a></li>
+                <li><a href="/pbo.html" class="nav">pbo</a></li>
+                <li><a href="/signature.txt">signature</a></li>
+                <li><a href="/contact.html">contact</a></li>
+                <li><a onclick="switchTheme();" class="nav" id="changeTheme"></a></li>
+            </ul>
+        </nav>
+        <h2>Pembangkit Bilangan Prima</h2>
+        <div class="dash">
+            <div class="paragraph">
+<p>Metode untuk pengujian bilangan prima yang paling sederhana adalah
+<em>brute force</em>, yaitu membagi $n$ dengan $p \in \mathbb{P}, p \leq \sqrt{n}$.</p>
+</div>
+<div class="paragraph">
+<p>Jika $n$ habis dibagi dengan salah satu bilangan prima, maka $n$ adalah bilangan
+komposit, jika tidak bisa dibagi dengan salah satu bilangan prima maka $n$
+adalah bilangan prima.</p>
+</div>
+<div class="paragraph">
+<p>Kompleksitasnya $O(\sqrt{n})$, sehingga tidak efektif.</p>
+</div>
+<div class="paragraph">
+<p>Terdapat algoritma lain yang lebih efektif,</p>
+</div>
+<div class="sect1">
+<h2 id="algoritma-lehmann"><a class="anchor" href="#algoritma-lehmann"></a>Algoritma Lehmann</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bangkitkan bilangan acak $p$ sepanjang $n$ angka,</p>
+</li>
+<li>
+<p>uji <em>brute force</em> terhadap $p$ dengan bilangan $p &lt; 256$, ini akan
+mengeliminasi bilangan prima $80%$,</p>
+</li>
+<li>
+<p>kemudian uji $p$ dengan algoritma Lehmann:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>bangkitkan bilangan acak $a, a &lt; p$,</p>
+</li>
+<li>
+<p>hitung $a^{(p-1)/2} \bmod p$,</p>
+</li>
+<li>
+<p>jika $a^{(p-1)/2} \not\equiv 1$ atau $-1 \bmod p$, maka $p$ tidak prima,</p>
+</li>
+<li>
+<p>jika $a^{(p-1)/2} \equiv 1$ atau $-1 \bmod p$, maka peluang $p$ prima
+adalah $50%$,</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>ulangi pengujian algoritma Lehmann sebanyak $t$ kali (dengan nilai $a$
+berbeda), jika hasil hitung langkah kedua algoritma Lehmann sama dengan 1 atau
+-1, tetapi tidak selalu sama dengan 1, maka peluang $p$ adalah prima mempunyai
+kesalahan tidak lebih dari $1/2^{t}$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Jumlah pengujian yang disarankan adalah lima kali<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="algoritma-rabin-miller"><a class="anchor" href="#algoritma-rabin-miller"></a>Algoritma Rabin-Miller</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sebelumnya:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>bangkitkan nilai $p$ yang akan diuji keprimaannya,</p>
+</li>
+<li>
+<p>kemudian hitung nilai $b$, dimana $2^b$ adalah nilai pangkat 2 terbesar yang
+habis membagi $p - 1$,</p>
+</li>
+<li>
+<p>hitung $m$ sedemikian sehingga $p = 1 + 2^{b} m$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Kemudian jalankan algoritma ini:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ambil bilangan sembarangan $a, a &lt; p$,</p>
+</li>
+<li>
+<p>$j = 0$, hitung $z = a^{m} \bmod p$,</p>
+</li>
+<li>
+<p>jika $z = 1$ atau $z = p - 1$, maka $p$ mungkin prima, jika $z &gt; 0$ dan
+$z = 1$ maka bukan prima,</p>
+</li>
+<li>
+<p><code>j++</code>, jika $j &lt; b$ dan $z \neq p - 1$, maka $z = z^{2} \bmod p$ dan kembali
+ke langkah 3,</p>
+</li>
+<li>
+<p>jika $j = b$ dan $z \neq p - 1$, maka $p$ tidak prima.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.
+</div>
+</div>
+        </div>
+
+        <code>Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>
+        <code> Created: , Last updated:
+            </code><br>
+        <code>ID: </code><footer class="noselect">
+    <nav>
+       <ul>
+           <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/cryptography/2018-05-22-pembangkit-prima.adoc">edit</a></li>
+           <li><a href=" /feed.xml ">rss</a></li>
+       </ul> 
+    </nav>
+
+    <div class="center">
+        &copy; Deo Valiandro. M, 2016 - 2022 dibuat dengan <span id="love">❤️️</span> dari localhost.
+    </div>
+</footer>
+<script>
+    const toggleSwitch = document.getElementById("changeTheme");
+    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+            toggleSwitch.innerHTML = "light";
+        } else {
+            stylesheet.setAttribute('href', '/assets/css/github.css');
+            toggleSwitch.innerHTML = "dark";
+        }
+    }
+
+    toggleSwitch.onclick = function() {
+        var stylesheet = document.getElementById("stylesheet");
+        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'light');
+            stylesheet.setAttribute('href', '/assets/css/github.css');
+            localStorage.setItem('theme', 'light');
+            toggleSwitch.innerHTML = "dark";
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
+            localStorage.setItem('theme', 'dark');
+            toggleSwitch.innerHTML = "light";
+        }
+    };
+</script></main>
+</body>
+
+</html>

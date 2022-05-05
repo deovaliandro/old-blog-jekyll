@@ -11,6 +11,8 @@
                 <li><a href="/link.html">link</a></li>
                 <li><a href="/pp.html">pp</a></li>
                 <li><a href="/pbo.html">pbo</a></li>
+                <li><a href="/signature.txt">signature</a></li>
+                <li><a href="/contact.html">contact</a></li>
                 <li><a onclick="switchTheme();" id="changeTheme"></a></li>
             </ul>
         </nav>
@@ -39,68 +41,28 @@
         {% if paginator.total_pages > 1 %}
         <div class="pagination center">
             {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | relative_url }}">&laquo; Prev</a>
+            <a href="{{ paginator.previous_page_path | relative_url }}" class="pag">&laquo; Prev</a>
             {% else %}
-            <span>&laquo; Prev</span>
+            <span class="pag">&laquo; Prev</span>
             {% endif %}
 
             {% for page in (1..paginator.total_pages) %}
             {% if page == paginator.page %}
-            <em>{{ page }}</em>
+            <em class="pag">{{ page }}</em>
             {% elsif page == 1 %}
-            <a href="{{ '/' | relative_url }}">{{ page }}</a>
+            <a href="{{ '/' | relative_url }}" class="pag">{{ page }}</a>
             {% else %}
-            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pag">{{ page }}</a>
             {% endif %}
             {% endfor %}
 
             {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | relative_url }}">Next &raquo;</a>
+            <a href="{{ paginator.next_page_path | relative_url }}" class="pag">Next &raquo;</a>
             {% else %}
-            <span>Next &raquo;</span>
+            <span class="pag">Next &raquo;</span>
             {% endif %}
         </div>
         {% endif %}
-
-        <h3 class="nobottom name">Contact</h3>
-        <p class="sub">Here is how you can reach me.</p>
-        <ul>
-            <li>GitHub: <a href="https://github.com/deovaliandro">https://github.com/deovaliandro</a></li>
-            <li>Email: <a href="mailto:me@deo.or.id">me@deo.or.id</a></li>
-            <li>Twitter: <a href="https://twitter.com/deovaliandro">https://twitter.com/deovaliandro</a></li>
-            <li>Telegram: <a href="https://t.me/aheeemm">https://t.me/aheeemm</a></li>
-        </ul>
-
-        <h3 class="nobottom name">Signature</h3>
-        <code>
-            <pre>
------BEGIN PGP SIGNED MESSAGE-----
-Hash: SHA256
-
-I truly claim that this website (https://deo.or.id/) is mine.
-
-The most trusted my public keys source is on my GitHub profile:
-https://github.com/deovaliandro
-
-    Deo Valiandro. M
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCAAdFiEEzmHPkxOP5DbMF00Qyuz46Kw72b0FAmIi9O4ACgkQyuz46Kw7
-2b3AOhAAiY4JckwBMApo2IxMnsyAzY7tM4PdmMxiG8NYUWW2GtV0H9N4iiseFbtJ
-ob1BtUTEXPnkUt1QoRgNfvHzUCtVlvOAT4whd25es30U3aat/YHdcZ1Qy56oy5Uk
-RmIXQYKLoRDEP48iuqg10owvCNlybKxu0Yp5iQ2A2DytJyXlglfeiomJmYwCstiI
-L6WgFAExIi2dsn91Q29zmq/QL/f8zTyBJRn/PLX3FynMPDD7D5bMQmEZtk/jTaOc
-6i2felEtYGweNr1d9v5QFG8lL9vawkZDC05TBPQpETr8Zm21ZoBAMLS1ZoxYbd/e
-LgK0RbMyO3NgZERMDPo+2+FrIGZcS/7v1E+ccgVKGuRIw5F0rVrwiivZV9yP+nbP
-+pnMkqbhYPE7IxkuLN2QYf0qACJp7MeJRHtLzKB7bWZ5FW+ypRu1BWKry1qs7vxh
-YSJaBSMD3PIzwHaPtgoVIUQmL4tvaE4bwwQYMJnKz94EuDU+1yioxIfDrClAbSr0
-fbBECjnEindU7qEMu10eoDGKfpidVDaQ13f6ZAYrjshZcZYg0OGNreRU8l6S/x9u
-bok45WSoCsasiZVLYi5yOm/UK6VOo65yqwRMF53hzIHgAPVNqGBOkZlPIYKcYkOm
-ObwNpJCrgNfkqGyi4ytrDvf/lxPrVkbQkLp6dSWQSmxpTkRJdso=
-=gMEX
------END PGP SIGNATURE-----
-		</pre>
-        </code>
 
         <hr>
 
