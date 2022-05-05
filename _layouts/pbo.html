@@ -1,29 +1,21 @@
-{%- include header.html -%}
-<main>
-    <div class="navigation noselect">
-        [<a href="/" class="email">/home</a>]
-        {%- include nav.html -%}
-    </div>
-    {{ content }}
-    <h3>PBO dengan Java:</h3>
-    <p>Pemrograman berorientasi objek (PBO) atau Object-oriented programming (OOP) adalah sebuah paradikma pemrograman
-        yang didasarkan pada sebuah objek yang bisa memiliki data (atribut) dan perilaku (prosedur atau method)<sup><a
-                href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia</a></sup>. PBO adalah materi
-        lanjutan dari <a href="#pp">Pengantar Pemrograman</a>.</p>
-    <ol class="dash post">
-        {% for post in site.categories.pbo reversed %}
-        {% if post.url %}
-        <li class="list-post">
-            <div>
-                <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
-            </div>
-            <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span></li>
-        {% endif %}
-        {% endfor %}
-    </ol>
-    <hr>
-    {%- include footer.html -%}
-</main>
-</body>
+---
+layout: default
+title: PBO dengan Java
+---
 
-</html>
+<h3>PBO dengan Java:</h3>
+<p>Pemrograman berorientasi objek (PBO) atau Object-oriented programming (OOP) adalah sebuah paradikma pemrograman
+    yang didasarkan pada sebuah objek yang bisa memiliki data (atribut) dan perilaku (prosedur atau method)<sup><a
+            href="https://en.wikipedia.org/wiki/Object-oriented_programming">Wikipedia</a></sup>. PBO adalah materi
+    lanjutan dari <a href="#pp">Pengantar Pemrograman</a>.</p>
+<ol class="post">
+    {% for post in site.categories.pbo reversed %}
+    {% if post.url %}
+    <li class="list-post">
+        <div>
+            <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="post-title">{{ post.title }}</a>
+        </div>
+        <span class="meta">{{ post.date | date: "%d/%m/%y" }}</span></li>
+    {% endif %}
+    {% endfor %}
+</ol>
