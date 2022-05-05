@@ -43,7 +43,7 @@ Operasi penjumlahan dan perkalian dilakukan dengan menerapkan penjumlahan
 koefisien-koefisiennya dalam $\bmod \space  2$.
 
 Misalnya $a=(a_{n-1} \cdots a_{1}a_{0})$ dan $b=(b_{n-1} \cdots b_{1}b_{0})$,
-$a, b \n GF(2^n)$, maka:
+$a, b \in GF(2^n)$, maka:
 
 . penjumlahan $a + b = c = (c_{n-1} \cdots c_{1}c_{0}), c_{i} = (a_{i} + b_{i})
 \bmod 2, c \in GF(2^n)$,
