@@ -1,7 +1,10 @@
-:page-title       : Asciidoc Checkbox
-:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout      : default
-:page-category    : Tutorial
+:page-title     : Asciidoc Checkbox
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : Tutorial
+:page-time      : 2021-11-09T07:12:45
+:page-update    : 2022-05-06T13:38:00
+:page-idn       : 4f707212db5ccd8b247ffbe95be47c5c4730244f0886d2d007eadd934e3db2ee
 
 Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
 
