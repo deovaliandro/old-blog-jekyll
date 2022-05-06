@@ -10,7 +10,8 @@ Ini adalah rangkuman tentang SOLID yang saya pelajari di Dicoding.
 
 
 . Single Responsibility Principle (SRP),
-Sebuah class hanya melalukan satu tugas tertentu. Jika terdapat satu class yang memiliki dua tugas, maka sebaiknya dibuat dalam dua class yang berbeda.
+Sebuah class hanya melalukan satu tugas tertentu. Jika terdapat satu class yang
+memiliki dua tugas, maka sebaiknya dibuat dalam dua class yang berbeda.
 
 . Open/Close Principle (OCP),
 Sebuah sistem dapat ditambahkan dengan fungsi yang baru, tetapi tanpa mengubah
