@@ -3,7 +3,7 @@
 read title
 
 dt=$(date +"%Y-%m-%dT%T")
-tl=$(date +"%Y-%m-%dT%T-$title" | sha256sum | cut -c1-64)
+tl=$(date +"%Y-%m-%dT%T-$title" | sha256sum | cut -c1-16)
 
 touch "`echo $(date +\"%Y-%m-%d-\")`$tl.adoc"
 

@@ -4,7 +4,7 @@
 :page-category  : Tutorial
 :page-time      : 2021-11-09T07:12:45
 :page-update    : 2022-05-06T13:38:00
-:page-idn       : 4f707212db5ccd8b247ffbe95be47c5c4730244f0886d2d007eadd934e3db2ee
+:page-idn       : 4f707212db5ccd8b
 
 Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
 
