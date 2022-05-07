@@ -4,7 +4,7 @@
 :page-category  : artikel
 :page-time      : 2022-03-23T19:20:13
 :page-update    : 2022-05-05T20:40:25
-:page-idn       : 6848e8c07130266f44f7a02c2099a06bac59f63175c1a12b777d3e8a8f850600
+:page-idn       : 6848e8c07130266f
 
 Cara cepat menentukan negatif atau positif:
 

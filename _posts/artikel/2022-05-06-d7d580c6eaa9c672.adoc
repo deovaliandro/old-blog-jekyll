@@ -4,6 +4,6 @@
 :page-category  : ...
 :page-time      : 2022-05-06T11:24:19
 :page-update    : 2022-05-06T11:24:19
-:page-idn       : d7d580c6eaa9c67263b460c1be3af5c5e399fd8bc1df4e074f1eaf280892a810
+:page-idn       : d7d580c6eaa9c672
 
 Arch Linux telah membuatku berhenti menjadi __distro hopper__.

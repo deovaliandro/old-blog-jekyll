@@ -4,7 +4,7 @@
 :page-category  : Artikel
 :page-time      : 2021-11-11T11:11:11
 :page-update    : 2022-05-06T13:40:15
-:page-idn       : 33b1184e5b6a8ff18c97490150ba83be9d7edcd93a316fe3e3f990964ac47f1b
+:page-idn       : 33b1184e5b6a8ff1
 
 .Tata krama mahasiswa
 [link=/assets/img/tata-krama-mahasiswa.jpeg] 
