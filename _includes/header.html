@@ -32,7 +32,7 @@
         --blockquote: #f9f9f9;
         --meta: #828282;
         --link: #54008c;
-        --color1: #ececec;
+        --color1: #F0F0F0;
         --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
     }
 
@@ -67,9 +67,14 @@
     }
 
     code,
-    pre {
+    pre:not(.listingblock){
         font: 400 14px/18px Roboto Mono;
         background-color: var(--color1);
+    }
+
+    code,
+    pre{
+        font: 400 14px/18px Roboto Mono;
     }
 
     pre {
