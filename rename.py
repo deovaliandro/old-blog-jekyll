@@ -1,7 +1,7 @@
 import os
 import hashlib
 
-os.chdir('/home/deo/blog/_posts/cryptography')
+os.chdir('/home/deo/blog/_posts/toc')
 
 for count, f in enumerate(os.listdir()):
     f_name, f_ext = os.path.splitext(f)

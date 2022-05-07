@@ -12,4 +12,3 @@ dll.), non-primitif (array, record/struct, union) dan abstract data type (ADT),
 misalnya list, tuple, associative array, map, set, multiset (bag), stack, queue,
 graph (tree, heap), dan sebagainya
 footnote:[https://en.wikipedia.org/wiki/List_of_data_structures].
-
