@@ -1,98 +1,52 @@
 {%- include header.html -%}
 
-<body>
-    <main>
-        <h2 class="nobottom name">Deo Valiandro. M</h2>
-        <p class="sub"><code>/var/log/</code></p>
-        <nav class="noselect">
-            <ul>
-                <li>home</li>
-                <li><a href="/todo.html">todo</a></li>
-                <li><a href="/link.html">link</a></li>
-                <li><a href="/pp.html">pp</a></li>
-                <li><a href="/pbo.html">pbo</a></li>
-                <li><a href="/about.html">about</a></li>
-                <li><a onclick="switchTheme();" id="changeTheme">dark</a></li>
-                <li><a href="/signature.txt">signature</a></li>
-            </ul>
-        </nav>
+<h3>log: </h3>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Title</th>
+        <th>Action</th>
+    </tr>
+    {% for post in paginator.posts %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <tr>
+        <td class="center"><code class="er">{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
+        <td class="post-title-pl">{{ post.title }}</a></td>
+        <td class="center"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">view</a></td>
+    </tr>
+    {% endfor %}
+</table>
 
-        <h3>log: </h3>
-        <table>
-            <tr>
-                <th>Date</th>
-                <th>Title</th>
-                <th>Action</th>
-            </tr>
-            {% for post in paginator.posts %}
-            {% capture category_name %}{{ category | first }}{% endcapture %}
-            <tr>
-                <td class="center"><code class="er">{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
-                <td class="post-title-pl">{{ post.title }}</a></td>
-                <td class="center"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">view</a></td>
-            </tr>
-            {% endfor %}
-        </table>
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination center">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="pag">&laquo; Prev</a>
+    {% else %}
+    <span class="pag">&laquo; Prev</span>
+    {% endif %}
 
-        <!-- Pagination links -->
-        {% if paginator.total_pages > 1 %}
-        <div class="pagination center">
-            {% if paginator.previous_page %}
-            <a href="{{ paginator.previous_page_path | relative_url }}" class="pag">&laquo; Prev</a>
-            {% else %}
-            <span class="pag">&laquo; Prev</span>
-            {% endif %}
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <b class="pag">{{ page }}</b>
+    {% elsif page == 1 %}
+    <a href="{{ '/' | relative_url }}" class="pag">{{ page }}</a>
+    {% else %}
+    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pag">{{ page }}</a>
+    {% endif %}
+    {% endfor %}
 
-            {% for page in (1..paginator.total_pages) %}
-            {% if page == paginator.page %}
-            <b class="pag">{{ page }}</b>
-            {% elsif page == 1 %}
-            <a href="{{ '/' | relative_url }}" class="pag">{{ page }}</a>
-            {% else %}
-            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pag">{{ page }}</a>
-            {% endif %}
-            {% endfor %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="pag">Next &raquo;</a>
+    {% else %}
+    <span class="pag">Next &raquo;</span>
+    {% endif %}
+</div>
+{% endif %}
 
-            {% if paginator.next_page %}
-            <a href="{{ paginator.next_page_path | relative_url }}" class="pag">Next &raquo;</a>
-            {% else %}
-            <span class="pag">Next &raquo;</span>
-            {% endif %}
-        </div>
-        {% endif %}
-
-        <hr>
-
-        {%- include footer.html -%}
-    </main>
+<hr>
+{%- include footer.html -%}
+</main>
 </body>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css"
-    integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB"
-    crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js"
-    integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY"
-    crossorigin="anonymous">
-</script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js"
-    integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR"
-    crossorigin="anonymous">
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        renderMathInElement(document.body, {
-            delimiters: [{
-                left: '$$',
-                right: '$',
-                display: true
-            }, {
-                left: '$',
-                right: '$',
-                display: false
-            }],
-            throwOnError: true,
-            trust: true
-        });
-    });
-</script>
 
 </html>
