@@ -4,7 +4,7 @@
 :page-category  : Algoritma
 :page-time      : 2021-01-31T10:00:21
 :page-update    : 2022-05-05T20:35:55
-:page-idn       : 110ace2431a4a3a61f0b2ab25bbaa8c344fb1d96ec6fc03a7f28c5db9056c32a
+:page-idn       : 110ace2431a4a3a6
 
 [source, c, noline]
 ----
