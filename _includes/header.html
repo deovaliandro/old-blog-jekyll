@@ -14,15 +14,6 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}"
         href="{{ " /feed.xml " | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=EB+Garamond:400,400italic,700,700italic%7COpen+Sans:300">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
     <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
 
 </head>
@@ -36,7 +27,6 @@
         --link: #54008c;
         --color1: #F0F0F0;
         --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
-        --font1: "EB Garamond", serif;
     }
 
     [data-theme="dark"] {
@@ -51,11 +41,11 @@
 
     body {
         width: 60rem;
-        font-family: var(--font1);
+        font-family: var(--font);
         color: var(--font-color);
         background-color: var(--bg);
-        font-size: calc(1rem + 0.00625 * (120vw - 55rem));
-        line-height: 1.4;
+        font-size: calc(1rem + 0.00625 * (90vw - 55rem));
+        /* line-height: 1.4; */
         margin: 0px auto;
         word-break: break-word;
         overflow-y: scroll;
@@ -71,13 +61,13 @@
 
     code,
     pre:not(.listingblock){
-        font: 400 14px/18px Roboto Mono;
+        font: 400 14px/18px monospace;
         background-color: var(--color1);
     }
 
     code,
     pre{
-        font: 400 14px/18px Roboto Mono;
+        font: 400 14px/18px monospace;
     }
 
     pre {
@@ -87,7 +77,7 @@
     a {
         color: var(--link);
         background-color: transparent;
-        font-family: var(--font1);
+        font-family: var(--font);
     }
 
     a.bare {
@@ -111,7 +101,7 @@
     }
 
     nav {
-        margin-top: 1em;
+        margin-top: .8em;
     }
 
     nav ul {
@@ -148,6 +138,7 @@
 
     .sub {
         margin-top: 0;
+        margin-bottom: 0;
     }
 
     #love {
@@ -206,6 +197,7 @@
 
     .post-title-pl {
         padding-left: .5rem;
+        width: 75%;
     }
 
     tr:nth-child(even) {
@@ -253,8 +245,6 @@
                 right: '$',
                 display: false
             }],
-            // throwOnError: true,
-            // trust: true
         });
     });
 </script>

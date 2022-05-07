@@ -1,18 +1,16 @@
 {%- include header.html -%}
 
-<h3>log: </h3>
+<h3>Log: </h3>
 <table>
     <tr>
         <th>Date</th>
         <th>Title</th>
-        <th>Action</th>
     </tr>
     {% for post in paginator.posts %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
     <tr>
         <td class="center"><code class="er">{{ post.time | date: "%Y-%m-%dT%T" }}</code></td>
-        <td class="post-title-pl">{{ post.title }}</a></td>
-        <td class="center"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">view</a></td>
+        <td class="post-title-pl"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></td>
     </tr>
     {% endfor %}
 </table>
@@ -43,7 +41,11 @@
     {% endif %}
 </div>
 {% endif %}
-
+<nav>
+    <ul>
+        <li><a href="{{ " /feed.xml " | prepend: site.baseurl }}">rss</a></li>
+    </ul>
+ </nav>
 <hr>
 {%- include footer.html -%}
 </main>
