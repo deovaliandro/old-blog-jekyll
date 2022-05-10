@@ -1,7 +1,10 @@
-:page-title       : Pemrograman Fungsional
-:page-signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout      : default
-:page-category    : fp
+:page-title     : Pemrograman Fungsional
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : fp
+:page-time      : 2022-02-05T07:12:45
+:page-update    : 2022-05-10T13:38:00
+:page-idn       : da24bdacf0d20091
 
 Functional Programming (FP) merupakan konsep yang baru bagi saya. Ketika
 memasuki program studi Ilmu Komputer di Universitas Hasanuddin, saya hanya
