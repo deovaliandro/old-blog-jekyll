@@ -15,6 +15,7 @@
     <link rel="self" type="application/atom+xml" title="{{ site.title }}"
         href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
+    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
 </head>
 <style>
     :root {
@@ -23,7 +24,7 @@
         --font-color: #4B4B4B;
         --blockquote: #f9f9f9;
         --meta: #828282;
-        --link: #54008c;
+        --link: #7e22ce;
         --color1: #F0F0F0;
         --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
     }
@@ -49,7 +50,8 @@
         overflow-y: scroll;
     }
 
-    h1, h2 {
+    h1,
+    h2 {
         border-bottom: 1px dotted #504945;
     }
 
@@ -58,13 +60,13 @@
     }
 
     code,
-    pre:not(.listingblock){
+    pre:not(.listingblock) {
         font: 400 14px/18px monospace;
         background-color: var(--color1);
     }
 
     code,
-    pre{
+    pre {
         font: 400 14px/18px monospace;
     }
 
@@ -215,7 +217,7 @@
         background-color: transparent;
     }
 
-    .ava > img {
+    .ava>img {
         float: left;
         margin-right: 1em;
         width: 8rem;
@@ -261,28 +263,34 @@
     <main>
         <h2 class="nobottom name">Deo Valiandro. M</h2>
         <p class="sub"><code>/var/log/</code></p>
-        <nav class="noselect">
+        <nav>
             <ul>
                 <li>
                     <a href="/">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-						</svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
                         Home
                     </a>
                 </li>
                 <li>
                     <a href="/about.html">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor" stroke-width="2">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
-                          </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2" />
+                        </svg>
                         about</a>
                 </li>
                 <li><a onclick="switchTheme();" id="changeTheme">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                      </svg>
-                    dark</a>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor"
+                            stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        dark</a>
                 </li>
             </ul>
         </nav>

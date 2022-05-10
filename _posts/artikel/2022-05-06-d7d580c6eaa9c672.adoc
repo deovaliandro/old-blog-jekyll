@@ -6,4 +6,4 @@
 :page-update    : 2022-05-06T11:24:19
 :page-idn       : d7d580c6eaa9c672
 
-Arch Linux telah membuatku berhenti menjadi __distro hopper__.
+Arch Linux telah membuatku berhenti menjadi __distro hopper__ &#128274;.

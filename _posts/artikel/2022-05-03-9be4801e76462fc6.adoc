@@ -6,4 +6,4 @@
 :page-update    : 2022-05-04T20:39:25
 :page-idn       : 9be4801e76462fc6
 
-Saya tertarik dengan website seseorang, jadi saya mencoba menirunya.
+Saya tertarik dengan website seseorang, jadi saya mencoba menirunya &#x1F60A;.
