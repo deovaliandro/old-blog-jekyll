@@ -4,10 +4,11 @@
 :page-category  : Kriptografi
 :page-time      : 2021-11-11T12:10:12
 :page-update    : 2022-05-03T22:48:35
-:page-idn       : c6a041e28dc650b3fc609a80681251a7200d5aa2999793a0bf2f95f867b2d9c5
+:page-idn       : c6a041e28dc650b3
 
 
-== Kompresi dan Enkripsi
+Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file &#128272;,
+salah satu caranya adalah dengan menggunakan GPG.
 
 Untuk compress folder:
 
