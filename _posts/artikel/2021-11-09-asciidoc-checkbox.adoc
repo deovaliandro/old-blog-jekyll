@@ -22,9 +22,9 @@ kemudian mengaktifkan font awesome untuk membuat icon checkbox aktif,
 
 Contoh hasil:
 
-* [*] checked
-* [x] also checked
-* [ ] not checked
+- [*] checked
+- [x] also checked
+- [ ] not checked
 
 Sumber:
 

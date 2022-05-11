@@ -3,7 +3,7 @@ description: >-
   Hamba yang tidak berguna di tangan Allah yang penuh hikmat.
 baseurl: ""
 url: "https://deo.or.id"
-permalink: /:year/:month/:title:output_ext
+permalink: /:year/:title:output_ext
 paginate: 10
 paginate_path: "/:num.html"
 hidden: true
