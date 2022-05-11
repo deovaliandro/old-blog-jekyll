@@ -3,9 +3,9 @@
 :page-layout    : default
 :page-category  : Teori Komputasi
 :page-tags      : [math]
-:page-time      : 2022-02-05T07:12:45
+:page-time      : 2021-12-03T07:12:45
 :page-update    : 2022-05-10T13:38:00
-:page-idn       : 4f707212db5ccd8b
+:page-idn       : 5af38ddb268baf54
 
 
 == Latar belakang
@@ -46,3 +46,14 @@ ${a^{\ast}} = {\epsilon, a, aa, aaa, \cdots}$. Dengan menggunakan $x \in
 \Sigma^{\ast}$ adalah $x$ atas alfabet $\Sigma$.
 
 Kecuali $\Sigma = \{\}$, Kleene closure atas alfabet adalah infinity set.
+
+_The Pragmatic Programmer_ <<pp>> should be required reading for all developers.
+To learn all about design patterns, refer to the book by the "`Gang of Four`" <<gof>>.
+
+[bibliography]
+== References
+
+* [[[pp]]] Andy Hunt & Dave Thomas. The Pragmatic Programmer:
+From Journeyman to Master. Addison-Wesley. 1999.
+* [[[gof,gang]]] Erich Gamma, Richard Helm, Ralph Johnson & John Vlissides.
+Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley. 1994.
