@@ -6,6 +6,7 @@
 :page-update    : 2022-05-06T13:40:15
 :page-idn       : 192ffb04208a63c4
 
+
 .Tata krama mahasiswa
 [link=/assets/img/tata-krama-mahasiswa.jpeg] 
 image::/assets/img/tata-krama-mahasiswa.jpeg[Tata krama mahasiswa] 

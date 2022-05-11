@@ -6,6 +6,7 @@
 :page-update    : 2022-05-06T13:38:00
 :page-idn       : 4f707212db5ccd8b
 
+
 Untuk menggunakan checkbox asciidoc pada jekyll, dapat menggunakan
 
 [source, asciidoc]

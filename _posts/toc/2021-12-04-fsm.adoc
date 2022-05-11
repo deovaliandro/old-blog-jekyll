@@ -8,6 +8,7 @@
 :page-idn       : 4f707212db5ccd8b
 :toc:
 
+
 == Finite Automata
 
 > "One way to define a language is to construct an automaton—a kind

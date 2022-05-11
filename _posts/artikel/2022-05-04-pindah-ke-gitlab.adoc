@@ -4,7 +4,7 @@
 :page-category  : log
 :page-time      : 2022-05-04T13:02:31
 :page-update    : 2022-05-04T13:02:31
-:page-idn       : 50e565789bf00008
+:page-idn       : cbe99292bb50ac1d
 
 Rencana pindahkan semua git ke GitLab dari Github.
 Entah kenapa lebih nyaman tanpa embel mikocok &#x1F605;.

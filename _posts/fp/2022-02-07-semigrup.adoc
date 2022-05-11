@@ -1,11 +1,11 @@
-:page-title     : Semigroup
+:page-title     : Semigrup
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : fp
 :page-tags      : [math]
 :page-time      : 2022-02-07T07:11:55
 :page-update    : 2022-05-10T19:38:00
-:page-idn       : 53c3e4296cec66dc
+:page-idn       : 7a26ef4ec51018e7
 
 Sebuah set S yang mempunyai operasi binary $S \times S \to S$, dengan operasi
 $\cdot$ adalah semigroup jika memenuhi:

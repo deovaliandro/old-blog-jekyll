@@ -4,10 +4,11 @@
 :page-category  : artikel
 :page-time      : 2022-02-22T15:00:10
 :page-update    : 2022-05-05T20:49:15
-:page-idn       : ba1b1fabc1279658
+:page-idn       : 20851450dc5b6873
+:toc:
+
 
 Ini adalah rangkuman tentang SOLID yang saya pelajari di Dicoding.
-
 
 . Single Responsibility Principle (SRP),
 Sebuah class hanya melalukan satu tugas tertentu. Jika terdapat satu class yang
