@@ -3,6 +3,9 @@
 :page-layout    : default
 :page-category  : Kriptografi
 :page-tags      : [math]
+:page-time      : 2019-10-02T19:43:00
+:page-update    : 2022-05-10T08:27:00
+:page-idn       : a43fba9cfc8327e8
 
 Fungsi adalah sebuah relasi khusus pada dua himpunan.
 
