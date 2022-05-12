@@ -1,0 +1,11 @@
+:page-title     : Pindah ke MathJax
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : artikel
+:page-time      : 2022-05-14T14:55:30
+:page-update    : 2022-05-14T14:55:30
+:page-idn       : c970f80b6beda8d6
+:toc:
+
+Karena alasan kompatibilitas, akhirnya saya pindah ke MathJax setelah sekian
+lama menggunakan KaTeX
