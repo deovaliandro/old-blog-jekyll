@@ -1,0 +1,37 @@
+:page-title     : Machine Learning Week-1 (Coursera)
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : ml
+:page-time      : 2022-05-14T07:08:30
+:page-update    : 2022-05-14T07:08:30
+:page-idn       : 88b7bd82f4dfd60d
+:toc:
+
+
+== Pendahuluan
+
+Dulu saya mengambil mata kuliah ML, tetapi kemudian berganti fokus ke
+kriptografi, jadi untuk mempelajari materi lagi, saya ikut kelas Coursera.
+
+== Intro
+
+Machine Learning adalah mesin yang mempelajari data berdasarkan pengalaman,
+dengan memperhatikan beberapa kelas dari suatu tugas tertentu.
+
+Terbagi menjadi:
+
+=== Supervised Learning
+
+Diberikan dataset yang telah diketahui hasilnya bagaimana dan diberikan tugas
+untuk menentukan korelasi data jika diberikan suatu input diluar data yang telah
+ada.
+
+Dikategorikan menjadi:
+
+==== regression
+
+memprediksi hasil continui,  misalnya memprediksi harga rumah.
+
+==== classification
+
+memprediksi hasil diskrit, misalnya memprediksi tumor ganas atau tumor jinak.
