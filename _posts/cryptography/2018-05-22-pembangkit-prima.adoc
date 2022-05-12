@@ -6,6 +6,10 @@
 :page-time      : 2018-05-22T22:14:18
 :page-update    : 2022-05-10T08:27:00
 :page-idn       : a43fba9cfc8327e8
+:toc:
+
+
+== Pendahuluan
 
 Metode untuk pengujian bilangan prima yang paling sederhana adalah
 __brute force__, yaitu membagi $n$ dengan $p \in \mathbb{P}, p \leq \sqrt{n}$.
