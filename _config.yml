@@ -5,8 +5,9 @@ baseurl: ""
 url: "https://deo.or.id"
 permalink: /:year/:title:output_ext
 paginate: 10
-paginate_path: "/:num.html"
+paginate_path: "/:num"
 hidden: true
+timezone: Asia/Singapore
 
 plugins:
   - jekyll-asciidoc

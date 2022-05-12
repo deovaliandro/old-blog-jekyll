@@ -16,256 +16,242 @@
         href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
     <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
-</head>
-<style>
-    body {counter-reset: h2}
-    h2 {counter-reset: h3}
-    h3 {counter-reset: h4}
-    h4 {counter-reset: h5}
-    h5 {counter-reset: h6}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    h2:before {counter-increment: h2; content: counter(h2) ". "}
-    h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
-    h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
-    h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
-    h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
-
-    h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before { content: ""; counter-increment: none }
+    <style>
+        body {counter-reset: h2}
+        h2 {counter-reset: h3}
+        h3 {counter-reset: h4}
+        h4 {counter-reset: h5}
+        h5 {counter-reset: h6}
     
-    :root {
-        --bg: #fff;
-        --hr: #cccccc;
-        --font-color: #4B4B4B;
-        --blockquote: #f9f9f9;
-        --meta: #828282;
-        --link: #205375;
-        --color1: #F0F0F0;
-        --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
-    }
-
-    [data-theme="dark"] {
-        --bg: #282828;
-        --hr: #d79921;
-        --font-color: #ebdbb2;
-        --blockquote: #504945;
-        --meta: #d5c4a1;
-        --link: #d79921;
-        --color1: #504945;
-    }
-
-    body {
-        max-width: 50rem;
-        font-family: var(--font);
-        color: var(--font-color);
-        background-color: var(--bg);
-        font-size: calc(1rem + 0.00625 * (90vw - 55rem));
-        margin: 0px auto;
-        padding:0 1rem 0 1rem;
-        word-break: break-word;
-        overflow-y: scroll;
-    }
-
-    h1,
-    h2 {
-        border-bottom: 1px dotted #504945;
-    }
-
-    .nobottom {
-        border-bottom: none;
-    }
-
-    code,
-    pre:not(.listingblock) {
-        font: calc(1rem + 0.00625 * (40vw - 55rem)) monospace;
-        background-color: var(--color1);
-    }
-
-    code,
-    pre {
-        font:calc(1rem + 0.00625 * (50vw - 55rem)) monospace;
-    }
-
-    pre {
-        padding: 1em;
-    }
-
-    a {
-        color: var(--link);
-        background-color: transparent;
-        font-family: var(--font);
-        text-decoration: none;
-    }
-
-    a.bare {
-        word-break: break-all;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    hr {
-        position: relative;
-        border: 0;
-        border-top: 1px solid var(--hr);
-    }
-
-    .post-title {
-        font-weight: 500;
-        text-decoration: none;
-    }
-
-    nav {
-        margin-top: .8em;
-    }
-
-    nav ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-
-    nav li {
-        display: inline-block;
-        margin-right: .5em;
-        margin-bottom: .25em;
-    }
-
-    blockquote {
-        background: var(--blockquote);
-        border-left: 5px solid var(--hr);
-        margin-left: 0;
-        padding: 1em;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    .dash {
-        padding-left: 1rem;
-        padding-right: 1rem;
-        border: 1px dotted #4B4B4B;
-    }
-
-    .name {
-        margin-bottom: 0;
-    }
-
-    .nav {
-        text-decoration: underline;
-    }
-
-    .sub {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    #love {
-        vertical-align: middle;
-    }
-
-    .MathJax {
-        font-size: 1.1em !important;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    .noselect {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-    }
-
-    .meta {
-        font: 400 14px/18px Roboto Mono;
-    }
-
-    .list-post {
-        padding: .1rem 0;
-    }
-
-    .title {
-        border: none;
-        text-align: center;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    #footnotes {
-        padding-bottom: 1em;
-    }
-
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
-
-    td,
-    th {
-        border: 1px solid #dddddd;
-    }
-
-    .post-title-pl {
-        padding-left: .5rem;
-        width: 60%;
-    }
-
-    tr:nth-child(even) {
-        background-color: var(--color1);
-    }
-
-    .pagination {
-        margin-top: 1em;
-    }
-
-    .pag {
-        margin-right: 1em;
-    }
-
-    .er {
-        background-color: transparent;
-    }
-
-    .ava>img {
-        float: left;
-        margin-right: 1em;
-        width: 8rem;
-    }
-
-    svg {
-        height: 1.25rem;
-        vertical-align: middle;
-    }
-</style>
-
-{% if page.tags != empty %}
-{% for tag in page.tags %}
-{% if tag == "math" %}
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$']],
+        h2:before {counter-increment: h2; content: counter(h2) ". "}
+        h3:before {counter-increment: h3; content: counter(h2) "." counter(h3) ". "}
+        h4:before {counter-increment: h4; content: counter(h2) "." counter(h3) "." counter(h4) ". "}
+        h5:before {counter-increment: h5; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) ". "}
+        h6:before {counter-increment: h6; content: counter(h2) "." counter(h3) "." counter(h4) "." counter(h5) "." counter(h6) ". "}
+    
+        h2.nocount:before, h3.nocount:before, h4.nocount:before, h5.nocount:before, h6.nocount:before { content: ""; counter-increment: none }
+        
+        :root {
+            --bg: #fff;
+            --hr: #cccccc;
+            --font-color: #4B4B4B;
+            --blockquote: #f9f9f9;
+            --meta: #828282;
+            --link: #205375;
+            --color1: #F0F0F0;
+            --font: system-ui, -apple-system, BlinkMacSystemFont, segoe ui, Roboto, Oxygen, Ubuntu, Cantarell, pt sans, open sans, fira sans, droid sans, helvetica neue, Helvetica, Arial, sans-serif;
         }
-    };
-
-</script>
-{% endif %}
-{% endfor %}
-{% endif %}
-
+    
+        [data-theme="dark"] {
+            --bg: #282828;
+            --hr: #d79921;
+            --font-color: #ebdbb2;
+            --blockquote: #504945;
+            --meta: #d5c4a1;
+            --link: #d79921;
+            --color1: #504945;
+        }
+    
+        body {
+            max-width: 50rem;
+            font-family: var(--font);
+            color: var(--font-color);
+            background-color: var(--bg);
+            font-size: calc(1rem + 0.00625 * (90vw - 55rem));
+            margin: 0px auto;
+            padding:0 1rem 0 1rem;
+            word-break: break-word;
+            overflow-y: scroll;
+        }
+    
+        h1,
+        h2 {
+            border-bottom: 1px dotted #504945;
+        }
+    
+        .nobottom {
+            border-bottom: none;
+        }
+    
+        code,
+        pre:not(.listingblock) {
+            font: calc(1rem + 0.00625 * (40vw - 55rem)) 'Source Code Pro';
+            background-color: var(--color1);
+        }
+    
+        code,
+        pre {
+            font: calc(1rem + 0.00625 * (50vw - 55rem)) 'Source Code Pro';
+            white-space: pre-wrap; 
+        }
+    
+        pre {
+            padding: 1em;
+        }
+    
+        a {
+            color: var(--link);
+            background-color: transparent;
+            font-family: var(--font);
+            text-decoration: none;
+        }
+    
+        a.bare {
+            word-break: break-all;
+        }
+    
+        a:hover {
+            text-decoration: underline;
+        }
+    
+        hr {
+            position: relative;
+            border: 0;
+            border-top: 1px solid var(--hr);
+        }
+    
+        .post-title {
+            font-weight: 500;
+            text-decoration: none;
+        }
+    
+        nav {
+            margin-top: .8em;
+        }
+    
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+    
+        nav li {
+            display: inline-block;
+            margin-right: .5em;
+            margin-bottom: .25em;
+        }
+    
+        blockquote {
+            background: var(--blockquote);
+            border-left: 5px solid var(--hr);
+            margin-left: 0;
+            padding: 1em;
+        }
+    
+        img {
+            width: 100%;
+        }
+    
+        .dash {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            border: 1px dotted #4B4B4B;
+        }
+    
+        .name {
+            margin-bottom: 0;
+        }
+    
+        .nav {
+            text-decoration: underline;
+        }
+    
+        .sub {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+    
+        #love {
+            vertical-align: middle;
+        }
+    
+        .MathJax {
+            font-size: 1.1em !important;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    
+        .noselect {
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    
+        .meta {
+            font: 400 14px/18px Roboto Mono;
+        }
+    
+        .list-post {
+            padding: .1rem 0;
+        }
+    
+        .title {
+            border: none;
+            text-align: center;
+        }
+    
+        .center {
+            text-align: center;
+        }
+    
+        #footnotes {
+            padding-bottom: 1em;
+        }
+    
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        td,
+        th {
+            border: 1px solid #dddddd;
+        }
+    
+        .post-title-pl {
+            padding-left: .5rem;
+            width: 60%;
+        }
+    
+        tr:nth-child(even) {
+            background-color: var(--color1);
+        }
+    
+        .pagination {
+            margin-top: 1em;
+        }
+    
+        .pag {
+            margin-right: 1em;
+        }
+    
+        .er {
+            background-color: transparent;
+        }
+    
+        .ava>img {
+            float: left;
+            margin-right: 1em;
+            width: 8rem;
+        }
+    
+        svg {
+            height: 1.25rem;
+            vertical-align: middle;
+        }
+    </style>
+</head>
 <body>
     <main>
         <h2 class="nobottom name nocount">Deo Valiandro. M</h2>
@@ -279,7 +265,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round"
                                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
-                        Home
+                        home
                     </a>
                 </li>
                 <li>
