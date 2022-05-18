@@ -4,26 +4,27 @@
 <script>
     window.MathJax = {
         tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$']]
+            inlineMath: [
+                ['$', '$']
+            ],
+            displayMath: [
+                ['$$', '$']
+            ]
         }
     };
 </script>
-<h3 class="nocount">Catatan: </h3>
-<table>
-    <tr>
-        <th>Date</th>
-        <th>Title</th>
-    </tr>
+
+<ul class="list-post">
     {% for post in paginator.posts %}
     {% capture category_name %}{{ category | first }}{% endcapture %}
-    <tr>
-        <td class="center"><code class="er">{{ post.date | date: "%Y-%m-%dT%T" }}</code></td>
-        <td class="post-title-pl"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-        </td>
-    </tr>
+    <li>
+        <div class="post">
+            <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+            <code class="er">📅 {{ post.date | date: "%Y-%m-%dT%T" }}</code>
+        </div>
+    </li>
     {% endfor %}
-</table>
+</ul>
 
 <!-- Pagination links -->
 {% if paginator.total_pages > 1 %}
@@ -53,13 +54,7 @@
 {% endif %}
 <nav>
     <ul>
-        <li><a href="{{ " /feed.xml " | prepend: site.baseurl }}">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 2 24 24" stroke="currentColor"
-                    stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6 0a1 1 0 11-2 0 1 1 0 012 0z" />
-                </svg>
-                rss</a></li>
+        <li><a href="{{ " /feed.xml " | prepend: site.baseurl }}">🚩rss</a></li>
     </ul>
 </nav>
 <hr>
