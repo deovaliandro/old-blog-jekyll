@@ -28,10 +28,20 @@ ada.
 
 Dikategorikan menjadi:
 
-==== regression
+. regression, memprediksi hasil continui,  misalnya memprediksi harga rumah.
+. classification, memprediksi hasil diskrit, misalnya memprediksi tumor ganas
+atau tumor jinak.
 
-memprediksi hasil continui,  misalnya memprediksi harga rumah.
+=== Unsupervised Learning
 
-==== classification
+Diberikan data yang tidak diketahui, kemudian dilakukan pengelompokan data.
+Hasilnya adalah struktur data. Kita dapat melakukannya dengan melakukan klustering
+atau clustering data berdasarkan variabelnya.
 
-memprediksi hasil diskrit, misalnya memprediksi tumor ganas atau tumor jinak.
+Contoh:
+
+. Clusetering, diberikan data gen kemudian dikelompokkan berdasarkan variabel,
+seperti lokasi, masa hidup, dll.
+. Non-clustering, menemukan struktur dari data chaos, misalnya "Cocktail Party
+Algorithm", identifying individual voices and music from a mesh of sounds at a
+cocktail party.
