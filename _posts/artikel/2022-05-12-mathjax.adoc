@@ -9,3 +9,27 @@
 
 Karena alasan kompatibilitas, akhirnya saya pindah ke MathJax setelah sekian
 lama menggunakan KaTeX.
+
+Import dengan:
+
+[source, html]
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+Kemudian saya menggunakan konfigurasi sederhana saja,
+
+[source, javascript]
+----
+window.MathJax = 
+{
+    tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+    }
+};
+----
+
+Agar tidak terlalu memberatkan browser, saya tidak langsung menjalankan fungsi
+tersebut kecuali halaman tersebut memiliki persamaan matematika, dengan
+memanfaatkan fitur tag di Jekyll, maka hal ini dapat diatasi.
