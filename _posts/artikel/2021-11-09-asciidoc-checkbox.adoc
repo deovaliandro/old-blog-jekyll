@@ -31,6 +31,6 @@ Sumber:
 
 * link:https://docs.asciidoctor.org/asciidoc/latest/lists/checklist/[asciidoctor.org]
 
-+++
+++++
 <script src="https://kit.fontawesome.com/c42de40267.js" crossorigin="anonymous" defer></script>
-+++
+++++

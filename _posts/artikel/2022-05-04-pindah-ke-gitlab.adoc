@@ -6,7 +6,8 @@
 :page-update    : 2022-05-04T13:02:31
 :page-idn       : cbe99292bb50ac1d
 
-Rencana pindahkan semua git ke GitLab dari Github.
-Entah kenapa lebih nyaman tanpa embel mikocok &#x1F605;.
+
+Rencana pindahkan semua git ke GitLab dari Github. Entah kenapa lebih nyaman
+tanpa embel mikocok &#x1F605;.
 
 Pelan-pelan akan dipindahkan semua.

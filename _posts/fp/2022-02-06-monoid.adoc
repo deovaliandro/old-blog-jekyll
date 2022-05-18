@@ -7,6 +7,7 @@
 :page-update    : 2022-05-10T19:40:17
 :page-idn       : 5fafa77330800e5f
 
+
 Sebuah set S yang mempunyai operasi binary $S \times S \to S$, dengan operasi
 $\cdot$ adalah monoid jika memenuhi:
 
