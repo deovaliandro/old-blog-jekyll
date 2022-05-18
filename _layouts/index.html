@@ -52,11 +52,8 @@
     {% endif %}
 </div>
 {% endif %}
-<nav>
-    <ul>
-        <li><a href="{{ " /feed.xml " | prepend: site.baseurl }}">🚩rss</a></li>
-    </ul>
-</nav>
+
+<a href="{{ " /feed.xml " | prepend: site.baseurl }}">🚩rss</a>
 <hr>
 {%- include footer.html -%}
 </main>
