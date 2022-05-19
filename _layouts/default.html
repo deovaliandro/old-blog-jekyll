@@ -16,9 +16,16 @@
     {{ content }}
 </div>
 <hr>
+
+{% if page.signed-by %}
 <code class="er">Signed-off-by: {{ page.signed-by }}</code><br>
+{% endif %}
+{% if page.date %}
 <code class="er">Created: {{ page.date | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}</code><br>
+{% endif %}
+{% if page.idn %}
 <code class="er">ID: {{ page.idn }}</code>
+{% endif %}
 <nav>
     <ul>
         <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}">✏️ edit</a></li>
