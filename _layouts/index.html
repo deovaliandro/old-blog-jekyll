@@ -20,7 +20,7 @@
     <li>
         <div class="post">
             <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
-            <code class="er">📅 {{ post.date | date: "%Y-%m-%d" }}</code>
+            <code class="er">{{ post.date | date: "%Y-%m-%d" }}</code>
         </div>
     </li>
     {% endfor %}
