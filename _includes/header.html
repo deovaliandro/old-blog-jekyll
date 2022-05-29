@@ -28,6 +28,8 @@
             --color1: #F0F0F0;
             --font: 1.33rem 'Fira Code';
             --fontmono: 400 0.9em 'Fira Code', monospace;
+            --bg2: rgb(255, 215, 0);
+            --bg3: darkred;
         }
 
         [data-theme=dark] {
@@ -37,7 +39,9 @@
             --blockquote: #504945;
             --meta: #d5c4a1;
             --link: #d79921;
-            --color1: #504945
+            --color1: #504945;
+            --bg3: rgb(255, 215, 0);
+            --bg2: darkred;
         }
 
         body {
@@ -229,7 +233,7 @@
         a {
             text-decoration: none;
             border-bottom: solid 1px #bbb;
-            color: #000;
+            color: var(--font-color);
         }
 
         a:hover{
@@ -237,7 +241,7 @@
         }
 
         .title > a:hover {
-            background-color: rgb(255, 215, 0);
+            background-color: var(--bg2);
         }
 
         #name {
@@ -257,12 +261,12 @@
         }
 
         .contact {
-            color: rgb(139, 0, 0);
+            color: var(--bg3);
             border-bottom: none;
         }
 
         .contact:hover {
-            border-bottom: dotted 2px darkred;
+            border-bottom: dotted 2px var(--bg3);
         }
     </style>
 </head>
@@ -277,7 +281,7 @@
                 <li>
                     <a href="/about.html">🧒🏻about</a>
                 </li>
-                <li><a onclick="switchTheme();" id="changeTheme">🌙dark</a>
+                <li><a onclick="switchTheme();" id="changeTheme">🌚dark</a>
                 </li>
             </ul>
         </nav>

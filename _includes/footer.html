@@ -17,7 +17,7 @@
             toggleSwitch.innerHTML = "🌞light";
         } else {
             stylesheet.setAttribute('href', '/assets/css/github.css');
-            toggleSwitch.innerHTML = "🌙dark";
+            toggleSwitch.innerHTML = "🌚dark";
         }
     }
 
@@ -28,7 +28,7 @@
             document.documentElement.setAttribute('data-theme', 'light');
             stylesheet.setAttribute('href', '/assets/css/github.css');
             localStorage.setItem('theme', 'light');
-            toggleSwitch.innerHTML = "🌙dark";
+            toggleSwitch.innerHTML = "🌚dark";
         } else {
             document.documentElement.setAttribute('data-theme', 'dark');
             stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
