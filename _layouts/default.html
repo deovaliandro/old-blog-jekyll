@@ -11,7 +11,8 @@
     };
 </script>
 {% endif %}{% endfor %}{% endif %}
-<h2>{{ page.title }}</h2>
+<h1>{{ page.title }}</h1>
+
 <div>
     {{ content }}
 </div>
@@ -28,8 +29,8 @@
 {% endif %}
 <nav>
     <ul>
-        <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}">✏️ edit</a></li>
-        <li><a href="#">🎣 top</a></li>
+        <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}" class="tools">✏️ edit</a></li>
+        <li><a href="#" class="tools">🎣 top</a></li>
     </ul>
 </nav>
 {%- include footer.html -%}

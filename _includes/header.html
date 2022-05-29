@@ -15,22 +15,7 @@
     <link rel="self" type="application/atom+xml" title="{{ site.title }}"
         href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
     <link link id="stylesheet" rel="stylesheet" type="text/css" href="">
-    <script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
 
     <style>
         :root {
@@ -41,8 +26,8 @@
             --meta: #828282;
             --link: #681da8;
             --color1: #F0F0F0;
-            --font: 1em 'Source Sans Pro', sans-serif;
-            --fontmono: 300 0.9em 'JetBrains Mono';
+            --font: 1.33rem 'Fira Code';
+            --fontmono: 400 0.9em 'Fira Code', monospace;
         }
 
         [data-theme=dark] {
@@ -58,8 +43,7 @@
         body {
             text-rendering: optimizeLegibility;
             max-width: 50rem;
-            font-size: large;
-            font-family: 'Source Sans Pro', serif;
+            font: var(--font);
             color: var(--font-color);
             background-color: var(--bg);
             margin: 0 auto;
@@ -69,14 +53,28 @@
             line-height: 1.4;
         }
 
-        h1,
-        h2,
+        h1 {
+            color: rgb(218, 165, 32);
+            font: 4.44rem 'Fira Code';
+            font-weight: 700;
+        }
+
+        h2 {
+            color: rgb(0, 139, 139);
+            font: 3rem 'Fira Code';
+            font-weight: 600;
+        }
+
         h3,
         h4,
         h5,
         h6,
         h7 {
             font-family: 'Playfair Display', serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            code { font-family: 'Fira Code VF', monospace; }
         }
 
         code,
@@ -124,7 +122,6 @@
         nav li {
             display: inline-block;
             margin-right: .5em;
-            margin-bottom: .25em
         }
 
         blockquote {
@@ -199,7 +196,6 @@
         }
 
         .title {
-            font-size: 1.2em;
             margin: 0 auto;
         }
 
@@ -230,8 +226,43 @@
             vertical-align: middle
         }
 
-        footer {
-            margin-bottom: 2rem;
+        a {
+            text-decoration: none;
+            border-bottom: solid 1px #bbb;
+            color: #000;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        .title > a:hover {
+            background-color: rgb(255, 215, 0);
+        }
+
+        #name {
+            margin: 0 auto;
+            font-weight: 700;
+            font-size: 2rem;
+            color: tomato;
+        }
+
+        nav > ul > li > p {
+            margin: 0;
+        }
+
+        .tools:hover {
+            background-color: rgb(0, 139, 139);
+            color: white;
+        }
+
+        .contact {
+            color: rgb(139, 0, 0);
+            border-bottom: none;
+        }
+
+        .contact:hover {
+            border-bottom: dotted 2px darkred;
         }
     </style>
 </head>
@@ -241,7 +272,7 @@
         <nav>
             <ul>
                 <li>
-                    <p class="title"><a href="/">Deo Valiandro. M</a></p>
+                    <p><a href="/" id="name">Deo Valiandro. M</a></p>
                 </li>
                 <li>
                     <a href="/about.html">🧒🏻about</a>
