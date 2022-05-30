@@ -1,0 +1,270 @@
+@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+:root {
+    --bg: #fff;
+    --hr: #cccccc;
+    --font-color: #000;
+    --blockquote: #f9f9f9;
+    --meta: #828282;
+    --link: #681da8;
+    --color1: #F0F0F0;
+    --font: 1.33rem 'Fira Code';
+    --fontmono: 400 0.9em 'Fira Code', monospace;
+    --bg2: rgb(255, 215, 0);
+    --bg3: darkred;
+}
+
+[data-theme=dark] {
+    --bg: #282828;
+    --hr: #d79921;
+    --font-color: #ebdbb2;
+    --blockquote: #504945;
+    --meta: #d5c4a1;
+    --link: #d79921;
+    --color1: #504945;
+    --bg3: rgb(255, 215, 0);
+    --bg2: darkred;
+}
+
+body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    text-rendering: optimizeLegibility;
+    max-width: 50rem;
+    font: var(--font);
+    color: var(--font-color);
+    background-color: var(--bg);
+    margin: 0 auto;
+    padding: 0 1rem 0 1rem;
+    word-break: break-word;
+    overflow-y: scroll;
+    line-height: 1.4;
+}
+
+h1 {
+    color: rgb(218, 165, 32);
+    font: 4.44rem 'Abril Fatface';
+    font-weight: 700;
+}
+
+h2 {
+    color: rgb(0, 139, 139);
+    font: 3rem 'Fira Code';
+    font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6,
+h7 {
+    font-family: 'Playfair Display', serif;
+}
+
+@supports (font-variation-settings: normal) {
+    code { font-family: 'Fira Code VF', monospace; }
+}
+
+code,
+pre {
+    font: var(--fontmono);
+    white-space: pre-wrap
+}
+
+pre {
+    background-color: var(--color1);
+    padding: 1em
+}
+
+a {
+    color: var(--link);
+    background-color: transparent;
+    font-family: var(--font);
+    text-decoration: none
+}
+
+a.bare {
+    word-break: break-all
+}
+
+a:hover {
+    text-decoration: underline
+}
+
+hr {
+    position: relative;
+    border: 0;
+    border-top: 1px solid var(--hr)
+}
+
+nav {
+    margin: .8em auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+nav li {
+    display: inline-block;
+    margin-right: .5em;
+}
+
+blockquote {
+    background: var(--blockquote);
+    border-left: 5px solid var(--hr);
+    margin-left: 0;
+    padding: 1em
+}
+
+img {
+    /* width: 100% */
+}
+
+.dash {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border: 1px dotted #4b4b4b
+}
+
+#love {
+    vertical-align: middle
+}
+
+.MathJax {
+    font-size: 1.1em !important;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.center {
+    text-align: center
+}
+
+#footnotes {
+    padding-bottom: 1em
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%
+}
+
+td,
+th {
+    border: 1px solid #ddd
+}
+
+.post-title-pl {
+    padding-left: .5rem;
+    width: 60%
+}
+
+tr:nth-child(even) {
+    background-color: var(--color1)
+}
+
+.post {
+    margin-bottom: 0.5em;
+}
+
+.title {
+    margin: 0 auto;
+}
+
+.list-post {
+    list-style-type: square;
+}
+
+.pagination {
+    margin-top: 1em
+}
+
+.pag {
+    margin-right: 1em
+}
+
+.er {
+    font-size: 0.8em;
+    background-color: transparent
+}
+
+.ava>img {
+    float: left;
+    margin-right: 1em;
+    width: 8rem
+}
+
+svg {
+    height: 1.25rem;
+    vertical-align: middle
+}
+
+a {
+    text-decoration: none;
+    border-bottom: solid 1px #bbb;
+    color: var(--font-color);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.title > a:hover {
+    background-color: var(--bg2);
+}
+
+#name {
+    margin: 0 auto;
+    /* font-weight: 700; */
+    font-size: 4rem;
+    font-family: 'Abril Fatface';
+    font-weight: normal;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 110%;
+}
+
+nav > ul > li > p {
+    margin: 0;
+}
+
+.tools:hover {
+    background-color: rgb(0, 139, 139);
+    color: white;
+}
+
+.contact {
+    color: var(--bg3);
+    border-bottom: none;
+}
+
+.contact:hover {
+    border-bottom: dotted 2px var(--bg3);
+}
+
+#myname {
+    margin: 0 auto;
+    font-size: 5rem;
+    font-family: 'Abril Fatface';
+    font-weight: normal;
+    letter-spacing: 2px;
+    line-height: 110%;
+}

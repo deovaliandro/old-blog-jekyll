@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+
+    body {
+        margin: 0 auto;
+        /* width: 90vw; */
+    }
+
+    p {
+        font: 2em 'Fira Code';
+    }
+
+    h1 {
+        font: 6em 'Abril Fatface';
+        margin: 0 auto;
+    }
+
+    h2 {
+        font: 4em 'Abril Fatface';
+    }
+
+    #per {
+        padding: 2em 2em 0em 2em;
+        margin: 0 auto;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+
+    .contact {
+        color: darkred;
+        border-bottom: none;
+    }
+
+    .contact:hover {
+        border-bottom: dotted 2px darkred;
+        background-color: transparent;
+    }
+
+    .title {
+        font-size: 2.4em;
+    }
+</style>
+
+<body>
+    <div id="per">
+        <h1>Deo Valiandro. M</h1>
+        <p>Nama saya Deo Valiandro. M, seorang programmer. Tulisan ini berbasis
+            google sana dan google sini, semoga bermanfaat. Saya lulusan
+            Universitas Hasanuddin pada tahun 2020 dengan bidang
+            Ilmu Komputer mayor di Kriptography dan minor di Pemrograman Web.
+        </p>
+
+        <h2>Kontak</h2>
+        <p>Saya dapat ditemukan di
+            <a href="https://github.com/deovaliandro" class="contact">Github</a> maupun
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>, jika anda
+            ingin mengontak saya, dapat mengirim email ke
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a> atau melalui
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a> di
+            Twitter.</p>
+
+        <h2>List tulisan:</h2>
+        <ul class="list-post">
+            {% for post in site.posts %}
+            <li>
+                <div class="post">
+                    <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
