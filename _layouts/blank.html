@@ -76,6 +76,15 @@
         margin: 0 auto;
         list-style: square;
     }
+    
+    .center {
+        text-align: center;
+    }
+    
+    footer {
+        font: 1.5em 'Fira Code';
+        margin-bottom: 2em;
+    }
 </style>
 
 <body>
@@ -117,6 +126,12 @@
         </li>
         {% endfor %}
     </ul>
+
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
 </body>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
