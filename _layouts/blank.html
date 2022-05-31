@@ -60,27 +60,8 @@
     }
     
     .title {
-        font-size: 2.4em;
-    }
-    
-    li {
-        background-color: white;
-        height: 15vh;
-        padding: 2em;
-    }
-    
-    li:nth-child(even) {
-        background-color: #F4F4F4;
-    }
-    
-    li:nth-child(odd) {
-        background-color: #FFFFFF;
-    }
-    
-    .list {
-        list-style: none;
-        margin: 0 auto;
-        padding: 0;
+        font: 2em 'Fira Code';
+        margin: 1em auto;
     }
     
     #per3 {
@@ -90,8 +71,10 @@
         color: white;
     }
     
-    #per4 {
-        height: 40vh;
+    .list {
+        padding: 3em 4em 3em 4em;
+        margin: 0 auto;
+        list-style: square;
     }
 </style>
 
@@ -123,12 +106,13 @@
     </div>
 
     <ul class="list">
+        <h2>list & daftar:</h2>
         {% for post in site.posts %}
-        <li id="per4">
-            <div class="post">
+        <li>
+            <div>
                 <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
                 <!-- <p>{{ post.content | truncatewords:20 }}</p> -->
-                <p>{{ post.date | date: "%Y-%m-%d" }} | {{ post.category }}</p>
+                <!-- <p>{{ post.date | date: "%Y-%m-%d" }} | {{ post.category }}</p> -->
             </div>
         </li>
         {% endfor %}
