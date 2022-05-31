@@ -6,7 +6,7 @@
 :page-update    : 2022-05-19T13:00:20
 :page-idn       : 
 :page-tags      : [math]
-:toc:
+
 
 == Pendahuluan
 Exclusive-or (XOR) adalah satu satu gerbang logika yang didasarkan pada aljabar

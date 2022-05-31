@@ -10,82 +10,143 @@
 </head>
 <style>
     @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
-
     body {
         margin: 0 auto;
-        /* width: 90vw; */
     }
-
+    
     p {
-        font: 2em 'Fira Code';
+        font: 1.6em 'Fira Code';
     }
-
+    
     h1 {
-        font: 6em 'Abril Fatface';
+        font: 5em 'Abril Fatface';
         margin: 0 auto;
     }
-
+    
     h2 {
-        font: 4em 'Abril Fatface';
-    }
-
-    #per {
-        padding: 2em 2em 0em 2em;
+        font: 3em 'Abril Fatface';
         margin: 0 auto;
     }
-
+    
+    #per1 {
+        padding: 4em;
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        padding: 3em 4em 3em 4em;
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
     a {
         text-decoration: none;
         color: black;
     }
-
+    
     a:hover {
         background-color: rgb(255, 215, 0);
     }
-
+    
     .contact {
-        color: darkred;
+        color: #A20000;
         border-bottom: none;
     }
-
+    
     .contact:hover {
-        border-bottom: dotted 2px darkred;
+        border-bottom: dotted 0.15em #A20000;
         background-color: transparent;
     }
-
+    
     .title {
         font-size: 2.4em;
+    }
+    
+    li {
+        background-color: white;
+        height: 15vh;
+        padding: 2em;
+    }
+    
+    li:nth-child(even) {
+        background-color: #F4F4F4;
+    }
+    
+    li:nth-child(odd) {
+        background-color: #FFFFFF;
+    }
+    
+    .list {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+    }
+    
+    #per3 {
+        padding: 3em 4em 3em 4em;
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    #per4 {
+        height: 40vh;
     }
 </style>
 
 <body>
-    <div id="per">
+    <div id="per1">
         <h1>Deo Valiandro. M</h1>
-        <p>Hy, nama saya Deo, seorang programmer. Tulisan ini berbasis
-            google sana dan google sini, semoga bermanfaat. Jika terdapat kekelirian
-            mohon dimaklumi.
+        <p>Hy, nama saya Deo, seorang programmer. Tulisan ini berbasis google sana dan google sini, semoga bermanfaat. Jika terdapat kekelirian mohon dimaklumi.
         </p>
+    </div>
 
+    <div id="per2">
         <h2>Kontak</h2>
         <p>Saya dapat ditemukan di
-            <a href="https://github.com/deovaliandro" class="contact">Github</a> maupun
-            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>, jika anda
-            ingin mengontak saya, dapat mengirim email ke
-            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a> atau melalui
-            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a> di
-            Twitter.</p>
+            <a href="https://github.com/deovaliandro" class="contact"><b>Github</b></a> maupun
+            <a href="https://gitlab.com/deovaliandro" class="contact"><b>GitLab</b></a>, jika anda ingin mengontak saya, dapat mengirim email ke
+            <a href="mailto:me@deo.or.id" class="contact"><b>me@deo.or.id</b></a> atau melalui
+            <a href="https://twitter.com/deovaliandro" class="contact"><b>@deovaliandro</b></a> di Twitter.
+        </p>
 
-        <h2>List tulisan:</h2>
-        <ul class="list-post">
-            {% for post in site.posts %}
-            <li>
-                <div class="post">
-                    <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
     </div>
+    <div id="per3">
+        <h2>Perhatian!</h2>
+        <p>Kami TIDAK bertanggung-jawab atas KEAKURATAN mau pun KERUGIAN yang mungkin terjadi akibat memanfaatkan situs ini. HARAP MENANGGUNG SENDIRI SEGALA RISIKO! Jangan lupa mengungkapkan/ menuliskan penghargaan (acknowledgement) jika anda menggunakan
+            bahan karya dari pihak lain. Situs ini berbasis “Google Sana, Google Sini, Coba Itu, Coba Ini, Lalu Tanya-tanyi” (GSGSCICILTT). Entah ini PLAGIAT, entah ini RISET, yang jelas tidak pernah ada klaim bahwa ini merupakan karya asli, serta belum
+            tentu pula merupakan solusi terbaik, serta bukan untuk konsumsi Scopus :). Mohon kiranya memberikan tanggapan, terutama jika memiliki solusi alternatif. Semoga catatan ini akan bermanfaat di masa mendatang, saat sudah lupa cara menyelesaikan
+            masalah trivia ini. </p>
+
+        <p>-- https://rms46.vlsm.org/</p>
+    </div>
+
+    <ul class="list">
+        {% for post in site.posts %}
+        <li id="per4">
+            <div class="post">
+                <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+                <!-- <p>{{ post.content | truncatewords:20 }}</p> -->
+                <p>{{ post.date | date: "%Y-%m-%d" }} | {{ post.category }}</p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
 </body>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [
+                ['$', '$']
+            ],
+            displayMath: [
+                ['$$', '$']
+            ]
+        }
+    };
+</script>
 
 </html>

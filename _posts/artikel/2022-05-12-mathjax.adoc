@@ -5,7 +5,6 @@
 :page-date      : 2022-05-12 15:10:30 +0800
 :page-update    : 2022-05-12 15:10:30 +0800
 :page-idn       : c970f80b6beda8d6
-:toc:
 
 
 Karena alasan kompatibilitas, akhirnya saya pindah ke MathJax setelah sekian

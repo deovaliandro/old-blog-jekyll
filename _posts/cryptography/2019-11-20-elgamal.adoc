@@ -6,7 +6,6 @@
 :page-time      : 2019-11-20T23:15:00
 :page-update    : 2022-05-10T08:27:00
 :page-idn       : a43fba9cfc8327e8
-:toc:
 
 
 == Pendahuluan
