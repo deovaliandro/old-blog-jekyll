@@ -8,12 +8,11 @@
 :page-tags      : [math]
 
 
-== Pendahuluan
 Exclusive-or (XOR) adalah satu satu gerbang logika yang didasarkan pada aljabar
 boolean.
 
 Jika Or $\equiv$ penjumlahan, and $\equiv$ perkalian, maka XOR ($\oplus$) adalah
-gabungan dari or, and dan not.
+gabungan dari _or_, _and_ dan _not_.
 
 XOR dilambangkan dengan:
 

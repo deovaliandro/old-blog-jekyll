@@ -7,8 +7,6 @@
 :page-idn       : 61133825cf7b6981
 
 
-== Pendahuluan
-
 Functional Programming (FP) merupakan konsep yang baru bagi saya. Ketika
 memasuki program studi Ilmu Komputer di Universitas Hasanuddin, saya hanya
 dikenalkan dengan pemrograman imperatif dengan Pascal kemudian melompat ke

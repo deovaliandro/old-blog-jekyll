@@ -1,40 +1,140 @@
-{%- include header.html -%}
-{% if page.tags != empty %}{% for tag in page.tags %}{% if tag == "math" %}
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$']]
-        }
-    };
-</script>
-{% endif %}{% endfor %}{% endif %}
-<h1>{{ page.title }}</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<div>
-    {{ content }}
-</div>
-<hr>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.6em 'Fira Code';
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+    
+    #per1 {
+        padding: 4em;
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        padding: 3em 4em 3em 4em;
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+        margin: 1em auto;
+    }
+    
+    #per3 {
+        padding: 3em 4em 3em 4em;
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        padding: 3em 4em 3em 4em;
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    footer {
+        /* font: 1.5em 'Fira Code'; */
+        margin-bottom: 2em;
+    }
+    
+    code,
+    pre {
+        font: var(--fontmono);
+        white-space: pre-wrap
+    }
+    
+    pre {
+        background-color: var(--color1);
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+</style>
 
-{% if page.signed-by %}
-<code class="er">Signed-off-by: {{ page.signed-by }}</code><br>
-{% endif %}
-{% if page.date %}
-<code class="er">Created: {{ page.date | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}</code><br>
-{% endif %}
-{% if page.idn %}
-<code class="er">ID: {{ page.idn }}</code>
-{% endif %}
-<nav>
-    <ul>
-        <li><a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}" class="tools">✏️ edit</a></li>
-        <li><a href="#" class="tools">🎣 top</a></li>
-    </ul>
-</nav>
-{%- include footer.html -%}
-</main>
+<body>
+    {% if page.tags != empty %}{% for tag in page.tags %}{% if tag == "math" %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$']
+                ],
+                displayMath: [
+                    ['$$', '$']
+                ]
+            }
+        };
+    </script>
+    {% endif %}{% endfor %}{% endif %}
+
+    <div id="per1">
+        <h1>{{ page.title }}</h1>
+        {{ content }}
+        <hr> {% if page.signed-by %}
+        <code class="er">Signed-off-by: {{ page.signed-by }}</code><br> {% endif %} {% if page.date %}
+        <code class="er">Created: {{ page.date | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}</code>{% endif %}
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
 </body>
 
 </html>

@@ -8,8 +8,6 @@
 :page-idn       : a43fba9cfc8327e8
 
 
-== Pendahuluan
-
 RSA adalah sebuah algoritma berdasarkan skema public-key cryptography. Diberi
 nama RSA sebagai inisial para penemunya:
 link:https://people.csail.mit.edu/rivest[Ron Rivest], Adi Shamir, dan Leonard

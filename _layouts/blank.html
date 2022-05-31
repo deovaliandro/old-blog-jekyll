@@ -60,7 +60,7 @@
     }
     
     .title {
-        font: 2em 'Fira Code';
+        /* font: 2em 'Fira Code'; */
         margin: 1em auto;
     }
     
@@ -85,12 +85,17 @@
         font: 1.5em 'Fira Code';
         margin-bottom: 2em;
     }
+    
+    .title {
+        border-bottom: 0.1em dashed #455469;
+    }
 </style>
 
 <body>
     <div id="per1">
         <h1>Deo Valiandro. M</h1>
-        <p>Hy, nama saya Deo, seorang programmer. Tulisan ini berbasis google sana dan google sini, semoga bermanfaat. Jika terdapat kekelirian mohon dimaklumi.
+        <p>
+            Hy, nama saya Deo, seorang programmer. Website ini semacam <i>log</i> tempat saya menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya pelajari, khususnya ketika saya masih berkuliah. Jika terdapat kekelirian mohon dikoreksi.
         </p>
     </div>
 
@@ -102,15 +107,16 @@
             <a href="mailto:me@deo.or.id" class="contact"><b>me@deo.or.id</b></a> atau melalui
             <a href="https://twitter.com/deovaliandro" class="contact"><b>@deovaliandro</b></a> di Twitter.
         </p>
-
     </div>
+
     <div id="per3">
         <h2>Perhatian!</h2>
-        <p>Kami TIDAK bertanggung-jawab atas KEAKURATAN mau pun KERUGIAN yang mungkin terjadi akibat memanfaatkan situs ini. HARAP MENANGGUNG SENDIRI SEGALA RISIKO! Jangan lupa mengungkapkan/ menuliskan penghargaan (acknowledgement) jika anda menggunakan
-            bahan karya dari pihak lain. Situs ini berbasis “Google Sana, Google Sini, Coba Itu, Coba Ini, Lalu Tanya-tanyi” (GSGSCICILTT). Entah ini PLAGIAT, entah ini RISET, yang jelas tidak pernah ada klaim bahwa ini merupakan karya asli, serta belum
-            tentu pula merupakan solusi terbaik, serta bukan untuk konsumsi Scopus :). Mohon kiranya memberikan tanggapan, terutama jika memiliki solusi alternatif. Semoga catatan ini akan bermanfaat di masa mendatang, saat sudah lupa cara menyelesaikan
-            masalah trivia ini. </p>
-
+        <p>
+            Kami TIDAK bertanggung-jawab atas KEAKURATAN mau pun KERUGIAN yang mungkin terjadi akibat memanfaatkan situs ini. HARAP MENANGGUNG SENDIRI SEGALA RISIKO! Jangan lupa mengungkapkan/ menuliskan penghargaan (acknowledgement) jika anda menggunakan bahan karya
+            dari pihak lain. Situs ini berbasis “Google Sana, Google Sini, Coba Itu, Coba Ini, Lalu Tanya-tanyi” (GSGSCICILTT). Entah ini PLAGIAT, entah ini RISET, yang jelas tidak pernah ada klaim bahwa ini merupakan karya asli, serta belum tentu pula
+            merupakan solusi terbaik, serta bukan untuk konsumsi Scopus :). Mohon kiranya memberikan tanggapan, terutama jika memiliki solusi alternatif. Semoga catatan ini akan bermanfaat di masa mendatang, saat sudah lupa cara menyelesaikan masalah
+            trivia ini.
+        </p>
         <p>-- https://rms46.vlsm.org/</p>
     </div>
 
@@ -119,9 +125,9 @@
         {% for post in site.posts %}
         <li>
             <div>
-                <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+                <p><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}" class="title">{{ post.title }}</a><span>, {{ post.date | date: "%Y-%m-%d" }}</span></p>
                 <!-- <p>{{ post.content | truncatewords:20 }}</p> -->
-                <!-- <p>{{ post.date | date: "%Y-%m-%d" }} | {{ post.category }}</p> -->
+                <!-- <p> | {{ post.category }}</p> -->
             </div>
         </li>
         {% endfor %}

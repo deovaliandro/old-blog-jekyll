@@ -7,8 +7,6 @@
 :page-idn       : 88b7bd82f4dfd60d
 
 
-== Pendahuluan
-
 Dulu saya mengambil mata kuliah ML, tetapi kemudian berganti fokus ke
 kriptografi, jadi untuk mempelajari materi lagi, saya ikut kelas Coursera.
 

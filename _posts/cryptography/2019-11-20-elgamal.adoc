@@ -8,8 +8,6 @@
 :page-idn       : a43fba9cfc8327e8
 
 
-== Pendahuluan
-
 ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
 pada persoalan logaritma diskrit, yaitu $p \in \mathbb{P}, \{g, y\} \in
 \mathbb{Z}, \exists x | g^{x} \equiv y (\bmod p)$. Menemukan nilai $x$ akan
