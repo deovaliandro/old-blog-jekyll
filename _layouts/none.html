@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Pengumuman</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
 
+<body>
+	<section class="section">
+    <div class="container">
+      <h1 class="title">Pengumuman</h1>
+	
+	<input class="input" type="text" placeholder="Masukkan nama yang dituju" id="nama">
+
+	<div class="select mt-3">
+		<select id="to">
+			<option>Ruangan Kepala Badan</option>
+			<option>Ruangan Sekretaris Badan</option>
+			<option>Ruangan Tata Usaha</option>
+			<option>Ruangan Akutansi</option>
+			<option>Ruangan Aset</option>
+			<option>Ruangan I T</option>
+		</select>
+	</div>
+
+	<div>
+		<button class="button is-danger mt-4" onclick="run()">Umumkan!</button>
+	<button class="button is-warning mt-4" onclick="location.reload();">Bersihkan</button>
+	</div>
+	</div>
+</section>
+</body>
+<script type="text/javascript">
+	var msg = new SpeechSynthesisUtterance();
+	var voices = window.speechSynthesis.getVoices();
+	msg.voice = voices[0];
+	msg.lang = 'id-ID';
+
+	function run(){
+		msg.text = "Diharapkan saudara " + document.getElementById('nama').value + " menuju " + document.getElementById('to').value;
+		speechSynthesis.speak(msg);
+	}
+</script>
+</html>
