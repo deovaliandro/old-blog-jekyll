@@ -19,102 +19,104 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'G-FX2LRVX0JD');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-FX2LRVX0JD');
     </script>
 </head>
 <style>
-    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
-    body {
-        margin: 0 auto;
-        font: 1.2em 'Fira Code';
-        padding: 3em 4em 3em 4em;
+    @import url('https://rsms.me/inter/inter.css');
+
+    html {
+        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        max-width: 80vw;
+        margin: auto;
+        font-size: 1.5rem;
+        line-height: 1.75;
     }
 
-    @media only screen and (max-width: 600px) {
-        body {
-            /* background-color: lightblue; */
+    @supports (font-variation-settings: normal) {
+        html {
+            font-family: 'Inter var', sans-serif;
         }
     }
-    
-    h1 {
-        font: 3em 'Abril Fatface';
+
+    body {
         margin: 0 auto;
-    }
-    
-    h2 {
-        font: 2em 'Abril Fatface';
-        margin: 0 auto;
-        border-bottom: 0.1em dashed rebeccapurple;
     }
 
-    hr {
-        border-bottom: 1px solid grey;
-        border-top: none;
-    }
-    
-    #per1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 500;
         margin: 0 auto;
     }
-    
-    #per2 {
-        margin: 0 auto;
-        background-color: #1ce783;
-        color: #2B0E18;
-    }
-    
+
     a {
         text-decoration: none;
         color: black;
+        border-bottom: 2px dotted #455469;
     }
-    
+
     a:hover {
         background-color: rgb(255, 215, 0);
     }
-    
+
     .contact {
         color: #A20000;
         border-bottom: none;
     }
-    
+
     .contact:hover {
         border-bottom: dotted 0.15em #A20000;
         background-color: transparent;
     }
-    
+
     .title {
-        font: 2em 'Fira Code';
+        margin: 1em auto;
     }
-    
-    #per3 {
-        margin: 0 auto;
-        background-color: black;
-        color: white;
-    }
-    
+
     .list {
-        margin: 0 auto;
         list-style: square;
     }
-    
+
     .center {
         text-align: center;
     }
-    
-    pre {
-        overflow: auto;
-        padding: 1em
+
+    footer {
+        margin-bottom: 2em;
     }
-    
-    em {
-        border-bottom: 0.1em solid #A20000;
+
+    .title {
+        border-bottom: 0.1em dashed #455469;
     }
 
     .MathJax {
         font-size: 1em !important;
+    }
+
+    pre {
+        font-size: 0.9rem;
+        padding: 0.5em;
+    }
+
+    hr {
+        border-top: 4px double #8c8b8b;
+        text-align: center;
+    }
+
+    .quoteblock {
+        background-color: bisque;
+        padding: 2px;
     }
 </style>
 
@@ -139,16 +141,15 @@
     <div id="per1">
         <h1>{{ page.title }}</h1>
         {{ content }}
-        <hr> {% if page.signed-by %}
-        <code class="er">Signed-off-by: {{ page.signed-by }}</code><br> {% endif %} {% if page.date %}
-        <code class="er">Created: {{ page.date | date: "%Y-%m-%dT%T" }}, Last updated: {{ page.update | date: "%Y-%m-%dT%T" }}</code>{% endif %}
-        <br>
-        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}" class="tools">✏️edit</a>
-        <a href="#" class="tools">🎣top</a>
+        <hr>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/{{page.path}}" class="tools">edit</a>
+        <a href="#" class="tools">top</a>
     </div>
     <footer>
         <div class="center">
-            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+            <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC
+                BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M, <span id="love">🌱</span> with <span
+                id="love">💗</span> from <span id="love">🇮🇩</span>.
         </div>
     </footer>
     </main>
