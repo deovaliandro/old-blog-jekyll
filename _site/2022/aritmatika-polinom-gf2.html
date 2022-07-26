@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Aritmatika Polinom di dalam Medan Galois $GF(2^n)$</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2022/aritmatika-polinom-gf2.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$']
+                ],
+                displayMath: [
+                    ['$$', '$']
+                ]
+            }
+        };
+    </script>
+    
+
+    <div id="per1">
+        <h1>Aritmatika Polinom di dalam Medan Galois $GF(2^n)$</h1>
+        <div class="paragraph">
+<p>Galois Field (GF) yang banyak digunakan dalam kriptografi adalah $GF(2^n)$
+karena setiap baris text direpresentasikan sebagai barisan bit 0 dan 1 sepanjang
+$n$ bit.</p>
+</div>
+<div class="paragraph">
+<p>Semua elemen dalam $GF(2^n)$ dinyatakan dalam bentuk polinom.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum polinom berderajat n adalah:</p>
+</div>
+<div class="paragraph">
+<p>$$f(x) = a_{n}x^{n} + a_{n-1}x^{n-1} + \cdots + a_{2}x^{2} + a_{1}x + a_{0}$</p>
+</div>
+<div class="paragraph">
+<p>$a_{n}, a_{n-1}, a_{0}$ adalah koefisien-koefisien polinom, $n$ adalah derajat
+polinom.</p>
+</div>
+<div class="paragraph">
+<p>$GF(2^{n})$ memiliki $2^n$ elemen, setiap elemen direpresentasikan sebagai
+polinom berderajat $n-1$ atau kurang, dengan koefisien-koefisiennya adalah
+elemen $\{0, 1\}$:</p>
+</div>
+<div class="paragraph">
+<p>$$GF(p^{n}) = \{a_{n-1}x^{n-1} + a_{n-2}x^{n-2} + \cdots + a_{1}x + a_{0} |
+a_{i} \in \{0, 1\}\}$</p>
+</div>
+<div class="paragraph">
+<p>Contohnya:
+$GF(2^{3}) = \{a_{2}x^{2} + a_{1}x^{1} + a_{0} | a_{i} \in \{0, 1\}\}$, memiliki
+derajat polinom $\geq 2$.</p>
+</div>
+<div class="paragraph">
+<p>Di dalam $GF(2^3)$, terdapat $2^{3} = 8$ polinom, yaitu:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$0 \to 000$</p>
+</li>
+<li>
+<p>$1 \to 001$</p>
+</li>
+<li>
+<p>$x \to 010$</p>
+</li>
+<li>
+<p>$x+1 \to 011$</p>
+</li>
+<li>
+<p>$x^{2} \to 100$</p>
+</li>
+<li>
+<p>$x^{2}+1 \to 101$</p>
+</li>
+<li>
+<p>$x^{2}+x \to 110$</p>
+</li>
+<li>
+<p>$x^{2}+x+1 \to 111$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Operasi penjumlahan dan perkalian dilakukan dengan menerapkan penjumlahan
+koefisien-koefisiennya dalam $\bmod \space  2$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $a=(a_{n-1} \cdots a_{1}a_{0})$ dan $b=(b_{n-1} \cdots b_{1}b_{0})$,
+$a, b \in GF(2^n)$, maka:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>penjumlahan $a + b = c = (c_{n-1} \cdots c_{1}c_{0}), c_{i} = (a_{i} + b_{i})
+\bmod 2, c \in GF(2^n)$,</p>
+</li>
+<li>
+<p>perkalian $a \times b = c (c_{n-1} \cdots c_{1}c_{0})$ dimana $c$ adalah sisa
+bagi dari polinom $a(x) \cdot b(x)$ dengan <em>irreducible polynomial</em> $f(x)$
+derajat $n$, $c \in GF(2^n)$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contoh: $a = x^3 + x^2 + 1$, $b = x^2 + x$, $a, b \in GF(2^4)$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a+b &amp; = x^3 + x^2 + 1 + x^2 + x \bmod 2 \\
+    &amp; = x^3 + 2x^2 + x + 1 \bmod 2 \\
+    &amp; = x^3 + x + 1
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Operasi penjumlahan polinom $GF(p^2) \equiv$ operasi xor $(\oplus)$, misalnya:</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a \oplus b &amp; = x^3 + x^2 + 1 + x^2 + x \bmod 2 \\
+           &amp; = 1101 \oplus 0110 \\
+           &amp; = 1011 \equiv x^3 + x + 1
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Operasi perkalian sama persis dengan perkalian baisa, kecuali menghasilkan
+polinom dengan derajat $\geq n - 1$,</p>
+</div>
+<div class="paragraph">
+<p>misalnya, $a = x^2 + x, b = x + 1, a, b \in GF(2^4)$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a \cdot b &amp; = (x^2 + x)(x + 1) \bmod 2 \\
+        &amp; = (x^2 \cdot x) + (x^2 \cdot 1) + (x \cdot x) + (x \cdot 1) \bmod 2 \\
+        &amp; = x^3 + x^2 + + x^2 + x \bmod 2 \\
+        &amp; = x^3 + 2(x^2) + x \bmod 2 \\
+        &amp; = x^3 + x
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Jika menghasilkan polinom $\geq n - 1$, maka direduksi dengan membagi secara
+modulo terhadap polinom <em>irreducible polynomial</em> $f(x)$ berderajat $n$.
+<em>Irreducible polynomial</em> adalah polinom yang tidak dihasilkan dari perkalian
+dua buah polinom lain (kecuali $1$ dan dirinya sendiri). Misalnya $x^2 + 1 \in
+GF(2^n)$, contoh lainnya $x^4 + x + 1$, tetapi $x^5 + x^2 + x + 1$ adalah
+polinom tereduksi karena $x^5 + x^2 + x + 1 = (x^5 + x^2 + 1)(x^2 + 1)$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $a = 1011, b = 1001, a, b \in GF(2^4)$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+a \times b &amp; = (x^3 + x + 1) \times (x^3 + 1) \bmod 2 \\
+           &amp; = x^6 + x^4 + x + 1\\
+           &amp; = x^3 + x^2
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>$x^3 + x^2$ dihasilkan dari membagi $x^6 + x^4 + x + 1$ dengan
+<em>irreducible polynomial</em> $f(x) = x^4 + x + 1$.</p>
+</div>
+<div class="paragraph">
+<p>$f(x)/g(x)$ memberikan hasil $g(x)$ (quotient) dam sisa $r(x)$ (remainder), yang
+memenuhi:</p>
+</div>
+<div class="paragraph">
+<p>$$f(x) = q(x)g(x) + r(x)$</p>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2022-02-12T00:00:00, Last updated: 2022-05-10T08:27:00</code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/cryptography/2022-02-12-aritmatika-polinom-gf2.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

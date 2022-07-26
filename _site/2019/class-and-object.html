@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Class dan Object</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2019/class-and-object.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+
+    <div id="per1">
+        <h1>Class dan Object</h1>
+        <div class="paragraph">
+<p>Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan
+sebuah objek real kedalam bahasa bahasa pemrograman.</p>
+</div>
+<div class="sect1">
+<h2 id="objek-object"><a class="anchor" href="#objek-object"></a>Objek (object)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan
+(KBBI, 2018). Misalnya seorang manusia, seekor kucing, seekor anjing atau benda
+lain, misalnya sebuah kursi. Itu adalah sebuah objek.</p>
+</div>
+<div class="paragraph">
+<p>Nah, setiap objek pasti memiliki identitas atau atribut, misalnya seorang
+manusia memiliki identitan atau atribut nama, umur, tinggi, berat dan berbagai
+identitas lainnya.</p>
+</div>
+<div class="paragraph">
+<p>Selain itu, sebuah objek juga pasti memiliki tingka laku, misalnya seorang
+manusia bisa makan, tidur, berjalan, bermain, koding dan berbagai kegiatan
+aktivitas lainnya.</p>
+</div>
+<div class="paragraph">
+<p>Sebuah objek dalam PBO juga demikian, objek tersebut akan memiliki
+sifat/atrribute dan perilaku/behaviour.</p>
+</div>
+<div class="paragraph">
+<p>Sifat/atribut yang dimaksud di PBO adalah sesuatu yang memiliki nilai, seperti
+ukuran, warna, berat, keterangan, dan semacamnya.</p>
+</div>
+<div class="paragraph">
+<p>Sedangkan tingkah laku/behaviour adalah kumpulan perintah yang melakukan suatu
+kegiatan spesifik.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="class"><a class="anchor" href="#class"></a>Class</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek.
+Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah
+objek. Sehingga dapat kita katakan bahwa:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Class adalah blueprint dari objek dan objek adalah instance dari sebuah class.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Di Java, semuanya dibungkus dengan sebuah <code>class</code>. <code>class</code> adalah core dari Java
+itu sendiri.</p>
+</div>
+<div class="paragraph">
+<p>Aturan untuk <code>class</code> Java:
+1. <code>class</code> dapat memiliki <code>public</code> atau default (no modifier).
+2. Dapat berupa <code>abstract</code> atau <code>final</code> (<code>class</code> normal).
+3. Harus mempunyai keyword <code>class</code> dan harus diikuti nama <code>class</code> yang
+   berupa PascalCase.
+4. Dapat meng-extend hanya sebuah <code>parent class</code>. Secara default, meng-extend
+   class <code>Object</code>.
+5. Variabel dan method dibungkus didalam kurung kurawal (<code>{}</code>).</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span>  <span class="nc">ClassName</span> <span class="o">{</span>
+     <span class="n">field</span><span class="o">;</span>
+     <span class="n">method</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Misalnya seorang anak yang baru lahir, pastilah dia akan memiliki nama, namun
+kita belum memberikannya nama. Kenyataan bahwa dia akan memiliki nama, itu
+dimisalkan kedalam sebuah blueprint, bahwa seorang manusia pastilah memiliki
+nama, umur, perilaku, dan sebagainya.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya blueprintnya:
+1. Perilaku: bernafas, makan, bergerak, melihat, &#8230;&#8203; dst.
+2. Atribut: nama, umur, jenis kelamin, &#8230;&#8203; dsb.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Manusia</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">umur</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">nama</span><span class="o">,</span> <span class="n">jenisKelamin</span><span class="o">;</span>
+
+    <span class="kt">void</span> <span class="nf">bernafas</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kt">void</span> <span class="nf">makan</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kt">void</span> <span class="nf">berbicara</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Untuk menggunakan cetakan ini untuk seorang manusia, maka dapat menggunakan
+perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Manusia</span> <span class="n">deo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manusia</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>maka akan muncul sebuah objek baru, dengan nama objek <code>deo</code>, dan memiliki nama,
+umur, jenis kelamin, bernafas, dll.</p>
+</div>
+<div class="paragraph">
+<p>Setiap kali objek di-instance dari sebuah class, maka objek tersebut mewarisi
+atribut dan perilaku dari class yang di-intace-kan. Artinya objek <code>deo</code> yang
+telah dibuat juga mempunyai atribut nama, umur dan semua atribut dan perilaku
+yang ada di <code>class Manusia</code>.</p>
+</div>
+<div class="paragraph">
+<p>Perintah <code>new</code> adalah sebuah keyword untuk mengalokasikan memory untuk object
+tersebut.</p>
+</div>
+<div class="paragraph">
+<p>Tapi, datanya belum diisi, dan masih sebatas sebuah template sehingga defaultnya
+nilainya <code>0</code>/<code>null</code>/<code>false</code>, kita dapat mengisinya dengan menggunakan perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">deo</span><span class="o">.</span><span class="na">nama</span> <span class="o">=</span> <span class="s">"Deo"</span><span class="o">;</span>
+<span class="n">deo</span><span class="o">.</span><span class="na">umur</span> <span class="o">=</span> <span class="mi">22</span><span class="o">;</span>
+<span class="n">deo</span><span class="o">.</span><span class="na">jenisKelamin</span> <span class="o">=</span> <span class="s">"Laki-laki"</span><span class="o">;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2019-04-28T00:00:00, Last updated: </code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/oop/2019-04-28-class-and-object.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

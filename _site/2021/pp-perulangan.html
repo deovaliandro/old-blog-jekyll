@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Perulangan</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2021/pp-perulangan.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+
+    <div id="per1">
+        <h1>Perulangan</h1>
+        <div class="paragraph">
+<p>Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama
+syarat yang diberikan masih memenuhi.</p>
+</div>
+<div class="paragraph">
+<p>Setiap perulangan memiliki empat bagian, yaitu <code>inisialisasi</code>, <code>body</code>,
+<code>iterasi</code>, dan <code>terminasi/kondisi</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Inisialisasi adalah statement yang menyatakan keadaan awal sebuah perulangan.</p>
+</li>
+<li>
+<p>Body atau badan program adalah blok statement yang akan dijalankan terus
+menerus selama perulangan berlangsung.</p>
+</li>
+<li>
+<p>Iterasi adalah statement atau bagian program yang nilainya terus berubah
+(ascending, descending atau cara lainnya) untuk mencapai batas atau keadaan
+untuk berhenti.</p>
+</li>
+<li>
+<p>Terminasi atau kondisi adalah statement bernilai Boolean yang menyatakan
+batas atau keadaan untuk menghentikan perulangan.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Pada Java dikenal tiga macam bentuk perulangan, yaitu: <code>while</code>, <code>do-while</code>, dan
+<code>for</code>.</p>
+</div>
+<div class="paragraph">
+<p>Pada dasarnya semua perulangan dalam Java memiliki cara kerja yang sama
+yaitu selama kondisi masih bernilai true maka perulangan akan terus dilakukan
+hinggi kondisi bernilai false.</p>
+</div>
+<div class="sect1">
+<h2 id="for"><a class="anchor" href="#for"></a>For</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For adalah perulangan yang banyaknya perulangan diketahui atau banyaknya
+perulangan sudah jelas(tentu).</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">for</span> <span class="o">(</span><span class="n">inisialisasi</span><span class="o">;</span> <span class="n">kondisi</span><span class="o">;</span> <span class="n">iterasi</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//body</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">99</span><span class="o">;</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="while"><a class="anchor" href="#while"></a>While</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While adalah perulangan yang banyaknya perulangan tidak menentu dan lebih
+sederhana dari pada perulangan for.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Inisialisasi</span><span class="o">;</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="n">kondisi</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//body</span>
+    <span class="nc">Iterasi</span><span class="o">;</span> <span class="c1">//opsional</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">19</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+<span class="k">while</span> <span class="o">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+    <span class="n">i</span><span class="o">++;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="do-while"><a class="anchor" href="#do-while"></a>Do-while</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pada perulangan ini bagian body (semua dalam kurung kurawal setelah "do")
+dijalankan terlebih dahulu sebelum pengecekan kondisi.</p>
+</div>
+<div class="paragraph">
+<p>Sehingga walaupun kondisi dari awal bernilai false, bagian body tetap dijalankan
+sekali. Berbeda dengan perulangan while apabila kondisi diawal bernilai false
+maka bagian body tidak akan dijalankan.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Inisialisasi</span><span class="o">;</span>
+
+<span class="k">do</span> <span class="o">{</span>
+    <span class="c1">//body</span>
+    <span class="nc">Iterasi</span><span class="o">;</span> <span class="c1">//opsional</span>
+<span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">kondisi</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">19</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+
+<span class="k">do</span> <span class="o">{</span>
+    <span class="n">i</span><span class="o">++;</span>
+<span class="o">}</span> <span class="k">while</span> <span class="o">(</span><span class="n">i</span><span class="o">&lt;</span><span class="n">n</span><span class="o">)</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="for-each"><a class="anchor" href="#for-each"></a>For-each</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>For-each bukanlah keyword dari Java, melainkan cara yang lebih sederhana untuk
+membuat perulangan for.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">for</span> <span class="o">(</span><span class="n">type</span> <span class="kt">var</span><span class="o">:</span> <span class="n">array</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">statements</span> <span class="n">using</span> <span class="kt">var</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sama nilainya dengan</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+    <span class="n">type</span> <span class="kt">var</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+    <span class="n">statements</span> <span class="n">using</span> <span class="kt">var</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ini biasa digunakan pada array atau koleksi (seperti ArrayList).</p>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span> <span class="o">=</span> <span class="o">{</span> <span class="mi">125</span><span class="o">,</span> <span class="mi">132</span><span class="o">,</span> <span class="mi">95</span><span class="o">,</span> <span class="mi">116</span><span class="o">,</span> <span class="mi">110</span> <span class="o">};</span>
+
+<span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="nl">i:</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Namun for-each memiliki batasan:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Tidak bisa digunakan jika ingin memodifikasi nilai array,</p>
+</li>
+<li>
+<p>Tidak bisa melacak nomor index,</p>
+</li>
+<li>
+<p>Hanya bisa melakukan perulangan kedepan sekali.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2021-05-17T00:00:00, Last updated: </code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/pp/2021-05-17-pp-perulangan.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

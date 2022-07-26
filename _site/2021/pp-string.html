@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; String</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2021/pp-string.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+
+    <div id="per1">
+        <h1>String</h1>
+        <div class="paragraph">
+<p>Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
+Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa
+karakter (char).</p>
+</div>
+<div class="paragraph">
+<p>String sendiri sebenarnya merupakan sebuah class yang terdapat dalam library
+Java dan digunakan untuk memanipulasi karakter. Contoh sintaks untuk
+mendeklarasikan sebuah string:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Hay"</span><span class="o">;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>String adalah tipe data immutable; ketika objek <code>String</code> dibuat, maka kontennya
+tidak bisa diubah lagi.</p>
+</div>
+<div class="paragraph">
+<p>Untuk menggabungkan beberapa string, Java menggunakan <code>+</code>, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">String</span> <span class="n">nama</span> <span class="o">=</span> <span class="s">"John "</span> <span class="o">+</span> <span class="s">"Doe"</span><span class="o">;</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">nama</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>menghasilkan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">John Doe</code></pre>
+</div>
+</div>
+<div class="sect1">
+<h2 id="menthod-dalam-class-string"><a class="anchor" href="#menthod-dalam-class-string"></a>Menthod dalam class String</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ada beberapa method yang ada di dalam class <code>String</code>:</p>
+</div>
+<div class="sect2">
+<h3 id="equals"><a class="anchor" href="#equals"></a>equals()</h3>
+<div class="paragraph">
+<p>Digunakan untuk menentukan apakah dua buah <code>String</code> adalah sama, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">String</span> <span class="n">str0</span> <span class="o">=</span> <span class="s">"Kamu"</span><span class="o">;</span>
+<span class="nc">String</span> <span class="n">str1</span> <span class="o">=</span> <span class="s">"Kami"</span><span class="o">;</span>
+
+<span class="k">if</span><span class="o">(</span><span class="n">str0</span><span class="o">.</span><span class="na">equal</span><span class="o">(</span><span class="n">str1</span><span class="o">))</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Sama"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Tidak sama"</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>str1</code> menunjukkan bahwa <code>str1</code> adalah nilai yang dijadikan pembanding.</p>
+</div>
+<div class="paragraph">
+<p><code>equals()</code> menghasilkan nilai <code>boolean</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="length"><a class="anchor" href="#length"></a>length()</h3>
+<div class="paragraph">
+<p>Digunakan untuk menentukan panjangnya suatu string, misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">String</span> <span class="n">str</span> <span class="o">=</span> <span class="s">"Nona manis"</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="n">str</span><span class="o">.</span><span class="na">length</span><span class="o">();</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">l</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>length()</code> menghasilkan nilai <code>int</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charat"><a class="anchor" href="#charat"></a>charAt()</h3>
+<div class="paragraph">
+<p>Digunakan untuk menentukan <code>char</code> pada posisi tertentu pada sebuah <code>String</code>,
+misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">String</span> <span class="n">nama</span> <span class="o">=</span> <span class="s">"Deo Valiandro"</span>
+<span class="kt">char</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">nama</span><span class="o">.</span><span class="na">charAt</span><span class="o">(</span><span class="mi">2</span><span class="o">);</span>
+
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">p2</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>angka 2 menunjukkan index char yang diinginkan dalam sebuah <code>String</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>charAt()</code> mengahasilkan nilai <code>char</code>.</p>
+</div>
+<div class="paragraph">
+<p>Dan masih banyak lagi method-method lainnya.</p>
+</div>
+</div>
+</div>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2021-05-22T00:00:00, Last updated: </code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/pp/2021-05-22-pp-string.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

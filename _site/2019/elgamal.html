@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; ELGamal</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2019/elgamal.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$']
+                ],
+                displayMath: [
+                    ['$$', '$']
+                ]
+            }
+        };
+    </script>
+    
+
+    <div id="per1">
+        <h1>ELGamal</h1>
+        <div class="paragraph">
+<p>ElGamal dibuat oleh Taher Elgamal pada tahun 1985. Keamanan ElGamal terletak
+pada persoalan logaritma diskrit, yaitu $p \in \mathbb{P}, \{g, y\} \in
+\mathbb{Z}, \exists x | g^{x} \equiv y (\bmod p)$. Menemukan nilai $x$ akan
+sangat susah.</p>
+</div>
+<div class="sect1">
+<h2 id="variabel"><a class="anchor" href="#variabel"></a>Variabel</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>$p \in \mathbb{P}$ (tidak rahasia),</p>
+</li>
+<li>
+<p>$g \in \mathbb{Z}$, $g$ adalah akar primitif dari $p$ (tidak rahasia),</p>
+</li>
+<li>
+<p>$x$, bilangan acak (rahasia),</p>
+</li>
+<li>
+<p>$y = g^x \bmod p$ (tidak rahasia, kunci publik),</p>
+</li>
+<li>
+<p>$m$, plaintext (rahasia),</p>
+</li>
+<li>
+<p>$a, b$, ciphertext (tidak rahasia).</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fungsi-enkripsi-dan-dekripsi"><a class="anchor" href="#fungsi-enkripsi-dan-dekripsi"></a>Fungsi Enkripsi dan Dekripsi</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fungsi enkripsi dinyatakan dengan:</p>
+</div>
+<div class="paragraph">
+<p>$$a = g^x \bmod p$</p>
+</div>
+<div class="paragraph">
+<p>$$b = y^k m \bmod p$</p>
+</div>
+<div class="paragraph">
+<p>Pasangan $a, b$ adalah ciphertext yang berukuran $2 \times m$.</p>
+</div>
+<div class="paragraph">
+<p>Fungsi dekripsi dinyatakan dengan:</p>
+</div>
+<div class="paragraph">
+<p>$$\begin{aligned}
+m &amp; = (b/a^{x}) \bmod p\\
+  &amp; = b(a^{x} )^{-1} \bmod p
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Dengan: $(a^{x} )^{-1} = a^{p-1-x} \bmod p$ (invers modulo).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="skenario"><a class="anchor" href="#skenario"></a>Skenario</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bagian ini menjelaskan skenario bagaimana kriptografi kunci publik bekerja.
+Kita akan menggunakan partisipan klasik Alice dan Bob sebagai dua pihak  yang
+melakukan pertukaran informasi.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Alice dan Bob setuju untuk menggunakan public-key cryptosystem.</p>
+</li>
+<li>
+<p>Bob mengirimkan public key-nya kepada Alice.</p>
+</li>
+<li>
+<p>Alice meng-encrypt pesan yang dibuatkan dengan menggunakan public key milik
+Bob dan mengirimkan pesan yang sudah di-encrypt kepada Bob.</p>
+</li>
+<li>
+<p>Bob men-decrypt pesan dari Alice menggunakan private key miliknya.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="pembangkitan-kunci"><a class="anchor" href="#pembangkitan-kunci"></a>Pembangkitan Kunci</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Alice dan Bob menyepakati $p \in \mathbb{P}, a \in \mathbb{Z}$, kemudian:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Alice memilih $x, x &lt; x &lt; p-1$ (acak),</p>
+</li>
+<li>
+<p>Alice menghitung $y = g^x \bmod p$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Mengasilkan kunci publik: $(y, g, p)$ dan kunci private $(x)$.</p>
+</div>
+<div class="paragraph">
+<p>Misalhnya:</p>
+</div>
+<div class="paragraph">
+<p>$p = 2273$, $g = 3, x = 243$, Alice kemudian menghitung:</p>
+</div>
+<div class="paragraph">
+<p>$y = g^x \bmod p = 3^{243} \bmod 2273 = 461$</p>
+</div>
+<div class="paragraph">
+<p>Menghasilkan kunci publik $(461, 3, 2273)$ dan kunci privat $(243)$.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contoh"><a class="anchor" href="#contoh"></a>Contoh</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pesan $m, 0 &gt; m &lt; p-1$, dapat dibagi kedalam blok $m_1, m_2, \cdots$, sehingga
+$m &lt; p-1$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $m = 07001114$, $m_1 = 0700, m_2 = 1114, \forall m_i &lt; 2273 - 1$.</p>
+</div>
+<div class="sect2">
+<h3 id="enkripsi-pesan"><a class="anchor" href="#enkripsi-pesan"></a>Enkripsi Pesan</h3>
+<div class="paragraph">
+<p>Untuk enkripsi blok $m_1$, dipilih $k = 1463 \in [0, 2273-1]$.</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+m_1 &amp; = 0700 \\
+a   &amp; = g^k \bmod p \\
+    &amp; = 3^{1463} \bmod 2273 \\
+    &amp; = 1439 \\
+b   &amp; = y^k m_1 \bmod p \\
+    &amp; = 461^{1463} \cdot 700 \bmod 2273 \\
+    &amp; = 74
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Cihpertext untuk $c_1 = (1439, 74)$.</p>
+</div>
+<div class="paragraph">
+<p>Untuk enkripsi blok $m_2$, dipilih $k = 2001 \in [0, 2273-1]$.</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+m_1 &amp; = 1114 \\
+a   &amp; = g^k \bmod p \\
+    &amp; = 3^{20001} \bmod 2273 \\
+    &amp; = 1220 \\
+b   &amp; = y^k m_1 \bmod p \\
+    &amp; = 461^{20001} \cdot 1114 \bmod 2273 \\
+    &amp; = 1682
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Cihpertext untuk $c_1 = (1220, 1682)$.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="dekripsi-pesan"><a class="anchor" href="#dekripsi-pesan"></a>Dekripsi Pesan</h3>
+<div class="paragraph">
+<p>Untuk mendekripsi blok $c_1$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+c_1 &amp; = (1439, 74) \\
+(a^{x} )^{-1} &amp; = a^{p-1-x} \bmod p \\
+    &amp; = 1439^{2029} \bmod 2273 \\
+    &amp; = 1791 \\
+m_1 &amp; = b/a^{x} \bmod p \\
+    &amp; = b(a^{x} )^{-1} \bmod p \\
+    &amp; = 74 \cdot 1791 \bmod 2273 \\
+    &amp; = 700 \\
+    &amp; = 0700
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Untuk mendekripsi blok $c_2$,</p>
+</div>
+<div class="paragraph">
+<p>$\begin{aligned}
+c_2 &amp; = (1220, 1682) \\
+(a^{x} )^{-1} &amp; = a^{p-1-x} \bmod p \\
+    &amp; = 1220^{2029} \bmod 2273 \\
+    &amp; = 1125 \\
+m_2 &amp; = b/a^{x} \bmod p \\
+    &amp; = b(a^{x} )^{-1} \bmod p \\
+    &amp; = 1682 \cdot 1125 \bmod 2273 \\
+    &amp; = 1114
+\end{aligned}$</p>
+</div>
+<div class="paragraph">
+<p>Pesan berhasil di dekripsi kemabali, yaitu $07001114$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="penutup"><a class="anchor" href="#penutup"></a>Penutup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>ElGamal pada awalnya diciptakan untuk <em>digital signature</em> yang kemudian
+dimodifikasi untuk digunakan untuk enkripsi dan dekripsi. Kekuatan ElGamal
+terletak pada sukarnya menghitung logaritma diskrit.</p>
+</div>
+<div class="paragraph">
+<p>ElGamal seperti algoritma asimetrik lainnya, digunakan untuk enkripsi dan
+dekripsi kunci algoritma simetrik.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference"><a class="anchor" href="#reference"></a>Reference</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ElGamal. T. "A Public-Key Cryptosystem and a Signature Scheme Based on
+Discrete Logarithms". IEEE Transactions on Information Theory. 1985</p>
+</li>
+<li>
+<p>Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.</p>
+</li>
+<li>
+<p>Schneier, B. Applied Cryptography, 2nd Ed. John Wiley &amp; Sons, Inc:
+Canada, 1996.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="lampiran"><a class="anchor" href="#lampiran"></a>Lampiran</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Penggunaan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">python elgamal.py</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="python"><span class="k">def</span> <span class="nf">is_relative_prime</span><span class="p">(</span><span class="n">prime</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">data</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">prime</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">,</span> <span class="n">prime</span> <span class="o">%</span> <span class="n">data</span>
+    <span class="k">return</span> <span class="n">prime</span>
+
+<span class="k">def</span> <span class="nf">is_primitive_root</span><span class="p">(</span><span class="n">prime</span><span class="p">,</span> <span class="n">root</span><span class="p">):</span>
+    <span class="n">primitive_root</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">prime</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">primitive_root</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">%</span> <span class="n">prime</span><span class="p">)</span>
+
+    <span class="c1"># Untuk memastikan tidak terjadi pembandingan primitive_root pada indeks j
+</span>    <span class="c1"># dan i yang sama
+</span>    <span class="n">kampret</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c1"># Membandingkan apakah tidak ada data yang sama
+</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">primitive_root</span><span class="p">)):</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">kampret</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">primitive_root</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">primitive_root</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">primitive_root</span><span class="p">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s">"Not primitive root"</span><span class="p">)</span>
+                <span class="k">return</span> <span class="mi">0</span>
+
+        <span class="k">if</span> <span class="n">is_relative_prime</span><span class="p">(</span><span class="n">prime</span><span class="p">,</span> <span class="n">primitive_root</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">!=</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">"Not relative prime"</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="n">kampret</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="mi">1</span>
+
+
+<span class="k">def</span> <span class="nf">key_builder</span><span class="p">():</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Input prime number, root and secret key (x)"</span><span class="p">)</span>
+    <span class="n">prime</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">secret_key</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)]</span>
+
+    <span class="c1"># root number must be primitive root from prime
+</span>    <span class="k">if</span> <span class="n">is_primitive_root</span><span class="p">(</span><span class="n">prime</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">y</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">secret_key</span><span class="p">)</span> <span class="o">%</span> <span class="n">prime</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Public Key (%d, %d, %d)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">prime</span><span class="p">))</span>
+        <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Private key %d"</span> <span class="o">%</span> <span class="n">secret_key</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">encryption</span><span class="p">():</span>
+    <span class="c1"># message is one character, string will be add later
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"Input message"</span><span class="p">)</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="s">"Input y, g and p (public key)"</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)]</span>
+
+    <span class="c1"># k is random number from 1 &lt;= k &lt;= p-1
+</span>    <span class="k">print</span><span class="p">(</span><span class="s">"Input k"</span><span class="p">)</span>
+    <span class="n">k</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+
+    <span class="c1"># the ciphertext will be a pair of a and b
+</span>    <span class="n">a</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">%</span> <span class="n">p</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="nb">ord</span><span class="p">(</span><span class="n">message</span><span class="p">))</span> <span class="o">%</span> <span class="n">p</span>
+
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Ciphertext (%d, %d)"</span> <span class="o">%</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">))</span>
+
+
+<span class="k">def</span> <span class="nf">decryption</span><span class="p">():</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="p">[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">input</span><span class="p">().</span><span class="n">split</span><span class="p">(</span><span class="s">" "</span><span class="p">)]</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="nb">pow</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">))</span> <span class="o">*</span> <span class="n">b</span> <span class="o">%</span> <span class="n">p</span>
+    <span class="k">print</span><span class="p">(</span><span class="sa">f</span><span class="s">"Message %c"</span> <span class="o">%</span> <span class="n">m</span><span class="p">)</span>
+
+<span class="n">key_builder</span><span class="p">()</span>
+<span class="n">encryption</span><span class="p">()</span>
+<span class="n">decryption</span><span class="p">()</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2019-11-20T00:00:00, Last updated: 2022-05-10T08:27:00</code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/cryptography/2019-11-20-elgamal.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

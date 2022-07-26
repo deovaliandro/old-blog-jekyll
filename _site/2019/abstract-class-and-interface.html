@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Abstract Class dan Interface</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2019/abstract-class-and-interface.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+
+    <div id="per1">
+        <h1>Abstract Class dan Interface</h1>
+        <div class="sect1">
+<h2 id="abstract-method-vs-overriding"><a class="anchor" href="#abstract-method-vs-overriding"></a>Abstract method vs Overriding</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Abstract method adalah method yang ditulis untuk diimplementasikan nantinya
+(harus diimplementasikan). Abstract method ini sebagai perjanjian bahwa
+method-method yang diberi tanda <code>abstract</code> merupakan method yang penting
+sehingga harus diimplementasikan. Manfaatnya, digunakan sebagai jembatan antar
+class.</p>
+</div>
+<div class="paragraph">
+<p>Perbedaan abstract method dengan overriding - Abstract harus di implementasikan
+sedangkan overriding itu opsional</p>
+</div>
+<div class="paragraph">
+<p>Untuk menggunakan abstract class didalam sebuah class, digunakan keyword
+<code>abstract</code>, dan untuk mengimplementasikannya pada class menggunakan keyword
+<code>implement</code>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">One</span><span class="o">{</span>
+    <span class="nc">One</span><span class="o">(){</span>
+        <span class="o">...</span>
+    <span class="o">}</span>
+
+    <span class="kd">abstract</span> <span class="n">dataType</span> <span class="nf">theMethod</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Main</span> <span class="n">implement</span> <span class="nc">One</span> <span class="o">{</span>
+    <span class="o">...</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="interface"><a class="anchor" href="#interface"></a>Interface</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Interface adalah kumpulan abstract method yang digabung menjadi satu class.
+Interface digunakan untuk menjembatani berbagai jenis class untuk dapat saling
+berkomunikasi satu dengan yang lain.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">interface</span> <span class="nc">Orang</span><span class="o">{</span>
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">makan</span><span class="o">();</span>
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">suara</span><span class="o">();</span>
+    <span class="kd">abstract</span> <span class="kt">void</span> <span class="nf">jalan</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Manusia</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">nama</span><span class="o">,</span> <span class="n">jenisKelamin</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">umur</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">Manusia</span><span class="o">(</span><span class="nc">String</span> <span class="n">nama</span><span class="o">,</span> <span class="nc">String</span> <span class="n">jenisKelamin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">umur</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">nama</span> <span class="o">=</span> <span class="n">nama</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">jenisKelamin</span> <span class="o">=</span> <span class="n">jenisKelamin</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">umur</span> <span class="o">=</span> <span class="n">umur</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getNama</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">nama</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setNama</span><span class="o">(</span><span class="nc">String</span> <span class="n">nama</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">nama</span> <span class="o">=</span> <span class="n">nama</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getJenisKelamin</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">jenisKelamin</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setJenisKelamin</span><span class="o">(</span><span class="nc">String</span> <span class="n">jenisKelamin</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">jenisKelamin</span> <span class="o">=</span> <span class="n">jenisKelamin</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getUmur</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">umur</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUmur</span><span class="o">(</span><span class="kt">int</span> <span class="n">umur</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">umur</span> <span class="o">=</span> <span class="n">umur</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Ayah</span> <span class="kd">extends</span> <span class="nc">Manusia</span> <span class="kd">implements</span> <span class="nc">Orang</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">Ayah</span><span class="o">(</span><span class="nc">String</span> <span class="n">nama</span><span class="o">,</span> <span class="nc">String</span> <span class="n">jenisKelamin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">umur</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">nama</span><span class="o">,</span> <span class="n">jenisKelamin</span><span class="o">,</span> <span class="n">umur</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makan</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ayah makan"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">suara</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ayah bersuara"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">jalan</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ayah berjalan"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">Ibu</span> <span class="kd">extends</span> <span class="nc">Manusia</span> <span class="kd">implements</span> <span class="nc">Orang</span> <span class="o">{</span>
+
+    <span class="kd">public</span> <span class="nf">Ibu</span><span class="o">(</span><span class="nc">String</span> <span class="n">nama</span><span class="o">,</span> <span class="nc">String</span> <span class="n">jenisKelamin</span><span class="o">,</span> <span class="kt">int</span> <span class="n">umur</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">nama</span><span class="o">,</span> <span class="n">jenisKelamin</span><span class="o">,</span> <span class="n">umur</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">makan</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ibu makan"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">suara</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ibu bersuara"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">jalan</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Ibu berjalan"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Bacaan menarik tentang interface
+<a href="https://medium.com/@Dewey92/oop-interface-what-ca16de0359af" class="bare">https://medium.com/@Dewey92/oop-interface-what-ca16de0359af</a></p>
+</div>
+</div>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2019-05-22T00:00:00, Last updated: </code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/oop/2019-05-22-abstract-class-and-interface.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

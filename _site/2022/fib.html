@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Fibonacci</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2022/fib.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [
+                    ['$', '$']
+                ],
+                displayMath: [
+                    ['$$', '$']
+                ]
+            }
+        };
+    </script>
+    
+
+    <div id="per1">
+        <h1>Fibonacci</h1>
+        <div class="paragraph">
+<p>bilangan fibonacci adalah barisan yang didefinisikan secara rekursif sebagai berikut:</p>
+</div>
+<div class="paragraph">
+<p>$$
+F(n) =
+  \begin{cases}
+    0, &amp; \text{jika } n = 0, \\
+    1, &amp; \text{jika } n = 1, \\
+    F(n - 1)+F(n - 2), &amp; \text{jika } tidak.
+  \end{cases}
+$</p>
+</div>
+<div class="paragraph">
+<p>bilanga fibonacci dapat dinyatakan sebagai berikut:</p>
+</div>
+<div class="paragraph">
+<p>$$F_n = \frac{x_1^n - x_2^n}{\sqrt{5}}$</p>
+</div>
+<div class="paragraph">
+<p>Perbandingan antara $F_{n+1}$ dan $F_{n}$ hampir selalu sama untuk sebarang nilai n dan mulai nilai n
+tertentu, perbandingan ini nilainya tetap. Perbandingan itu disebut rasio emas yang nilainya mendekati
+<em>1,618</em>.</p>
+</div>
+<div class="paragraph">
+<p>Cara cepat dengan python:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="python"><span class="k">class</span> <span class="nc">FibDist</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">def</span> <span class="nf">__missing__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+        <span class="n">fibk</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">fibk</span>
+
+<span class="n">fibd</span> <span class="o">=</span> <span class="n">FibDist</span><span class="p">()</span>
+<span class="k">print</span><span class="p">(</span><span class="n">fibd</span><span class="p">[</span><span class="mi">100</span><span class="p">])</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Berdasarkan buku The Art of Computer Programming karya Donald E. Knuth, barisan ini pertama kali
+dijelaskan oleh matematikawan India, Gopala dan Hemachandra pada tahun 1150, ketika menyelidiki berbagai
+kemungkinan untuk memasukkan barang-barang ke dalam kantong. Di dunia barat, barisan ini pertama kali
+dipelajari oleh Leonardo da Pisa, yang juga dikenal sebagai Fibonacci (sekitar 1200), ketika membahas
+pertumbuhan ideal dari populasi kelinci.</p>
+</div>
+<div class="paragraph">
+<p>100 bilangan fibonacci:</p>
+</div>
+<div class="paragraph">
+<p>1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
+610
+987
+1597
+2584
+4181
+6765
+10946
+17711
+28657
+46368
+75025
+121393
+196418
+317811
+514229
+832040
+1346269
+2178309
+3524578
+5702887
+9227465
+14930352
+24157817
+39088169
+63245986
+102334155
+165580141
+267914296
+433494437
+701408733
+1134903170
+1836311903
+2971215073
+4807526976
+7778742049
+12586269025
+20365011074
+32951280099
+53316291173
+86267571272
+139583862445
+225851433717
+365435296162
+591286729879
+956722026041
+1548008755920
+2504730781961
+4052739537881
+6557470319842
+10610209857723
+17167680177565
+27777890035288
+44945570212853
+72723460248141
+117669030460994
+190392490709135
+308061521170129
+498454011879264
+806515533049393
+1304969544928657
+2111485077978050
+3416454622906707
+5527939700884757
+8944394323791464
+14472334024676221
+23416728348467685
+37889062373143906
+61305790721611591
+99194853094755497
+160500643816367088
+259695496911122585
+420196140727489673
+679891637638612258
+1100087778366101931
+1779979416004714189
+2880067194370816120
+4660046610375530309
+7540113804746346429
+12200160415121876738
+19740274219868223167
+31940434634990099905
+51680708854858323072
+83621143489848422977
+135301852344706746049
+218922995834555169026
+354224848179261915075</p>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2022-05-31T00:00:00, Last updated: 2022-05-31T22:71:20</code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/algorithm/2022-05-31-fib.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>

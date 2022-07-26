@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Deo &mdash; Struktur Dasar</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="">
+    <meta name="author" content="Home">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="http://localhost:4000/2021/pp-struktur-dasar.html">
+    <link rel="self" type="application/atom+xml" title="Home"
+        href="http://localhost:4000/feed.xml">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
+    <link rel="stylesheet" href="/assets/css/github.css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FX2LRVX0JD');
+    </script>
+</head>
+<style>
+    @import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
+    body {
+        margin: 0 auto;
+        font: 1.2em 'Fira Code';
+        padding: 3em 4em 3em 4em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        body {
+            /* background-color: lightblue; */
+        }
+    }
+    
+    h1 {
+        font: 3em 'Abril Fatface';
+        margin: 0 auto;
+    }
+    
+    h2 {
+        font: 2em 'Abril Fatface';
+        margin: 0 auto;
+        border-bottom: 0.1em dashed rebeccapurple;
+    }
+
+    hr {
+        border-bottom: 1px solid grey;
+        border-top: none;
+    }
+    
+    #per1 {
+        margin: 0 auto;
+    }
+    
+    #per2 {
+        margin: 0 auto;
+        background-color: #1ce783;
+        color: #2B0E18;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
+    
+    .contact {
+        color: #A20000;
+        border-bottom: none;
+    }
+    
+    .contact:hover {
+        border-bottom: dotted 0.15em #A20000;
+        background-color: transparent;
+    }
+    
+    .title {
+        font: 2em 'Fira Code';
+    }
+    
+    #per3 {
+        margin: 0 auto;
+        background-color: black;
+        color: white;
+    }
+    
+    .list {
+        margin: 0 auto;
+        list-style: square;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    pre {
+        overflow: auto;
+        padding: 1em
+    }
+    
+    em {
+        border-bottom: 0.1em solid #A20000;
+    }
+
+    .MathJax {
+        font-size: 1em !important;
+    }
+</style>
+
+<body>
+    
+
+    <div id="per1">
+        <h1>Struktur Dasar</h1>
+        <div class="paragraph">
+<p>Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
+dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
+object-oriented language karena masih mendukung primitive data types seperti
+int, char, dll.</p>
+</div>
+<div class="paragraph">
+<p>Sintaks Java mirip dengan C/C++, tetapi Java tidak mensupport low-level
+programming seperti pointer (sebenarnya Java punya pointer. Semua turunan object
+adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
+perlu tahu fakta ini<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>).
+Kode Java selalu ditulis didalam sebuah class dan objek.</p>
+</div>
+<div class="sect1">
+<h2 id="struktur-program"><a class="anchor" href="#struktur-program"></a>Struktur program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Struktur dasar sebuah bahasa pemrograman Java adalah sebagai berikut:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello world!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>class Main</code> Adalah class utama, nama <code>Main</code> harus sesuai dengan nama file.
+Aturan penulisannya adalah dengan menggunakan huruf kapital di huruf pertama.
+Misalnya: <code>Main</code>, <code>Utama</code>, dsb-nya.</p>
+</div>
+<div class="paragraph">
+<p><code>public static void main(String args[])</code> adalah kode utama yang akan dijalankan
+ketika kita menjalankan sebuah program Java.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aturan-penamaan"><a class="anchor" href="#aturan-penamaan"></a>Aturan Penamaan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
+dalam Java yang harus dipatuhi seperti:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>tidak boleh diawali dengan angka,</p>
+</li>
+<li>
+<p>tidak boleh disertai symbol khusus seperti <code>@</code>,<code>!</code>,<code>*</code>,<code>#</code>,</p>
+</li>
+<li>
+<p>tidak boleh menggunakan reserved word sebagai nama variable,</p>
+</li>
+<li>
+<p>boleh diawali dengan underscore atau symbol <code>$</code>, dan</p>
+</li>
+<li>
+<p>nama variable tidak boleh mengandung spasi.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Menurut <em>Convention over configuration Java</em>, penulisan nama variable
+menggunakan lowerCamel case (misalnya <code>namaVariabel</code>), dan penulisan nama class
+menggunakan UpperCamel case (misalnya <code>Main`</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="menjalankan-program"><a class="anchor" href="#menjalankan-program"></a>Menjalankan program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.</p>
+</div>
+<div class="paragraph">
+<p>Untuk meng-compile java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">javac NamaFile.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dan kemudian akan menghasilkan sebuah file dengan nama <code>NamaFile.class</code>.
+File inilah yang kemudian dijalankan dengan menggunakan perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">java NamaFile</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>perhatikan, untuk menjalankan, tidak perlu menggunakan <code>NamaFile.class</code>, cukup
+dengan menggunakan <code>NamaFile</code> saja.</p>
+</div>
+<div class="paragraph">
+<p>Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
+perlu mengcompilenya terlebih dahulu<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello world!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dapat langsung dijalankan dengan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">java NamaFile.java</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Dari blog <a href="https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/" class="bare">https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://openjdk.java.net/jeps/330" class="bare">https://openjdk.java.net/jeps/330</a>
+</div>
+</div>
+        <hr> 
+        <code class="er">Signed-off-by: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;</code><br>  
+        <code class="er">Created: 2021-05-13T00:00:00, Last updated: </code>
+        <br>
+        <a href="https://github.com/deovaliandro/deovaliandro.github.io/edit/main/_posts/pp/2021-05-13-pp-struktur-dasar.adoc" class="tools">✏️edit</a>
+        <a href="#" class="tools">🎣top</a>
+    </div>
+    <footer>
+        <div class="center">
+            &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        </div>
+    </footer>
+    </main>
+</body>
+
+</html>
