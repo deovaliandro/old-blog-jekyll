@@ -1,138 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+{%- include header.html -%}
+<h1>Deo Valiandro. M</h1>
+<p>
+    Hy, nama saya Deo, seorang programmer. Website ini semacam <i>log</i> tempat saya menyimpan catatan-catatan
+    pelajaran yang sebelumnya pernah saya pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
+    kekelirian mohon dikoreksi.
+</p>
 
-<head>
-    <title>Deo &mdash; {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
-    <meta name="author" content="{{ site.title }}">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="self" type="application/atom+xml" title="{{ site.title }}"
-        href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FX2LRVX0JD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+<h2>Kontak</h2>
+<ol>
+    <li><a href="https://github.com/deovaliandro" class="contact"><b>Github</b></a></li>
+    <li><a href="https://gitlab.com/deovaliandro" class="contact"><b>GitLab</b></a></li>
+    <li><a href="mailto:me@deo.or.id" class="contact"><b>me@deo.or.id</b></a></li>
+    <li><a href="https://twitter.com/deovaliandro" class="contact"><b>@deovaliandro</b></a></li>
+</ol>
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+<h2>Blog:</h2>
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <p>{{ post.date | date: "%Y-%m-%d" }}, <a href="{{ post.url }}"
+                title="{{ site.url }}{{ post.url }}">{{ post.title }}</a><span></span></p>
+    </li>
+    {% endfor %}
+</ul>
 
-        gtag('config', 'G-FX2LRVX0JD');
-    </script>
-</head>
-<style>
-    @import url('https://rsms.me/inter/inter.css');
-
-    html {
-        font-family: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        max-width: 80vw;
-        margin: auto;
-        font-size: 1.5rem;
-        line-height: 1.75;
-    }
-
-    @supports (font-variation-settings: normal) {
-        html {
-            font-family: 'Inter var', sans-serif;
-        }
-    }
-
-    body {
-        margin: 0 auto;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-weight: 500;
-        margin: 0 auto;
-    }
-
-    a {
-        text-decoration: none;
-        color: black;
-    }
-
-    a:hover {
-        background-color: rgb(255, 215, 0);
-    }
-
-    .contact {
-        color: #A20000;
-        border-bottom: none;
-    }
-
-    .contact:hover {
-        border-bottom: dotted 0.15em #A20000;
-        background-color: transparent;
-    }
-
-    .title {
-        margin: 1em auto;
-    }
-
-    .list {
-        list-style: square;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    footer {
-        margin-bottom: 2em;
-    }
-
-    .title {
-        border-bottom: 0.1em dashed #455469;
-    }
-</style>
-
-<body>
-    <h1>Deo Valiandro. M</h1>
-    <p>
-        Hy, nama saya Deo, seorang programmer. Website ini semacam <i>log</i> tempat saya menyimpan catatan-catatan
-        pelajaran yang sebelumnya pernah saya pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
-        kekelirian mohon dikoreksi.
-    </p>
-
-    <h2>Kontak</h2>
-    <ol>
-        <li><a href="https://github.com/deovaliandro" class="contact"><b>Github</b></a></li>
-        <li><a href="https://gitlab.com/deovaliandro" class="contact"><b>GitLab</b></a></li>
-        <li><a href="mailto:me@deo.or.id" class="contact"><b>me@deo.or.id</b></a></li>
-        <li><a href="https://twitter.com/deovaliandro" class="contact"><b>@deovaliandro</b></a></li>
-    </ol>
-
-    <h2>Blog:</h2>
-    <ul>
-        {% for post in site.posts %}
-        <li>
-            <div>
-                <p>{{ post.date | date: "%Y-%m-%d" }}, <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}"
-                        class="title">{{ post.title }}</a><span></span></p>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-
-    <footer>
-        <div class="center">
-            <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC
-                BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M, <span id="love">🌱</span> with <span
-                id="love">💗</span> from <span id="love">🇮🇩</span>.
-        </div>
-    </footer>
+<footer>
+    <div class="center">
+        <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC
+            BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M, <span id="love">🌱</span> with <span
+            id="love">💗</span> from <span id="love">🇮🇩</span>.
+    </div>
+</footer>
 </body>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
