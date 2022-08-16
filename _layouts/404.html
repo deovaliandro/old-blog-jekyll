@@ -9,13 +9,6 @@
     --link: #54008c;
 }
 
-[data-theme="dark"] {
-    --bg: #282828;
-    --hr: #d79921;
-    --font-color: #ebdbb2;
-    --link: #d79921;
-}
-
 body {
     color: var(--font-color);
     background-color: var(--bg);
@@ -53,27 +46,5 @@ a:hover {
 <body>
 {{ content }}
 </body>
-<script>
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-}
-
-toggleSwitch.onclick = function() {
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-};
-</script>
 
 </html>

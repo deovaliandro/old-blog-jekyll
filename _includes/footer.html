@@ -1,39 +1,7 @@
 <footer>
     <div class="center">
-        &copy; <span x-data="{ message: new Date().getFullYear() }" x-text="message"></span> Deo Valiandro. M, <span
-            id="love">🌱</span> with <span id="love">💗</span> from <span id="love">🇮🇩</span>.
+        <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style="color: inherit;">CC
+            BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M, <span id="love">🌱</span> with <span
+            id="love">💗</span> from <span id="love">🇮🇩</span>.
     </div>
 </footer>
-<script>
-    // OPTIMIZE
-    const toggleSwitch = document.getElementById("changeTheme");
-    const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-
-    if (currentTheme) {
-        document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
-            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
-            toggleSwitch.innerHTML = "🌞light";
-        } else {
-            stylesheet.setAttribute('href', '/assets/css/github.css');
-            toggleSwitch.innerHTML = "🌚dark";
-        }
-    }
-
-    toggleSwitch.onclick = function () {
-        var stylesheet = document.getElementById("stylesheet");
-        const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
-        if (currentTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'light');
-            stylesheet.setAttribute('href', '/assets/css/github.css');
-            localStorage.setItem('theme', 'light');
-            toggleSwitch.innerHTML = "🌚dark";
-        } else {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            stylesheet.setAttribute('href', '/assets/css/gruvbox.css');
-            localStorage.setItem('theme', 'dark');
-            toggleSwitch.innerHTML = "🌞light";
-        }
-    };
-</script>

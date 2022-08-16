@@ -1,0 +1,62 @@
+{%- include header.html -%}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [
+                ['$', '$']
+            ],
+            displayMath: [
+                ['$$', '$']
+            ]
+        }
+    };
+</script>
+
+<ul class="list-post">
+    {% for post in paginator.posts %}
+    {% capture category_name %}{{ category | first }}{% endcapture %}
+    <li>
+        <div class="post">
+            <p class="title"><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a></p>
+            <code class="er">{{ post.date | date: "%Y-%m-%d" }}</code>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+<!-- Pagination links -->
+{% if paginator.total_pages > 1 %}
+<div class="pagination center">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url }}" class="pag">&laquo; Prev</a>
+    {% else %}
+    <span class="pag">&laquo; Prev</span>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    <b class="pag">{{ page }}</b>
+    {% elsif page == 1 %}
+    <a href="{{ '/' | relative_url }}" class="pag">{{ page }}</a>
+    {% else %}
+    <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}" class="pag">{{ page }}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url }}" class="pag">Next &raquo;</a>
+    {% else %}
+    <span class="pag">Next &raquo;</span>
+    {% endif %}
+</div>
+{% endif %}
+
+<a href="{{ " /feed.xml " | prepend: site.baseurl }}" class="tools">🚩rss</a>
+<hr>
+{%- include footer.html -%}
+</main>
+</body>
+
+</html>
