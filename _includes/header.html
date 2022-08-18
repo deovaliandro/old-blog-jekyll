@@ -2,133 +2,118 @@
 <html lang="en">
 
 <head>
-	<title>
-		Deo &mdash; {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
-	</title>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="description"
-		content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
-	<meta name="author" content="{{ site.title }}" />
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-	<link rel="self" type="application/atom+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend: site.baseurl
-		| prepend: site.url }}">
-	<link rel="stylesheet dns-prefetch" href="/assets/css/github.css" rel="preconnect" crossorigin />
-	<script src="/assets/js/turbo.min.js"></script>
-	<script data-goatcounter="https://deo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <title>
+        Deo &mdash; {% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}
+    </title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta name="author" content="{{ site.title }}" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="self" type="application/atom+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend: site.baseurl
+        | prepend: site.url }}">
+    <link rel="stylesheet dns-prefetch" href="/assets/css/github.css" rel="preconnect" crossorigin />
+    <script src="/assets/js/turbo.min.js"></script>
+    <script data-goatcounter="https://deo.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <style>
-	@import url("https://rsms.me/inter/inter.css");
+    @import url("https://rsms.me/inter/inter.css");
 
-	html {
-		font-family: "Inter", ui-sans-serif, system-ui, -apple-system,
-			BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-			"Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-			"Segoe UI Symbol", "Noto Color Emoji";
-		max-width: 50vw;
-		margin: auto;
-		font-size: 1.2rem;
-		line-height: 1.75;
-	}
+    @supports (font-variation-settings: normal) {
+        html {
+            font-family: "Inter var", sans-serif;
+        }
+    }
 
-	@supports (font-variation-settings: normal) {
-		html {
-			font-family: "Inter var", sans-serif;
-		}
-	}
+    body {
+        margin: auto;
+        padding: 20px;
+        max-width: 720px;
+        font-family: "Inter", ui-sans-serif, system-ui, -apple-system,
+            BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+            "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+            "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 1em;
+        line-height: 1.75;
+    }
 
-	@media (max-width: 500px) {
-		html {
-			max-width: 95vw;
-		}
-	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: 500;
+        margin: 0 auto;
+    }
 
-	@media (min-width: 500px) and (max-width: 900px) {
-		html {
-			max-width: 80vw;
-		}
-	}
+    a {
+        text-decoration: none;
+        color: black;
+        border-bottom: dotted 2px #a20000;
+    }
 
-	body {
-		margin: 0 auto;
-	}
+    a:hover {
+        background-color: rgb(255, 215, 0);
+    }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-weight: 500;
-		margin: 0 auto;
-	}
+    .contact {
+        color: #a20000;
+        border-bottom: none;
+    }
 
-	a {
-		text-decoration: none;
-		color: black;
-		border-bottom: dotted 2px #a20000;
-	}
+    .contact:hover {
+        border-bottom: dotted 0.15em #a20000;
+        background-color: transparent;
+    }
 
-	a:hover {
-		background-color: rgb(255, 215, 0);
-	}
+    .title {
+        margin: 1em auto;
+    }
 
-	.contact {
-		color: #a20000;
-		border-bottom: none;
-	}
+    .list {
+        list-style: square;
+    }
 
-	.contact:hover {
-		border-bottom: dotted 0.15em #a20000;
-		background-color: transparent;
-	}
+    .center {
+        text-align: center;
+    }
 
-	.title {
-		margin: 1em auto;
-	}
+    footer {
+        margin-bottom: 2em;
+    }
 
-	.list {
-		list-style: square;
-	}
+    .MathJax {
+        font-size: 1em !important;
+    }
 
-	.center {
-		text-align: center;
-	}
+    pre {
+        font-size: 0.9rem;
+        padding: 0.5em;
+        overflow-x: scroll;
+    }
 
-	footer {
-		margin-bottom: 2em;
-	}
+    hr {
+        border-top: 4px double #8c8b8b;
+        text-align: center;
+    }
 
-	.MathJax {
-		font-size: 1em !important;
-	}
+    .quoteblock {
+        background-color: bisque;
+        padding: 2px;
+    }
 
-	pre {
-		font-size: 0.9rem;
-		padding: 0.5em;
-		overflow-x: scroll;
-	}
-
-	hr {
-		border-top: 4px double #8c8b8b;
-		text-align: center;
-	}
-
-	.quoteblock {
-		background-color: bisque;
-		padding: 2px;
-	}
-
-	ul>li {
-		line-height: 1;
-	}
+    ul>li {
+        line-height: 1;
+    }
 </style>
 
 <body>
-	<nav>
-		<a href="/">Home</a>
-		<a href="/about.html">About</a>
-	</nav>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav>
