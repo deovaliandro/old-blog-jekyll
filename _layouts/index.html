@@ -8,20 +8,12 @@
     mohon dikoreksi.
 </p>
 
-<h2>Kontak</h2>
-<ol>
-    <li><a href="https://github.com/deovaliandro" class="contact"><b>Github</b></a></li>
-    <li><a href="https://gitlab.com/deovaliandro" class="contact"><b>GitLab</b></a></li>
-    <li><a href="mailto:me@deo.or.id" class="contact"><b>me@deo.or.id</b></a></li>
-    <li><a href="https://twitter.com/deovaliandro" class="contact"><b>@deovaliandro</b></a></li>
-</ol>
-
-<h2>Blog:</h2>
-<ul>
+<h2>Post:</h2>
+<ul class="list">
     {% for post in site.posts %}
     <li>
-        <p>{{ post.date | date: "%Y-%m-%d" }}, <a href="{{ post.url }}"
-                title="{{ site.url }}{{ post.url }}">{{ post.title }}</a><span></span></p>
+        <p><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
+            {{ post.title }}</a><span></span></p>
     </li>
     {% endfor %}
 </ul>

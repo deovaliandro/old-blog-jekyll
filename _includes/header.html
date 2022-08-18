@@ -23,20 +23,11 @@
 <style>
     @import url("https://rsms.me/inter/inter.css");
 
-    @supports (font-variation-settings: normal) {
-        html {
-            font-family: "Inter var", sans-serif;
-        }
-    }
-
     body {
         margin: auto;
         padding: 20px;
         max-width: 720px;
-        font-family: "Inter", ui-sans-serif, system-ui, -apple-system,
-            BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-            "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-            "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: "Inter" ,sans-serif;
         font-size: 1em;
         line-height: 1.75;
     }
@@ -47,28 +38,21 @@
     h4,
     h5,
     h6 {
-        font-weight: 500;
-        margin: 0 auto;
+        margin: auto;
+    }
+
+    p {
+        color: #444;
     }
 
     a {
         text-decoration: none;
-        color: black;
-        border-bottom: dotted 2px #a20000;
     }
 
     a:hover {
-        background-color: rgb(255, 215, 0);
-    }
-
-    .contact {
         color: #a20000;
-        border-bottom: none;
-    }
-
-    .contact:hover {
-        border-bottom: dotted 0.15em #a20000;
-        background-color: transparent;
+        text-decoration: underline;
+        background-color: rgb(255, 215, 0);
     }
 
     .title {
@@ -98,7 +82,7 @@
     }
 
     hr {
-        border-top: 4px double #8c8b8b;
+        border-top: thin black;
         text-align: center;
     }
 
