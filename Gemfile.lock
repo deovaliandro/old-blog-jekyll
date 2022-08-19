@@ -82,9 +82,10 @@ DEPENDENCIES
   jekyll-feed (~> 0.12)
   jekyll-paginate
   jekyll-redirect-from
+  rouge
   tzinfo
   tzinfo-data
   webrick (~> 1.7)
 
 BUNDLED WITH
-   2.3.7
+   2.3.19

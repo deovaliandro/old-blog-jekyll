@@ -1,5 +1,6 @@
 {%- include header.html -%}
-{% if page.tags != empty %}{% for tag in page.tags %}{% if tag == "math" %}
+
+{% if page.math %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script"
     async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -8,10 +9,10 @@
         tex: {
             inlineMath: [['$', '$']],
             displayMath: [['$$', '$']]
-        }
-    };
+            }
+        };
 </script>
-{% endif %}{% endfor %}{% endif %}
+{% endif %}
 
 <div id="per1">
     <h1>{{ page.title }}</h1>

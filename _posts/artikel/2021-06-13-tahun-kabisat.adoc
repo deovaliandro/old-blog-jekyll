@@ -4,7 +4,10 @@
 :page-category  : Tutorial
 :page-time      : 2021-06-13T07:12:45
 :page-update    : 2022-05-06T13:38:00
-:page-idn       : 
+
+> "Although the Genius Myth of the solo software developer still persists,
+> the truth is that no one really goes it alone."
+> -- Software Engineering at Google
 
 Tahun kabisat (bahasa Inggris: Leap year) merupakan tahun yang mengalami
 penambahan satu hari dengan tujuan untuk menyesuaikan penanggalan dengan tahun
@@ -33,11 +36,11 @@ Dalam Python:
 ----
 year = input("Year = ")
 
-if (year % 400) == 0:
+if (year % 400 == 0):
     print ("Leap year")
-else if (year % 100):
-    print ("Not leap year)
-else if (year % 4) == 0:
+elif (year % 100):
+    print ("Not leap year")
+elif (year % 4 == 0):
     print ("Leap year")
 else:
     print ("Not leap year")

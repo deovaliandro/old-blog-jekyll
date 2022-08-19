@@ -21,14 +21,14 @@ asciidoctor:
   attributes:
     - icons=font
     - source-highlighter=rouge
-    # - source-linenums-option=none
     - sectanchors=_
     - experimental=_
     - rouge-style=github
     - stylesdir=css
 
 markdown: kramdown
-highlighter: none
+highlighter: rouge
+render_with_liquid: false
 kramdown:
   input: GFM
   hard_wrap: false
