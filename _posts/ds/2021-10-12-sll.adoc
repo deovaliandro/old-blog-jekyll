@@ -4,7 +4,6 @@
 :page-category  : Tutorial
 :page-time      : 2021-10-12T10:12:54
 :page-update    : 2022-05-11T22:29:44
-:page-idn       : 456defebd7a14954
 
 
 [source, c]

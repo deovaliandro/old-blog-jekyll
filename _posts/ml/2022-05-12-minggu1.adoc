@@ -4,7 +4,6 @@
 :page-category  : ml
 :page-time      : 2022-05-12T14:08:30
 :page-update    : 2022-05-12T14:08:30
-:page-idn       : 88b7bd82f4dfd60d
 
 
 Dulu saya mengambil mata kuliah ML, tetapi kemudian berganti fokus ke
