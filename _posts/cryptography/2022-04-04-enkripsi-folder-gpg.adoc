@@ -4,7 +4,6 @@
 :page-category  : Kriptografi
 :page-time      : 2021-11-11T12:10:12
 :page-update    : 2022-05-03T22:48:35
-:page-idn       : acd36f5efc265265
 
 
 Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file &#128272;,

@@ -2,10 +2,10 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
-:page-tags      : [math]
 :page-time      : 2019-11-02T12:00:54
 :page-update    : 2022-05-10T08:27:00
-:page-idn       : a43fba9cfc8327e8
+:page-math: true
+
 
 Beberapa mode cipher block
 

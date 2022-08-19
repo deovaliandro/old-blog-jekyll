@@ -27,6 +27,20 @@
     <script src="/assets/js/turbo.min.js"></script>
     <script data-goatcounter="https://deo.goatcounter.com/count" async 
         src="//gc.zgo.at/count.js"></script>
+
+    {% if page.math == true %}
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script"
+        async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$']]
+                }
+            };
+    </script>
+    {% endif %}
     
     <style>
         body {
@@ -36,6 +50,10 @@
             font-family: "Inter", sans-serif;
             font-size: 1em;
             line-height: 1.75;
+        }
+
+        h1 {
+            margin-bottom: 0;
         }
 
         a {

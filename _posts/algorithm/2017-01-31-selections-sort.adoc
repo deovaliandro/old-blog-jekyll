@@ -4,7 +4,6 @@
 :page-category  : Algoritma
 :page-time      : 2017-01-31T10:00:21
 :page-update    : 2022-05-05T20:35:55
-:page-idn       : 2fc17950f20abe41
 
 
 [source, c]
