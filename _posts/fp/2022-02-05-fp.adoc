@@ -5,6 +5,9 @@
 :page-time      : 2022-02-05T07:12:45
 :page-update    : 2022-05-10T13:38:00
 
+> The purpose of software engineering is to control complexity, not to create it.
+> -— Dr. Pamela Zave, coauthor of Software Requirements and Design
+
 
 Functional Programming (FP) merupakan konsep yang baru bagi saya. Ketika
 memasuki program studi Ilmu Komputer di Universitas Hasanuddin, saya hanya
