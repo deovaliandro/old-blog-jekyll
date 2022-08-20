@@ -6,6 +6,8 @@
 :page-update    : 2022-05-19T13:00:20
 :page-math: true
 
+> "Never trust anyone too much, remember the devil was once an angel."
+> -- Ken Kaneki
 
 Exclusive-or (XOR) adalah satu satu gerbang logika yang didasarkan pada aljabar
 boolean.
