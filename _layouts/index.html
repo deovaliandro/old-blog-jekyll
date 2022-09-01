@@ -1,37 +1,39 @@
 {%- include header.html -%}
 <main>
-<h1>Deo Valiandro. M</h1>
-<p>
-    Hy, nama saya Deo, seorang programmer. Website ini semacam <i>log</i> tempat
-    saya menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya
-    pelajari, khususnya ketika saya masih berkuliah. Jika terdapat kekelirian
-    mohon dikoreksi.
-</p>
+    <article>
+        <h1>Deo Valiandro. M</h1>
+        <p>
+            Hy, nama saya Deo, seorang programmer. Website ini semacam <i>log</i> tempat
+            saya menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya
+            pelajari, khususnya ketika saya masih berkuliah. Jika terdapat kekelirian
+            mohon dikoreksi.
+        </p>
+    </article>
 
-<h2>Post:</h2>
-<ul class="list">
-    {% for post in site.posts %}
-    <li>
-        <p><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
-            {{ post.title }}</a><span></span></p>
-    </li>
-    {% endfor %}
-</ul>
-<hr>
-{%- include footer.html -%}
+    <article>
+    <h2>Post:</h2>
+    <ul class="list">
+        {% for post in site.posts %}
+        <li>
+            <p><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
+                    {{ post.title }}</a><span></span></p>
+        </li>
+        {% endfor %}
+    </ul>
+    </article>
+    {%- include footer.html -%}
 </main>
 </body>
 {% if page.math %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script"
-    async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
     window.MathJax = {
         tex: {
-                inlineMath: [['$', '$']],
-                displayMath: [['$$', '$']]
-            }
-        };
+            inlineMath: [['$', '$']],
+            displayMath: [['$$', '$']]
+        }
+    };
 </script>
 {% endif %}
 
