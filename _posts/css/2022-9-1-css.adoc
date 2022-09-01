@@ -1,0 +1,28 @@
+:page-title     : Rancangan CSS
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : css
+:page-time      : 2022-09-01T11:46:12
+
+
+## Font
+
+[source, css]
+font-family: "Inter", sans-serif;
+
+## Key
+
+[source, css]
+----
+kbd {
+    color: #444;
+    border: 1px solid #444;
+    border-bottom: 3px solid #444;
+    border-radius: 5px;
+    padding: 0.1rem 0.4rem;
+}
+----
+
+Misalnya:
+
+kbd:[Ctrl + s]
