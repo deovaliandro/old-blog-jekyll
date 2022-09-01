@@ -13,7 +13,6 @@ plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
-  - jekyll-paginate
 
 author: Deo Valiandro. M
 
