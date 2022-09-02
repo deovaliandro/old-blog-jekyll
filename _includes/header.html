@@ -69,9 +69,12 @@
         a {
             color: #54008c;
             padding: 0.15rem 0.2rem 0.0;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
         }
 
         a:hover {
+            border-bottom: none;
             background: #54008c;
             text-decoration: none;
             outline: 1px solid #f0d547;
@@ -166,5 +169,5 @@
 
 <body>
     <nav>
-        <a href="/">~deo@nefario</a>/<a href="{{ post.url }}">{% if page.title != "Home" %}{{ page.title }}{% endif %}</a>
+        <a href="/">~deo@nefario</a>/{% if page.title != "Home" %}<a href="{{ post.url }}">{{ page.title }}</a>{% endif %}
     </nav>

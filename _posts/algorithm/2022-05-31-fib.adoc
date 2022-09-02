@@ -1,4 +1,4 @@
-:page-title: Fibonacci
+:page-title: 💧 Fibonacci
 :page-signed-by: Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout: default
 :page-category: artikel

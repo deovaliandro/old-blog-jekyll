@@ -1,4 +1,4 @@
-:page-title     : Is Even?
+:page-title     : 2️⃣ Is Even?
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : artikel
