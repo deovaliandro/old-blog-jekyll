@@ -1,4 +1,4 @@
-:page-title     : Rancangan CSS
+:page-title     : 📑 Rancangan CSS
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : css

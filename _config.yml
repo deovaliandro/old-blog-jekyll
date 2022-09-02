@@ -21,7 +21,7 @@ asciidoctor:
   attributes:
     - icons=font
     - source-highlighter=rouge
-    - sectanchors=_
+    # - sectanchors=_
     - experimental=_
     - rouge-style=github
     - stylesdir=css

@@ -68,13 +68,15 @@
 
         a {
             color: #54008c;
-            padding: 2px 0 2px 0;
+            padding: 0.15rem 0.2rem 0.0;
         }
 
         a:hover {
             background: #54008c;
-            color: #fff;
-
+            text-decoration: none;
+            border: 1px solid #f0d547;
+            border-radius: 0.3rem;
+            background-color: #fff8d3;
         }
 
         article {
@@ -164,5 +166,5 @@
 
 <body>
     <nav>
-        <a href="/">Home</a> > <a href="{{ post.url }}">{{ page.title }}</a>
+        <a href="/">~deo@nefario</a>/<a href="{{ post.url }}">{% if page.title != "Home" %}{{ page.title }}{% endif %}</a>
     </nav>
