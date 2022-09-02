@@ -30,3 +30,7 @@ kbd:[Ctrl + s]
 ## Marked
 
 ##Hello my friend##
+
+## Inline Code
+
+`run()`

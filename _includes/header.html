@@ -40,16 +40,18 @@
         }
 
         html {
-            font-family: 'Inter', sans-serif;
+            font-family: Cantarell ,'Inter', sans-serif;
         }
 
         @supports (font-variation-settings: normal) {
             html {
-                font-family: 'Inter var', sans-serif;
+                font-family: Cantarell ,'Inter', sans-serif;
             }
         }
 
         body {
+            font-weight: 400;
+            font-size: 17px;
             margin: auto;
             max-width: 720px;
             overflow-wrap: break-word;
@@ -124,6 +126,18 @@
             padding: 2px 5px;
             border-radius: 4px;
             background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
         }
 
         .title {
