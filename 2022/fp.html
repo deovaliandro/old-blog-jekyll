@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Pemrograman Fungsional
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2022/fp.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Pemrograman Fungsional</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 5 February 2022</sub>
+    
+    <div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>The purpose of software engineering is to control complexity, not to create it.
+-— Dr. Pamela Zave, coauthor of Software Requirements and Design</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Functional Programming (FP) merupakan konsep yang baru bagi saya. Ketika
+memasuki program studi Ilmu Komputer di Universitas Hasanuddin, saya hanya
+dikenalkan dengan pemrograman imperatif dengan Pascal kemudian melompat ke
+pengantar pemrograman dengan menggunakan Java.</p>
+</div>
+<div class="paragraph">
+<p>Ketika dikenalkan dengan paradigma pemrograman, kami langsung dikenalkan dengan
+pemrograman berorientasi objek atau PBO/OOP (Eng).</p>
+</div>
+<div class="paragraph">
+<p>FP kemudian saya dikenal ketika bergabung dengan komunitas di Telegram, yaitu
+grup Telegram Haskel. Dari grup inilah kemudian dikenalkan dengan berbagai
+konsep fp, namun saya masih kebingungan dengan berbagai jenis konsep fp.</p>
+</div>
+<div class="paragraph">
+<p>Ketika salah satu anggota grup Haskell mengirim channel youtube
+<a href="https://www.youtube.com/c/cvladfp" class="bare">https://www.youtube.com/c/cvladfp</a>, kemudian saya mulai mengenal lebih dalam.</p>
+</div>
+<div class="paragraph">
+<p>Tulisan ini saya tulis untuk mengawali pelajaran tentang fp.</p>
+</div>
+<div class="sect1">
+<h2 id="haskell"><a class="anchor" href="#haskell"></a>Haskell</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Contoh fungsi dasar Haskell,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="haskell"><span class="n">babyFunction</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">babyFucntion</span> <span class="mi">12</span></code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">144</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Contoh mencari data dalam list,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="haskell"><span class="n">elem'</span> <span class="o">::</span> <span class="p">(</span><span class="kt">Eq</span> <span class="n">a</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">a</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="n">a</span><span class="p">]</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+<span class="n">elem'</span> <span class="n">a</span> <span class="kt">[]</span> <span class="o">=</span> <span class="kt">False</span>
+<span class="n">elem'</span> <span class="n">a</span> <span class="p">(</span><span class="n">x</span><span class="o">:</span><span class="n">xs</span><span class="p">)</span>
+    <span class="o">|</span> <span class="n">a</span> <span class="o">==</span> <span class="n">x</span>    <span class="o">=</span> <span class="kt">True</span>
+    <span class="o">|</span> <span class="n">otherwise</span> <span class="o">=</span> <span class="n">elem'</span> <span class="n">a</span> <span class="n">xs</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>is Upper,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="haskell"><span class="n">isUpper</span> <span class="o">::</span> <span class="kt">Char</span> <span class="o">-&gt;</span> <span class="kt">Bool</span>
+<span class="n">isUpper</span> <span class="n">x</span> <span class="o">=</span> <span class="n">elem</span> <span class="n">x</span> <span class="p">[</span><span class="sc">'A'</span><span class="o">..</span><span class="sc">'Z'</span><span class="p">]</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Landasan Matematika Kriptografi
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Set dan Fungsi" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2020/math-kriptografi.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$']]
+            }
+        };
+    </script>
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Landasan Matematika Kriptografi</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 23 July 2020</sub>
+    
+    <div class="sect1">
+<h2 id="set-dan-fungsi"><a class="anchor" href="#set-dan-fungsi"></a>Set dan Fungsi</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Set bilangan real = $\mathbb{R}$,</p>
+</li>
+<li>
+<p>Set bilangan bulat = $\mathbb{Z}$,</p>
+</li>
+<li>
+<p>Set bilangan rasional = $\mathbb{Q}$,</p>
+</li>
+<li>
+<p>Set bilangan asli = $\mathbb{N}$, $\mathbb{Z}^+$ atau $\mathbb{Z}_{&gt;0}$,</p>
+</li>
+<li>
+<p>Set kosong = $\emptyset$ atau ${}$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Kardinalitas</strong> adalah banyaknya anggota dari suatu set dengan notasi $\|S\|$.</p>
+</div>
+<div class="paragraph">
+<p>Himpunan matrix $m \times n$ dengan entry bilangan real, diberi notasi
+$M^{m,n}(\mathbb{R})$.</p>
+</div>
+<div class="sect2">
+<h3 id="hasil-kali-kartesius"><a class="anchor" href="#hasil-kali-kartesius"></a>Hasil Kali Kartesius</h3>
+<div class="paragraph">
+<p>Hasil kali dua himpunan tak kosong $ A $ dan $ B $ didefinisikan:</p>
+</div>
+<div class="paragraph">
+<p>$$A \times B = \{(a, b) \|a \in A, b \in B\}$</p>
+</div>
+<div class="paragraph">
+<p>dengan $\|A \times B\| = \|A\|\times \|B\|$.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="relasi-ekuvalensi"><a class="anchor" href="#relasi-ekuvalensi"></a>Relasi Ekuvalensi</h3>
+<div class="paragraph">
+<p>Misalnya terdapat himpunan tak kosong $A $, suatu subhimpunan $ R \subset A^2$
+disebut relasi ekivalen pada $A$ jika memenuhi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$\forall a \in A \Rightarrow (a, a) \in R$</p>
+</li>
+<li>
+<p>$\forall a_1, a_2 \in A: (a_1, a_2) \in R \Leftrightarrow (a_2, a_1) \in R$</p>
+</li>
+<li>
+<p>$\forall a_1,a_2,a_3 \in A:a_1,a_2) \wedge (a_2,a_3 \Rightarrow (a_1,a_3)$</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Relasi ekivalensi sering diberi lambang $\sim$, sehingga $(a, b) \in R$ sering
+ditulis $aRb$ atau $a \sim b$.</p>
+</div>
+<div class="paragraph">
+<p>Contohnya:</p>
+</div>
+<div class="paragraph">
+<p>$ \sim \subseteq \mathbb{Z}^2 $ dengan aturan $ (a, b) \in \sim \Leftrightarrow
+\exists k \in \mathbb{Z} : a - b = 4k $</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>fyi: $\mathbb{Z}^2$ is standard notation for the Cartesian square of the
+Integers; the set of all pairs of integers.</p>
+</div>
+<div class="paragraph">
+<p>$\mathbb{Z}^2 = { (x,y): x \in \mathbb{Z}, y \in \mathbb{Z} }$</p>
+</div>
+<div class="paragraph">
+<p>source: <a href="https://math.stackexchange.com/questions/2187233/what-means-a-set-in-z2" class="bare">https://math.stackexchange.com/questions/2187233/what-means-a-set-in-z2</a></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Karena $5 \sim 17$ dan $17 \sim -3$, maka $5 \sim -3$ (transitif),
+$17 \sim 5 $ dan $ -3 \sim 17$ (sifat simetri).</p>
+</div>
+<div class="paragraph">
+<p><strong>Teorema</strong></p>
+</div>
+<div class="paragraph">
+<p>Jika $A$ adalah himpunan tidak kosong dan $\sim \subseteq A^{2}$ adalah sebuah
+relasi ekuivalen pada $A$, maka terdapat bilangan asli $n$ dan sub-subhimpunan
+$A_1, A_2, A_3, \cdots,A_n$ yang memenuhi sifat:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Sifat saling lepas,
+$\forall i, j \in \{ 1, 2, \cdots, n \}: A_i \cap A_j = \emptyset$,</p>
+</li>
+<li>
+<p>Sifat partisi lengkap, $A_1 \cup A_2 \cup \cdots \cup A_n = A$</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="modulo"><a class="anchor" href="#modulo"></a>Modulo</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>$a^n \bmod b = a^k \cdot a^l \bmod b$, dimana $k+l=m$.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aljabar-abstrak"><a class="anchor" href="#aljabar-abstrak"></a>Aljabar Abstrak</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Aljabar abstrak digunakan untuk mempelajari struktur aljabar dan sifatnya.</p>
+</div>
+<div class="sect2">
+<h3 id="grup"><a class="anchor" href="#grup"></a>Grup</h3>
+<div class="paragraph">
+<p>Grup $(G, \ast)$ merupakan himpunan $G$ dengan operasi biner $\ast$ pada $G$
+yang memenuhi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$\forall a, b \in G, a \ast b \in G$,</p>
+</li>
+<li>
+<p>$\exists a, b, c \in G, (a \ast b) \ast c = a \ast (b \ast c)$,</p>
+</li>
+<li>
+<p>$\exists e \ni \forall a \in G \to e \ast a = a \ast e = a$,</p>
+</li>
+<li>
+<p>$\forall a \in G, \exists a' \in G \ni a \ast a' = a' \ast a = e$,</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Misalnya $(\mathbb{Z}, +)$, $(\mathbb{R}, +)$, $(\mathbb{Z}_2, \oplus)$,
+$(\mathbb{Z}_3, \oplus)$, $(\mathbb{Z}_n, \oplus)$, $(\mathbb{Z}_p, \oplus)$,
+$(\mathbb{Z}_p^\ast, \otimes)$.</p>
+</div>
+<div class="paragraph">
+<p>Grup dikatakan <em>grup abelian</em> jika memenuhi sifat komutatif,
+$\exists a, b \in G, a \ast b = b \ast a$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $(\mathbb{G}, +)$, $(\mathbb{Z}\_2, \oplus)$, $(\mathbb{Z}_3, \oplus)$.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ring"><a class="anchor" href="#ring"></a>Ring</h3>
+<div class="paragraph">
+<p>Ring $(R, +, \times)$ merupakan himpunan $R$, dengan operasi biner $ + $ dan
+$\times$ yang memenuhi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>$\exists e = 0$ untuk $(R, +)$ yang merupakan grup abelian,</p>
+</li>
+<li>
+<p>$\exists a, b, c \in R, a \times (b \times c) = (a \times b) \times c,$,</p>
+</li>
+<li>
+<p>$\exists e = 1, 1 \ne 0$ untuk
+$(R, \times) \ni 1 \times a = a, \times 1 = a \forall a \in R$,</p>
+</li>
+<li>
+<p>operasi $\times$ distributif pada penjumlahan:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>$a \times (b + c) = (a \times b ) + (a \times c)$,</p>
+</li>
+<li>
+<p>$(b + c) \times a = (b \times a ) + (c \times a)$.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Contohnya $(\mathbb{Z}, +, \times)$.</p>
+</div>
+<div class="paragraph">
+<p>Ring dikatakan <em>commutative ring</em> jika
+$\exists a, b \in R, a \times b = b \times a$.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="field"><a class="anchor" href="#field"></a>Field</h3>
+<div class="paragraph">
+<p>Field F adalah sebuah commutative ring dimana
+$\forall a \ne 0 \in F, \exists a^{-1} \in F \ni a \times a^{-1} = 1$.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya $(\mathbb{Q}, \times, +)$, $(\mathbb{R}, \times, +)$.</p>
+</div>
+<div class="paragraph">
+<p>Field dikatakan <em>finite field</em> jika himpunannya terhingga (orde n, dinotasikan
+$F_n$). Sebaliknya, elemen tidak terbatas adalah <em>infinity field</em>.</p>
+</div>
+<div class="paragraph">
+<p>Jumlah elemen dalam finite field disebut orde, jika orde $n$, dinotasikan $F_n$.
+Misalnya $F_2$ memiliki elemen $0, 1$. Finite field digunakan dalam kriptografi,
+karena berada dalam himpunan berhingga.</p>
+</div>
+<div class="paragraph">
+<p>Infinity field misalnya $(\mathbb{R}, +, \times)$ membentuk infinity field yang
+tidak memiliki aplikasi dalam kriptografi.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="galois-field"><a class="anchor" href="#galois-field"></a>Galois Field</h3>
+<div class="paragraph">
+<p>GF adalah finite field dengan $p^{n}$ elemen, $p \in P, n \geq 1$.</p>
+</div>
+<div class="paragraph">
+<p>Dinotasikan dengan: $$GF(p^{2})$</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>$GF(p)$</p>
+<div class="paragraph">
+<p>Bila $n=1$, maka $GF(p) = F_{p}$ dan elemennya $Z_{p} = \{0, 1, 2, &#8230;&#8203; , p-1\}$,
+operasi penjumlahan dan perkalian dilakukan dalam $\bmod \space p$.</p>
+</div>
+</li>
+<li>
+<p>$GF(p^{n})$</p>
+<div class="paragraph">
+<p>Operasi penjumlahan dan perkalian dilakukan dalam polinom derajat $n$ (bentuk
+$f(x)$).</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="reference"><a class="anchor" href="#reference"></a>Reference</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

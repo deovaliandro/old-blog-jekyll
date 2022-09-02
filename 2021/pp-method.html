@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Method
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2021/pp-method.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Method</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 20 May 2021</sub>
+    
+    <div class="paragraph">
+<p>Method adalah suatu fungsi.</p>
+</div>
+<div class="paragraph">
+<p>Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).</p>
+</div>
+<div class="paragraph">
+<p>Method pada Java memiliki bentuk umum seperti berikut ini:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">return</span><span class="o">-</span><span class="n">type</span> <span class="nf">methodName</span><span class="o">(</span><span class="n">parameter</span><span class="o">-</span><span class="n">list</span><span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//body of method</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dimana:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>return-type</code> adalah jenis nilai yang akan dikembalikan oleh method
+tersebut.</p>
+</li>
+<li>
+<p>methodName adalah nama method</p>
+</li>
+<li>
+<p>parameter-list adalah daftar nilai yang dikirim ke method tersebut.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contohnya:</p>
+</div>
+<div class="paragraph">
+<p>sebuah method yang berfungsi untuk menghitung hasil perkalian dua buah bilangan.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kt">int</span> <span class="nf">multipication</span><span class="o">(</span><span class="kt">int</span> <span class="n">a</span><span class="o">,</span> <span class="kt">int</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">b</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>int</code> adalah tipe data yang akan dikembalikan oleh method tersebut, yaitu hasil
+perkalian a dengan b. <code>multipication</code> adalah nama method tersebut, <code>int a</code> dan
+<code>int b</code> adalah 2 jenis parameter yang diterima oleh method tersebut, parameter
+ini akan berguna sebagai nilai yang akan diolah oleh method tersebut.</p>
+</div>
+<div class="paragraph">
+<p><code>public</code> adalah
+<a href="/2019/05/19/encapsulation.html#access-modifier">access modifier</a>.</p>
+</div>
+<div class="paragraph">
+<p>Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan
+menggunakan namanya, misalnya kita akan memanggil method yang telah kita buat
+diatas:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">hasil</span> <span class="o">=</span> <span class="n">multipication</span><span class="o">(</span><span class="mi">12</span><span class="o">,</span> <span class="mi">14</span><span class="o">);</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>12 dan 14 disini adalah argumen yang dikirim.</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>untuk mengembalikan multiple values, dapat menggunakan return array</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Sebuah method juga dapat mengembalikan object. Misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Demo</span><span class="o">{</span>
+    <span class="kt">int</span> <span class="n">a</span><span class="o">;</span>
+    <span class="kt">double</span> <span class="n">b</span><span class="o">;</span>
+    <span class="kt">int</span> <span class="n">c</span><span class="o">;</span>
+
+    <span class="nc">Demo</span><span class="o">(</span><span class="kt">int</span> <span class="n">m</span><span class="o">,</span> <span class="kt">double</span> <span class="n">d</span><span class="o">,</span> <span class="kt">int</span> <span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">m</span><span class="o">;</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">d</span><span class="o">;</span>
+        <span class="n">c</span> <span class="o">=</span> <span class="n">a</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">MethodDemo4</span><span class="o">{</span>
+    <span class="kd">static</span> <span class="nc">Demo</span> <span class="nf">get</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">Demo</span><span class="o">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="o">,</span> <span class="o">(</span><span class="kt">double</span><span class="o">)</span><span class="n">x</span> <span class="o">/</span> <span class="n">y</span><span class="o">,</span> <span class="o">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">));</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Demo</span> <span class="n">ans</span> <span class="o">=</span> <span class="n">get</span><span class="o">(</span><span class="mi">25</span><span class="o">,</span> <span class="mi">5</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Multiplication = "</span> <span class="o">+</span> <span class="n">ans</span><span class="o">.</span><span class="na">a</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Division = "</span> <span class="o">+</span> <span class="n">ans</span><span class="o">.</span><span class="na">b</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Addition = "</span> <span class="o">+</span> <span class="n">ans</span><span class="o">.</span><span class="na">c</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sumber: <a href="{https://www.studytonight.com/java/methods-in-java.php}"><a href="https://www.studytonight.com" class="bare">https://www.studytonight.com</a></a></p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Java menggunakan call-by-value bukan call-by-reference</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Note:
+1. Tambahkan call-by-value vs call-by-reference</p>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

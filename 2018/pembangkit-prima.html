@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Pembangkit Bilangan Prima
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Metode untuk pengujian bilangan prima yang paling sederhana adalahbrute force, yaitu membagi $n$ dengan $p \in \mathbb{P}, p \leq \sqrt{n}$." />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2018/pembangkit-prima.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']],
+                displayMath: [['$$', '$']]
+            }
+        };
+    </script>
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Pembangkit Bilangan Prima</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 22 May 2018</sub>
+    
+    <div class="paragraph">
+<p>Metode untuk pengujian bilangan prima yang paling sederhana adalah
+<em>brute force</em>, yaitu membagi $n$ dengan $p \in \mathbb{P}, p \leq \sqrt{n}$.</p>
+</div>
+<div class="paragraph">
+<p>Jika $n$ habis dibagi dengan salah satu bilangan prima, maka $n$ adalah bilangan
+komposit, jika tidak bisa dibagi dengan salah satu bilangan prima maka $n$
+adalah bilangan prima.</p>
+</div>
+<div class="paragraph">
+<p>Kompleksitasnya $O(\sqrt{n})$, sehingga tidak efektif.</p>
+</div>
+<div class="paragraph">
+<p>Terdapat algoritma lain yang lebih efektif,</p>
+</div>
+<div class="sect1">
+<h2 id="algoritma-lehmann"><a class="anchor" href="#algoritma-lehmann"></a>Algoritma Lehmann</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Bangkitkan bilangan acak $p$ sepanjang $n$ angka,</p>
+</li>
+<li>
+<p>uji <em>brute force</em> terhadap $p$ dengan bilangan $p &lt; 256$, ini akan
+mengeliminasi bilangan prima $80%$,</p>
+</li>
+<li>
+<p>kemudian uji $p$ dengan algoritma Lehmann:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>bangkitkan bilangan acak $a, a &lt; p$,</p>
+</li>
+<li>
+<p>hitung $a^{(p-1)/2} \bmod p$,</p>
+</li>
+<li>
+<p>jika $a^{(p-1)/2} \not\equiv 1$ atau $-1 \bmod p$, maka $p$ tidak prima,</p>
+</li>
+<li>
+<p>jika $a^{(p-1)/2} \equiv 1$ atau $-1 \bmod p$, maka peluang $p$ prima
+adalah $50%$,</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>ulangi pengujian algoritma Lehmann sebanyak $t$ kali (dengan nilai $a$
+berbeda), jika hasil hitung langkah kedua algoritma Lehmann sama dengan 1 atau
+-1, tetapi tidak selalu sama dengan 1, maka peluang $p$ adalah prima mempunyai
+kesalahan tidak lebih dari $1/2^{t}$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Jumlah pengujian yang disarankan adalah lima kali<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="algoritma-rabin-miller"><a class="anchor" href="#algoritma-rabin-miller"></a>Algoritma Rabin-Miller</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sebelumnya:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>bangkitkan nilai $p$ yang akan diuji keprimaannya,</p>
+</li>
+<li>
+<p>kemudian hitung nilai $b$, dimana $2^b$ adalah nilai pangkat 2 terbesar yang
+habis membagi $p - 1$,</p>
+</li>
+<li>
+<p>hitung $m$ sedemikian sehingga $p = 1 + 2^{b} m$.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Kemudian jalankan algoritma ini:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ambil bilangan sembarangan $a, a &lt; p$,</p>
+</li>
+<li>
+<p>$j = 0$, hitung $z = a^{m} \bmod p$,</p>
+</li>
+<li>
+<p>jika $z = 1$ atau $z = p - 1$, maka $p$ mungkin prima, jika $z &gt; 0$ dan
+$z = 1$ maka bukan prima,</p>
+</li>
+<li>
+<p><code>j++</code>, jika $j &lt; b$ dan $z \neq p - 1$, maka $z = z^{2} \bmod p$ dan kembali
+ke langkah 3,</p>
+</li>
+<li>
+<p>jika $j = b$ dan $z \neq p - 1$, maka $p$ tidak prima.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

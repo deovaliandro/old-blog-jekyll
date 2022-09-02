@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Class dan Object
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2019/class-and-object.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Class dan Object</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 28 April 2019</sub>
+    
+    <div class="paragraph">
+<p>Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan
+sebuah objek real kedalam bahasa bahasa pemrograman.</p>
+</div>
+<div class="sect1">
+<h2 id="objek-object"><a class="anchor" href="#objek-object"></a>Objek (object)</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan
+(KBBI, 2018). Misalnya seorang manusia, seekor kucing, seekor anjing atau benda
+lain, misalnya sebuah kursi. Itu adalah sebuah objek.</p>
+</div>
+<div class="paragraph">
+<p>Nah, setiap objek pasti memiliki identitas atau atribut, misalnya seorang
+manusia memiliki identitan atau atribut nama, umur, tinggi, berat dan berbagai
+identitas lainnya.</p>
+</div>
+<div class="paragraph">
+<p>Selain itu, sebuah objek juga pasti memiliki tingka laku, misalnya seorang
+manusia bisa makan, tidur, berjalan, bermain, koding dan berbagai kegiatan
+aktivitas lainnya.</p>
+</div>
+<div class="paragraph">
+<p>Sebuah objek dalam PBO juga demikian, objek tersebut akan memiliki
+sifat/atrribute dan perilaku/behaviour.</p>
+</div>
+<div class="paragraph">
+<p>Sifat/atribut yang dimaksud di PBO adalah sesuatu yang memiliki nilai, seperti
+ukuran, warna, berat, keterangan, dan semacamnya.</p>
+</div>
+<div class="paragraph">
+<p>Sedangkan tingkah laku/behaviour adalah kumpulan perintah yang melakukan suatu
+kegiatan spesifik.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="class"><a class="anchor" href="#class"></a>Class</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek.
+Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah
+objek. Sehingga dapat kita katakan bahwa:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Class adalah blueprint dari objek dan objek adalah instance dari sebuah class.</p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Di Java, semuanya dibungkus dengan sebuah <code>class</code>. <code>class</code> adalah core dari Java
+itu sendiri.</p>
+</div>
+<div class="paragraph">
+<p>Aturan untuk <code>class</code> Java:
+1. <code>class</code> dapat memiliki <code>public</code> atau default (no modifier).
+2. Dapat berupa <code>abstract</code> atau <code>final</code> (<code>class</code> normal).
+3. Harus mempunyai keyword <code>class</code> dan harus diikuti nama <code>class</code> yang
+   berupa PascalCase.
+4. Dapat meng-extend hanya sebuah <code>parent class</code>. Secara default, meng-extend
+   class <code>Object</code>.
+5. Variabel dan method dibungkus didalam kurung kurawal (<code>{}</code>).</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umum:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span>  <span class="nc">ClassName</span> <span class="o">{</span>
+     <span class="n">field</span><span class="o">;</span>
+     <span class="n">method</span><span class="o">;</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Misalnya seorang anak yang baru lahir, pastilah dia akan memiliki nama, namun
+kita belum memberikannya nama. Kenyataan bahwa dia akan memiliki nama, itu
+dimisalkan kedalam sebuah blueprint, bahwa seorang manusia pastilah memiliki
+nama, umur, perilaku, dan sebagainya.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya blueprintnya:
+1. Perilaku: bernafas, makan, bergerak, melihat, &#8230;&#8203; dst.
+2. Atribut: nama, umur, jenis kelamin, &#8230;&#8203; dsb.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Manusia</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">umur</span><span class="o">;</span>
+    <span class="nc">String</span> <span class="n">nama</span><span class="o">,</span> <span class="n">jenisKelamin</span><span class="o">;</span>
+
+    <span class="kt">void</span> <span class="nf">bernafas</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kt">void</span> <span class="nf">makan</span><span class="o">()</span> <span class="o">{}</span>
+    <span class="kt">void</span> <span class="nf">berbicara</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Untuk menggunakan cetakan ini untuk seorang manusia, maka dapat menggunakan
+perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="nc">Manusia</span> <span class="n">deo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Manusia</span><span class="o">();</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>maka akan muncul sebuah objek baru, dengan nama objek <code>deo</code>, dan memiliki nama,
+umur, jenis kelamin, bernafas, dll.</p>
+</div>
+<div class="paragraph">
+<p>Setiap kali objek di-instance dari sebuah class, maka objek tersebut mewarisi
+atribut dan perilaku dari class yang di-intace-kan. Artinya objek <code>deo</code> yang
+telah dibuat juga mempunyai atribut nama, umur dan semua atribut dan perilaku
+yang ada di <code>class Manusia</code>.</p>
+</div>
+<div class="paragraph">
+<p>Perintah <code>new</code> adalah sebuah keyword untuk mengalokasikan memory untuk object
+tersebut.</p>
+</div>
+<div class="paragraph">
+<p>Tapi, datanya belum diisi, dan masih sebatas sebuah template sehingga defaultnya
+nilainya <code>0</code>/<code>null</code>/<code>false</code>, kita dapat mengisinya dengan menggunakan perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="n">deo</span><span class="o">.</span><span class="na">nama</span> <span class="o">=</span> <span class="s">"Deo"</span><span class="o">;</span>
+<span class="n">deo</span><span class="o">.</span><span class="na">umur</span> <span class="o">=</span> <span class="mi">22</span><span class="o">;</span>
+<span class="n">deo</span><span class="o">.</span><span class="na">jenisKelamin</span> <span class="o">=</span> <span class="s">"Laki-laki"</span><span class="o">;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

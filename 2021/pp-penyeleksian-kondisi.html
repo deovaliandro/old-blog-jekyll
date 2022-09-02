@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Penyeleksian Kondisi
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2021/pp-penyeleksian-kondisi.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Penyeleksian Kondisi</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 16 May 2021</sub>
+    
+    <div class="paragraph">
+<p>Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu.</p>
+</div>
+<div class="paragraph">
+<p>Jika syarat yang diberikan memenuhi, maka semua statement dalam blok kondisi
+tersebut akan dijalankan, namun jika tidak maka semua stetement dalam blok itu
+dilewati dan tidak dijalankan.</p>
+</div>
+<div class="paragraph">
+<p>Contohnya, jika nilai sama dengan atau lebih dari 90 maka mahasiswa tersebut
+mendapatkan nilai A, jika nilainya adalah dalam rentang 80-90 maka mahasiswa
+tersebut mendapatkan nilai B, dan seterusnya.</p>
+</div>
+<div class="paragraph">
+<p>Disini dilakukan perulangan dengan mengecek nilai mahasiswa tersebut, jika
+memenuhi atau terdapat dalam rentang tertentu, maka mahasiswa tersebut akan
+mendapat nilai ini.</p>
+</div>
+<div class="paragraph">
+<p>Dalam Java terdapat dua macam penyeksian kondisi yaitu "If-else" dan "Switch".</p>
+</div>
+<div class="sect1">
+<h2 id="if-else"><a class="anchor" href="#if-else"></a>If-Else</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Bentuk if-else adalah bentuk jika-maka, jika memenuhi syarat ini, lakukan ini,
+jika tidak maka cek ke syarat berikutnya.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umumnya adalah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">if</span> <span class="o">(</span> <span class="n">syarat1</span> <span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//dijalankan ketika syarat1 = true</span>
+<span class="o">}</span> <span class="k">if</span> <span class="k">else</span> <span class="o">(</span> <span class="n">syarat2</span> <span class="o">)</span> <span class="o">{</span>
+    <span class="c1">//dijalankan ketika syarat2 = true</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="c1">//dijalankan ketika semua syarat false</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Aturannya:</p>
+</div>
+<div class="paragraph">
+<p>Berikut ini hal yang harus diketahui ketika menggunakan "If-else":</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If statement bisa tidak memiliki "else" statement, "else" statement harus
+terletak setelah semua "else If" statement (jika ada).</p>
+</li>
+<li>
+<p>If statement bisa memiliki banyak "else if" statement dan semuanya harus
+terletak sebelum "else" statement.</p>
+</li>
+<li>
+<p>Ketika salah satu "else if" statement dijalankan, tidak ada "else if" lainnya
+yang akan dijalankan.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">nilai</span> <span class="o">=</span> <span class="mi">50</span><span class="o">;</span>
+
+<span class="k">if</span> <span class="o">(</span><span class="n">nilai</span> <span class="o">&lt;=</span> <span class="mi">50</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"C"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">if</span> <span class="k">else</span> <span class="o">(</span><span class="n">nilai</span> <span class="o">&lt;=</span> <span class="mi">85</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"B"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">if</span> <span class="k">else</span> <span class="o">(</span><span class="n">nilai</span> <span class="o">&gt;</span> <span class="mi">85</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"A"</span><span class="o">);</span>
+<span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Eror"</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="switch"><a class="anchor" href="#switch"></a>Switch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pada switch terdapat syarat yang digunakan untuk pengujian terhadap daftar nilai
+yang ada.</p>
+</div>
+<div class="paragraph">
+<p>Setiap nilai (daftar nilai) ini disebut case, dan syarat akan diperiksa untuk
+setiap case. Jika daftar case tidak ada yang memenuhi, maka akan otomatis
+ke <code>default</code>.</p>
+</div>
+<div class="paragraph">
+<p>Bentuk umumnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="k">switch</span> <span class="o">(</span> <span class="n">test_variable</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="n">value</span> <span class="o">:</span>
+        <span class="c1">//statement</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="n">value</span> <span class="o">:</span>
+        <span class="c1">//statement</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">default</span> <span class="o">:</span>
+        <span class="c1">//statement</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Switch memerlukan <code>break</code> untuk menghentikan pengujian ketika pengujian itu
+sudah memenuhi persyaratan yang diberikan.</p>
+</div>
+<div class="paragraph">
+<p><code>break</code> digunakan untuk menghentikan pencarian jika kondisi yang dicari sudah
+memenuhi (Baca bagian [Jump Statement](/2021/05/18/jump-statement.html)).</p>
+</div>
+<div class="paragraph">
+<p>Contoh penggunaan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="o">;</span>
+<span class="k">switch</span> <span class="o">(</span><span class="n">a</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">case</span> <span class="mi">1</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You chose One"</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">2</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You chose Two"</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">3</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You chose Three"</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">4</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You chose Four"</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">case</span> <span class="mi">5</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"You chose Five"</span><span class="o">);</span>
+        <span class="k">break</span><span class="o">;</span>
+    <span class="k">default</span><span class="o">:</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Invalid Choice"</span><span class="o">);</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

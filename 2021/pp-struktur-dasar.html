@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Struktur Dasar
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2021/pp-struktur-dasar.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Struktur Dasar</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 13 May 2021</sub>
+    
+    <div class="paragraph">
+<p>Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
+dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
+object-oriented language karena masih mendukung primitive data types seperti
+int, char, dll.</p>
+</div>
+<div class="paragraph">
+<p>Sintaks Java mirip dengan C/C++, tetapi Java tidak mensupport low-level
+programming seperti pointer (sebenarnya Java punya pointer. Semua turunan object
+adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
+perlu tahu fakta ini<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>).
+Kode Java selalu ditulis didalam sebuah class dan objek.</p>
+</div>
+<div class="sect1">
+<h2 id="struktur-program"><a class="anchor" href="#struktur-program"></a>Struktur program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Struktur dasar sebuah bahasa pemrograman Java adalah sebagai berikut:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello world!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><code>class Main</code> Adalah class utama, nama <code>Main</code> harus sesuai dengan nama file.
+Aturan penulisannya adalah dengan menggunakan huruf kapital di huruf pertama.
+Misalnya: <code>Main</code>, <code>Utama</code>, dsb-nya.</p>
+</div>
+<div class="paragraph">
+<p><code>public static void main(String args[])</code> adalah kode utama yang akan dijalankan
+ketika kita menjalankan sebuah program Java.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="aturan-penamaan"><a class="anchor" href="#aturan-penamaan"></a>Aturan Penamaan</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
+dalam Java yang harus dipatuhi seperti:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>tidak boleh diawali dengan angka,</p>
+</li>
+<li>
+<p>tidak boleh disertai symbol khusus seperti <code>@</code>,<code>!</code>,<code>*</code>,<code>#</code>,</p>
+</li>
+<li>
+<p>tidak boleh menggunakan reserved word sebagai nama variable,</p>
+</li>
+<li>
+<p>boleh diawali dengan underscore atau symbol <code>$</code>, dan</p>
+</li>
+<li>
+<p>nama variable tidak boleh mengandung spasi.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Menurut <em>Convention over configuration Java</em>, penulisan nama variable
+menggunakan lowerCamel case (misalnya <code>namaVariabel</code>), dan penulisan nama class
+menggunakan UpperCamel case (misalnya <code>Main`</code>).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="menjalankan-program"><a class="anchor" href="#menjalankan-program"></a>Menjalankan program</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.</p>
+</div>
+<div class="paragraph">
+<p>Untuk meng-compile java:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">javac NamaFile.java</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dan kemudian akan menghasilkan sebuah file dengan nama <code>NamaFile.class</code>.
+File inilah yang kemudian dijalankan dengan menggunakan perintah:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">java NamaFile</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>perhatikan, untuk menjalankan, tidak perlu menggunakan <code>NamaFile.class</code>, cukup
+dengan menggunakan <code>NamaFile</code> saja.</p>
+</div>
+<div class="paragraph">
+<p>Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
+perlu mengcompilenya terlebih dahulu<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Misalnya:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Hello world!"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>dapat langsung dijalankan dengan:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="bash">java NamaFile.java</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Dari blog <a href="https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/" class="bare">https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://openjdk.java.net/jeps/330" class="bare">https://openjdk.java.net/jeps/330</a>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

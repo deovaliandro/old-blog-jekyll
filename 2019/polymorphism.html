@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Polymorphism
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2019/polymorphism.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Polymorphism</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 29 May 2019</sub>
+    
+    <div class="paragraph">
+<p>Polimorfiesme (bahasa Inggris polymorphims) adalah kemampuan dari suatu objek
+untuk  merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling
+umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan
+untuk merujuk ke inheritance objek class.</p>
+</div>
+<div class="paragraph">
+<p>Hal ini memungkinkan perubahan perilaku program secara dinamis saat program
+berjalan, tanpa suatu modul tahu bahwa modul yang lain sudah berubah.</p>
+</div>
+<div class="paragraph">
+<p>Polymorphism menyederhanakan dan menghilangkan if-else, di saat-saat di mana
+penggunaannya menjadi tidak praktis lagi. Kode-kode yang tersebar di mana-mana
+dengan if-else yang selalu sama, akhirnya semuanya di masukkan ke dalam
+kelas-kelas masing-masing. Ditaruhlah interface di depan kelas-kelas itu,
+sehingga sekarang kode yang baru terasa lebih mudah dibaca
+<sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>.</p>
+</div>
+<div class="paragraph">
+<p>Polymorphism terbagi menjadi dua, yaitu <strong>compiled time polymorphism</strong> dan
+<strong>runtime polymorphism</strong>.</p>
+</div>
+<div class="sect1">
+<h2 id="compiled-time-polymorphimsstatic-polymorphims"><a class="anchor" href="#compiled-time-polymorphimsstatic-polymorphims"></a>Compiled time polymorphims/static polymorphims</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polimorfiesme yang berjalan ketika kompilasi. Misalnya:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Method overloading,</p>
+</li>
+<li>
+<p>Constructor overloading,</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Contoh:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">class</span> <span class="nc">Arithmetic</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">long</span> <span class="nf">add</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">,</span> <span class="kt">int</span> <span class="n">k</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">i</span> <span class="o">+</span> <span class="n">j</span> <span class="o">+</span> <span class="n">k</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="runtime-polymorphism"><a class="anchor" href="#runtime-polymorphism"></a>Runtime polymorphism</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Polimorfiesme yang berjalan ketika runtime. Menggunakan override yang dituliskan
+dalam bentuk keyword <code>@Override</code>. Misalnya:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Method overloading,</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java"><span class="c1">//Superclass</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Operasi</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">op</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewOperation</span> <span class="kd">extends</span> <span class="nc">Operasi</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kt">void</span> <span class="nf">op</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="kt">int</span> <span class="n">j</span><span class="o">){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">j</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overriding-vs-overloading"><a class="anchor" href="#overriding-vs-overloading"></a>Overriding vs Overloading</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Overriding mengimplementasikan Runtime Polymorphism, Overloading
+mengimplementasikan Compile time polymorphism,</p>
+</li>
+<li>
+<p>Overriding terjadi antara superclass dan subclass, Overloading terjadi antara
+metode di kelas yang sama.</p>
+</li>
+<li>
+<p>Overriding memiliki tanda yang sama yaitu nama dan argumen yang sama,
+Overloading memiliki nama yang sama namun parameter berbeda.</p>
+</li>
+<li>
+<p>Overloading, method dipanggil ketika compile-time, Overriding, dipanggil
+ketika runtime objek yang ditentukan.</p>
+</li>
+<li>
+<p>Jika Overriding breaks, akan berakibat fatar karena efeknya akan terlihat pada
+saat runtime, namun jika Overloading breaks, akan muncul compile-time error
+dan lebih mudah untuk memperbaikinya<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <a href="https://jekjektuanakal.my.id/posts/peta-jalan-pejuang-cpp/" class="bare">https://jekjektuanakal.my.id/posts/peta-jalan-pejuang-cpp/</a>
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. <a href="https://www.journaldev.com/32182/overriding-vs-overloading-in-java" class="bare">https://www.journaldev.com/32182/overriding-vs-overloading-in-java</a>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>

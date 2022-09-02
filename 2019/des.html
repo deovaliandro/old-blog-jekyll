@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Deo &mdash; Data Encryption Standard (DES)
+    </title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="Home" />
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="canonical" href="https://deo.or.id/2019/des.html" />
+    <link rel="self" type="application/atom+xml" title="Home" href="https://deo.or.id /feed.xml">
+
+    
+
+    <link rel="stylesheet" href="/assets/css/code.css">
+    <style>
+        * {
+            text-rendering: geometricPrecision;
+        }
+
+        html {
+            font-family: Cantarell, sans-serif;
+        }
+
+        @supports (font-variation-settings: normal) {
+            html {
+                font-family: Cantarell, sans-serif;
+            }
+        }
+
+        body {
+            font-weight: 400;
+            font-size: 17px;
+            margin: auto;
+            max-width: 720px;
+            overflow-wrap: break-word;
+            line-height: 1.75;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        nav {
+            font-family: var(--sans-font);
+            margin: 1rem 1rem 1rem 0;
+        }
+
+        nav a {
+            margin-right: 8px;
+        }
+
+        a {
+            color: #54008c;
+            padding: 2px 0 2px 0;
+        }
+
+        a:hover {
+            background: #54008c;
+            color: #fff;
+
+        }
+
+        article {
+            border: 1px solid #d8dae1;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            margin-bottom: 2em;
+        }
+
+        pre {
+            font-size: 0.9rem;
+            padding: 0.5em;
+            overflow-x: scroll;
+        }
+
+        hr {
+            border-top: thin black;
+            text-align: center;
+        }
+
+        blockquote {
+            margin-left: 1em;
+            font-style: italic;
+        }
+
+        ul>li {
+            line-height: 1;
+        }
+
+        kbd {
+            color: #444;
+            border: 1px solid #444;
+            border-bottom: 3px solid #444;
+            border-radius: 5px;
+            padding: 0.1rem 0.4rem;
+        }
+
+        mark {
+            padding: 2px 5px;
+            border-radius: 4px;
+            background-color: #ffdd33;
+        }
+
+        code {
+            font: 400 14px monospace;
+            color: #24292f;
+            border-radius: 0.3rem;
+            padding: 0.15rem 0.2rem 0.05rem;
+        }
+
+        code:not(pre>code) {
+            background-color: #fff8d3;
+            border: 1px solid #f0d547;
+        }
+
+        .title {
+            margin: 1em auto;
+        }
+
+        .list {
+            list-style: square;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .quoteblock {
+            margin: 1em auto;
+            padding: 5px 0 20px 0;
+            border-left: 1em solid #444;
+            background-color: #f8f8f8;
+        }
+
+        .attribution {
+            font-size: 0.8em;
+            margin-left: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+    </nav><article>
+    <h1>Data Encryption Standard (DES)</h1>
+    
+    <sub>Ditulis oleh: Deo Valiandro. M &lt;valiandrod@gmail.com&gt;, pada 24 October 2019</sub>
+    
+    <div class="paragraph">
+<p>Algoritma DES dikembangkan di IBM dibawah kepemimpinan W.L. Tuchman pada tahun
+1972. Algoritma ini didasarkan pada algoritma Lucifer yang dibuat oleh Horst
+Feistel.</p>
+</div>
+<div class="paragraph">
+<p>DES termasuk ke dalam sistem kriptografi simetri dan tergolong jenis cipher
+blok.</p>
+</div>
+<div class="paragraph">
+<p>DES beroperasi pada ukuran blok 64 bit. DES mengenkripsikan 64 bit plainteks
+menjadi 64 bit cipherteks dengan menggunakan 56 bit kunci internal (internal
+key) atau upa-kunci (subkey). Kunci internal dibangkitkan dari kunci eksternal
+(external key) yang panjangnya 64 bit.</p>
+</div>
+<div class="paragraph">
+<p>Implementasi dengan menggunakan Python:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="python"><span class="n">ip</span> <span class="o">=</span> <span class="p">[</span><span class="mi">58</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span>
+      <span class="mi">62</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="mi">57</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span>
+      <span class="mi">61</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+
+<span class="n">ip_inv</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">63</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span>
+          <span class="mi">38</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span>
+          <span class="mi">36</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span>
+          <span class="mi">34</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+
+<span class="n">expansion</span> <span class="o">=</span> <span class="p">[</span><span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span>
+             <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span>
+             <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span>
+             <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+<span class="n">permutation_box</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>
+                   <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">d</span><span class="p">(</span><span class="n">lis</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">lis</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">rotate_left</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">data</span><span class="p">[</span><span class="n">n</span><span class="p">:]</span> <span class="o">+</span> <span class="n">data</span><span class="p">[:</span><span class="n">n</span><span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">str2bin</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">dummy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)):</span>
+        <span class="n">bits</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">]))[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="n">bits</span> <span class="o">=</span> <span class="s">'00000000'</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">bits</span><span class="p">):]</span> <span class="o">+</span> <span class="n">bits</span>
+        <span class="n">dummy</span><span class="p">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">bits</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">dummy</span>
+
+
+<span class="k">def</span> <span class="nf">key_builder</span><span class="p">(</span><span class="n">ext_key</span><span class="p">):</span>
+    <span class="n">pc1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">57</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">58</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span>
+           <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">60</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">44</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span>
+           <span class="mi">63</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">62</span><span class="p">,</span> <span class="mi">54</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span>
+           <span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+
+    <span class="n">pc2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span>
+           <span class="mi">23</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span>
+           <span class="mi">41</span><span class="p">,</span> <span class="mi">52</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">47</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span>
+           <span class="mi">44</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">39</span><span class="p">,</span> <span class="mi">56</span><span class="p">,</span> <span class="mi">34</span><span class="p">,</span> <span class="mi">53</span><span class="p">,</span> <span class="mi">46</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">36</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">32</span><span class="p">]</span>
+
+    <span class="n">key_round</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+
+    <span class="n">raw_result</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">final_key</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pc1</span><span class="p">)):</span>
+        <span class="n">raw_result</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ext_key</span><span class="p">[</span><span class="n">pc1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="n">left</span> <span class="o">=</span> <span class="n">raw_result</span><span class="p">[:</span><span class="mi">28</span><span class="p">]</span>
+    <span class="n">right</span> <span class="o">=</span> <span class="n">raw_result</span><span class="p">[</span><span class="mi">28</span><span class="p">:]</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">key_round</span><span class="p">)):</span>
+        <span class="n">left</span> <span class="o">=</span> <span class="n">rotate_left</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">key_round</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">right</span> <span class="o">=</span> <span class="n">rotate_left</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">key_round</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">ki</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="n">right</span>
+        <span class="n">aur</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pc2</span><span class="p">)):</span>
+            <span class="n">aur</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">ki</span><span class="p">[</span><span class="n">pc2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+        <span class="n">final_key</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">aur</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">final_key</span>
+
+
+<span class="k">def</span> <span class="nf">split_message</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">msg_split</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">),</span> <span class="mi">64</span><span class="p">):</span>
+        <span class="n">msg_split</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">64</span><span class="p">])</span>
+
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg_split</span><span class="p">[</span><span class="n">j</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mi">64</span><span class="p">:</span>
+            <span class="n">miss</span> <span class="o">=</span> <span class="mi">64</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">msg_split</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+            <span class="n">padding</span> <span class="o">=</span> <span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">0</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">miss</span><span class="p">))</span>
+            <span class="n">msg_split</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">extend</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">padding</span><span class="p">])</span>
+        <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="n">msg_split</span>
+
+
+<span class="k">def</span> <span class="nf">permutation_function</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">table</span><span class="p">):</span>
+    <span class="n">dummy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="p">)):</span>
+        <span class="n">dummy</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">table</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">dummy</span>
+
+
+<span class="k">def</span> <span class="nf">xor_with_key</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">key_f</span><span class="p">):</span>
+    <span class="n">dummy</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">msg</span><span class="p">)):</span>
+        <span class="n">dummy</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">msg</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">^</span> <span class="n">key_f</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">dummy</span>
+
+
+<span class="k">def</span> <span class="nf">s_box</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+    <span class="n">s1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s3</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s4</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s5</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">11</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s6</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s7</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s8</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">13</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">],</span>
+          <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="p">],</span> <span class="p">]</span>
+
+    <span class="n">s</span> <span class="o">=</span> <span class="p">[</span><span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span><span class="p">,</span> <span class="n">s4</span><span class="p">,</span> <span class="n">s5</span><span class="p">,</span> <span class="n">s6</span><span class="p">,</span> <span class="n">s7</span><span class="p">,</span> <span class="n">s8</span><span class="p">]</span>
+
+    <span class="n">b</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+        <span class="n">ar</span> <span class="o">=</span> <span class="n">msg</span><span class="p">[</span><span class="n">index</span><span class="p">:</span><span class="n">index</span> <span class="o">+</span> <span class="mi">6</span><span class="p">]</span>
+        <span class="n">index</span> <span class="o">+=</span> <span class="mi">6</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ar</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">ar</span><span class="p">[</span><span class="mi">5</span><span class="p">]),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">column</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="s">''</span><span class="p">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ar</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]]),</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">row</span><span class="p">][</span><span class="n">column</span><span class="p">])[</span><span class="mi">2</span><span class="p">:]</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="s">'0000'</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">value</span><span class="p">):]</span> <span class="o">+</span> <span class="n">value</span>
+        <span class="n">b</span><span class="p">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">value</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">b</span>
+
+
+<span class="k">def</span> <span class="nf">encrypt</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">internal_key</span><span class="p">):</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="n">split_message</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+    <span class="n">cipher</span> <span class="o">=</span> <span class="s">""</span>
+
+    <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="n">permutation</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">ip</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">permutation</span><span class="p">[:</span><span class="mi">32</span><span class="p">],</span> <span class="n">permutation</span><span class="p">[</span><span class="mi">32</span><span class="p">:]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">):</span>
+            <span class="n">expand</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">expansion</span><span class="p">)</span>
+            <span class="n">vector_a</span> <span class="o">=</span> <span class="n">xor_with_key</span><span class="p">(</span><span class="n">expand</span><span class="p">,</span> <span class="n">internal_key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">vector_b</span> <span class="o">=</span> <span class="n">s_box</span><span class="p">(</span><span class="n">vector_a</span><span class="p">)</span>
+            <span class="n">pb</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">vector_b</span><span class="p">,</span> <span class="n">permutation_box</span><span class="p">)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">right</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pb</span><span class="p">)):</span>
+                <span class="n">right</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">pb</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">^</span> <span class="n">left</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="n">temp</span>
+
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">right</span> <span class="o">+</span> <span class="n">left</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">ip_inv</span><span class="p">)</span>
+        <span class="n">cipher</span> <span class="o">+=</span> <span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">final</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">cipher</span>
+
+
+<span class="k">def</span> <span class="nf">decrypt</span><span class="p">(</span><span class="n">messages</span><span class="p">,</span> <span class="n">internal_key</span><span class="p">):</span>
+    <span class="n">messages</span> <span class="o">=</span> <span class="n">split_message</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+    <span class="n">plaintext</span> <span class="o">=</span> <span class="s">""</span>
+
+    <span class="k">for</span> <span class="n">msg</span> <span class="ow">in</span> <span class="n">messages</span><span class="p">:</span>
+        <span class="n">permutation</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">msg</span><span class="p">,</span> <span class="n">ip</span><span class="p">)</span>
+        <span class="n">left</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">permutation</span><span class="p">[:</span><span class="mi">32</span><span class="p">],</span> <span class="n">permutation</span><span class="p">[</span><span class="mi">32</span><span class="p">:]</span>
+
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">expand</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">expansion</span><span class="p">)</span>
+            <span class="n">vector_a</span> <span class="o">=</span> <span class="n">xor_with_key</span><span class="p">(</span><span class="n">expand</span><span class="p">,</span> <span class="n">internal_key</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+            <span class="n">vector_b</span> <span class="o">=</span> <span class="n">s_box</span><span class="p">(</span><span class="n">vector_a</span><span class="p">)</span>
+            <span class="n">pb</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">vector_b</span><span class="p">,</span> <span class="n">permutation_box</span><span class="p">)</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">right</span>
+            <span class="n">right</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">pb</span><span class="p">)):</span>
+                <span class="n">right</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">pb</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="o">^</span> <span class="n">left</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
+            <span class="n">left</span> <span class="o">=</span> <span class="n">temp</span>
+
+        <span class="n">raw</span> <span class="o">=</span> <span class="n">right</span> <span class="o">+</span> <span class="n">left</span>
+        <span class="n">final</span> <span class="o">=</span> <span class="n">permutation_function</span><span class="p">(</span><span class="n">raw</span><span class="p">,</span> <span class="n">ip_inv</span><span class="p">)</span>
+        <span class="n">plaintext</span> <span class="o">+=</span> <span class="s">""</span><span class="p">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">final</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">plaintext</span>
+
+
+<span class="c1"># open key
+</span><span class="n">externalKey</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'pass.txt'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
+<span class="n">key_in_binary</span> <span class="o">=</span> <span class="n">str2bin</span><span class="p">(</span><span class="n">externalKey</span><span class="p">)</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">key_builder</span><span class="p">(</span><span class="n">key_in_binary</span><span class="p">)</span>
+
+<span class="c1"># message 8-byte (text)
+# message = open('message.txt', 'r').read()
+# message = str2bin(message)
+</span>
+<span class="c1"># message in json (more than 8-byte)
+</span><span class="n">message</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">'example.json'</span><span class="p">,</span> <span class="s">'r'</span><span class="p">).</span><span class="n">read</span><span class="p">()</span>
+<span class="n">message</span> <span class="o">=</span> <span class="n">str2bin</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+
+<span class="c1"># encrypt message
+</span><span class="n">ciphertext</span> <span class="o">=</span> <span class="n">encrypt</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Ciphertext ="</span><span class="p">,</span> <span class="n">ciphertext</span><span class="p">)</span>
+
+<span class="n">aa</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">aa</span><span class="p">.</span><span class="n">extend</span><span class="p">([</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">ciphertext</span><span class="p">])</span>
+
+<span class="c1"># decrypt message
+</span><span class="k">print</span><span class="p">(</span><span class="s">"Plaintext ="</span><span class="p">,</span> <span class="n">d</span><span class="p">(</span><span class="n">message</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Plaintext ="</span><span class="p">,</span> <span class="n">decrypt</span><span class="p">(</span><span class="n">aa</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span></code></pre>
+</div>
+</div>
+</article><footer>
+    <div class="center">
+        <a
+            target="_blank"
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            CC BY-NC-SA 4.0</a> 2016-Sekarang, &copy; Deo Valiandro. M,
+            <span id="love">🌱</span> with <span id="love">💗</span>
+            from <span id="love">🇮🇩</span>.
+
+        <p>
+            Situs ini menggunakan <a href="https://www.mathjax.org/">MathJax</a>
+            dan berbagai jenis CSS.
+        </p>
+        <p>Kontak:
+            <a href="https://github.com/deovaliandro" class="contact">Github</a>,
+            <a href="https://gitlab.com/deovaliandro" class="contact">GitLab</a>,
+            <a href="mailto:me@deo.or.id" class="contact">me@deo.or.id</a>,
+            <a href="https://twitter.com/deovaliandro" class="contact">@deovaliandro</a>,
+            <a href="@deo@fosstodon.org">@deo@fosstodon.org</a>
+        </p>
+    </div>
+</footer></main>
+</body>
+
+</html>
