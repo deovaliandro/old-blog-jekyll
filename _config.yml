@@ -13,6 +13,7 @@ plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
+  - jekyll-email-protect
 
 author: Deo Valiandro. M
 

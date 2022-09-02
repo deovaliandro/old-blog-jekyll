@@ -34,6 +34,7 @@ GEM
     jekyll-asciidoc (3.0.0)
       asciidoctor (>= 1.5.0)
       jekyll (>= 3.0.0)
+    jekyll-email-protect (1.1.0)
     jekyll-feed (0.16.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-redirect-from (0.16.0)
@@ -74,6 +75,7 @@ PLATFORMS
 DEPENDENCIES
   jekyll (~> 4.2.1)
   jekyll-asciidoc
+  jekyll-email-protect
   jekyll-feed (~> 0.12)
   jekyll-redirect-from
   webrick (~> 1.7)
