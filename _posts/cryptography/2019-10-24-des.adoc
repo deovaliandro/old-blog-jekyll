@@ -5,6 +5,8 @@
 :page-time      : 2019-10-24T01:12:32
 :page-update    : 2022-05-10T08:27:00
 
+> Friends don’t spy; true friendship is about privacy, too.
+> -- Stephen King
 
 Algoritma DES dikembangkan di IBM dibawah kepemimpinan W.L. Tuchman pada tahun
 1972. Algoritma ini didasarkan pada algoritma Lucifer yang dibuat oleh Horst
