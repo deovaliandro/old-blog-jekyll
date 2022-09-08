@@ -34,3 +34,8 @@ kbd:[Ctrl + s]
 ## Inline Code
 
 `run()`
+
+## Blockquote
+
+> Ini adalah kami
+> -- Deo
