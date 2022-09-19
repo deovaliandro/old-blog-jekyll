@@ -5,6 +5,7 @@
 :page-time: 2022-05-31T22:71:20
 :page-update: 2022-05-31T22:71:20
 :page-math: true
+:page-desc: Fibonacci adalah deret angka yang diperoleh dengan menjumlahkan dua angka sebelumnya: 1, 1, 2, 3, 5 ...
 
 
 > Humanity is OK, but 99% of people are boring idiots

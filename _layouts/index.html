@@ -8,18 +8,18 @@
             pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
             kekelirian mohon dikoreksi.
         </p>
+        <a href="/archived.html">archived</a>
     </article>
 
     <article>
-    <h2>Post:</h2>
-    <ul class="list">
-        {% for post in site.posts %}
-        <li>
-            <p><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
-                    {{ post.title }}</a><span></span></p>
-        </li>
-        {% endfor %}
-    </ul>
+    <h2>Tulisan terbaru:</h2>
+    {% for post in site.posts limit:3 %}
+    <article>
+        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> on <code>{{ post.category }}</code> pada <code>{{ post.time }}</code>.
+        <hr>
+        <p>{{ post.desc }}</p>
+    </article>
+    {% endfor %}
     </article>
     {%- include footer.html -%}
 </main>

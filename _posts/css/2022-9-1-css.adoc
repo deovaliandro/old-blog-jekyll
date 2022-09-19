@@ -3,6 +3,7 @@
 :page-layout    : default
 :page-category  : css
 :page-time      : 2022-09-01T11:46:12
+:page-desc      : Rancangan CSS ini digunakan untuk mengupdate website ini. CSS ini menggunakan tampilan yang sederhana dan ringan.
 
 
 ## Font

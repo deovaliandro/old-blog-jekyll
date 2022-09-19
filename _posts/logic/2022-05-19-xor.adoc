@@ -4,7 +4,8 @@
 :page-category  : logic
 :page-time      : 2022-05-19T13:00:20
 :page-update    : 2022-05-19T13:00:20
-:page-math: true
+:page-math      : true
+:page-desc      : XOR adalah salah satu salah satu gerbang logika yang unik, karena jika operasinya dilakukan sebanyak genap kali, maka akan menghasilkan nilai semula.
 
 > "Never trust anyone too much, remember the devil was once an angel."
 > -- Ken Kaneki
