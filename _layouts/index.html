@@ -8,14 +8,14 @@
             pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
             kekelirian mohon dikoreksi.
         </p>
-        <a href="/archived.html">archived</a>
+        <a href="/archived.html"> 📚 archived</a>
     </article>
 
     <article>
     <h2>Tulisan terbaru:</h2>
     {% for post in site.posts limit:3 %}
     <article>
-        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> on <code>{{ post.category }}</code> pada <code>{{ post.time }}</code>.
+        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 📎 <code>{{ post.category }}</code>, 🗓️ <code>{{ post.time }}</code>.
         <hr>
         <p>{{ post.desc }}</p>
     </article>
