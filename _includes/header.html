@@ -52,18 +52,36 @@
             font-size: 17px;
             overflow-wrap: break-word;
             line-height: 1.75;
+            margin: 0;
+        }
+
+        main {
             max-width: 50%;
             margin: auto;
         }
 
-        @media only screen and (max-width: 1281px) {
-            body {
+        @media only screen and (max-width: 1280px) {
+            main {
                 max-width: 90%;
             }
         }
 
         nav {
-            margin: 20px auto;
+            width: 75vw;
+            color: white;
+            margin: 0 auto 20px auto;
+            background-color: #54008C;
+            line-height: 4rem;
+            padding-left: 25%;
+        }
+        
+        nav > a {
+            color: #fff;
+        }
+
+        nav > a:hover {
+            background-color: white;
+            color: #54008C;
         }
 
         h1, h2, h3, h4, h5, h6 {
