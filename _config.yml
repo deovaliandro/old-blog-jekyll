@@ -5,7 +5,7 @@ baseurl: ""
 url: "https://deo.or.id"
 permalink: /:year/:title:output_ext
 hidden: true
-timezone: Asia/Singapore
+timezone: Asia/Makassar
 
 plugins:
   - jekyll-asciidoc
