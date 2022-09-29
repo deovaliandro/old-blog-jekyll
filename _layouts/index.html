@@ -15,7 +15,7 @@
     <h2>Tulisan terbaru:</h2>
     {% for post in site.posts limit:3 %}
     <article>
-        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 📎 <code>{{ post.category }}</code>, 🗓️ <code>{{ post.time }}</code>.
+        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 📎 {{ post.category }}, 🗓️ {{ post.time }}.
         <hr>
         <p>{{ post.desc }}</p>
     </article>
