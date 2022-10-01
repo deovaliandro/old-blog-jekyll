@@ -13,14 +13,14 @@
 
     <article>
     <h2>Tulisan terbaru:</h2>
+    </article>
     {% for post in site.posts limit:3 %}
     <article>
-        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 📎 {{ post.category }}, 🗓️ {{ post.time }}.
+        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 📎 {{ post.category }}, 🗓️ {{ post.time | date: "%-d %B %Y" }}.
         <hr>
         <p>{{ post.desc }}</p>
     </article>
     {% endfor %}
-    </article>
     {%- include footer.html -%}
 </main>
 </body>
