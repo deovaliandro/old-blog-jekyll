@@ -19,7 +19,7 @@ asciidoctor:
   attributes:
     - icons=font
     - source-highlighter=rouge
-    # - sectanchors=_
+    - sectanchors=_
     - experimental=_
     - rouge-style=github
     - stylesdir=css
@@ -29,10 +29,17 @@ highlighter: rouge
 render_with_liquid: false
 kramdown:
   input: GFM
-  hard_wrap: false
+  hard_wrap: true
   syntax_highlighter_opts:
+    default_lang: html
+    css_class : 'syntax'
     block:
-      line_numbers: false
+      line_numbers: true
 
 feed:
   posts_limit: 1000
+
+
+sass:
+  sass_dir: _sass
+  style: compressed

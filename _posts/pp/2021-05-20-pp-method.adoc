@@ -10,6 +10,7 @@ Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).
 
 Method pada Java memiliki bentuk umum seperti berikut ini:
 
+[.java-lang]
 [source, java]
 return-type methodName(parameter-list) {
     //body of method

@@ -15,20 +15,15 @@
   </div>
 
   <h2>Tulisan terbaru:</h2>
-  <ol>
-  {% for post in site.posts limit:10 %}
+  <ol>{% for post in site.posts limit:10 %}
     <li>
       <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-    </li>
-    {% endfor %}
-  </ol>
-  
+    </li>{% endfor %}
+  </ol>  
   <a class="button" href="/archived.html"> 📚 archived</a>
-
   {%- include footer.html -%}
 </main>
-</body>
-{% if page.math %}
+</body>{% if page.math %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
@@ -38,7 +33,5 @@
       displayMath: [['$$', '$']]
     }
   };
-</script>
-{% endif %}
-
+</script>{% endif %}
 </html>
