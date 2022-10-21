@@ -1,36 +1,44 @@
 {%- include header.html -%}
 <main>
-    <article>
-        <h1>👋 Hello there!</h1>
-        <p>
-            Nama saya Deo. Website ini semacam <i>log</i> tempat saya
-            menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya
-            pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
-            kekelirian mohon dikoreksi.
-        </p>
-        <a href="/archived.html"> 📚 archived</a>
-    </article>
-    <article>
-    <h2>Tulisan terbaru:</h2>
-    </article>
-    {% for post in site.posts limit:3 %}<article>
-        <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a> 📎 {{ post.category }}, 🗓️ {{ post.time | date: "%-d %B %Y" }}.
-        <hr>
-        <p>{{ post.desc }}</p>
-    </article>{% endfor %}
-    {%- include footer.html -%}
+  <h2>👋 Hello there!</h2>
+  <div class="alert alert-info">
+    <p>
+      Nama saya Deo. Website ini semacam <i>log</i> tempat saya
+      menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya
+      pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
+      kekelirian mohon dikoreksi.
+      Saya sering memperbaharui tulisan untuk memperbaiki kesalahan dan
+      informasi yang sudah tidak relevan, jadi tolong jangan ambil semuanya
+      begitu saja. Semua pendapat yang diungkapkan di sini adalah pendapat saya
+      sendiri, tidak mewakili orang/organisasi tertentu.
+    </p>
+  </div>
+
+  <h2>Tulisan terbaru:</h2>
+  <ol>
+  {% for post in site.posts limit:10 %}
+    <li>
+      <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ol>
+  
+  <a class="button" href="/archived.html"> 📚 archived</a>
+
+  {%- include footer.html -%}
 </main>
 </body>
 {% if page.math %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$']]
-        }
-    };
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$']]
+    }
+  };
 </script>
 {% endif %}
+
 </html>

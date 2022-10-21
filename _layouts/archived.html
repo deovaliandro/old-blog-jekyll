@@ -1,29 +1,27 @@
 {%- include header.html -%}
 <main>
-    <article>
-    <h2>Post:</h2>
-    <ul class="list">
-        {% for post in site.posts %}
-        <li>
-            <p><a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
-                    {{ post.title }}</a>, {{ post.time | date: "%-d %B %Y" }}<span></span></p>
-        </li>
-        {% endfor %}
-    </ul>
-    </article>
-    {%- include footer.html -%}
+  <h2>Semua tulisan:</h2>
+  <hr>
+  <ol>
+    {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ol>
+  {%- include footer.html -%}
 </main>
 </body>
 {% if page.math %}
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script>
-    window.MathJax = {
-        tex: {
-            inlineMath: [['$', '$']],
-            displayMath: [['$$', '$']]
-        }
-    };
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$']]
+    }
+  };
 </script>
 {% endif %}
 
