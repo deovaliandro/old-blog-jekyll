@@ -24,7 +24,6 @@ body {
 
 nav {
   padding-top: 1rem;
-  max-width: 720px;
   margin: auto;
 }
 
@@ -258,7 +257,7 @@ mark {
   border-color: #bee5eb;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 720px) {
   html {
     margin: 3vw;
   }
