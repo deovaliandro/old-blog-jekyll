@@ -635,6 +635,19 @@ mark {
     }
   }
 
+  &.python-lang {
+    &::before {
+      content: "Ruby";
+      position: static;
+      display: block;
+      color: #fff;
+      background: #FFE05A;
+      padding: 5px 0 5px 10px;
+      border-top-left-radius: .3em;
+      border-top-right-radius: .3em;
+    }
+  }
+
   .content {
     .rouge {
       margin: 0;
