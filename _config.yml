@@ -1,19 +1,16 @@
 title: Home
-description: >-
-  Hamba yang tidak berguna di tangan Allah yang penuh hikmat.
-baseurl: ""
+description: "Hamba yang tidak berguna di tangan Allah yang penuh hikmat."
 url: "https://deo.or.id"
 permalink: /:year/:title:output_ext
 hidden: true
 timezone: Asia/Makassar
+author: Deo Valiandro. M
 
 plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-email-protect
-
-author: Deo Valiandro. M
 
 asciidoctor:
   attributes:
@@ -38,7 +35,6 @@ kramdown:
 
 feed:
   posts_limit: 1000
-
 
 sass:
   sass_dir: _sass

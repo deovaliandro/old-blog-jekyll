@@ -6,6 +6,10 @@
 :page-desc      : Rancangan CSS ini digunakan untuk mengupdate website ini. CSS ini menggunakan tampilan yang sederhana dan ringan.
 
 
+## Smartquotes
+
+"lorem"
+
 ## Font
 
 [source, css]
