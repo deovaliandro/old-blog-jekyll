@@ -12,18 +12,18 @@ Operator aritmatika yang dapat dilakukan adalah:
 |===
 | Hasil | Operator
 
-| Additional                |    +
-| Subtraction               |    -
-| Multiplication            |    *
-| Division                  |    /
-| Modulus                   |    %
-| Increment                 |    ++
-| Decrement                 |    --
-| Additional assignment     |    +=
-| Subtraction assignment    |    -=
-| Multiplication assignment |    *=
-| Division assignment       |    /=
-| Modulus asignement        |    %=
+| Additional                | +
+| Subtraction               | -
+| Multiplication            | *
+| Division                  | /
+| Modulus                   | %
+| Increment                 | ++
+| Decrement                 | --
+| Additional assignment     | +=
+| Subtraction assignment    | -=
+| Multiplication assignment | *=
+| Division assignment       | /=
+| Modulus asignement        | %=
 |===
 
 Operator ini hanya bisa digunakan pada tipe data angka, tidak bisa digunakan

@@ -1,4 +1,4 @@
-:page-title     : 🔐 Enkripsi Folder dengan GPG
+:page-title     : Enkripsi Folder dengan GPG
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Kriptografi
