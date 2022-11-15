@@ -1,4 +1,5 @@
 @import"https://fonts.googleapis.com/css2?family=Vollkorn";
+@import"https://fonts.googleapis.com/css?family=EB+Garamond:400,400italic,700,700italic%7COpen+Sans:300";
 
 * {
   text-rendering: geometricPrecision;
@@ -24,7 +25,8 @@ body {
 }
 
 main {
-  font-family: 'Vollkorn';
+  font-family: 'EB Garamond';
+  font-size: 1.2rem;
 }
 
 h1 {
@@ -35,7 +37,7 @@ h1 {
 }
 
 .signed-by {
-  font-size: .9rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -127,7 +129,9 @@ input {
 
 img {
   display: block;
-  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   max-width: 100%;
   border-radius: 5px;
   box-shadow: 2px 2px #000 0.5;
@@ -198,7 +202,7 @@ td {
 
 .button {
   display: inline-block;
-  padding: .1rem .75rem;
+  padding: .15rem .90rem .1rem .90rem;
   background: #e9ecef;
   border: #343a40 1px solid;
   font-size: .9rem;
@@ -317,6 +321,7 @@ td {
   margin-top: -10px;
   margin-left: -10px;
   margin-right: -10px;
+  margin-bottom: 10px;
   border-top-left-radius: .3em;
   border-top-right-radius: .3em;
 }
@@ -324,7 +329,8 @@ td {
 .listingblock {
   margin-bottom: 20px;
   width: 100%;
-  background-color: #f8f8f8;
+  background-color: #f5f5f5;
+  overflow-x: scroll;
   .content {
     .rouge {
       margin: 0;

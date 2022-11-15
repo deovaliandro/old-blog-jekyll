@@ -2,7 +2,7 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : Tutorial
-:page-tags      : [math]
+:page-math      : true
 :page-time      : 2021-12-18T13:10:06
 :page-update    : 2022-05-06T13:11:25
 
