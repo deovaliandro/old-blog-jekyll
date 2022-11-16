@@ -114,6 +114,7 @@ ol {
 pre, code {
   font-family: 'IBM Plex Mono', monospace;
   font-size: .9rem;
+  overflow-x: scroll;
 }
 
 code {
@@ -361,7 +362,6 @@ td {
   margin-bottom: 20px;
   width: 100%;
   background-color: #f5f5f5;
-  overflow-x: scroll;
   .content {
     .rouge {
       margin: 0;
