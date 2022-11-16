@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en">
 
 <head>
   <title>
@@ -15,7 +15,7 @@
   <link rel="shortcut icon" href="/favicon.png" type="image/png" />
   <link rel="icon" href="/favicon.png" type="image/png" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-  <link rel="self" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl |
+  <link rel="self" type="application/atom+xml" title="{{ site.title }}" href="{{ " /feed.xml" | prepend: site.baseurl |
     prepend: site.url }}">
   {% if page.math == true %}
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -33,6 +33,11 @@
 
 <body>
   <nav>
-    <a href="/">🚀 home</a>
-    <a href="/about.html">🤵 me</a>
+    <div class="left">
+      <h2><a href="/">Deo Valiandro. M</a></h2>
+    </div>
+    <div class="right">
+      <a href="/about.html">About</a> /
+      <a href="/galery.html">Gallery</a>
+    </div>
   </nav>

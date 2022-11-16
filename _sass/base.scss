@@ -1,5 +1,6 @@
 @import"https://fonts.googleapis.com/css2?family=Vollkorn";
-@import"https://fonts.googleapis.com/css?family=EB+Garamond:400,400italic,700,700italic%7COpen+Sans:300";
+@import"https://fonts.googleapis.com/css?family=EB+Garamond";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
 
 * {
   text-rendering: geometricPrecision;
@@ -25,8 +26,17 @@ body {
 }
 
 main {
-  font-family: 'EB Garamond';
-  font-size: 1.2rem;
+  font-family: 'Vollkorn';
+  font-size: 1.1rem;
+
+  a:hover {
+    color: #111;
+    // text-decoration: underline;
+  }
+  a {
+    color: #a00000;
+    text-decoration: none;
+  }
 }
 
 h1 {
@@ -42,8 +52,33 @@ h1 {
 }
 
 nav {
-  padding-top: 1rem;
-  margin: auto;
+  padding: 1rem 0 1rem 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 5px solid #424242;
+  border-bottom: 1px solid #e8e8e8;
+
+  a {
+    color: #333;
+  }
+
+  .left {
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+    grid-column: 1;
+    grid-row: 1;
+    width: auto;
+  }
+
+  .right {
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    text-align: right;
+  }
 }
 
 cite {
@@ -59,7 +94,8 @@ a {
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+    // text-decoration: underline;
+    border-bottom: 1px solid #444;
   }
 }
 
@@ -75,13 +111,12 @@ ol {
   }
 }
 
-pre {
-  font-family: 'SF Mono', monospace;
+pre, code {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: .9rem;
 }
 
 code {
-  font-family: 'SF Mono', monospace;
-  font-size: .85rem;
   line-height: 0;
 
   &:not(pre>code) {
@@ -127,7 +162,7 @@ input {
   font-size: 16px;
 }
 
-img {
+img, video, svg {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -135,10 +170,6 @@ img {
   max-width: 100%;
   border-radius: 5px;
   box-shadow: 2px 2px #000 0.5;
-}
-
-svg {
-  vertical-align: middle;
 }
 
 kbd {
@@ -337,4 +368,8 @@ td {
       padding: 10px;
     }
   }
+}
+
+footer {
+  margin: 1rem 0 2rem 0;
 }

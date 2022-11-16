@@ -1,26 +1,21 @@
 {%- include header.html -%}
 <main>
-  <h2>👋 Hello there!</h2>
-  <div class="alert alert-info">
-    <p>
-      Nama saya Deo. Website ini semacam <i>log</i> tempat saya
-      menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya
-      pelajari, khususnya ketika saya masih berkuliah. Jika terdapat
-      kekelirian mohon dikoreksi.
-      Saya sering memperbaharui tulisan untuk memperbaiki kesalahan dan
-      informasi yang sudah tidak relevan, jadi tolong jangan ambil semuanya
-      begitu saja. Semua pendapat yang diungkapkan di sini adalah pendapat saya
-      sendiri, tidak mewakili orang/organisasi tertentu.
-    </p>
-  </div>
+  <p>Hi! Saya Deo, dan selamat datang di blog saya.</p>
+  <p>Website ini semacam <i>log</i> tempat saya menyimpan catatan-catatan
+    pelajaran yang sebelumnya pernah saya pelajari, khususnya ketika saya
+    masih berkuliah. Jika terdapat kekelirian mohon dikoreksi. Saya sering
+    memperbaharui tulisan untuk memperbaiki kesalahan dan informasi yang sudah
+    tidak relevan, jadi tolong jangan ambil semuanya begitu saja. Semua
+    tulisan yang ada di sini adalah tulisan saya sendiri, tidak mewakili
+    orang/organisasi tertentu.</p>
 
   <h2>Tulisan terbaru:</h2>
   <ol>{% for post in site.posts limit:10 %}
     <li>
-      <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>, pada {{ post.time | date: "%d %B %Y" }}
     </li>{% endfor %}
   </ol>  
-  <a class="button" href="/archived.html"> 📚 archived</a>
+  <a class="button" href="/archived.html">Archived</a>
 </main>
 {%- include footer.html -%}
 </body>{% if page.math %}

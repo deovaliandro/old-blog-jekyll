@@ -1,11 +1,10 @@
 {%- include header.html -%}
 <main>
   <h2>Semua tulisan:</h2>
-  <hr>
   <ol>
     {% for post in site.posts %}
     <li>
-      <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+      <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>, pada {{ post.time | date: "%d %B %Y" }}
     </li>
     {% endfor %}
   </ol>

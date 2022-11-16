@@ -2,13 +2,12 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-category  : css
-:page-time      : 2022-09-01T11:46:12
-:page-desc      : Rancangan CSS ini digunakan untuk mengupdate website ini. CSS ini menggunakan tampilan yang sederhana dan ringan.
+:page-time      : 2016-09-01T11:46:12
 
 
-## Smartquotes
-
-"lorem"
+Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
+maka sebagai bahan pelajaran, kami mencoba membuat css sederhana. Rancangan CSS
+ini akan diperbaharui kedepannya.
 
 ## Font
 
