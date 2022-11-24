@@ -1,5 +1,5 @@
-@import"https://fonts.googleapis.com/css2?family=Vollkorn";
-@import"https://fonts.googleapis.com/css?family=EB+Garamond";
+@import url('https://fonts.googleapis.com/css2?family=Vollkorn');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
 
 * {
@@ -16,7 +16,6 @@ html {
 }
 
 body {
-  margin: 0;
   overflow-wrap: break-word;
   font-size: 1rem;
   font-family: sans-serif;
@@ -26,7 +25,7 @@ body {
 }
 
 main {
-  font-family: 'Vollkorn';
+  font-family: 'Vollkorn', sans-serif;
   font-size: 1.1rem;
 
   a:hover {
@@ -94,18 +93,11 @@ a {
   text-decoration: none;
 
   &:hover {
-    // text-decoration: underline;
     border-bottom: 1px solid #444;
   }
 }
 
-ul {
-  >li {
-    line-height: 2rem;
-  }
-}
-
-ol {
+ol, ul {
   >li {
     line-height: 2rem;
   }
@@ -170,7 +162,7 @@ img, video, svg {
   width: 50%;
   max-width: 100%;
   border-radius: 5px;
-  box-shadow: 2px 2px #000 0.5;
+  box-shadow: 2px 2px #000;
 }
 
 kbd {
@@ -247,29 +239,8 @@ td {
 
   &:hover {
     text-decoration: none;
-    text-decoration: none;
     background: #f8f9fa;
     color: #000;
-  }
-}
-
-.avatar {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: safe;
-
-  img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    filter: grayscale(100%);
-    transition: 0.1s;
-    padding: 2px;
-
-    &:hover {
-      filter: grayscale(0%);
-    }
   }
 }
 
@@ -315,7 +286,6 @@ td {
   padding: .5rem;
   border: 1px solid transparent;
   background-color: #F4F4F4;
-  padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 
@@ -350,10 +320,7 @@ pre.rouge table td{padding:5px}pre.rouge table pre{margin:0}pre.rouge .cm{color:
   color: #fff;
   background: #0086b3;
   padding: 12px 0 12px 10px;
-  margin-top: -10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-bottom: 10px;
+  margin: -10px -10px 10px;
   border-top-left-radius: .3em;
   border-top-right-radius: .3em;
 }
