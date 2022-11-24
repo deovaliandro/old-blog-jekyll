@@ -25,17 +25,8 @@ body {
 }
 
 main {
-  font-family: 'Vollkorn', sans-serif;
+  font-family: 'Vollkorn', sans-serif, Noto Color Emoji;
   font-size: 1.1rem;
-
-  a:hover {
-    color: #111;
-    // text-decoration: underline;
-  }
-  a {
-    color: #a00000;
-    text-decoration: none;
-  }
 }
 
 h1 {
@@ -92,7 +83,7 @@ a.bare {
 a {
   text-decoration: none;
 
-  &:hover {
+  &:hover:not(.button) {
     border-bottom: 1px solid #444;
   }
 }
@@ -155,7 +146,7 @@ input {
   font-size: 16px;
 }
 
-img, video, svg {
+img, video {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -163,6 +154,10 @@ img, video, svg {
   max-width: 100%;
   border-radius: 5px;
   box-shadow: 2px 2px #000;
+}
+
+svg {
+  margin-bottom: -3.4%;
 }
 
 kbd {
@@ -225,22 +220,25 @@ td {
 }
 
 .button {
+  font-family: "Inter", sans-serif;
+  min-width: 90px;
   display: inline-block;
-  padding: .15rem .90rem .1rem .90rem;
-  background: #e9ecef;
-  border: #343a40 1px solid;
-  font-size: .9rem;
+  padding: .375rem .625rem .375rem .625rem;
+  background: #fff;
+  border: rgba(209, 213, 219, 1) 1px solid;
+  border-radius: .25rem;
+  font-size: .8rem;
+  text-align: center;
   font-weight: 400;
   line-height: 1.5;
   cursor: pointer;
   color: #000;
-  border-radius: 0;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 1px 2px 0 #0000000d;
+
   &:hover {
-    text-decoration: none;
-    background: #f8f9fa;
-    color: #000;
+    background-color: rgba(249, 250, 251, 1);
   }
 }
 
