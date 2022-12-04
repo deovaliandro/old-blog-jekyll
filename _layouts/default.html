@@ -1,9 +1,8 @@
 {%- include header.html -%}
-<main>
-  <h1>{{ page.title | smartify }}</h1>
-  {% if page.signed-by %}<p class="signed-by">Ditulis oleh: {{ page.signed-by }}, pada {{ page.date | date: "%-d %B %Y" }}</p>{% endif %}
-  {{ content | smartify }}
-</main>
+<h1>{{ page.title | smartify }}</h1>
+{% if page.signed-by %}<p class="signed-by">Ditulis oleh: {{ page.signed-by }}, pada {{ page.date | date: "%-d %B %Y" }}
+</p>{% endif %}
+{{ content | smartify }}
 {%- include footer.html -%}
 </body>
 

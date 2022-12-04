@@ -17,18 +17,11 @@ html {
 }
 
 body {
+  font-family: 'Inter', sans-serif, Noto Color Emoji;
   overflow-wrap: break-word;
   font-size: 1rem;
-  font-family: sans-serif;
-  align-items: stretch;
-  color: #333;
-  background-color: #f9f4e7;
   margin: 0;
-}
-
-main {
-  font-family: 'Inter', sans-serif, Noto Color Emoji;
-  font-size: 1.1rem;
+  line-height: 1.5rem;
   max-width: 720px;
   margin: 0 auto;
 }
@@ -40,48 +33,13 @@ h1 {
   margin-bottom: 0;
 }
 
+h2 {
+  font-weight: 800;
+}
+
 .signed-by {
   font-size: 1rem;
   text-align: center;
-}
-
-nav {
-  border-top: .8rem solid #424242;
-  border-bottom: 1px solid #e8e8e8;
-    
-  a {
-    color: #333;
-  }
-  
-  .main {
-    margin: 0;
-    display: grid;
-    padding: 1rem 0 1rem 0;
-    grid-template-columns: 1fr 1fr;
-    max-width: 720px;
-    margin: 0 auto;
-    
-    .left {
-      h2 {
-        margin: 0;
-        padding: 0;
-      }
-      grid-column: 1;
-      grid-row: 1;
-      width: auto;
-    }
-  
-    .right {
-      grid-column: 2;
-      grid-row: 1;
-      width: auto;
-      text-align: right;
-
-      a {
-        margin-left: 1rem;
-      }
-    }
-  }
 }
 
 cite {
@@ -95,10 +53,6 @@ a.bare {
 
 a {
   text-decoration: none;
-
-  &:hover:not(.button) {
-    border-bottom: 1px solid #444;
-  }
 }
 
 ol, ul {
