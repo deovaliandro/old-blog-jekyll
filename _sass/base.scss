@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Vollkorn');
 @import url('https://fonts.googleapis.com/css?family=EB+Garamond');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
+$mono: 'Roboto Mono', monospace;
+$garamond: 'EB Garamond', serif;
+$inter: 'Inter', sans-serif;
 
 * {
   text-rendering: geometricPrecision;
@@ -17,7 +20,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif, Noto Color Emoji;
+  font-family: $inter;
   overflow-wrap: break-word;
   font-size: 1rem;
   margin: 0;
@@ -28,9 +31,15 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 3rem;
   font-weight: 800;
   margin-bottom: 0;
+  line-height: 1em;
+}
+
+p {
+  font-family: $garamond;
+  font-size: 20px;
+  line-height: 1.3em;
 }
 
 .title {

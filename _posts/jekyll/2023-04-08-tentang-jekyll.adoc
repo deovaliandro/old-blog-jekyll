@@ -1,0 +1,18 @@
+:page-title     : Tentang jekyll
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : jekyll
+:page-time      : 2023-04-08
+:page-update    : 2023-04-08
+:page-math      : false
+
+Sekarang banyak bermunculan ssg yang bagus, tetapi saya masih memilih bertahan
+di jekyll.
+
+Alasannya cukup simpel, karena jekyll masih memenuhi semua yang saya butuhkan.
+Fitur yang saya butuhkan tidaklah muluk-muluk, hanya beberapa hal dasar seperti
+koleksi, slug, mathjax dan beberapa fitur lainnya. Fitur ini masih disupport
+secara penuh oleh jekyll.
+
+Selama jekyll masih memenuhi kebutuhanku, sepertinya saya tidak akan berpindah
+ke ssg lainnya.
