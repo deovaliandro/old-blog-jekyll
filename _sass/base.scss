@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono');
-@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
 
-$mono: 'Roboto Mono', monospace;
-$garamond: 'EB Garamond', serif;
+$mono: 'DM Mono', monospace;
+$garamond: 'Source Serif Pro', serif;
 $inter: 'Inter', sans-serif;
 
 * {
@@ -22,7 +22,6 @@ html {
 body {
   font-family: $inter;
   overflow-wrap: break-word;
-  font-size: 1rem;
   margin: 0;
   line-height: 1.5rem;
   max-width: 720px;
@@ -30,20 +29,20 @@ body {
 }
 
 h1 {
-  text-align: center;
-  font-weight: 800;
-  margin-bottom: 0;
-  line-height: 1em;
+  line-height: 40px;
+  font-size: 32px;
 }
 
 p {
+  color: rgb(41, 41, 41);
   font-family: $garamond;
   font-size: 20px;
-  line-height: 1.3em;
+  line-height: 32px;
 }
 
 .title {
   font-weight: 800;
+  margin-bottom: 0;
 
   a {
     color: #000;
@@ -75,12 +74,12 @@ a {
 ol, ul {
   >li {
     line-height: 2rem;
+    font-size: 18px;
   }
 }
 
 pre, code {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: .9rem;
+  font-family: $mono;
   overflow-x: scroll;
 }
 
@@ -265,8 +264,10 @@ td {
   margin-top: 1rem;
   margin-bottom: 1rem;
 
-  p {
+  > p {
     margin: 0;
+    font-size: 1rem;
+    font-family: $inter;
   }
 }
 
@@ -330,7 +331,7 @@ footer {
   margin: 1rem 0 2rem 0;
 }
 
-.gallery > img{
+.gallery > img {
   margin-bottom: 1rem;
   width: 100%;
 }
