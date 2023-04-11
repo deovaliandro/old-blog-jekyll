@@ -36,6 +36,6 @@ kramdown:
 feed:
   posts_limit: 1000
 
-sass:
-  sass_dir: _sass
-  style: compressed
+# sass:
+#   sass_dir: _sass
+#   style: compressed
