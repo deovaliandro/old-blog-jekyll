@@ -95,11 +95,9 @@ input {
 
 img, video {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   width: 50%;
   max-width: 100%;
-  border-radius: 5px;
 }
 
 svg {
@@ -269,4 +267,9 @@ footer {
       margin-right: 3vw;
     }
   }
+}
+
+#me {
+  border-radius: 50%;
+  width: 10ch;
 }

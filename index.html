@@ -1,5 +1,21 @@
 ---
-layout: index
-title: home
+layout: default
 math: true
 ---
+
+<p>Hi! <b>Saya Deo</b>, dan selamat datang di blog saya.</p>
+<p>Website ini semacam <i>log</i> tempat saya menyimpan catatan-catatan
+  pelajaran yang sebelumnya pernah saya pelajari, khususnya ketika saya
+  masih berkuliah. Jika terdapat kekelirian mohon dikoreksi. Saya sering
+  memperbaharui tulisan untuk memperbaiki kesalahan dan informasi yang sudah
+  tidak relevan, jadi tolong jangan ambil semuanya begitu saja. Semua
+  tulisan yang ada di sini adalah tulisan saya sendiri, tidak mewakili
+  orang/organisasi tertentu.</p>
+
+<h2>Tulisan terbaru:</h2>
+<ol>{% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>, pada {{ post.time | date: "%d %B
+    %Y" }}
+  </li>{% endfor %}
+</ol>
