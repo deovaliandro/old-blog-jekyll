@@ -35,3 +35,6 @@ kramdown:
 
 feed:
   posts_limit: 1000
+
+sass:
+  style: compressed
