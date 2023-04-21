@@ -1,0 +1,36 @@
+:page-title     : Exclusive-or (XOR)
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : logic
+:page-time      : 2022-05-19T13:00:20
+:page-math      : true
+
+
+> "Never trust anyone too much, remember the devil was once an angel."
+> -- Ken Kaneki
+
+Exclusive-or (XOR) adalah satu satu gerbang logika yang didasarkan pada aljabar
+boolean.
+
+Jika Or $\equiv$ penjumlahan, and $\equiv$ perkalian, maka XOR ($\oplus$) adalah
+gabungan dari _or_, _and_ dan _not_.
+
+XOR dilambangkan dengan:
+
+[.center]
+image::https://www.allaboutcircuits.com/uploads/articles/XOR-gate-circuit-calculation.jpg[]
+
+== Aturan
+
+Konklusi dari hasil diatas adalah:
+
+. $x \oplus 0 = x$
+. $x \oplus 1 = \bar{x}$
+. $x \oplus x = 0$
+. $x \oplus \bar{x} = 1$
+. $\bar{x} \oplus \bar{x} = 0$
+. $x \oplus \bar{x} = x \oplus x$
+. $A \oplus AB = A \bar{B}$
+. $A \oplus A\bar{B} = AB$
+. $A \oplus \bar{A}B = A + B$
+. $(A \oplus B) \cdot (A \oplus C) = \bar{A}BC+A\bar{B}\bar{C}$

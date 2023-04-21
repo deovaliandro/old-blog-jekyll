@@ -1,0 +1,36 @@
+:page-title     : Pindah ke MathJax
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : artikel
+:page-date      : 2022-05-12 15:10:30 +0800
+
+
+> If it isn't documented, it doesn't exist
+> -- anonymous
+
+Karena alasan kompatibilitas, akhirnya saya pindah ke MathJax setelah sekian
+lama menggunakan KaTeX.
+
+Import dengan:
+
+[source, html]
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+Kemudian saya menggunakan konfigurasi sederhana saja,
+
+[source, javascript]
+----
+window.MathJax = 
+{
+    tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+    }
+};
+----
+
+Agar tidak terlalu memberatkan browser, saya tidak langsung menjalankan fungsi
+tersebut kecuali halaman tersebut memiliki persamaan matematika, dengan
+memanfaatkan fitur tag di Jekyll, maka hal ini dapat diatasi.

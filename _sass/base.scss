@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$mono: 'DM Mono', monospace;
-$inter: "Inter", sans-serif;
+// $mono: 'DM Mono', monospace;
+// $inter: "Inter", sans-serif;
+$mono: monospace;
+$inter: sans-serif;
 
 body {
   font: 400 1.2rem /32px $inter;
@@ -232,7 +234,7 @@ pre.rouge table td{padding:5px}pre.rouge table pre{margin:0}pre.rouge .cm{color:
   content: attr(data-lang);
   display: block;
   color: #fff;
-  padding: 12px 0 12px 10px;
+  padding: 1rem 0 1rem 10px;
   margin: -10px -10px 10px;
   border-top-left-radius: .3em;
   border-top-right-radius: .3em;
