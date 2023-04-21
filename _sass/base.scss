@@ -254,6 +254,18 @@ footer {
   text-align: center;
 }
 
+#me {
+  border-radius: 50%;
+  width: 10ch;
+}
+
+.twitter-tweet {
+  border: 1px solid #222;
+  padding: 0 2ch 2ch 2ch;
+  box-shadow: 1ch 1ch #000;
+  margin-bottom: 4ch;
+}
+
 @media only screen and (max-width: 720px) {
   main {
     margin: 3vw;
@@ -267,16 +279,4 @@ footer {
       margin-right: 3vw;
     }
   }
-}
-
-#me {
-  border-radius: 50%;
-  width: 10ch;
-}
-
-.twitter-tweet {
-  border: 1px solid #222;
-  padding: 0 2ch 2ch 2ch;
-  box-shadow: 1ch 1ch #000;
-  margin-bottom: 4ch;
 }

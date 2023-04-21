@@ -3,7 +3,7 @@
 <h1>{{ page.title | smartify }}</h1>
 {% endif %}
 {% if page.signed-by %}
-<pre class="signed-by">Ditulis oleh: {{ page.signed-by }}, pada {{ page.date | date: "%-d %B %Y" }}</pre>
+<pre class="signed-by">{{ page.signed-by }}, {{ page.date | date: "%-d %B %Y" }}</pre>
 {% endif %}
 {{ content | smartify }}
 {%- include footer.html -%}
