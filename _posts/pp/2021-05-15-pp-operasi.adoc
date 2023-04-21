@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 == Operator Aritmatika
 
 Operator aritmatika yang dapat dilakukan adalah:
@@ -68,7 +69,6 @@ public class OperatorAritmatika {
 }
 ----
 
-
 == Operator pembanding
 
 Operator pembanding yan dapat dilakukan:
@@ -104,7 +104,6 @@ if (i < b) {
     System.out.println("Equal");
 }
 ----
-
 
 == Operator Logika
 

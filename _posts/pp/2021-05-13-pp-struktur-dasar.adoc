@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
 dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
 object-oriented language karena masih mendukung primitive data types seperti
@@ -14,7 +15,6 @@ programming seperti pointer (sebenarnya Java punya pointer. Semua turunan object
 adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
 perlu tahu fakta inifootnote:[Dari blog https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/]).
 Kode Java selalu ditulis didalam sebuah class dan objek.
-
 
 == Struktur program
 
@@ -34,7 +34,6 @@ Misalnya: `Main`, `Utama`, dsb-nya.
 `public static void main(String args[])` adalah kode utama yang akan dijalankan
 ketika kita menjalankan sebuah program Java.
 
-
 == Aturan Penamaan
 
 Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
@@ -49,7 +48,6 @@ dalam Java yang harus dipatuhi seperti:
 Menurut _Convention over configuration Java_, penulisan nama variable 
 menggunakan lowerCamel case (misalnya `namaVariabel`), dan penulisan nama class 
 menggunakan UpperCamel case (misalnya `Main``).
-
 
 == Menjalankan program
 

@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Method adalah suatu fungsi.
 
 Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).

@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu.
 
 Jika syarat yang diberikan memenuhi, maka semua statement dalam blok kondisi
@@ -19,7 +20,6 @@ memenuhi atau terdapat dalam rentang tertentu, maka mahasiswa tersebut akan
 mendapat nilai ini.
 
 Dalam Java terdapat dua macam penyeksian kondisi yaitu "If-else" dan "Switch".
-
 
 == If-Else
 
@@ -64,7 +64,6 @@ if (nilai <= 50) {
     System.out.println("Eror");
 }
 ----
-
 
 == Switch
 

@@ -4,19 +4,18 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Java merupakan bahasa pemrograman yang strongly typed (setiap data harus
 diberikan tipe data), maka kita tidak bisa mengabaikan tipe data. Kita harus
 tahu data seperti apa yang disimpan ke dalam variabel. Selain itu, Java juga
 bersifat statically typed, yang artinya setiap variabel harus dideklarasikan
 terlebih dahulu sebelum digunakan.
 
-
 == Tipe Data Primitif
 
 Tipe data primitif adalah tipe data standar yang tidak diturunkan dari objek
 manapun. Tipe data primitif telah ditentukan dengan kata kuncinya masing-masing.
 Terdapat 8 (delapan) tipe data primitif yang Java dukung, antara lain:
-
 
 === Integer
 
@@ -45,7 +44,6 @@ default `0L`.
 [source, java]
 long n = 122334445;
 
-
 === Floating-point numbers
 
 . float tipe data untuk bilangan desimal seperti 3.14, 2.1 atau bilangan desimal lainnya. Tipe data ini bisa nemapung nilai stem:[2^{32}]. Nilai default-nya
@@ -62,7 +60,6 @@ lebih besar yaitu stem:[2^{64}]. Nilai default-nya `0.0d`.
 +
 [source, java]
 double n = 144.2;
-
 
 === Characters
 
@@ -96,7 +93,6 @@ Tipe data ini akan banyak digunakan kemudian. Nilai default-nya `false`.
 [source, java]
 boolean b = true;
 
-
 == Tipe Data Reference
 
 Tipe data reference merupakan sebuah tipe data yang merujuk ke sebuah objek atau
@@ -115,7 +111,6 @@ String name = "Deo";
 perhatikan, penulisan `String` menggunakan kapital di awal kata, kemudian isinya
 disimpan di dalam tanda kutip dua ("...").
 
-
 == Deklarasi variabel
 
 Sebuah data dapat disimpan ke dalam variabel. Format penulisannya sebagai
@@ -123,7 +118,6 @@ berikut:
 
 [source, java]
 type namaVariabel;
-
 
 === Deklarasi
 
@@ -134,7 +128,6 @@ nilai. Contoh:
 int n;
 boolean b;
 char c;
-
 
 === Inisiasi
 
@@ -151,7 +144,6 @@ Deklarasi sekaligus inisiasi juga dapat dilakukan, misalnya dengan:
 float f = 21.0f;
 boolean b = false;
 
-
 === Inisiasi dinamis
 
 Dua atau lebih data dapat di isi secara bersamaan dalam satu baris dengan syarat
@@ -164,7 +156,6 @@ atau bisa juga jika semua data memiliki nilai yang sama, misalnya:
 
 [source, java]
 int x = y = z = 100;
-
 
 == Mengubah tipe ke tipe data lain
 

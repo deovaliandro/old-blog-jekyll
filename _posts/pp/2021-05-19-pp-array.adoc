@@ -4,13 +4,13 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Array adalah kelompok data dengan tipe yang sama.
 
 Dalam Java, pada saat mendeklarasikan sebuah array panjang array harus
 ditentukan, dan tidak dapat diubah setelahnya (nilai fix). Setiap item dalam
 sebuah array disebut element, dan setiap element dapat diakses dengan indexnya.
 Index array selalu mulai dari 0 sampai n-1, dengan n adalah panjang array.
-
 
 == Deklarasi
 
@@ -28,7 +28,6 @@ Contoh:
 
 [source, java]
 int[] arr = new int[20];
-
 
 == Mengisi
 
@@ -53,7 +52,6 @@ arr[0] = 132;
 arr[1] = 11;
 arr[2] = 134;
 arr[3] = 33;
-
 
 == Mengakses
 
@@ -80,7 +78,6 @@ akan menampilkan:
 
 dan kemudian diikuti oleh indeks berikutnya.
 
-
 == Array multi-dimensi
 
 Array multidimensi dapat diilustrasikan sebagai array dalam array. Artinya
@@ -106,7 +103,6 @@ Untuk mengaksesnya, digunakan cara yang sama dengan array 1-dimensi, misalnya:
 
 [source, java]
 System.out.println(arr[0][1]);
-
 
 == Panjang Array
 

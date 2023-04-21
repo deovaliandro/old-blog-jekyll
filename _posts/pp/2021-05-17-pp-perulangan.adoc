@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama
 syarat yang diberikan masih memenuhi.
 
@@ -25,7 +26,6 @@ Pada Java dikenal tiga macam bentuk perulangan, yaitu: `while`, `do-while`, dan
 Pada dasarnya semua perulangan dalam Java memiliki cara kerja yang sama
 yaitu selama kondisi masih bernilai true maka perulangan akan terus dilakukan
 hinggi kondisi bernilai false.
-
 
 == For
 
@@ -49,7 +49,6 @@ for (int i=0; i<n; i++) {
     System.out.println(i);
 }
 ----
-
 
 == While
 
@@ -80,7 +79,6 @@ while (i<n) {
     i++;
 }
 ----
-
 
 == Do-while
 
@@ -116,7 +114,6 @@ do {
 
 System.out.println(i);
 ----
-
 
 == For-each
 

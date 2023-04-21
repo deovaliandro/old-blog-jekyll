@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
 Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa
 karakter (char).
@@ -29,11 +30,9 @@ menghasilkan:
 [source, bash]
 John Doe
 
-
 == Menthod dalam class String
 
 Ada beberapa method yang ada di dalam class `String`:
-
 
 === equals()
 
@@ -55,7 +54,6 @@ if(str0.equal(str1)) {
 
 `equals()` menghasilkan nilai `boolean`.
 
-
 === length()
 
 Digunakan untuk menentukan panjangnya suatu string, misalnya:
@@ -69,7 +67,6 @@ System.out.println(l);
 ----
 
 `length()` menghasilkan nilai `int`.
-
 
 === charAt()
 

@@ -4,6 +4,7 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 Input dan output pada file digunakan untuk mengolah file tersebut.
 
 Untuk membaca suatu file, kita menggunakan class `FileReader` dan untuk menulis

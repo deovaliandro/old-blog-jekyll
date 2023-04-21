@@ -4,17 +4,16 @@
 :page-category  : pp
 :page-hidden    : true
 
+
 IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
 bagaimana mengeluarkan hasil dari program tersebut.
 
 Meskipun pengertian i/o secara lebih luas lebih dari hal tersebut, namun disini
 kita akan menggunakan terbatas pada input dan output di terminal.
 
-
 == Input
 
 Input di Java dapat menggunakan 2 cara (yang umum digunakan).
-
 
 === Dengan menggunakan Scanner
 
@@ -29,7 +28,6 @@ class Main{
     }
 }
 ----
-
 
 === Dengan menggunakan BufferReader
 
@@ -46,11 +44,9 @@ class Main{
 }
 ----
 
-
 == Output
 
 Output di Java dapat menggunakan 2 cara (yang umum digunakan).
-
 
 === System.out.print()
 
@@ -68,7 +64,6 @@ class Main{
     }
 }
 ----
-
 
 === System.out.printf
 
