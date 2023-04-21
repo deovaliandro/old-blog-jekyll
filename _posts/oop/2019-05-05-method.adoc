@@ -4,6 +4,7 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 Method adalah penggambaran suatu sifat dari sebuah objek.
 
 Method adalah kumpulan statemen yang dibungkus menjadi satu untuk melaksanakan

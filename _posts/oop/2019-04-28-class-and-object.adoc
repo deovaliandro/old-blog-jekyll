@@ -4,9 +4,9 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan
 sebuah objek real kedalam bahasa bahasa pemrograman.
-
 
 == Objek (object)
 
@@ -30,7 +30,6 @@ ukuran, warna, berat, keterangan, dan semacamnya.
 
 Sedangkan tingkah laku/behaviour adalah kumpulan perintah yang melakukan suatu
 kegiatan spesifik.
-
 
 == Class
 

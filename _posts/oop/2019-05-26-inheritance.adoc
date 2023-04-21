@@ -4,6 +4,7 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 Inheritance adalah pewarian sifat. Class yang berisafat umum akan mewariskan
 sifatnya ke class yang bersifat khusus. Misalnya class `Manusia` akan memiliki
 class turunan seperti `Ayah`, `Ibu` dan `Anak`.
@@ -100,7 +101,6 @@ Sedangkan kerugiannya adalah class parent dan child akan memiliki kesamaan
 identik, sehingga apabila terjadi perubahan di class parent, maka akan otomatis
 mengubah juga class child. Hal ini membuat adanya saling ketergantungan.
 
-
 == Jenis Inheritance
 
 Java hanya mendukung 3 jenis inheritance berikut:
@@ -113,7 +113,6 @@ Java tidak mendukung multiple inheritance dengan alasan keamanan dari masalah
 `Deadly Diamond of Death`.
 
 image::https://static.studytonight.com/java/images/types-of-inheritance.png[Types of Inheritance]
-
 
 === Single inheritance
 
@@ -136,7 +135,6 @@ public class B extends A{
     }
 }
 ----
-
 
 === Multilevel Inheritance
 
@@ -169,7 +167,6 @@ public class C extends B{
 }
 ----
 
-
 === Hierarchical Inheritance
 
 Ini terjadi jika ada dua class memiliki satu parent class yang sama. Misalnya
@@ -201,7 +198,6 @@ public class C extends A{
 }
 ----
 
-
 === Multiple Inheritance [tidak didukung Java]
 
 Multiple inheritance adalah inheritance sebuah class, misalnya class C yang
@@ -213,7 +209,6 @@ Mengapa multiple inheritance tidak didukung, karena:
 . Untuk mempermudah review code dan clear design.
 
 image::https://static.studytonight.com/java/images/multiple-inheritance-problem.jpg[Multiple Inheritance]
-
 
 == Overriding Method
 

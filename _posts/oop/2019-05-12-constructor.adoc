@@ -4,6 +4,7 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 Konstruktor adalah method yang dijalankan ketika pertama kali sebuah objek
 dipanggil. Sebuah `class` tanpa konstruktor akan otomatis dibuatkan konstruktor
 `default` oleh java.

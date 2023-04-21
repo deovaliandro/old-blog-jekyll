@@ -4,6 +4,7 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 Polimorfiesme (bahasa Inggris polymorphims) adalah kemampuan dari suatu objek
 untuk  merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling
 umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan
@@ -21,7 +22,6 @@ footnote:[https://jekjektuanakal.my.id/posts/peta-jalan-pejuang-cpp/].
 
 Polymorphism terbagi menjadi dua, yaitu *compiled time polymorphism* dan
 *runtime polymorphism*.
-
 
 == Compiled time polymorphims/static polymorphims
 
@@ -48,7 +48,6 @@ class Arithmetic {
     }
 }
 ----
-
 
 == Runtime polymorphism
 

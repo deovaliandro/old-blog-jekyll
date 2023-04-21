@@ -4,10 +4,10 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 Encapsulation atau enkapsulasi adalah pembatasan akses terhadap suatu atribut,
 method atau konstruktor dalam suatu class. Enkapsulasi memastikan bahwa hanya
 program hanya dapat diakses oleh yang diberi izin saja.
-
 
 == Access Modifier
 
@@ -63,7 +63,6 @@ Keterangan:
 - N artinya tidak bisa diakses,
 - Subclass artinya class anak,
 - World artinya seluruh package di aplikasi.
-
 
 == Setter and Getter
 

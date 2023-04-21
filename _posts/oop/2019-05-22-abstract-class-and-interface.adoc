@@ -4,6 +4,7 @@
 :page-category  : pbo
 :page-hidden    : true
 
+
 == Abstract method vs Overriding
 
 Abstract method adalah method yang ditulis untuk diimplementasikan nantinya
@@ -33,7 +34,6 @@ class Main implement One {
     ...
 }
 ----
-
 
 == Interface
 
