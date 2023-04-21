@@ -1,7 +1,7 @@
 title: Home
 description: "Sabbe Sattā Bhavantu Sukhitattā"
 url: "https://deovaliandro.github.io"
-permalink: /:year/:title:output_ext
+permalink: /:year/:month/:title:output_ext
 hidden: true
 timezone: Asia/Makassar
 author: Deo Valiandro. M
