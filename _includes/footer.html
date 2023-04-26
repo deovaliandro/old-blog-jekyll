@@ -4,3 +4,22 @@
     CC BY-NC-SA 4.0</a>, sejak 2016 &copy; <a href="https://github.com/deovaliandro">Deo Valiandro. M</a>,
   <span id="love">🌱</span> dengan <span id="love">❤️</span> dari <span id="love">🇮🇩</span>
 </footer>
+
+<script>
+  function renderCodeTags() {
+      const collection = document.getElementsByClassName("rouge highlight");
+
+      for (let i = 0; i < collection.length; i++) {
+      let cNode = collection[i].firstChild;
+      let lang = cNode.getAttribute("data-lang") ? cNode.getAttribute("data-lang") : "none";
+
+      let newNode = document.createElement("div");
+      newNode.className = "lang-tag";
+      newNode.innerHTML += lang;
+
+      collection[i].insertBefore(newNode, cNode);
+      }
+  }
+
+  renderCodeTags()
+</script>
