@@ -1,0 +1,10 @@
+:page-title     : NixOS
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-category  : nixos
+:page-time      : 2023-06-26
+
+
+Saya akhirnya berpindah dari arch linux ke NixOS.
+
+Semoga betah dan tidak jadi distro hopper lagi.
