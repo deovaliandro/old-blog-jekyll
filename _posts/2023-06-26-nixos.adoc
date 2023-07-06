@@ -8,3 +8,7 @@
 Saya akhirnya berpindah dari arch linux ke NixOS.
 
 Semoga betah dan tidak jadi distro hopper lagi.
+
+## Edit
+
+Saya akhirnya pindah ke PopOS setelah kesulitan mengkonfigurasi NixOS :D.

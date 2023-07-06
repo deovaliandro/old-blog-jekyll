@@ -23,18 +23,17 @@ asciidoctor:
 
 markdown: kramdown
 highlighter: rouge
-render_with_liquid: false
 kramdown:
   input: GFM
-  hard_wrap: true
+  syntax_highlighter: rouge
   syntax_highlighter_opts:
     default_lang: html
-    css_class : 'syntax'
+    css_class: 'highlight'
+    span:
+      line_numbers: false
     block:
       line_numbers: true
-
-feed:
-  posts_limit: 1000
+      start_line: 1
 
 sass:
   style: compressed

@@ -1,8 +1,7 @@
 :page-title     : Exclusive-or (XOR)
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : logic
-:page-time      : 2022-05-19T13:00:20
+:page-time      : 2022-05-19
 :page-math      : true
 
 

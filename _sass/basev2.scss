@@ -81,6 +81,9 @@ footer {
 
 code {
   font-family: $monospace;
+}
+
+code:not(pre>code) {
   padding: .2em;
   line-height: 1.4em;
   border: 1px solid #e5e5e5;
@@ -97,8 +100,7 @@ mark {
 
 // rouge
 pre.rouge {
-  font-family: $monospace;
-  padding: 2ch;
+  padding: 1ch;
   line-height: 1.4em;
   border: 1px solid #e5e5e5;
   background-color: #f8f8f8;
