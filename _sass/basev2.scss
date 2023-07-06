@@ -1,5 +1,6 @@
 // paramaeter
 $main-font: ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+$monospace: 'Courier New', Courier, monospace;
 
 body {
   font: 400 1rem /32px $main-font;
@@ -97,7 +98,7 @@ footer {
 
 // rouge
 pre.rouge {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: $monospace;
   font-size: .9em;
   padding: 2ch;
   line-height: 1.4em;
