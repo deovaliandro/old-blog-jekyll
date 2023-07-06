@@ -1,15 +1,23 @@
 {%- include header.html -%}
-{% if page.title %}
-<h1>{{ page.title | smartify }}</h1>
-{% endif %}
-{% if page.signed-by %}
-<p class="signed-by">
-  Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
-  Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
-</p>
-{% endif %}
-{{ content | smartify }}
-{%- include footer.html -%}
+
+<section>
+  {% if page.title %}
+  <h1>{{ page.title | smartify }}</h1>
+  {% endif %}
+
+  {% if page.signed-by %}
+  <p class="signed-by">
+    Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
+    Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
+  </p>
+  {% endif %}
+
+  {{ content | smartify }}
+</section>
+
+<!-- {%- include footer.html -%} -->
+
+</main>
 </body>
 
 </html>

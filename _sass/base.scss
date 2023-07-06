@@ -1,8 +1,8 @@
 $mono: 'DM Mono', monospace;
-$inter: "Inter", sans-serif;
+$inter: Inter, sans-serif;
 
 body {
-  font: 400 1.2rem /32px $inter;
+  font: 400 1rem /32px $inter;
   max-width: 80ch;
   margin: 0 auto;
   padding: 2ch;
@@ -46,6 +46,15 @@ pre, code {
   white-space: pre-wrap;
 }
 
+pre {
+  // padding: 8px 15px;
+  background: #f8f8f8;
+  background-color: rgb(248, 248, 248);
+  border-radius: 5px;
+  border: 1px solid #e5e5e5;
+  overflow-x: auto;
+}
+
 code {
   line-height: 0;
 
@@ -72,24 +81,7 @@ blockquote {
   box-shadow: 0 0 2px #3c485826;
 }
 
-summary {
-  font-weight: 500;
-}
-
-details {
-  border-radius: 2px;
-  box-shadow: 0 0 2px #3c485826;
-  border: 1px solid #d8dae1;
-  margin-bottom: 1rem;
-  padding: 1rem;
-}
-
-button {
-  min-width: 90px;
-}
-
-input {
-  font-size: 16px;
+summary {margin-right: 2rem;
 }
 
 img, video {
@@ -212,9 +204,6 @@ td {
 .lang-tag {
   display: block;
   padding: 0 1ch;
-  max-width: 10ch;
-  color: #fff;
-  background: #721c24;
   float: right;
 }
 
