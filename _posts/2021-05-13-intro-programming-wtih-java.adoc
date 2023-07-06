@@ -1,0 +1,1208 @@
+:page-title     : Pengantar Pemrograman dengan Java
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-time      : 2021-15-13
+
+== Struktur Dasar
+
+Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
+dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
+object-oriented language karena masih mendukung primitive data types seperti
+int, char, dll. 
+
+Sintaks Java mirip dengan C/C++, tetapi Java tidak mensupport low-level
+programming seperti pointer (sebenarnya Java punya pointer. Semua turunan object
+adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
+perlu tahu fakta 
+inifootnote:[Dari blog https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/]).
+Kode Java selalu ditulis didalam sebuah class dan objek.
+
+=== Struktur program
+
+Struktur dasar sebuah bahasa pemrograman Java adalah sebagai berikut:
+
+[source, java]
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
+}
+
+`class Main` Adalah class utama, nama `Main` harus sesuai dengan nama file.
+Aturan penulisannya adalah dengan menggunakan huruf kapital di huruf pertama.
+Misalnya: `Main`, `Utama`, dsb-nya.
+
+`public static void main(String args[])` adalah kode utama yang akan dijalankan
+ketika kita menjalankan sebuah program Java.
+
+=== Aturan Penamaan
+
+Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
+dalam Java yang harus dipatuhi seperti:
+
+1. tidak boleh diawali dengan angka,
+2. tidak boleh disertai symbol khusus seperti `@`,`!`,`*`,`#`,
+3. tidak boleh menggunakan reserved word sebagai nama variable,
+4. boleh diawali dengan underscore atau symbol `$`, dan
+5. nama variable tidak boleh mengandung spasi.
+
+Menurut _Convention over configuration Java_, penulisan nama variable 
+menggunakan lowerCamel case (misalnya `namaVariabel`), dan penulisan nama class 
+menggunakan UpperCamel case (misalnya `Main``).
+
+=== Menjalankan program
+
+Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.
+
+Untuk meng-compile java:
+
+[source, bash]
+javac NamaFile.java
+
+dan kemudian akan menghasilkan sebuah file dengan nama `NamaFile.class`.
+File inilah yang kemudian dijalankan dengan menggunakan perintah:
+
+[source, bash]
+java NamaFile
+
+perhatikan, untuk menjalankan, tidak perlu menggunakan `NamaFile.class`, cukup
+dengan menggunakan `NamaFile` saja.
+
+Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
+perlu mengcompilenya terlebih
+dahulufootnote:[https://openjdk.java.net/jeps/330].
+
+Misalnya:
+
+[source, java]
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+    }
+}
+
+dapat langsung dijalankan dengan:
+
+[source, bash]
+java NamaFile.java
+
+
+== Input dan Output
+
+IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
+bagaimana mengeluarkan hasil dari program tersebut.
+
+Meskipun pengertian i/o secara lebih luas lebih dari hal tersebut, namun disini
+kita akan menggunakan terbatas pada input dan output di terminal.
+
+=== Input
+
+Input di Java dapat menggunakan 2 cara (yang umum digunakan).
+
+==== Dengan menggunakan Scanner
+
+[source, java]
+----
+import java.util.Scanner;
+
+class Main{
+    public static void main(String args[]){
+        Scanner scan = new Scanner(System.in);
+        int i = scan.nextInt();
+    }
+}
+----
+
+==== Dengan menggunakan BufferReader
+
+[source, java]
+----
+import java.io.BufferedReader;
+import java.io.StreamReader;
+
+class Main{
+    public static void main(String args[]){
+        BufferedReader r = new BufferedReader(new StreamReader(System.in));
+        int a = Integer.parseInt(b.readLine());
+    }
+}
+----
+
+=== Output
+
+Output di Java dapat menggunakan 2 cara (yang umum digunakan).
+
+==== System.out.print()
+
+Fungsi print() meskipun kita menuliskan kodenya dua baris namun hasil atau
+outputnya tidak menjadi dua baris, solusinya kita bisa menggunakan fungsi yang
+kedua yaitu println() dimana dengan fungsi tersebut dapat menambahkan baris baru
+pada outputnya.
+
+[source, java]
+----
+class Main{
+    public static void main(String args[]){
+        System.out.println("Hello world");
+        System.out.print("Hello world");
+    }
+}
+----
+
+==== System.out.printf
+
+[source, java]
+----
+class Main{
+    public static void main(String args[]){
+        String data = "Hello world";
+        System.out.printf("%s", data);
+    }
+}
+----
+
+
+== Operasi Dasar
+
+=== Operator Aritmatika
+
+Operator aritmatika yang dapat dilakukan adalah:
+
+[.center]
+|===
+| Hasil | Operator
+
+| Additional                | +
+| Subtraction               | -
+| Multiplication            | *
+| Division                  | /
+| Modulus                   | %
+| Increment                 | ++
+| Decrement                 | --
+| Additional assignment     | +=
+| Subtraction assignment    | -=
+| Multiplication assignment | *=
+| Division assignment       | /=
+| Modulus asignement        | %=
+|===
+
+Operator ini hanya bisa digunakan pada tipe data angka, tidak bisa digunakan
+pada data `boolean`, tetapi dapat digunakan pada tipe data `char`, karena `char`
+pada dasarnya adalah `int` di dalama Java.
+
+Contoh:
+
+[source, java]
+----
+public class OperatorAritmatika {
+ 
+    public static void main(String[] args) {
+        System.out.println("Operasi Penjumlahan");
+        int hasilPenjumlahan = 5 + 1;
+        System.out.println("Hasil 5 + 1 = " + hasilPenjumlahan);
+        System.out.println();
+
+        System.out.println("Operasi Pengurangan");
+        int hasilPengurangan = 4 - 1;
+        System.out.println("Hasil 4 - 1 = " + hasilPengurangan);
+        System.out.println();
+
+        System.out.println("Operasi Pengalian");
+        int hasilPengalian = 5 * 5;
+        System.out.println("Hasil 5 * 5 = " + hasilPengalian);
+        System.out.println();
+
+        System.out.println("Operasi Pembagian");
+        int hasilPembagian = 20 / 2;
+        System.out.println("Hasil 20 / 2 = " + hasilPembagian);
+        System.out.println();
+
+        System.out.println("Operasi Habis bagi");
+        int hasilSisa = 8 % 2;
+        System.out.println("Hasil 8 % 2 = " + hasilSisa);
+        System.out.println();
+
+        int hasilSisaLain = 9 % 2;
+        System.out.println("Hasil 9 % 2 = " + hasilSisaLain);
+    }
+}
+----
+
+=== Operator pembanding
+
+Operator pembanding yan dapat dilakukan:
+
+[.center]
+|===
+|          Hasil           | Operator
+
+|         Equal to         |    ==
+|       Not equal to       |    !=
+|       Greater than       |    >
+|        Less than         |    <
+| Greater than or equal to |    >=
+|  Less than or equal to   |    <=
+|===
+
+Hasil operator ini adalah nilai boolean, bisa berupa true atau false.
+
+Integer, floating-point numbers, characters, dan Booleans bisa digunakan pada
+operator equal to dan not equal to, tetapi boolean tidak bisa digunakan pada
+operator lain (operator order) hanya integer, floating-point numbers dan
+characters.
+
+Contoh:
+
+[source, java]
+----
+int i = 12, b = 3;
+
+if (i < b) {
+    System.out.println("True");
+} else if (i == b) {
+    System.out.println("Equal");
+}
+----
+
+=== Operator Logika
+
+Operator logika yang bisa digunakan:
+
+[.center]
+|===
+| Hasil | Operator
+
+|  AND  |    &&
+|  OR   |   \|\|
+|  XOR  |    ^
+|  NOT  |    !
+|===
+
+Digunakan logika digunakan pada tipe data boolean untuk menyelesaikan
+permasalahan yang membutuhkan nilai-nilai logika.
+
+Contoh penggunaan:
+
+[source, java]
+----
+boolean a = true;
+int b = 12;
+
+if (a == true && b < 20) {
+    System.out.println("True");
+} else {
+    System.out.println("False");
+}
+----
+
+== Tipe Data
+
+Java merupakan bahasa pemrograman yang strongly typed (setiap data harus
+diberikan tipe data), maka kita tidak bisa mengabaikan tipe data. Kita harus
+tahu data seperti apa yang disimpan ke dalam variabel. Selain itu, Java juga
+bersifat statically typed, yang artinya setiap variabel harus dideklarasikan
+terlebih dahulu sebelum digunakan.
+
+=== Tipe Data Primitif
+
+Tipe data primitif adalah tipe data standar yang tidak diturunkan dari objek
+manapun. Tipe data primitif telah ditentukan dengan kata kuncinya masing-masing.
+Terdapat 8 (delapan) tipe data primitif yang Java dukung, antara lain:
+
+==== Integer
+
+. byte, tipe data yang menampung angka 8 bit dengan range -127 - 128
+(stem:[2^8]). Tipe data byte memiliki nilai default `0`.
++
+[source, java]
+byte n = 12;
+
+. short, tipe data yang menampung angka 16 bit dengan range -32.768 - 32.767
+(stem:[2^{16}]). Tipe data byte memiliki nilai default `0`.
++
+[source, java]
+short n = 1200;
+
+. int, tipe data yang menampung angka 32 bit dengan range -2,147,483,648 -
+2,147,483,647 (stem:[2^{32}]). Tipe data byte memiliki nilai default `0`.
++
+[source, java]
+int n = 289000;
+
+. long, tipe data yang lebih panjang dari int, yaitu -9,223,372,036,854,775,808
+sampai 9,223,372,036,854,775,807 (stem:[2^{64}]). Tipe data long memiliki nilai
+default `0L`.
++
+[source, java]
+long n = 122334445;
+
+==== Floating-point numbers
+
+. float tipe data untuk bilangan desimal seperti 3.14, 2.1 atau bilangan desimal
+lainnya. Tipe data ini bisa nemapung nilai stem:[2^{32}]. Nilai default-nya
+`0.0f`.
++
+[source, java]
+float n = 3.14f;
++
+penulisannya ditambahkan huruf `f` di belakang angkanya, ini untuk menandai
+bahwa bilangan tersebut adalah `float` bukan `double`.
+
+. double, tipe data yang mirip dengan float kecuali data yang bisa ditampungnya
+lebih besar yaitu stem:[2^{64}]. Nilai default-nya `0.0d`.
++
+[source, java]
+double n = 144.2;
+
+==== Characters
+
+. char, tipe data yang hanya bisa menampung satu karakter]. Nilai yang bisa
+ditampung adalah 0 to 65,535. Char digunakan untuk menampung karakter Unicode
+footnote:[http://www.unicode.org].
++
+[source, java]
+char c = 'a';
++
+Nilai yang diberikan disimpan dalam satu tanda kutip. Nilai defaulnya adalah
+`\u0000`.
++
+Char dalam spesifikasi resminya tergolong kedalam _integer type_ yang termasuk
+dalam kategori int, short, dll. Namun karena prinsipnya yang digunakan untuk
+menampung karakter Unicode, maka dibuat dalam kategori tersendiri
+footnote:[Java: The Complete Reference, 10th Edition page 98]. Sehingga char
+dapat ditulis seperti ini:
++
+[source, java]
+char c = 88;
++
+yang mana akan menghasilkan nilai `X`
+footnote:[98 adalah nilai desimal dari X dalam sistem ASCII dan Unicode].
+
+==== Boolean
+
+. Boolean, tipe data yang bisa menampung dua nilai, yaitu `benar` atau `salah`.
+Tipe data ini akan banyak digunakan kemudian. Nilai default-nya `false`.
++
+[source, java]
+boolean b = true;
+
+=== Tipe Data Reference
+
+Tipe data reference merupakan sebuah tipe data yang merujuk ke sebuah objek atau
+instance dari sebuah class. Salah satu tipe data yang termasuk ke dalam tipe
+data reference adalah `string`. Tipe data string menunjuk ke instance dari class
+`java.lang.String`.
+
+==== String
+
+String adalah tipe data yang menampung karakter. String bisa menampung lebih
+dari satu karakter, misalnya kata, kalimat atau paragraf.
+
+[source, java]
+String name = "Deo";
+
+perhatikan, penulisan `String` menggunakan kapital di awal kata, kemudian isinya
+disimpan di dalam tanda kutip dua ("...").
+
+=== Deklarasi variabel
+
+Sebuah data dapat disimpan ke dalam variabel. Format penulisannya sebagai
+berikut:
+
+[source, java]
+type namaVariabel;
+
+==== Deklarasi
+
+Deklarasi adalah pembuatan sebuah variabel, namun belum di isi dengan suatu
+nilai. Contoh:
+
+[source, java]
+int n;
+boolean b;
+char c;
+
+==== Inisiasi
+
+Inisiasi adalah pengisian sebuah variabel dengan data. Contoh:
+
+[source, java]
+n = 12;
+b = false;
+c = 'A';
+
+Deklarasi sekaligus inisiasi juga dapat dilakukan, misalnya dengan:
+
+[source, java]
+float f = 21.0f;
+boolean b = false;
+
+==== Inisiasi dinamis
+
+Dua atau lebih data dapat di isi secara bersamaan dalam satu baris dengan syarat
+tipe datanya sama. Contoh:
+
+[source, java]
+int a = 12, b = 13, c = 14;
+
+atau bisa juga jika semua data memiliki nilai yang sama, misalnya:
+
+[source, java]
+int x = y = z = 100;
+
+=== Mengubah tipe ke tipe data lain
+
+Suatu tipe data dapat di ubah ke tipe data lain, misalnya dari byte ke int.
+Syaratnya adalah:
+
+-   kedua tipe data kompatible, misalnya antara byte dengan int, int dengan
+    float, tetapi char dan boolean tidak memiliki kompatible.
+-   tipe data yang dituju memiliki ruang penyimpanan yang lebih besar, misalnya
+    byte memiliki ruang penyimpanan stem:[2^8], akan diubah ke int yang memiliki
+    penyimpanan stem:[2^{32}]. Tetapi jika dari tipe data int ke byte, maka jika
+    nilai yang akan diubah lebih besar dari stem:[2^8], maka akan menyebabkan
+    nilai akhir adalah hasil modulo dari ukuran byte.
+
+Cara mengubah tipe data dapat dicontohkan sebagai berikut:
+
+[source, java]
+int n = 12;
+byte b = (int) n;
+
+Bagaimana jika int ke float, silahkan coba sendiri.
+
+==== Konversi otomatis
+
+Misalnya terdapat a, b, c yang merupakan byte, kemudian dilakukan operasi
+sebagai berikut:
+
+[source, java]
+byte a = 40;
+byte b = 50;
+byte c = 100;
+int d = a * b / c;
+
+maka nilai a, b dan c akan otomatis diubah menjadi int.
+
+Aturan promosi ini adalah:
+
+1. byte, short, char akan di ubah ke int,
+2. jika operasinya adalah long, maka akan diubah ke long,
+3. float akan di ubah ke double,
+4. jika operasi melibatkan double, maka otomatis akan diubah semua ke double.
+
+
+
+== Penyeleksian Kondisi
+
+Peyeleksian adalah pilihan atau opsi dengan suatu syarat tertentu.
+
+Jika syarat yang diberikan memenuhi, maka semua statement dalam blok kondisi
+tersebut akan dijalankan, namun jika tidak maka semua stetement dalam blok itu
+dilewati dan tidak dijalankan.
+
+Contohnya, jika nilai sama dengan atau lebih dari 90 maka mahasiswa tersebut
+mendapatkan nilai A, jika nilainya adalah dalam rentang 80-90 maka mahasiswa
+tersebut mendapatkan nilai B, dan seterusnya.
+
+Disini dilakukan perulangan dengan mengecek nilai mahasiswa tersebut, jika
+memenuhi atau terdapat dalam rentang tertentu, maka mahasiswa tersebut akan
+mendapat nilai ini.
+
+Dalam Java terdapat dua macam penyeksian kondisi yaitu "If-else" dan "Switch".
+
+=== If-Else
+
+Bentuk if-else adalah bentuk jika-maka, jika memenuhi syarat ini, lakukan ini,
+jika tidak maka cek ke syarat berikutnya.
+
+Bentuk umumnya adalah:
+
+[source, java]
+----
+if ( syarat1 ) {
+    //dijalankan ketika syarat1 = true
+} if else ( syarat2 ) {
+    //dijalankan ketika syarat2 = true
+} else {
+    //dijalankan ketika semua syarat false
+}
+----
+
+Aturannya:
+
+Berikut ini hal yang harus diketahui ketika menggunakan "If-else":
+
+. If statement bisa tidak memiliki "else" statement, "else" statement harus
+terletak setelah semua "else If" statement (jika ada).
+. If statement bisa memiliki banyak "else if" statement dan semuanya harus
+terletak sebelum "else" statement.
+. Ketika salah satu "else if" statement dijalankan, tidak ada "else if" lainnya
+yang akan dijalankan.
+
+Contoh:
+
+[source, java]
+----
+int nilai = 50;
+
+if (nilai <= 50) {
+    System.out.println("C");
+} if else (nilai <= 85) {
+    System.out.println("B");
+} if else (nilai > 85) {
+    System.out.println("A");
+} else {
+    System.out.println("Eror");
+}
+----
+
+=== Switch
+
+Pada switch terdapat syarat yang digunakan untuk pengujian terhadap daftar nilai
+yang ada.
+
+Setiap nilai (daftar nilai) ini disebut case, dan syarat akan diperiksa untuk
+setiap case. Jika daftar case tidak ada yang memenuhi, maka akan otomatis
+ke `default`.
+
+Bentuk umumnya:
+
+[source, java]
+----
+switch ( test_variable) {
+    case value :
+        //statement
+        break;
+    case value :
+        //statement
+        break;
+    default :
+        //statement
+}
+----
+
+Switch memerlukan `break` untuk menghentikan pengujian ketika pengujian itu
+sudah memenuhi persyaratan yang diberikan.
+
+`break` digunakan untuk menghentikan pencarian jika kondisi yang dicari sudah
+memenuhi (Baca bagian [Jump Statement](/2021/05/18/jump-statement.html)).
+
+Contoh penggunaan:
+
+[source, java]
+----
+int a = 5;
+switch (a) {
+    case 1:
+        System.out.println("You chose One");
+        break;
+    case 2:
+        System.out.println("You chose Two");
+        break;
+    case 3:
+        System.out.println("You chose Three");
+        break;
+    case 4:
+        System.out.println("You chose Four");
+        break;
+    case 5:
+        System.out.println("You chose Five");
+        break;
+    default:
+        System.out.println("Invalid Choice");
+}
+----
+
+
+== Perulangan
+
+Perulangan (Looping) adalah suatu blok kode yang akan terus berjalan selama
+syarat yang diberikan masih memenuhi.
+
+Setiap perulangan memiliki empat bagian, yaitu `inisialisasi`, `body`,
+`iterasi`, dan `terminasi/kondisi`.
+
+. Inisialisasi adalah statement yang menyatakan keadaan awal sebuah perulangan.
+. Body atau badan program adalah blok statement yang akan dijalankan terus
+menerus selama perulangan berlangsung.
+. Iterasi adalah statement atau bagian program yang nilainya terus berubah
+(ascending, descending atau cara lainnya) untuk mencapai batas atau keadaan
+untuk berhenti.
+. Terminasi atau kondisi adalah statement bernilai Boolean yang menyatakan
+batas atau keadaan untuk menghentikan perulangan.
+
+Pada Java dikenal tiga macam bentuk perulangan, yaitu: `while`, `do-while`, dan
+`for`.
+
+Pada dasarnya semua perulangan dalam Java memiliki cara kerja yang sama
+yaitu selama kondisi masih bernilai true maka perulangan akan terus dilakukan
+hinggi kondisi bernilai false.
+
+=== For
+
+For adalah perulangan yang banyaknya perulangan diketahui atau banyaknya
+perulangan sudah jelas(tentu).
+
+Bentuk umum:
+
+[source, java]
+----
+for (inisialisasi; kondisi; iterasi) {
+    //body
+}
+----
+
+Contoh:
+
+[source, java]
+----
+int n = 99;
+
+for (int i=0; i<n; i++) {
+    System.out.println(i);
+}
+----
+
+=== While
+
+While adalah perulangan yang banyaknya perulangan tidak menentu dan lebih
+sederhana dari pada perulangan for.
+
+Bentuk umum:
+
+[source, java]
+----
+Inisialisasi;
+
+while (kondisi) {
+    //body
+    Iterasi; //opsional
+}
+----
+
+Contoh:
+
+[source, java]
+----
+int n = 19;
+int i = 0;
+
+while (i<n) {
+    System.out.println(i);
+    i++;
+}
+----
+
+=== Do-while
+
+Pada perulangan ini bagian body (semua dalam kurung kurawal setelah "do")
+dijalankan terlebih dahulu sebelum pengecekan kondisi.
+
+Sehingga walaupun kondisi dari awal bernilai false, bagian body tetap dijalankan
+sekali. Berbeda dengan perulangan while apabila kondisi diawal bernilai false
+maka bagian body tidak akan dijalankan.
+
+Bentuk umum:
+
+[source, java]
+----
+Inisialisasi;
+
+do {
+    //body
+    Iterasi; //opsional
+} while (kondisi);
+----
+
+Contoh:
+
+[source, java]
+----
+int n = 19;
+int i = 0;
+
+do {
+    i++;
+} while (i<n)
+
+System.out.println(i);
+----
+
+=== For-each
+
+For-each bukanlah keyword dari Java, melainkan cara yang lebih sederhana untuk
+membuat perulangan for.
+
+Bentuk umum:
+
+[source, java]
+for (type var: array) { 
+    statements using var;
+}
+
+Sama nilainya dengan
+
+[source, java]
+for (int i=0; i<arr.length; i++) {
+    type var = arr[i];
+    statements using var;
+}
+
+Ini biasa digunakan pada array atau koleksi (seperti ArrayList).
+
+Contoh:
+
+[source, java]
+----
+int[] arr = { 125, 132, 95, 116, 110 };
+
+for (int i: arr) {
+    System.out.println(i);
+}
+----
+
+Namun for-each memiliki batasan:
+
+. Tidak bisa digunakan jika ingin memodifikasi nilai array,
+. Tidak bisa melacak nomor index,
+. Hanya bisa melakukan perulangan kedepan sekali.
+
+
+== Jump Statement
+
+Jump statement adalah perintah untuk memindahkan alur program ke program yang
+lain. Java mengenal tiga buah perintah tersebut yaitu `break`, `continue` dan
+`return`.
+
+=== Break
+
+Break merupakan perintah yang dapat digunakan untuk menghentikan proses
+perulangan dengan paksa.
+
+Berikut ini contoh penggunaan break dalam while, program akan berhenti ketika
+nilai i = 2.
+
+Contoh:
+
+[source, java]
+----
+int n = 10;
+int i = 0;
+
+while (i<n) {
+    System.out.println(i);
+    i++;
+    
+    if (i == 2) {
+        break;
+    }
+}
+----
+
+=== Continue
+
+Continue adalah perintah yang dapat digunakan untuk meloncati proses perulangan.
+
+Continue hanya akan meloncati proses perulangan satu kali proses perulangan
+masih tetap berjalan selama hasil lompatannya itu masih berlaku dalam perulangan
+tersebut.
+
+Contoh:
+
+[source, java]
+----
+for (int i=0; i<10; i++) {
+    if (i == 5) {
+        continue;
+    }
+
+    System.out.println(i);
+}
+----
+
+Program di atas akan menampilkan bilangan mulai dari 0 sampai 10, tetapi angka 5
+tidak akan ditampilkan karena ketika nilai i = 5 maka perintah `continue` akan
+dijalankan.
+
+=== Return
+
+Return adalah perintah dalam java yang digunakan di dalam method. Return akan
+mengembalikan suatu nilai dari sebuah method yang dipanggil.
+
+Return akan dibahas di pembahasan tentang
+link:/2021/05/19/pp-method.html[Method].
+
+
+== Array
+
+Array adalah kelompok data dengan tipe yang sama.
+
+Dalam Java, pada saat mendeklarasikan sebuah array panjang array harus
+ditentukan, dan tidak dapat diubah setelahnya (nilai fix). Setiap item dalam
+sebuah array disebut element, dan setiap element dapat diakses dengan indexnya.
+Index array selalu mulai dari 0 sampai n-1, dengan n adalah panjang array.
+
+=== Deklarasi
+
+Sebelum digunakan, Array harus dideklarasikan terlebih dahulu dengan
+menentukan tipe data dan panjangnya.
+
+Bentuk umum:
+
+[source, java]
+----
+tipeData[] namaArray = new tipeData[n];
+//atau
+tipeData namaArray[] = new tipeData[n];
+----
+
+Contoh:
+
+[source, java]
+int[] arr = new int[20];
+
+=== Mengisi
+
+Ada beberapa cara untuk menginisialisasi array, diantaranya adalah:
+
+[source, java]
+----
+tipeData[] namaArray = { element1, element2, element3, element4 };
+//atau
+tipeData[] namaArray = new int[4];
+namaArray[0] = element1;
+namaArray[1] = element2;
+namaArray[2] = element3;
+namaArray[3] = element4;
+----
+
+Contoh:
+
+[source, java]
+----
+int[] arr = { 132, 11, 134, 33};
+//atau
+int[] arr = new int[4];
+arr[0] = 132;
+arr[1] = 11;
+arr[2] = 134;
+arr[3] = 33;
+----
+
+=== Mengakses
+
+Untuk mengakses element tertentu pada array cukup dengan menyebutkan nama array
+disertai dengan kurung siku dan index element yang ingin diakses.
+
+Bentuk umum:
+
+[source, java]
+namaArray[index];
+
+> Indeks array dimulai dari 0
+
+Jadi jika mempunyai data:
+
+[source, java]
+----
+int[] arr = { 132, 11, 134, 33};
+System.out.println(arr[0]);
+----
+
+akan menampilkan:
+
+[source, bash]
+132
+
+dan kemudian diikuti oleh indeks berikutnya.
+
+=== Array multi-dimensi
+
+Array multidimensi dapat diilustrasikan sebagai array dalam array. Artinya
+setiap element pada array tersebut adalah sebuah array juga (Array dua dimensi).
+Hal ini juga berlaku untuk Array NxN dimensi. 
+
+Contoh:
+
+[source, java]
+int[][] arr = new int[4][5];
+
+Kemudian untuk mengisinya dengan:
+
+[source, java]
+----
+int[][] arr = {
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1}
+};
+----
+
+Untuk mengaksesnya, digunakan cara yang sama dengan array 1-dimensi, misalnya:
+
+[source, java]
+System.out.println(arr[0][1]);
+
+=== Panjang Array
+
+Untuk menentukan panjang suatu array, digunakan fungsi `.length`.
+Contohnya:
+
+[source, java]
+----
+int[] arr = { 132, 11, 134, 33};
+System.out.println(arr.length);
+----
+
+output:
+[source, java]
+4
+
+nilainya bukan dihitung dari angka indeks terakhir melainkan jumlah indeknya,
+sehingga walaupun indeksnya dimulai dari angka `0` namun panjangnya tetap akan
+mengikuti jumlah indeksnya.
+
+Contoh lain:
+
+[source, java]
+----
+int[][] arr = {
+    {1, 1, 1, 1},
+    {1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1, 1},
+    {1, 1, 1, 1, 1, 1, 1}
+};
+
+System.out.println(arr.length);
+System.out.println(arr[0].length);
+System.out.println(arr[1].length);
+----
+
+output:
+
+[source, java]
+----
+4
+4
+5
+----
+
+
+== Method
+
+Method adalah suatu fungsi.
+
+Method melaksanakan suatu tugas tertentu (menurut prinsip SOLID).
+
+Method pada Java memiliki bentuk umum seperti berikut ini:
+
+[source, java]
+----
+return-type methodName(parameter-list) {
+    //body of method
+}
+----
+
+dimana:
+
+. `return-type` adalah jenis nilai yang akan dikembalikan oleh method
+tersebut.
+. methodName adalah nama method
+. parameter-list adalah daftar nilai yang dikirim ke method tersebut.
+
+Contohnya:
+
+sebuah method yang berfungsi untuk menghitung hasil perkalian dua buah bilangan.
+
+[source, java]
+----
+public int multipication(int a, int b) {
+    return a*b;
+}
+----
+
+`int` adalah tipe data yang akan dikembalikan oleh method tersebut, yaitu hasil
+perkalian a dengan b. `multipication` adalah nama method tersebut, `int a` dan
+`int b` adalah 2 jenis parameter yang diterima oleh method tersebut, parameter
+ini akan berguna sebagai nilai yang akan diolah oleh method tersebut.
+
+`public` adalah
+link:/2019/05/19/encapsulation.html#access-modifier[access modifier].
+
+Sedangkan untuk memanggil method tersebut, kita dapat memanggil dengan
+menggunakan namanya, misalnya kita akan memanggil method yang telah kita buat
+diatas:
+
+[source, java]
+int hasil = multipication(12, 14);
+
+12 dan 14 disini adalah argumen yang dikirim.
+
+> untuk mengembalikan multiple values, dapat menggunakan return array
+
+Sebuah method juga dapat mengembalikan object. Misalnya:
+
+[source, java]
+----
+class Demo{
+    int a;
+    double b;
+    int c;
+
+    Demo(int m, double d, int a) {
+        a = m;
+        b = d;
+        c = a;
+    }
+}
+
+class MethodDemo4{ 
+    static Demo get(int x, int y) {
+        return new Demo(x * y, (double)x / y, (x + y)); 
+    }
+
+    public static void main(String[] args) {
+        Demo ans = get(25, 5); 
+        System.out.println("Multiplication = " + ans.a); 
+        System.out.println("Division = " + ans.b); 
+        System.out.println("Addition = " + ans.c); 
+    } 
+}
+----
+
+> Java menggunakan call-by-value bukan call-by-reference
+
+Note:
+1. Tambahkan call-by-value vs call-by-reference
+
+
+== File IO
+
+Input dan output pada file digunakan untuk mengolah file tersebut.
+
+Untuk membaca suatu file, kita menggunakan class `FileReader` dan untuk menulis
+pada suatu file, kita menggunakan class `FileWriter`.
+
+Contoh kasusnya, menyalin suatu isi file ke file lain. Disini kita akan
+menggunakan `FileReader` untuk membaca isi file tersebut, lalu kita akan menulis
+dengan menggunakan `FileWriter` kepada file lainnya.
+
+[source, java]
+----
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+ 
+public class Main {
+    public static void main(String[] args) {
+        try {
+            FileReader fileReader = new FileReader("source.txt");
+            FileWriter fileWriter = new FileWriter("destination.txt");
+
+            int i;
+
+            while( ( i = fileReader.read()) != -1 ){
+                fileWriter.write(i);
+            }
+            
+            fileReader.close();
+            fileWriter.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("File tidak ada! " + e);
+        } catch (IOException e) {
+            System.out.println("Terdapat masalah ada I/O" + e);
+        }
+    }
+}
+----
+
+
+== String
+
+Di dalam bahasa pemrograman Java, string merupakan sebuah tipe data reference.
+Tipe data ini diperlakukan sebagai sebuah obyek. String adalah kumpulan beberapa
+karakter (char).
+
+String sendiri sebenarnya merupakan sebuah class yang terdapat dalam library
+Java dan digunakan untuk memanipulasi karakter. Contoh sintaks untuk
+mendeklarasikan sebuah string:
+
+[source, java]
+String str = "Hay";
+
+String adalah tipe data immutable; ketika objek `String` dibuat, maka kontennya
+tidak bisa diubah lagi.
+
+Untuk menggabungkan beberapa string, Java menggunakan `+`, misalnya:
+
+[source, java]
+----
+String nama = "John " + "Doe";
+System.out.println(nama);
+----
+
+menghasilkan:
+
+[source, bash]
+John Doe
+
+=== Menthod dalam class String
+
+Ada beberapa method yang ada di dalam class `String`:
+
+==== equals()
+
+Digunakan untuk menentukan apakah dua buah `String` adalah sama, misalnya:
+
+[source, java]
+----
+String str0 = "Kamu";
+String str1 = "Kami";
+
+if(str0.equal(str1)) {
+    System.out.println("Sama");
+} else {
+    System.out.println("Tidak sama");
+}
+----
+
+`str1` menunjukkan bahwa `str1` adalah nilai yang dijadikan pembanding.
+
+`equals()` menghasilkan nilai `boolean`.
+
+==== length()
+
+Digunakan untuk menentukan panjangnya suatu string, misalnya:
+
+[source, java]
+----
+String str = "Nona manis";
+int l = str.length();
+
+System.out.println(l);
+----
+
+`length()` menghasilkan nilai `int`.
+
+==== charAt()
+
+Digunakan untuk menentukan `char` pada posisi tertentu pada sebuah `String`,
+misalnya:
+
+[source, java]
+----
+String nama = "Deo Valiandro"
+char p2 = nama.charAt(2);
+
+System.out.println(p2);
+----
+
+angka 2 menunjukkan index char yang diinginkan dalam sebuah `String`.
+
+`charAt()` mengahasilkan nilai `char`.
+
+
+Dan masih banyak lagi method-method lainnya.

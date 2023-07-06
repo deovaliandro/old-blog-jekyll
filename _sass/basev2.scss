@@ -98,6 +98,37 @@ mark {
   background-color: #fd3;
 }
 
+// table
+table {
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  overflow: auto;
+  width: 100%;
+
+  > tbody > tr > td > p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+th {
+  border: 1px solid #898ea4;
+  padding: .5rem;
+  background-color: #f5f7ff;
+  font-weight: bold;
+}
+
+tr:nth-child(2n) {
+  background-color: #f5f7ff;
+}
+
+td {
+  border: 1px solid #898ea4;
+  text-align: left;
+  padding: .5rem;
+}
+
 // rouge
 pre.rouge {
   padding: 1ch;
