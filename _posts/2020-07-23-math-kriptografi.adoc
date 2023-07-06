@@ -1,9 +1,7 @@
 :page-title     : Landasan Matematika Kriptografi
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : kriptografi
-:page-time      : 2020-07-23T11:44:12
-:page-update    : 2022-05-10T08:27:00
+:page-time      : 2020-07-23
 :page-math      : true
 
 

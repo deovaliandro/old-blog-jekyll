@@ -1,10 +1,7 @@
 :page-title     : Is Even?
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : artikel
 :page-time      : 2022-03-23T19:20:13
-:page-update    : 2022-05-05T20:40:25
-:page-math      : false
 
 
 Cara cepat menentukan negatif atau positif:

@@ -5,8 +5,3 @@
 
 
 Lama tidak mengurus blog ini, saatnya on lagi.
-
-.Lightweight Markup
-****
-Writing languages that let you type less and express more.
-****

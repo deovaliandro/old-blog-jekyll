@@ -1,9 +1,7 @@
 :page-title     : Stack
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : strukda
-:page-time      : 2021-09-30T08:09:00
-:page-update    : 2022-05-11T22:28:58
+:page-time      : 2021-09-30
 
 
 [source, c++]

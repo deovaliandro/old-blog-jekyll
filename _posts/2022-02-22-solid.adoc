@@ -1,9 +1,7 @@
 :page-title     : SOLID
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : artikel
 :page-time      : 2022-02-22T15:00:10
-:page-update    : 2022-05-05T20:49:15
 
 
 Ini adalah rangkuman tentang SOLID yang saya pelajari di Dicoding.

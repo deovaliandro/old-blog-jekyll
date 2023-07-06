@@ -1,9 +1,7 @@
 :page-title     : Data Encryption Standard (DES)
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : kriptografi
-:page-time      : 2019-10-24T01:12:32
-:page-update    : 2022-05-10T08:27:00
+:page-time      : 2019-10-24
 :page-math      : true
 
 

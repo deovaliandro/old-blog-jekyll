@@ -1,8 +1,7 @@
 :page-title     : Rancangan CSS
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : css
-:page-time      : 2016-09-01T11:46:12
+:page-time      : 2016-09-01
 
 
 Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
