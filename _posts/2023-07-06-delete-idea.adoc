@@ -1,0 +1,15 @@
+:page-layout: default
+:page-title: Hapus .idea dari git
+:page-signed-by: Deo Valiandro. M <valiandrod@gmail.com>
+:page-time: 2023-06-07T19:04:00
+
+
+Folder ##.idea## sangat mengganggu jika masuk kedalam github.
+Untuk menghapusnya, dapat melakukan:
+
+1. tambahkan ##.idea## di ##.gitignore##,
+2. check file dari main dengan `git checkout main -- .gitignore`
+3. hapus ##.idea## dari git tree dengan menggunakan `git rm --cached -r .idea`
+4. commit, push.
+
+Selesai, masalah selesai.
