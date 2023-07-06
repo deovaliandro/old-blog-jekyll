@@ -1,0 +1,828 @@
+:page-title     : Pemrograman Berorientasi Objek dengan Java
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-time      : 2019-04-28
+
+
+## Class dan Object
+
+Konsep dasar dari Pemrograman Berorientasi objek sendiri adalah menyatakan
+sebuah objek real kedalam bahasa bahasa pemrograman.
+
+== Objek (object)
+
+Objek adalah hal, perkara, benda atau orang yang menjadi pokok pembicaraan
+(KBBI, 2018). Misalnya seorang manusia, seekor kucing, seekor anjing atau benda
+lain, misalnya sebuah kursi. Itu adalah sebuah objek.
+
+Nah, setiap objek pasti memiliki identitas atau atribut, misalnya seorang
+manusia memiliki identitan atau atribut nama, umur, tinggi, berat dan berbagai
+identitas lainnya.
+
+Selain itu, sebuah objek juga pasti memiliki tingka laku, misalnya seorang
+manusia bisa makan, tidur, berjalan, bermain, koding dan berbagai kegiatan
+aktivitas lainnya.
+
+Sebuah objek dalam PBO juga demikian, objek tersebut akan memiliki
+sifat/atrribute dan perilaku/behaviour.
+
+Sifat/atribut yang dimaksud di PBO adalah sesuatu yang memiliki nilai, seperti
+ukuran, warna, berat, keterangan, dan semacamnya.
+
+Sedangkan tingkah laku/behaviour adalah kumpulan perintah yang melakukan suatu
+kegiatan spesifik.
+
+== Class
+
+Setiap objek memiliki blueprint atau cetakan, digunakan untuk membuat objek.
+Suatu cetakan akan ditentukan apa-apa saja yang akan dimasukkan kedalam sebuah
+objek. Sehingga dapat kita katakan bahwa:
+
+> Class adalah blueprint dari objek dan objek adalah instance dari sebuah class.
+
+Di Java, semuanya dibungkus dengan sebuah `class`. `class` adalah core dari Java
+itu sendiri.
+
+Aturan untuk `class` Java:
+1. `class` dapat memiliki `public` atau default (no modifier).
+2. Dapat berupa `abstract` atau `final` (`class` normal).
+3. Harus mempunyai keyword `class` dan harus diikuti nama `class` yang
+   berupa PascalCase.
+4. Dapat meng-extend hanya sebuah `parent class`. Secara default, meng-extend
+   class `Object`.
+5. Variabel dan method dibungkus didalam kurung kurawal (`{}`).
+
+Bentuk umum:
+
+[source, java]
+class  ClassName {
+     field;
+     method;
+}
+
+Misalnya seorang anak yang baru lahir, pastilah dia akan memiliki nama, namun
+kita belum memberikannya nama. Kenyataan bahwa dia akan memiliki nama, itu
+dimisalkan kedalam sebuah blueprint, bahwa seorang manusia pastilah memiliki
+nama, umur, perilaku, dan sebagainya.
+
+Misalnya blueprintnya:
+1. Perilaku: bernafas, makan, bergerak, melihat, ... dst.
+2. Atribut: nama, umur, jenis kelamin, ... dsb.
+
+[source, java]
+----
+class Manusia {
+    int umur;
+    String nama, jenisKelamin;
+
+    void bernafas() {}
+    void makan() {}
+    void berbicara() {}
+}
+----
+
+Untuk menggunakan cetakan ini untuk seorang manusia, maka dapat menggunakan
+perintah:
+
+[source, java]
+Manusia deo = new Manusia();
+
+maka akan muncul sebuah objek baru, dengan nama objek `deo`, dan memiliki nama,
+umur, jenis kelamin, bernafas, dll.
+
+Setiap kali objek di-instance dari sebuah class, maka objek tersebut mewarisi
+atribut dan perilaku dari class yang di-intace-kan. Artinya objek `deo` yang
+telah dibuat juga mempunyai atribut nama, umur dan semua atribut dan perilaku
+yang ada di `class Manusia`.
+
+Perintah `new` adalah sebuah keyword untuk mengalokasikan memory untuk object
+tersebut.
+
+Tapi, datanya belum diisi, dan masih sebatas sebuah template sehingga defaultnya
+nilainya `0`/`null`/`false`, kita dapat mengisinya dengan menggunakan perintah:
+
+[source, java]
+deo.nama = "Deo";
+deo.umur = 22;
+deo.jenisKelamin = "Laki-laki";
+
+
+## Method
+
+Method adalah penggambaran suatu sifat dari sebuah objek.
+
+Method adalah kumpulan statemen yang dibungkus menjadi satu untuk melaksanakan
+suatu fungsi tertentu. Method sama dengan fungsi di bahasa pemrograman lain.
+
+Misalnya kita mempunya class `Manusia`, maka methodnya bisa seperti
+`berjalan()`, `makan()`, atau sifat lainnya.
+
+Lihat link:/2021/05/20/pp-method.html[Method pada modul Pengantar Pemrograman].
+
+
+## Constructor
+
+Konstruktor adalah method yang dijalankan ketika pertama kali sebuah objek
+dipanggil. Sebuah `class` tanpa konstruktor akan otomatis dibuatkan konstruktor
+`default` oleh java.
+
+Constructor adalah method tanpa return type dan nama methodnya sama dengan nama
+classnya.
+
+[source, java]
+----
+class Manusia {
+    int umur;
+    String nama, jenisKelamin;
+
+    void bernafas() {}
+    void makan() {}
+    void berbicara() {}
+
+    // Ini constructor
+    Manusia () {
+        nama = "Nama saya ..";
+        umur = 21;
+        jenisKelamin = "L";
+    }
+}
+----
+
+Ketika dibuat sebuah objek dari class di atas dengan statement
+`Employee emp = new Employee();` maka nilai attribute `name = Shelena`
+dan nilai attribute `salary = 0`.
+
+[source, java]
+----
+class Manusia {
+    int umur;
+    String nama, jenisKelamin;
+
+    void bernafas() {}
+    void makan() {}
+    void berbicara() {}
+
+    // Ini constructor
+    Manusia () {
+        nama = "Nama saya ..";
+        umur = 21;
+        jenisKelamin = "L";
+    }
+}
+
+public class Main {
+    public static void main (String[] args) {
+        Manusia manusia = new Manusia();
+        System.out.println("Nama = "+ manusia.nama);
+        System.out.println("Umur = "+ manusia.umur);
+        System.out.println("Jenis Kelamin = "+ manusia.jenisKelamin);
+    }
+}
+----
+
+Java memperbolehkan sebuah class memiliki banyak constructor dengan ketentuan:
+
+- Setiap Constructor memiliki jumlah parameter yang berbeda,
+- Jumlah parameter boleh sama tetapi type data masing-masing parameternya harus
+  berbeda,
+- Apabila terdapat lebih dari satu constructor dalam class maka Constructor yang
+  digunakan adalah constructor yang sesuai dengan ketika objek di-instansikan.
+
+> Hal ini disebut dengan *overloading*, dimana beberapa method dapat memiliki
+> nama yang sama, namun dibedakan dengan paramater yang berbeda.
+
+Contoh:
+
+[source, java]
+----
+class Manusia {
+    int umur;
+    String nama, jenisKelamin;
+
+    void bernafas() {}
+    void makan() {}
+    void berbicara() {}
+
+    Manusia(String nama) {
+        this.nama = nama;
+    }
+
+    Manusia(String nama, int umur) {
+        this.nama = nama;
+        this.umur = umur;
+    }
+
+    Manusia (String nama, int umur, String jenisKelamin) {
+        this.nama = nama;
+        this.umur = umur;
+        this.jenisKelamin = jenisKelamin;
+    }
+}
+
+public class Main {
+    public static void main (String[] args) {
+        Manusia manusia1 = new Manusia("A", 22, "L");
+        Manusia manusia2 = new Manusia("B", 20);
+        Manusia manusia3 = new Manusia("C");       
+        System.out.println("Nama 1 = "+ manusia1.nama);
+        System.out.println("Nama 2 = "+ manusia2.nama);
+        System.out.println("Nama 3 = "+ manusia3.nama);
+    }
+}
+----
+
+Output:
+
+[source, java]
+Nama 1 = A 
+Nama 2 = B
+Nama 3 = C
+
+## Encapsulation
+
+Encapsulation atau enkapsulasi adalah pembatasan akses terhadap suatu atribut,
+method atau konstruktor dalam suatu class. Enkapsulasi memastikan bahwa hanya
+program hanya dapat diakses oleh yang diberi izin saja.
+
+== Access Modifier
+
+Access modifier adalah tingkat level akses yang dapat diberikan. Secara umum,
+dalam Java ada 4 macam jenis modifier, yaitu: public, private, protected dan
+default modifier (blank). Apabila sebuah modifier tidak ditentukan maka secara
+otomatis compiler memberikan default modifier pada attribute atau method
+tersebut.
+
+1. Public
++
+Sebuah attribute atau method yang diberikan access modifier public artinya dapat
+diakses dari class yang berbeda. Penggunaan public modifier biasanya untuk
+method-method yang bekerja sebagai transportasi data seperti Setter Method dan
+Getter.
+
+2. Protected
++
+Sebuah attribute atau method yang diberikan access modifier protected artinya
+dapat diakses dari class lain yang merupakan subclassnya. Access modifier ini
+biasa digunakan untuk attribute dalam sebuah Class yang menjadi superclass.
+
+3. Private
++
+Attribute atau method dengan access modifier private hanya dapat diakses dari
+dalam Classnya sendiri. Umumnya sebuah method dalam sebuah class diberikan
+Private modifier apabila method tersebut hanya berkerja di dalam classnya
+sendiri atau pada method dan attribute yang harus disembunyikan dari class lain
+termasuk.
+
+4. Default Modifier (blank)
++
+Default modifier yaitu modifier yang diberikan kepada method atau attribute yang
+tidak ditentukan modifiernya. Sebuah attribute atau method dengan access
+modifier default dapat diakses dari luar Class walaupun class tersebut bukan
+subclassnya selama berada dalam package yang sama.
+
+Tabel jangkauan untuk tiap modifier:
+
+[.center]
+|===
+|Modifier|Class|Package|Subclass|World
+
+|public|Y|Y|Y|Y
+|protected|Y|Y|Y|N
+|default modifier|Y|Y|N|N
+|private|Y|N|N|N
+|===
+
+Keterangan:
+
+- Y artinya bisa diakses,
+- N artinya tidak bisa diakses,
+- Subclass artinya class anak,
+- World artinya seluruh package di aplikasi.
+
+== Setter and Getter
+
+Setter dan Getter adalah istilah untuk method dengan access modifier public yang
+digunakan untuk mengubah (Set) atau mengambil (Get) nilai suatu attribute
+private atau protected dalam sebuah Class.
+
+> Setter adalah sarana untuk mengambil nilai di dalam sebuah *atribut private*
+>
+> Getter adalah sarana untuk mengubah nilai di dalam sebuah *atribut private*
+
+Setter dan getter ini memiliki akses *public*, sehingga dapat diakses kelas
+lainnya, sedangkan method utamanya tidak perlu diketahui oleh orang lain.
+
+[source, java]
+----
+class Manusia {
+
+    private String nama, jenisKelamin;
+    int umur;
+
+    public Manusia(String nama, String jenisKelamin, int umur) {
+        this.nama = nama;
+        this.jenisKelamin = jenisKelamin;
+        this.umur = umur;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getJenisKelamin() {
+        return jenisKelamin;
+    }
+
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
+}
+----
+
+== Abstract Class dan Interface
+
+=== Abstract method vs Overriding
+
+Abstract method adalah method yang ditulis untuk diimplementasikan nantinya
+(harus diimplementasikan). Abstract method ini sebagai perjanjian bahwa
+method-method yang diberi tanda `abstract` merupakan method yang penting
+sehingga harus diimplementasikan. Manfaatnya, digunakan sebagai jembatan antar
+class.
+
+Perbedaan abstract method dengan overriding - Abstract harus di implementasikan
+sedangkan overriding itu opsional
+
+Untuk menggunakan abstract class didalam sebuah class, digunakan keyword
+`abstract`, dan untuk mengimplementasikannya pada class menggunakan keyword
+`implement`.
+
+[source, java]
+----
+class One{
+    One(){
+        ...
+    }
+
+    abstract dataType theMethod();
+}
+
+class Main implement One {
+    ...
+}
+----
+
+=== Interface
+
+Interface adalah kumpulan abstract method yang digabung menjadi satu class.
+Interface digunakan untuk menjembatani berbagai jenis class untuk dapat saling
+berkomunikasi satu dengan yang lain.
+
+[source, java]
+----
+interface Orang{
+    abstract void makan();
+    abstract void suara();
+    abstract void jalan();
+}
+
+class Manusia {
+
+    private String nama, jenisKelamin;
+    int umur;
+
+    public Manusia(String nama, String jenisKelamin, int umur) {
+        this.nama = nama;
+        this.jenisKelamin = jenisKelamin;
+        this.umur = umur;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getJenisKelamin() {
+        return jenisKelamin;
+    }
+
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
+}
+
+class Ayah extends Manusia implements Orang {
+
+    public Ayah(String nama, String jenisKelamin, int umur) {
+        super(nama, jenisKelamin, umur);
+    }
+
+    public void makan() {
+        System.out.println("Ayah makan");
+    }
+
+    public void suara() {
+        System.out.println("Ayah bersuara");
+    }
+
+    public void jalan() {
+        System.out.println("Ayah berjalan");
+    }
+}
+
+class Ibu extends Manusia implements Orang {
+
+    public Ibu(String nama, String jenisKelamin, int umur) {
+        super(nama, jenisKelamin, umur);
+    }
+
+    public void makan() {
+        System.out.println("Ibu makan");
+    }
+
+    public void suara() {
+        System.out.println("Ibu bersuara");
+    }
+
+    public void jalan() {
+        System.out.println("Ibu berjalan");
+    }
+}
+----
+
+Bacaan menarik tentang interface
+https://medium.com/@Dewey92/oop-interface-what-ca16de0359af
+
+
+== Inheritance
+
+Inheritance adalah pewarian sifat. Class yang berisafat umum akan mewariskan
+sifatnya ke class yang bersifat khusus. Misalnya class `Manusia` akan memiliki
+class turunan seperti `Ayah`, `Ibu` dan `Anak`.
+
+Ketika meng-extend sebuah class, maka semua member non-private termasuk variabel
+dan method akan diwariskan ke class tersebut.
+
+Class `Manusia` akan memiliki atribut dan method tersendiri, misalnya `nama`,
+`jenisKelamin` dan `umur`. Class `Ayah` misalnya akan memiliki method dan
+atribut dari class `Manusia` namun akan memiliki sifat-sifat dan atribut yang
+khusus, seperti `suara`, `gayaBerjalan`, `warnaKulit`, dsb.
+
+Untuk mewariskan sifat, digunakan keyword `extend`, dan untuk memanggil atribut
+dan method dari class induk, menggunakan keyword `super`. Keyword yang kedua
+adalah `implements` untuk inheritance/mewariskan dari sebuah interface.
+
+image::https://static.studytonight.com/java/images/inheritance-in-java.jpg[Inheritance]
+
+Keyword `super` dapat digunakan untuk memanggil property di class parent, bahkan
+bisa memanggil constructor class parent.
+
+Misalnya:
+
+[source, java]
+----
+class Manusia {
+
+    private String nama, jenisKelamin;
+    int umur;
+
+    public Manusia(String nama, String jenisKelamin, int umur) {
+        this.nama = nama;
+        this.jenisKelamin = jenisKelamin;
+        this.umur = umur;
+    }
+
+    public String getNama() {
+        return nama;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public String getJenisKelamin() {
+        return jenisKelamin;
+    }
+
+    public void setJenisKelamin(String jenisKelamin) {
+        this.jenisKelamin = jenisKelamin;
+    }
+
+    public int getUmur() {
+        return umur;
+    }
+
+    public void setUmur(int umur) {
+        this.umur = umur;
+    }
+}
+----
+
+Class `Ayah` akan mewarisi sifat-sifat dari class `Manusia`.
+
+[source, java]
+----
+class Ayah extends Manusia implements Orang {
+
+    public Ayah(String nama, String jenisKelamin, int umur) {
+        super(nama, jenisKelamin, umur);
+    }
+
+    public void makan() {
+        System.out.println("Ayah makan");
+    }
+
+    public void suara() {
+        System.out.println("Ayah bersuara");
+    }
+
+    public void jalan() {
+        System.out.println("Ayah berjalan");
+    }
+}
+----
+
+Keuntungan dari inheritance adalah:
+
+. Reusability dari code, kita tidak perlu menulis kode berulang-ulang.
+. Mendukung polimorphisme dengan adanya method overriding (dibahas pada bab
+polimorphisme)
+
+Sedangkan kerugiannya adalah class parent dan child akan memiliki kesamaan
+identik, sehingga apabila terjadi perubahan di class parent, maka akan otomatis
+mengubah juga class child. Hal ini membuat adanya saling ketergantungan.
+
+=== Jenis Inheritance
+
+Java hanya mendukung 3 jenis inheritance berikut:
+
+. Single inheritance
+. Multilevel inheritance
+. Heirarchical inheritance
+
+Java tidak mendukung multiple inheritance dengan alasan keamanan dari masalah
+`Deadly Diamond of Death`.
+
+image::https://static.studytonight.com/java/images/types-of-inheritance.png[Types of Inheritance]
+
+==== Single inheritance
+
+Ini misalnya ketika ada pewarisan suatu class ke class lain, misalnya:
+
+[source, java]
+----
+class A{
+    int a = 10;
+    void show() {
+        System.out.println("a = "+a);
+    }
+}
+
+public class B extends A{
+    
+    public static void main(String[] args) {
+        B b = new B();
+        b.show();        
+    }
+}
+----
+
+==== Multilevel Inheritance
+
+Ini misalnya pada sebuah class C extends class B, lalu class B extends class A.
+Misalnya:
+
+[source, java]
+----
+class A{
+    int a = 10;
+    void show() {
+        System.out.println("a = "+a);
+    }
+}
+
+class B extends A{
+    int b = 10;
+    void showB() {
+        System.out.println("b = "+b);
+    }
+}
+
+public class C extends B{
+    
+    public static void main(String[] args) {
+        C c = new C();
+        c.show();
+        c.showB();
+    }
+}
+----
+
+==== Hierarchical Inheritance
+
+Ini terjadi jika ada dua class memiliki satu parent class yang sama. Misalnya
+class B dan class C extends class A. Contohnya:
+
+[source, java]
+----
+class A{
+    int a = 10;
+    void show() {
+        System.out.println("a = "+a);
+    }
+}
+
+class B extends A{
+    int b = 10;
+    void showB() {
+        System.out.println("b = "+b);
+    }
+}
+
+public class C extends A{   
+    public static void main(String[] args) {
+        C c = new C();
+        c.show();
+        B b = new B();
+        b.show();
+    }
+}
+----
+
+==== Multiple Inheritance [tidak didukung Java]
+
+Multiple inheritance adalah inheritance sebuah class, misalnya class C yang
+mempunyai 2 buah parent, misalnya class B dan class A.
+
+Mengapa multiple inheritance tidak didukung, karena:
+
+. Untuk menghilangkan ambiguitas,
+. Untuk mempermudah review code dan clear design.
+
+image::https://static.studytonight.com/java/images/multiple-inheritance-problem.jpg[Multiple Inheritance]
+
+=== Overriding Method
+
+Dalam Java, sebuah method yang sama antara `superclass` dan `subclass`
+dibolehkan. Ketika sebuah method dengan nama yang sama dengan method yang ada
+pada `superclass` dibuat pada `subclass`, maka method yang ada di `superclass`
+ditimpa (`override`) dengan method yang baru.
+
+Sehingga, ketika method tersebut dipanggil pada `subclass`, maka yang akan
+dieksekusi adalah method yang ada pada `subclass`.
+
+Contohnya:
+
+[source, java]
+----
+class Person{
+    String name;
+    int yearOfBirth;
+    double height;
+    double weight;
+    int currentYear = 2020;
+
+    Person(String i, int j, double k, double l){
+        name = i;
+        yearOfBirth = j;
+        height = k;
+        weight = l;
+    }
+
+    int myAge(){
+        return currentYear - yearOfBirth;
+    }
+}
+
+class Deo extends Person{
+    Deo(String i, int j, double k, double l){
+        super(i,j,k,l);
+        super.myAge();
+    }
+
+    int myAge(){
+        return currentYear + yearOfBirth;
+    }
+}
+
+class OverridingExample{
+    public static void main(String args[]){
+        Deo deo = new Deo("Deo", 2002, 170.0, 50.0);
+        System.out.println("My name is " + deo.name);
+        System.out.println("My ages is " + deo.myAge());
+    }
+}
+----
+
+Dimana terlihat, bahwa terdapat dua method yang sama, yang pertama method
+`myAge` di `superclass` dan method `myAge` yang kedua di `subclass`.
+
+Walaupun sudah panggil dengan menggunakan `super.myAge()`, namun ketika di
+eksekusi, hasil yang keluar adalah method yang terdapat pada `subclass`, yang
+artinya sudah ditimpa/overriding.
+
+== Polymorphism
+
+Polimorfiesme (bahasa Inggris polymorphims) adalah kemampuan dari suatu objek
+untuk  merepresentasikan satu bentuk ke dalam banyak bentuk. Penggunaan paling
+umum dari polymorphism pada OOP terjadi ketika reference superclass digunakan
+untuk merujuk ke inheritance objek class.
+
+Hal ini memungkinkan perubahan perilaku program secara dinamis saat program
+berjalan, tanpa suatu modul tahu bahwa modul yang lain sudah berubah.
+
+Polymorphism menyederhanakan dan menghilangkan if-else, di saat-saat di mana
+penggunaannya menjadi tidak praktis lagi. Kode-kode yang tersebar di mana-mana
+dengan if-else yang selalu sama, akhirnya semuanya di masukkan ke dalam
+kelas-kelas masing-masing. Ditaruhlah interface di depan kelas-kelas itu,
+sehingga sekarang kode yang baru terasa lebih mudah dibaca
+footnote:[https://jekjektuanakal.my.id/posts/peta-jalan-pejuang-cpp/].
+
+Polymorphism terbagi menjadi dua, yaitu *compiled time polymorphism* dan
+*runtime polymorphism*.
+
+=== Compiled time polymorphims/static polymorphims
+
+Polimorfiesme yang berjalan ketika kompilasi. Misalnya:
+
+. Method overloading,
+. Constructor overloading,
+
+Contoh:
+
+[source, java]
+----
+class Arithmetic {
+    public int add(int i, int j) {
+        return i + j;
+    }
+
+    public long add(int i, int j) {
+        return i + j;
+    }
+
+    public long add(int i, int j, int k) {
+        return i + j + k;
+    }
+}
+----
+
+=== Runtime polymorphism
+
+Polimorfiesme yang berjalan ketika runtime. Menggunakan override yang dituliskan
+dalam bentuk keyword `@Override`. Misalnya:
+
+. Method overloading,
+
+[source, java]
+----
+//Superclass
+public class Operasi {
+    void op(int i, int j){
+        System.out.println(i + j);
+    }
+}
+
+public class NewOperation extends Operasi {
+    @Override
+    void op(int i, int j){
+        System.out.println(i * j);
+    }
+}
+----
+
+=== Overriding vs Overloading
+
+. Overriding mengimplementasikan Runtime Polymorphism, Overloading
+    mengimplementasikan Compile time polymorphism,
+. Overriding terjadi antara superclass dan subclass, Overloading terjadi antara
+    metode di kelas yang sama.
+. Overriding memiliki tanda yang sama yaitu nama dan argumen yang sama,
+    Overloading memiliki nama yang sama namun parameter berbeda.
+. Overloading, method dipanggil ketika compile-time, Overriding, dipanggil
+    ketika runtime objek yang ditentukan.
+. Jika Overriding breaks, akan berakibat fatar karena efeknya akan terlihat pada
+    saat runtime, namun jika Overloading breaks, akan muncul compile-time error
+    dan lebih mudah untuk memperbaikinyafootnote:[https://www.journaldev.com/32182/overriding-vs-overloading-in-java].
