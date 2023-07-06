@@ -5,7 +5,7 @@ math: true
 
 <ol id="list-post">{% for post in site.posts %}
   <li>
-    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
-      {{ post.title }}</a>, pada {{ post.time | date: "%d %B %Y" }}
+    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+    <time>{{ post.time | date: "%d-%m-%Y" }}</time>
   </li>{% endfor %}
 </ol>

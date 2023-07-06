@@ -31,13 +31,35 @@ nav {
   }
 }
 
+time {
+  font-variant-numeric: tabular-nums;
+}
+
 hr {
   border: 0.1px solid #d8dae1;
 }
 
+blockquote {
+  margin: 1em auto;
+}
+
+.quoteblock {
+  margin: 1em auto;
+  padding: 1rem;
+  border-left: 1rem solid #444;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 2px #3c485826;
+}
+
+footer {
+  text-align: center;
+}
+
 #list-post > li {
+  display: flex;
   list-style: none;
   margin-left: -2rem;
+  justify-content: space-between;
 }
 
 #me {
@@ -45,6 +67,15 @@ hr {
   float: right;
   padding: 1ch;
   border-radius: 50%;
+}
+
+#home {
+  text-decoration: none;
+  color: #000;
+}
+
+#time-right  {
+  float: right;
 }
 
 // mobile
