@@ -8,12 +8,12 @@ Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
 maka sebagai bahan pelajaran, kami mencoba membuat css sederhana. Rancangan CSS
 ini akan diperbaharui kedepannya.
 
-## Font
+== Font
 
 [source, css]
 font-family: "Inter", sans-serif;
 
-## Key
+== Key
 
 [source, css]
 ----
@@ -30,15 +30,15 @@ Misalnya:
 
 kbd:[Ctrl + s]
 
-## Marked
+== Marked
 
 ##Hello my friend##
 
-## Inline Code
+== Inline Code
 
 `run()`
 
-## Blockquote
+== Blockquote
 
 > Ini adalah kami
 > -- Deo
