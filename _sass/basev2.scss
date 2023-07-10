@@ -9,7 +9,7 @@ body {
 main {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 0;
+  // flex-grow: 0;
   padding: 1rem;
   justify-content: center;
 }
@@ -28,6 +28,20 @@ nav {
     li {
       text-align: right;
       margin-right: 2rem;
+    }
+  }
+}
+
+.toc {
+  border: 1px solid #d8dae1;
+  border-radius: 5px;
+  padding-left: 1ch;
+
+  .sectlevel1 {
+    list-style: decimal-leading-zero;
+
+    .sectlevel2 {
+      list-style: lower-latin;
     }
   }
 }
