@@ -1,15 +1,13 @@
 title: Home
-description: "Sabbe Sattā Bhavantu Sukhitattā"
+description: "Blog by Deo"
 url: "https://deovaliandro.github.io"
 permalink: /:year/:month/:title:output_ext
-timezone: Asia/Makassar
 author: Deo Valiandro. M
 
 plugins:
   - jekyll-asciidoc
   - jekyll-redirect-from
   - jekyll-feed
-  - jekyll-email-protect
 
 asciidoctor:
   attributes:
