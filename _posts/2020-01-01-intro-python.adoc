@@ -5,18 +5,16 @@
 
 :toc:
 
-Python sebagai bahasa pemrograman yang populer dan komprehensif dengan
-menggabungkan kapabilitas, sintaksis kode yang jelas serta dilengkapi pustaka
-standar yang mempunyai fungsionalitas sangat besar. Python termasuk dari jajaran
-bahasa pemrograman tingkat tinggi seperti bahasa pemrograman C++, Java,
-Perl dan Pascal.
+Python adalah bahasa pemrograman *high-level* yang mudah dipelajari tetapi
+merupakan bahasa yang poweful. Dalam tulisan ini, kami akan menggunakan
+Python 3.11.
 
 == Keywords
 
-Keywords adalah kata yang dicadangkan oleh Python sehingga tidak boleh digunakan
-sebagai nama variabel, fungsi atau identifier lainnya. Keywords sendiri
-digunakan untuk mendefinisikan sintaks dan struktur dari bahasa Python. Keyword
-dalam Python merupakan case sensitive.
+Keywords atau kata kunci adalah kumpulan perintah Python sehingga tidak boleh
+digunakan sebagai nama variabel, fungsi atau identifier lainnya. Keywords
+sendiri digunakan untuk mendefinisikan sintaks dan struktur dari bahasa Python.
+Keyword bersifat case sensitive.
 
 Python 3.1 memiliki 33 keywords yang tidak dapat digunakan sebagai nama
 variabel, fungsi, atau objek lainnya. Semua keywords selain `True`, `False`, dan
@@ -38,57 +36,26 @@ pada Python:
 Identifiers merupakan nama yang diberikan kepada variabel, fungsi, kelas, modul
 atau objek lainnya. Identifiers dalam Python tidak boleh diawali dengan angka,
 tetapi boleh mengandung angka. Identifiers juga tidak boleh mengandung spasi
-atau karakter khusus, kecuali underscore (`_`) dan dollar sign (`$`). Identifiers
-juga bersifat case sensitive, artinya identifier yang ditulis dengan huruf besar
-dan huruf kecil berbeda.
+atau karakter khusus, kecuali underscore (`_`) dan dollar sign (`$`). 
+Identifiers juga bersifat case sensitive, artinya identifier yang ditulis dengan
+huruf besar dan huruf kecil berbeda.
 
 Aturan dalam penamaan identifiers:
 
 . Identifiers dapat berupa kombinasi dari huruf dalam lowercase (`a-z`) atau
-uppercase (`A-Z`) atau digit (`0-9`) atau underscore (`_`).
-Contoh: `myClass, var_1, this_is_a_long_variable`
+uppercase (`A-Z`) atau digit (`0-9`) atau underscore (`_`). Contoh: `myClass,
+var_1, this_is_a_long_variable`
 
-. Identifiers tidak boleh diawali dengan digit angka. Contoh:
+. Identifiers tidak boleh diawali dengan digit angka, misalnya `1variable`.
 
-   ```python
-   1variable #penulisan salah
-   variable1 #penulisan benar
-   ```
+. Keywords tidak dapat digunakan sebagai identifiers.
 
-3. Keywords tidak dapat digunakan sebagai identifiers.
+. Tidak diperbolehkan menggunakan symbol special seperti `!`, `@`, `#`, `$`,
+   `%`, dll. Misalnya tidak boleh menggunakan `x$ = 1`.
 
-    ```python
-    True = 1 #penulisan salah
-    ```
+. Sebuah identifier dapat memiliki panjang berapapun.
 
-    Maka outputnya akan error:
-
-    ```bash
-    File "e:\SISFOK\tes.py", line 1
-    True = 1
-    ^^^^
-    SyntaxError: cannot assign to True
-    ```
-
-4. Tidak diperbolehkan menggunakan symbol special seperti `!`, `@`, `#`, `$`,
-   `%`, dll. Contoh:
-
-    ```python
-    x$ = 1 #penulisan salah
-    ```
-
-    Outputnya:
-
-    ```bash
-    File "e:\SISFOK\tes.py", line 1
-    x$ = 1
-    ^
-    SyntaxError: invalid syntax
-    ```
-
-5. Sebuah identifier dapat memiliki panjang berapapun.
-
-6. Identifier Class harus diawali dengan huruf kapital sedangkan semua
+. Identifier Class harus diawali dengan huruf kapital sedangkan semua
    identifier lainnya harus diawali dengan huruf kecil. Contoh:
 
     ```python
@@ -142,60 +109,64 @@ Contoh: `myClass, var_1, this_is_a_long_variable`
 >
 >   4. Identifiers tidak boleh menggunakan keywords.
 
-## Statements
+== Statements
 
 Statements adalah instruksi atau pernyataan yang diberikan untuk dieksekusi oleh
 mesin. Penulisan statements dalam Python tidak diakhiri dengan tanda titik koma
-(`;`). Contohnya sebagai berikut:
+(kbd:[;]). Contohnya sebagai berikut:
 
-```python
+[source, python]
+----
 x = 1
 y = x
 z = x + y
-```
+----
 
 Dalam Python, akhir dari statement ditandai dengan baris baru. Tapi, kita dapat
 memperpanjang sebuah statement lebih dari beberapa baris secara eksplisit dengan
-menggunakan karakter forward slash (`\`). Contohnya :
+menggunakan karakter forward slash kbd:[\ ]. Contohnya:
 
-```python
-x = 1+2+3+\
-    4+5+6+\
-    7+8+9
-```
+[source, python]
+----
+x = 1 + 2 + 3 +\
+    4 + 5 + 6 +\
+    7 + 8 + 9
+----
 
-Multi-line statements juga terdapat dalam tanda kurung `()`, kurung siku `[]`,
-kurung kurawal `{}`. Sebagai contoh, kita dapat mengimplementasikan contoh di
-atas menjadi :
+Multi-line statements juga terdapat dalam tanda kurung kbd:[()], kurung siku
+kbd:[[\]] dan kurung kurawal kbd:[{}]. Misal:
 
-```python
+[source, python]
+----
 x = (1 + 2 + 3 +
     4 + 5 + 6 +
     7 + 8 + 9)
+
 colors = ['red',
         'blue',
         'green']
-```
+----
 
 Kita juga dapat menyingkat penulisan statements menjadi satu baris menggunakan
-tanda titik koma `;`.
+tanda titik koma kbd:[;].
 
-```python
+[source, python]
+----
 a = 1; b = 2; c = 3
-```
+----
 
-## Indentation
+== Indentation
 
 Sebagian besar Bahasa pemrograman seperti C, C++, dan Java menggunakan kurung
-kurawal `{}` untuk mendefinisikan sebuah blok kode sedangkan Python menggunakan
-indentasi. Indentation sendiri adalah penulisan yang menjorok masuk ke dalam
-dari sebuah kode.
+kurawal kbd:[{}] untuk mendefinisikan sebuah blok kode sedangkan Python
+menggunakan indentasi. Indentation sendiri adalah penulisan yang menjorok masuk
+ke dalam dari sebuah kode.
 
-Sebuah blok kode (body dari sebuah function, loop, etc) dalam Python dimulai
-dengan indentasi dan diakhiri dengan baris yang tidak diindentasi. Jumlah spasi
-dari indentasi itu bebas, tetapi jumlah spasinya harus konsisten. Biasanya, 4
-spasi digunakan sebagai indentasi dan lebih dipilih daripada tab. Sebagai
-contoh:
+Sebuah blok kode (__body__ dari sebuah __function__, __loop__, __etc__) dalam
+Python dimulai dengan indentasi dan diakhiri dengan baris yang tidak
+diindentasi. Jumlah spasi dari indentasi itu bebas, tetapi jumlah spasinya harus
+konsisten. Biasanya, 4 spasi digunakan sebagai indentasi dan lebih dipilih
+daripada tab. Sebagai contoh:
 
 - Penulisan Benar
 

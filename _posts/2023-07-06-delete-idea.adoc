@@ -12,4 +12,4 @@ Untuk menghapusnya, dapat melakukan:
 3. hapus ##.idea## dari git tree dengan menggunakan `git rm --cached -r .idea`
 4. commit, push.
 
-Selesai, masalah selesai.
+Masalah selesai.
