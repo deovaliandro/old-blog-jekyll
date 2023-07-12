@@ -1,4 +1,4 @@
-title: Home
+title: Deo
 description: "Blog by Deo"
 url: "https://deovaliandro.github.io"
 permalink: /:year/:month/:title:output_ext
@@ -25,12 +25,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     default_lang: html
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
-      start_line: 0
+    css_class: 'rouge'
 
 sass:
   style: compressed

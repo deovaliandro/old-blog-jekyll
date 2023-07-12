@@ -1,35 +1,18 @@
-// paramaeter
-$main-font: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Segoe UI Emoji", "Segoe UI Symbol", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
-$monospace: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+$main-font: -apple-system, system-ui;
+$monospace: Consolas, Menlo, Monaco, monospace;
 
 body {
   font: 400 1rem /32px $main-font;
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-  // flex-grow: 0;
-  padding: 1rem;
-  justify-content: center;
-}
-
-section {
+  margin: 0 auto;
   width: 80ch;
-  margin-left: 2rem;
 }
 
 nav {
-  width: 24ch;
-  ul {
-    border-right: 1px solid #edf2f7;
-    list-style: none;
+  text-align: center;
+}
 
-    li {
-      text-align: right;
-      margin-right: 2rem;
-    }
-  }
+h1 {
+  text-align: center;
 }
 
 .toc {
@@ -73,7 +56,8 @@ footer {
 #list-post > li {
   display: flex;
   list-style: none;
-  margin-left: -2rem;
+  margin-left: -2ch;
+  padding-top: 1ch;
   justify-content: space-between;
 }
 
@@ -91,6 +75,14 @@ footer {
 
 #time-right  {
   float: right;
+  padding-bottom: 1ch;
+}
+
+#signed-by {
+  font-family: $monospace;
+  font-size: small;
+  text-align: center;
+  border: none;
 }
 
 code {
@@ -98,11 +90,10 @@ code {
 }
 
 code:not(pre>code) {
-  padding: .2em;
-  line-height: 1.4em;
-  border: 1px solid #e5e5e5;
-  background-color: #f8f8f8;
-  border-radius: 5px;
+  border: 1px solid #f0d547;
+  background-color: #fff8d3;
+  border-radius: 0.3rem;
+  padding: 0.15rem 0.2rem 0.05rem;
   overflow-x: auto;
 }
 
@@ -112,7 +103,6 @@ mark {
   background-color: #fd3;
 }
 
-// table
 table {
   border-collapse: collapse;
   margin: 1.5rem 0;
@@ -143,7 +133,6 @@ td {
   padding: .5rem;
 }
 
-// kbd
 kbd {
   color: #444;
   border: 1px solid #444;
@@ -152,8 +141,7 @@ kbd {
   padding: 0.1rem 0.4rem;
 }
 
-// rouge
-pre.rouge {
+.rouge {
   padding: 1ch;
   line-height: 1.4em;
   border: 1px solid #e5e5e5;

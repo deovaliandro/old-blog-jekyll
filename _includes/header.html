@@ -12,13 +12,20 @@
     prepend: site.url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head>
-
+<!-- mathjax -->
+{% if page.math %}
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$']],
+      displayMath: [['$$', '$']]
+    }
+  };
+</script>{% endif %}
 <body>
-  <main>
-    <nav>
-      <ul>
-        <li><a href="/" id="home"><b>Deo Valiandro. M</b></a></li>
-        <li><a href="/about.html">about me</a></li>
-        <li><a href="/lab.html">labs</a></li>
-      </ul>
-    </nav>
+  <h1>{{ page.title | smartify }}</h1>
+  <nav>
+    <a href="/">home</a> | <a href="/about.html">about me</a> |
+    <a href="/lab.html">labs</a>
+  </nav>

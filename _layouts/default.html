@@ -1,12 +1,8 @@
 {%- include header.html -%}
-
+<main>
 <section>
-  {% if page.title %}
-  <h1>{{ page.title | smartify }}</h1>
-  {% endif %}
-
   {% if page.signed-by %}
-  <p class="signed-by">
+  <p id="signed-by">
     Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
     Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
   </p>
@@ -19,15 +15,4 @@
 
 </main>
 </body>
-<!-- mathjax -->
-{% if page.math == true %}
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$']],
-      displayMath: [['$$', '$']]
-    }
-  };
-</script>{% endif %}
 </html>
