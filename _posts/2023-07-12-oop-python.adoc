@@ -1,0 +1,13 @@
+:page-name	: OOP pada Python
+:page-template	: default
+:page-time	: 2023-07-12
+
+== Class dan Object
+
+== Constructor
+
+== Encapsulation
+
+== Inheritance
+
+== Polymorphisme
