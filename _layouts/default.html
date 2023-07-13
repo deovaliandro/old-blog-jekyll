@@ -1,17 +1,18 @@
 {%- include header.html -%}
-<main>
-<section>
+<article>
+    <h3>{{ page.title }}</h3>
   {% if page.signed-by %}
-  <p id="signed-by">
+  <span>
     Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
     Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
-  </p>
+  </span>
+  <hr>
   {% endif %}
 
   {{ content | smartify }}
-</section>
 
-{%- include footer.html -%}
+  {%- include footer.html -%}
+</article>
 
 </main>
 </body>
