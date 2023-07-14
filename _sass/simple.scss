@@ -1,86 +1,91 @@
 :root {
-    --width: 80ch;
-    --font: system-ui;
-    --monospace: monospace;
-    --color-border: #e4e4e7;
+  --width: 80ch;
+  --font: system-ui;
+  --monospace: monospace;
+  --color-border: #e4e4e7;
 }
 
 body {
-    font: 400 1rem /32px var(--font);
-    margin: 0 auto;
+  font: 400 1rem /32px var(--font);
+  margin: 0 auto;
 }
 
 a {
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid red;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid red;
 }
 
 @media only screen and (max-width: 960px) {
-   nav {
-       flex-grow: 1;
-       text-align: left;
-   }
+  nav {
+    flex-grow: 1;
+    text-align: left !important;
+  }
+
+  .time-right {
+    visibility: hidden;
+  }
 }
 
 main {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 nav {
-    order: 0;
-    margin: 0 2ch 0 2ch;
-    text-align: right;
+  order: 0;
+  margin: 0 2ch 0 0;
+  text-align: right;
 
-    ul {
-        li {
-            list-style: none;
-        }
+  ul {
+    li {
+      list-style: none;
     }
+  }
 }
 
 article {
-    order: 1;
-    width: 80ch;
-    margin: 0 2ch 0 2ch;
+  order: 1;
+  width: 80ch;
+  margin: 0 2ch 0 2ch;
 }
 
 hr {
-    border: .1px solid #d8dae1;
+  border: .1px solid #d8dae1;
 }
 
 blockquote {
-    margin: 1em auto;
+  margin: 1em auto;
 }
 
 .quoteblock {
-    margin: 1em auto;
-    padding: 1rem;
-    border-left: 1rem solid #444;
-    background-color: #f8f8f8;
-    box-shadow: 0 0 2px #3c4858;
+  margin: 1em auto;
+  padding: 1rem;
+  border-left: 1rem solid #444;
+  background-color: #f8f8f8;
+  box-shadow: 0 0 2px #3c4858;
 }
 
 footer {
-    text-align: center;
+  text-align: center;
 }
 
 #me {
-    width: 15ch;
-    float: right;
-    padding: 1ch;
-    border-radius: 50%;
+  width: 15ch;
+  float: right;
+  padding: 1ch;
+  border-radius: 50%;
 }
 
 .title {
-    border-bottom: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
 .time-right {
-    float: right;
+  float: right;
+  font-variant-numeric: tabular-nums;
 }
 
 code:not(pre>code) {
@@ -103,7 +108,7 @@ table {
   overflow: auto;
   width: 100%;
 
-  > tbody > tr > td > p {
+  >tbody>tr>td>p {
     padding: 0;
     margin: 0;
     text-align: center;

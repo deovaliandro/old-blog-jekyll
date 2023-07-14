@@ -1,6 +1,6 @@
 {%- include header.html -%}
 <article>
-    <h3>{{ page.title }}</h3>
+  <h1>{{ page.title }}</h1>
   {% if page.signed-by %}
   <span>
     Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
@@ -16,4 +16,5 @@
 
 </main>
 </body>
+
 </html>
