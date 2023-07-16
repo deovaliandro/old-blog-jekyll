@@ -72,10 +72,15 @@ blockquote {
 
 .quoteblock {
   margin: 1em auto;
-  padding: 1rem;
-  border-left: 1rem solid #444;
+  padding: .2rem 2ch;
+  border-left: 1rem solid rgba(34, 36, 38, .15);
   background-color: #f8f8f8;
   box-shadow: 0 0 2px #3c4858;
+
+  .attribution {
+      font-size: .8em;
+      font-style: italic;
+  }
 }
 
 footer {
@@ -89,10 +94,6 @@ footer {
   float: right;
   padding: 1ch;
   border-radius: 50%;
-}
-
-.title {
-  border-bottom: 1px solid grey;
 }
 
 .time-right {

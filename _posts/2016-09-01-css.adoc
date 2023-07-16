@@ -13,35 +13,30 @@ Rancangan CSS ini akan diperbaharui kedepannya.
 Saya pribadi pikir kita tidak perlu memuat terlalu banyak font, memberatkan
 website saja. Yang pasti tulisan bisa dibaca dengan jelas.
 
-[source, css]
-font-family: system-ui;
+Saya akhirnya menggunakan font https://rsms.me/inter/[Inter] untuk paragraf,
+https://fonts.google.com/specimen/DM+Serif+Display[DM Serif Display] untuk
+header dan https://fonts.google.com/specimen/DM+Mono[DM Mono] untuk monospace.
 
-== Key
+== Width
 
-[source, css]
-----
-kbd {
-    color: #444;
-    border: 1px solid #444;
-    border-bottom: 3px solid #444;
-    border-radius: 5px;
-    padding: 0.1rem 0.4rem;
-}
-----
+Saya selalu mengikuti https://en.wikipedia.org/wiki/Characters_per_line[CPL]
+yaitu 80 karakter per baris.
 
-Misalnya:
+== Lain-lain
+
+=== Key
 
 kbd:[Ctrl + s]
 
-== Marked
+=== Marked
 
 ##Hello my friend##
 
-== Inline Code
+=== Inline Code
 
 `run()`
 
-== Blockquote
+=== Blockquote
 
-> Ini adalah kami
-> -- Deo
+> "Bad programmers worry about the code. Good programmers worry about data structures and their relationships." 
+> -- Linus Torvalds
