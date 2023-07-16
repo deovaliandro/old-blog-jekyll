@@ -1,13 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 :root {
   --width: 80ch;
-  --font: system-ui;
-  --monospace: monospace;
+  --font: 'Inter' ,'DM Sans', sans-serif;
+  --font-h: 'DM Serif Display', sans-serif;
+  --monospace: 'DM Mono', monospace;
   --color-border: #e4e4e7;
 }
 
 body {
   font: 400 1rem /32px var(--font);
   margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-h);
+    border-bottom: 1px solid var(--color-border);
 }
 
 a {
@@ -70,6 +80,8 @@ blockquote {
 
 footer {
   text-align: center;
+  margin-top: 2ch;
+  margin-bottom: 4ch
 }
 
 #me {
@@ -88,18 +100,21 @@ footer {
   font-variant-numeric: tabular-nums;
 }
 
+code, pre {
+    font-family: var(--monospace);
+}
+
 code:not(pre>code) {
-  border: 1px solid #f0d547;
-  background-color: #fff8d3;
-  border-radius: 0.3rem;
-  padding: 0.15rem 0.2rem 0.05rem;
-  overflow-x: auto;
+  padding: .3ch .6ch;
+  border-radius: 1ch;
+  border: 1px solid var(--color-border);
 }
 
 mark {
   padding: 2px 5px;
-  border-radius: 4px;
-  background-color: #fd3;
+  border-radius: 1ch;
+  border: 1px solid #f0d547;
+  background-color: #fff8d3;
 }
 
 table {
@@ -135,7 +150,7 @@ td {
 kbd {
   color: #444;
   border: 1px solid #444;
-  border-bottom: 3px solid #444;
+  border-bottom: .5ch solid #444;
   border-radius: 5px;
   padding: 0.1rem 0.4rem;
 }

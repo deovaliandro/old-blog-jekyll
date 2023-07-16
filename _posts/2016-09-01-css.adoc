@@ -5,13 +5,16 @@
 
 
 Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
-maka sebagai bahan pelajaran, kami mencoba membuat css sederhana. Rancangan CSS
-ini akan diperbaharui kedepannya.
+maka sebagai bahan pelajaran, kami mencoba membuat css sangat sederhana.
+Rancangan CSS ini akan diperbaharui kedepannya.
 
 == Font
 
+Saya pribadi pikir kita tidak perlu memuat terlalu banyak font, memberatkan
+website saja. Yang pasti tulisan bisa dibaca dengan jelas.
+
 [source, css]
-font-family: "Inter", sans-serif;
+font-family: system-ui;
 
 == Key
 
