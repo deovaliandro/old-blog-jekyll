@@ -1,12 +1,12 @@
 source "https://rubygems.org"
 
-gem "jekyll"
+gem 'jekyll'
 
 group :jekyll_plugins do
-  gem "jekyll-feed"
+  gem 'jekyll-feed'
   gem 'jekyll-asciidoc'
   gem 'jekyll-redirect-from'
   gem 'jekyll-email-protect'
 end
 
-gem "webrick"
+gem 'webrick'
