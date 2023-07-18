@@ -33,7 +33,8 @@ berbeda), jika hasil hitung langkah kedua algoritma Lehmann sama dengan 1 atau
 -1, tetapi tidak selalu sama dengan 1, maka peluang $p$ adalah prima mempunyai
 kesalahan tidak lebih dari $1/2^{t}$.
 
-Jumlah pengujian yang disarankan adalah lima kalifootnote:[Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.].
+Jumlah pengujian yang disarankan adalah lima
+kalifootnote:[Munir. R. "Kriptografi Edisi Kedua". Informatika: Bandung. 2019.].
 
 
 == Algoritma Rabin-Miller

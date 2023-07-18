@@ -29,8 +29,8 @@ atau tumor jinak.
 === Unsupervised Learning
 
 Diberikan data yang tidak diketahui, kemudian dilakukan pengelompokan data.
-Hasilnya adalah struktur data. Kita dapat melakukannya dengan melakukan klustering
-atau clustering data berdasarkan variabelnya.
+Hasilnya adalah struktur data. Kita dapat melakukannya dengan melakukan
+klustering atau clustering data berdasarkan variabelnya.
 
 Contoh:
 

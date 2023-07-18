@@ -5,7 +5,7 @@
 
 
 Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file &#128272;,
-salah satu caranya adalah dengan menggunakan GPG.
+salah satu caranya adalah dengan menggunakan https://gnupg.org/[GPG].
 
 == Kompresi dan Enkripsi
 

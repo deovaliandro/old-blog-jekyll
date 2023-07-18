@@ -10,4 +10,4 @@ Pelan-pelan akan dipindahkan semua.
 
 ## Edit
 
-Batal :D .
+Batal pindah ke GitLab, tetapi malah ke https://codeberg.org/[codeberg].
