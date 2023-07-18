@@ -22,6 +22,12 @@ header dan https://fonts.google.com/specimen/DM+Mono[DM Mono] untuk monospace.
 Saya selalu mengikuti https://en.wikipedia.org/wiki/Characters_per_line[CPL]
 yaitu 80 karakter per baris.
 
+== Highlight
+
+Untuk urusan highlight code, saya serahkan ke
+https://github.com/rouge-ruby/rouge[rouge]. Saya menggunakan gruvbox.light
+dengan beberapa customisasi.
+
 == Lain-lain
 
 === Key
@@ -38,5 +44,6 @@ kbd:[Ctrl + s]
 
 === Blockquote
 
-> "Bad programmers worry about the code. Good programmers worry about data structures and their relationships." 
+> "Bad programmers worry about the code. Good programmers worry about data
+> structures and their relationships." 
 > -- Linus Torvalds
