@@ -25,8 +25,33 @@ yaitu 80 karakter per baris.
 == Highlight
 
 Untuk urusan highlight code, saya serahkan ke
-https://github.com/rouge-ruby/rouge[rouge]. Saya menggunakan gruvbox.light
+https://github.com/rouge-ruby/rouge[rouge]. Saya menggunakan ##gruvbox.light##
 dengan beberapa customisasi.
+
+Contohnya saja:
+
+[source, go]
+----
+package main
+
+import "fmt"
+
+type PrintString func(string2 string) string
+
+func sayBellow(name string, printString PrintString) string {
+    bellow := printString(name)
+    firstString := ":D " + bellow
+    return firstString
+}
+
+func printString(wow string) string {
+    return wow
+}
+
+func main() {
+    fmt.Println(sayBellow("satu", printString))
+}
+----
 
 == Lain-lain
 

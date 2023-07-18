@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,400&family=Inter:wght@400;700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap');
 
 :root {
     --width: 80ch;
-    --font: 'Inter' ,'DM Sans', sans-serif;
-    --font-h: 'DM Serif Display', sans-serif;
+    --font: 'Inter', sans-serif;
+    --font-h: 'EB Garamond', sans-serif;
     --monospace: 'DM Mono', monospace;
     --color-border: #e4e4e7;
 }
@@ -172,7 +172,6 @@ kbd {
 .highlight .err {
   color: #9d0006;
   background-color: #fbf1c7;
-  font-weight: bold;
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
   color: #928374;
@@ -200,7 +199,6 @@ kbd {
 }
 .highlight .gh {
   color: #79740e;
-  font-weight: bold;
 }
 .highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
   color: #9d0006;
@@ -216,7 +214,6 @@ kbd {
 }
 .highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
   color: #79740e;
-  font-style: italic;
 }
 .highlight .si {
   color: #79740e;
