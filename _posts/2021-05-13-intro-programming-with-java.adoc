@@ -66,13 +66,13 @@ kbd:[#],
 Menurut Convention over configuration Java
 footnote:[https://www.oracle.com/technetwork/java/codeconventions-150003.pdf],
 penulisan nama variable menggunakan lowerCamel case misalnya `namaVariabel`,
-dan penulisan nama class menggunakan UpperCamel case misalnya `Main`.
+dan penulisan nama class menggunakan uppercamel case misalnya `main`.
 
 === Menjalankan program
 
 Java adalah bahasa yang dicompile terlebih dahulu sebelum dirun.
 
-Untuk meng-compile java:
+Untuk mengcompile java:
 
 [source, bash]
 javac NamaFile.java
@@ -87,17 +87,19 @@ perhatikan, untuk menjalankan, tidak perlu menggunakan `NamaFile.class`, cukup
 dengan menggunakan `NamaFile` saja.
 
 Dengan update dari Java 11, maka sebuah program Java dapat dijalankan tanpa
-perlu mengcompilenya terlebih
-dahulufootnote:[https://openjdk.java.net/jeps/330].
+perlu mengcompilenya terlebih dahulu
+footnote:[https://openjdk.java.net/jeps/330].
 
 Misalnya:
 
 [source, java]
+----
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
 }
+----
 
 dapat langsung dijalankan dengan:
 
@@ -110,7 +112,7 @@ java NamaFile.java
 IO atau input output adalah mekanisme memasukkan suatu data kedalam program dan
 bagaimana mengeluarkan hasil dari program tersebut.
 
-Meskipun pengertian i/o secara lebih luas lebih dari hal tersebut, namun disini
+Meskipun pengertian I/O secara lebih luas lebih dari hal tersebut, namun disini
 kita akan menggunakan terbatas pada input dan output di terminal.
 
 === Input
@@ -152,10 +154,10 @@ Output di Java dapat menggunakan 2 cara (yang umum digunakan).
 
 ==== System.out.print()
 
-Fungsi print() meskipun kita menuliskan kodenya dua baris namun hasil atau
+Fungsi `print()` meskipun kita menuliskan kodenya dua baris namun hasil atau
 outputnya tidak menjadi dua baris, solusinya kita bisa menggunakan fungsi yang
-kedua yaitu println() dimana dengan fungsi tersebut dapat menambahkan baris baru
-pada outputnya.
+kedua yaitu `println()` dimana dengan fungsi tersebut dapat menambahkan baris
+baru pada outputnya.
 
 [source, java]
 ----
@@ -186,7 +188,6 @@ class Main{
 
 Operator aritmatika yang dapat dilakukan adalah:
 
-[.center]
 |===
 | Hasil | Operator
 
@@ -213,35 +214,9 @@ Contoh:
 [source, java]
 ----
 public class OperatorAritmatika {
- 
     public static void main(String[] args) {
-        System.out.println("Operasi Penjumlahan");
-        int hasilPenjumlahan = 5 + 1;
-        System.out.println("Hasil 5 + 1 = " + hasilPenjumlahan);
-        System.out.println();
-
-        System.out.println("Operasi Pengurangan");
-        int hasilPengurangan = 4 - 1;
-        System.out.println("Hasil 4 - 1 = " + hasilPengurangan);
-        System.out.println();
-
-        System.out.println("Operasi Pengalian");
-        int hasilPengalian = 5 * 5;
-        System.out.println("Hasil 5 * 5 = " + hasilPengalian);
-        System.out.println();
-
-        System.out.println("Operasi Pembagian");
-        int hasilPembagian = 20 / 2;
-        System.out.println("Hasil 20 / 2 = " + hasilPembagian);
-        System.out.println();
-
-        System.out.println("Operasi Habis bagi");
-        int hasilSisa = 8 % 2;
-        System.out.println("Hasil 8 % 2 = " + hasilSisa);
-        System.out.println();
-
-        int hasilSisaLain = 9 % 2;
-        System.out.println("Hasil 9 % 2 = " + hasilSisaLain);
+        System.out.println("Hasil 5 + 1 = " + (5 + 1));
+        System.out.println("Hasil 8 % 2 = " + (8 % 2));
     }
 }
 ----
