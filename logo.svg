@@ -7,7 +7,8 @@
    viewBox="0 0 16 16"
    version="1.1"
    id="SVGRoot"
-   sodipodi:docname="/tmp/ink_ext_XXXXXX.svgXVH271"
+   sodipodi:docname="logo.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202305151914+b0a8486541)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,14 +24,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="px"
      showgrid="true"
-     inkscape:zoom="0.25"
-     inkscape:cx="30.0"
-     inkscape:cy="30.0"
-     inkscape:window-width="1360"
-     inkscape:window-height="148"
+     inkscape:zoom="25.924602"
+     inkscape:cx="7.6568195"
+     inkscape:cy="7.6375328"
+     inkscape:window-width="1440"
+     inkscape:window-height="831"
      inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer1">
     <inkscape:grid
        type="xygrid"
@@ -51,16 +52,28 @@
        y="0"
        sodipodi:insensitive="true" />
     <circle
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.113386;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.0562941;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
        id="path11176"
-       cx="8"
+       cx="9.9268398"
        cy="8"
-       r="8" />
+       r="3.971853" />
     <circle
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0844411;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-       id="path11176-6"
-       cx="8"
-       cy="8"
-       r="5.9577794" />
+       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.0562941;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+       id="path11176-0"
+       cx="11.224859"
+       cy="11.290373"
+       r="3.971853" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:5.33333px;font-family:Inter;-inkscape-font-specification:'Inter Bold';writing-mode:tb-rl;fill:#000000;stroke:#000000;stroke-width:0.113386;stroke-linecap:round"
+       x="-3.4374995"
+       y="-12.807989"
+       id="text439"
+       transform="scale(-1)"><tspan
+         sodipodi:role="line"
+         id="tspan437"
+         x="-3.4374995"
+         y="-12.807989"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'DM Mono';-inkscape-font-specification:'DM Mono Bold'">deo</tspan></text>
   </g>
 </svg>
