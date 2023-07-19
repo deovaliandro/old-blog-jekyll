@@ -13,11 +13,10 @@ dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
 object-oriented language karena masih mendukung primitive data types seperti
 int, char, dll. 
 
-Sintaks Java mirip dengan C/C++, tetapi Java tidak mensupport low-level
-programming seperti pointer (sebenarnya Java punya pointer. Semua turunan object
+Sintaks Java mirip dengan `C/C++`, tetapi Java tidak support dengan low-level
+programming seperti pointer (sebenarnya Java punya pointer, semua turunan object
 adalah pointer. Akan tetapi, anda bisa jadi programmer Java profesional tanpa
-perlu tahu fakta 
-inifootnote:[Dari blog https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/]).
+perlu tahu fakta ini footnote:[https://jekjektuanakal.my.id/post/peta-jalan-pejuang-cpp-2/]).
 Kode Java selalu ditulis didalam sebuah class dan objek.
 
 === Struktur program
@@ -25,11 +24,13 @@ Kode Java selalu ditulis didalam sebuah class dan objek.
 Struktur dasar sebuah bahasa pemrograman Java adalah sebagai berikut:
 
 [source, java]
+----
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
 }
+----
 
 `class Main` Adalah class utama, nama `Main` harus sesuai dengan nama file.
 Aturan penulisannya adalah dengan menggunakan huruf kapital di huruf pertama.
@@ -38,20 +39,34 @@ Misalnya: `Main`, `Utama`, dsb-nya.
 `public static void main(String args[])` adalah kode utama yang akan dijalankan
 ketika kita menjalankan sebuah program Java.
 
+Dengan keluarnya jdk22 footnote:[https://openjdk.org/jeps/445] maka ada
+perubahan besar, yaitu:
+
+[source, java]
+----
+class HelloWorld {
+    void main() {
+        System.out.println("Meoworld");
+    }
+}
+----
+
 === Aturan Penamaan
 
 Dalam penulisan nama variabel perlu diperhatikan terdapat beberapa aturan khusus
 dalam Java yang harus dipatuhi seperti:
 
-1. tidak boleh diawali dengan angka,
-2. tidak boleh disertai symbol khusus seperti `@`,`!`,`*`,`#`,
-3. tidak boleh menggunakan reserved word sebagai nama variable,
-4. boleh diawali dengan underscore atau symbol `$`, dan
-5. nama variable tidak boleh mengandung spasi.
+. tidak boleh diawali dengan angka,
+. tidak boleh disertai symbol khusus seperti kbd:[@], kbd:[!], kbd:[*], 
+kbd:[#],
+. tidak boleh menggunakan reserved word sebagai nama variable,
+. boleh diawali dengan underscore atau symbol kbd:[$], dan
+. nama variable tidak boleh mengandung spasi.
 
-Menurut _Convention over configuration Java_, penulisan nama variable 
-menggunakan lowerCamel case (misalnya `namaVariabel`), dan penulisan nama class 
-menggunakan UpperCamel case (misalnya `Main``).
+Menurut Convention over configuration Java
+footnote:[https://www.oracle.com/technetwork/java/codeconventions-150003.pdf],
+penulisan nama variable menggunakan lowerCamel case misalnya `namaVariabel`,
+dan penulisan nama class menggunakan UpperCamel case misalnya `Main`.
 
 === Menjalankan program
 

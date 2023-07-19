@@ -69,10 +69,9 @@ blockquote {
 }
 
 .quoteblock {
-    margin: 1em auto;
-    padding: .2rem 2ch;
-    border-left: 1rem solid rgba(34, 36, 38, .15);
-    background-color: #f8f8f8;
+    padding: 0 15px;
+    border-left: 4px solid #e5e5e5;
+    color: #858585;
     box-shadow: 0 0 2px #3c4858;
 
     .attribution {
