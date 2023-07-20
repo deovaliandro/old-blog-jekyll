@@ -374,7 +374,7 @@ footnote:[98 adalah nilai desimal dari X dalam sistem ASCII dan Unicode].
 
 ==== Boolean
 
-. Boolean, tipe data yang bisa menampung dua nilai, yaitu `benar` atau `salah`.
+. Boolean, tipe data yang bisa menampung dua nilai, yaitu `true` atau `false`.
 Tipe data ini akan banyak digunakan kemudian. Nilai default-nya `false`.
 +
 [source, java]
@@ -434,8 +434,10 @@ c = 'A';
 Deklarasi sekaligus inisiasi juga dapat dilakukan, misalnya dengan:
 
 [source, java]
+----
 float f = 21.0f;
 boolean b = false;
+----
 
 ==== Inisiasi dinamis
 
@@ -1144,7 +1146,7 @@ String str = "Hay";
 String adalah tipe data immutable; ketika objek `String` dibuat, maka kontennya
 tidak bisa diubah lagi.
 
-Untuk menggabungkan beberapa string, Java menggunakan `+`, misalnya:
+Untuk menggabungkan beberapa string, Java menggunakan kbd:[+], misalnya:
 
 [source, java]
 ----
