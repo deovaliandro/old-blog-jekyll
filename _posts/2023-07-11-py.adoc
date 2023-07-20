@@ -1,9 +1,8 @@
----
-title: Pengantar Python
-layout: default
-signed-by: Deo &lt;valiandrod@gmail.com&gt;
-time: 2023-07-11
----
+:page-title: Pengantar Python
+:page-layout: default
+:page-signed-by: Deo Valiandro. M <valiandrod@gmail.com>
+:page-time: 2023-07-11
+
 
 Python adalah bahasa pemrograman *high-level* yang mudah dipelajari tetapi
 merupakan bahasa yang poweful. Dalam tulisan ini, kami akan menggunakan

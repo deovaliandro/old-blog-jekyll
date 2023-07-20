@@ -3,6 +3,7 @@
 :page-layout    : default
 :page-time      : 2021-15-13
 :toc-title      : 
+:page-math      : true
 
 :toc:
 
@@ -304,26 +305,26 @@ Terdapat 8 (delapan) tipe data primitif yang Java dukung, antara lain:
 
 ==== Integer
 
-. byte, tipe data yang menampung angka 8 bit dengan range -127 - 128
-(stem:[2^8]). Tipe data byte memiliki nilai default `0`.
+. byte, tipe data yang menampung angka 8 bit dengan range -127 - 128 ($2^4$).
+Tipe data byte memiliki nilai default `0`.
 +
 [source, java]
 byte n = 12;
 
 . short, tipe data yang menampung angka 16 bit dengan range -32.768 - 32.767
-(stem:[2^{16}]). Tipe data byte memiliki nilai default `0`.
+($2^{16}$). Tipe data byte memiliki nilai default `0`.
 +
 [source, java]
 short n = 1200;
 
 . int, tipe data yang menampung angka 32 bit dengan range -2,147,483,648 -
-2,147,483,647 (stem:[2^{32}]). Tipe data byte memiliki nilai default `0`.
+2,147,483,647 ($2^{32}$). Tipe data byte memiliki nilai default `0`.
 +
 [source, java]
 int n = 289000;
 
 . long, tipe data yang lebih panjang dari int, yaitu -9,223,372,036,854,775,808
-sampai 9,223,372,036,854,775,807 (stem:[2^{64}]). Tipe data long memiliki nilai
+sampai 9,223,372,036,854,775,807 ($2^{64}$). Tipe data long memiliki nilai
 default `0L`.
 +
 [source, java]
@@ -332,7 +333,7 @@ long n = 122334445;
 ==== Floating-point numbers
 
 . float tipe data untuk bilangan desimal seperti 3.14, 2.1 atau bilangan desimal
-lainnya. Tipe data ini bisa nemapung nilai stem:[2^{32}]. Nilai default-nya
+lainnya. Tipe data ini bisa nemapung nilai $2^{32}$. Nilai default-nya
 `0.0f`.
 +
 [source, java]
@@ -342,7 +343,7 @@ penulisannya ditambahkan huruf `f` di belakang angkanya, ini untuk menandai
 bahwa bilangan tersebut adalah `float` bukan `double`.
 
 . double, tipe data yang mirip dengan float kecuali data yang bisa ditampungnya
-lebih besar yaitu stem:[2^{64}]. Nilai default-nya `0.0d`.
+lebih besar yaitu $2^{64}$. Nilai default-nya `0.0d`.
 +
 [source, java]
 double n = 144.2;
@@ -350,7 +351,7 @@ double n = 144.2;
 ==== Characters
 
 . char, tipe data yang hanya bisa menampung satu karakter]. Nilai yang bisa
-ditampung adalah 0 to 65,535. Char digunakan untuk menampung karakter Unicode
+ditampung adalah 0 to 65.535. Char digunakan untuk menampung karakter Unicode
 footnote:[http://www.unicode.org].
 +
 [source, java]
@@ -395,7 +396,7 @@ dari satu karakter, misalnya kata, kalimat atau paragraf.
 String name = "Deo";
 
 perhatikan, penulisan `String` menggunakan kapital di awal kata, kemudian isinya
-disimpan di dalam tanda kutip dua ("...").
+disimpan di dalam tanda kutip dua (kbd:[" + "]).
 
 === Deklarasi variabel
 
@@ -411,18 +412,24 @@ Deklarasi adalah pembuatan sebuah variabel, namun belum di isi dengan suatu
 nilai. Contoh:
 
 [source, java]
+----
 int n;
 boolean b;
 char c;
+----
 
 ==== Inisiasi
 
-Inisiasi adalah pengisian sebuah variabel dengan data. Contoh:
+Inisiasi adalah pengisian sebuah variabel dengan data. Cara ini disarankan untuk
+dilakukan dibandingkan dengan hanya mendeklarasikan saja tipe variabel kosong.
+Misalnya:
 
 [source, java]
+----
 n = 12;
 b = false;
 c = 'A';
+----
 
 Deklarasi sekaligus inisiasi juga dapat dilakukan, misalnya dengan:
 
@@ -451,16 +458,18 @@ Syaratnya adalah:
 -   kedua tipe data kompatible, misalnya antara byte dengan int, int dengan
     float, tetapi char dan boolean tidak memiliki kompatible.
 -   tipe data yang dituju memiliki ruang penyimpanan yang lebih besar, misalnya
-    byte memiliki ruang penyimpanan stem:[2^8], akan diubah ke int yang memiliki
-    penyimpanan stem:[2^{32}]. Tetapi jika dari tipe data int ke byte, maka jika
-    nilai yang akan diubah lebih besar dari stem:[2^8], maka akan menyebabkan
+    byte memiliki ruang penyimpanan $2^8$, akan diubah ke int yang memiliki
+    penyimpanan $2^{32}$. Tetapi jika dari tipe data int ke byte, maka jika
+    nilai yang akan diubah lebih besar dari $2^8$, maka akan menyebabkan
     nilai akhir adalah hasil modulo dari ukuran byte.
 
 Cara mengubah tipe data dapat dicontohkan sebagai berikut:
 
 [source, java]
+----
 int n = 12;
 byte b = (int) n;
+----
 
 Bagaimana jika int ke float, silahkan coba sendiri.
 
@@ -470,19 +479,21 @@ Misalnya terdapat a, b, c yang merupakan byte, kemudian dilakukan operasi
 sebagai berikut:
 
 [source, java]
+----
 byte a = 40;
 byte b = 50;
 byte c = 100;
 int d = a * b / c;
+----
 
 maka nilai a, b dan c akan otomatis diubah menjadi int.
 
 Aturan promosi ini adalah:
 
-1. byte, short, char akan di ubah ke int,
-2. jika operasinya adalah long, maka akan diubah ke long,
-3. float akan di ubah ke double,
-4. jika operasi melibatkan double, maka otomatis akan diubah semua ke double.
+. byte, short, char akan di ubah ke int,
+. jika operasinya adalah long, maka akan diubah ke long,
+. float akan di ubah ke double,
+. jika operasi melibatkan double, maka otomatis akan diubah semua ke double.
 
 
 
@@ -730,17 +741,21 @@ membuat perulangan for.
 Bentuk umum:
 
 [source, java]
+----
 for (type var: array) { 
     statements using var;
 }
+----
 
 Sama nilainya dengan
 
 [source, java]
+----
 for (int i=0; i<arr.length; i++) {
     type var = arr[i];
     statements using var;
 }
+----
 
 Ini biasa digunakan pada array atau koleksi (seperti ArrayList).
 
