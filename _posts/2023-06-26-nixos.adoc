@@ -1,7 +1,6 @@
 :page-title     : NixOS
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
-:page-category  : nixos
 :page-time      : 2023-06-26
 
 

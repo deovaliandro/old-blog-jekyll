@@ -1,11 +1,11 @@
-:page-layout: default
-:page-title: Hapus .idea dari git
-:page-signed-by: Deo Valiandro. M <valiandrod@gmail.com>
-:page-time: 2023-06-07
+:page-title     : Hapus .idea dari git
+:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+:page-layout    : default
+:page-time      : 2023-06-07
 
 
-Folder ##.idea## sangat mengganggu jika masuk kedalam github.
-Untuk menghapusnya, dapat melakukan:
+Folder ##.idea## sangat mengganggu jika masuk kedalam github. Untuk
+menghapusnya, dapat melakukan:
 
 . tambahkan ##.idea## di ##.gitignore##,
 . check file dari main dengan `git checkout main -- .gitignore`
