@@ -120,7 +120,7 @@ table {
     overflow: auto;
     width: 100%;
 
-    > tbody > tr > td > p {
+    >tbody>tr>td>p {
         padding: 0;
         margin: 0;
         text-align: center;
@@ -172,7 +172,6 @@ kbd {
 }
 .highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
     color: #928374;
-    font-style: italic;
 }
 .highlight .cp {
     color: #427b58;
@@ -214,11 +213,9 @@ kbd {
 }
 .highlight .si {
     color: #79740e;
-    font-style: italic;
 }
 .highlight .sr {
     color: #79740e;
-    font-style: italic;
 }
 .highlight .sa {
     color: #9d0006;
