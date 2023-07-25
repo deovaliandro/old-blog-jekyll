@@ -4,10 +4,20 @@
 
 == Class dan Object
 
+Class adalah, object adalah
+
 == Constructor
+
+Constructor adalah
 
 == Encapsulation
 
+Encapsulation adalah
+
 == Inheritance
 
+Inheritance adalah
+
 == Polymorphisme
+
+Polymorphisme adalah

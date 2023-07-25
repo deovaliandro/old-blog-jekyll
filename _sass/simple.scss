@@ -3,14 +3,14 @@
 
 :root {
     --width: 80ch;
-    --font: 'Inter', sans-serif;
+    --font: 'Iosevka Aile Web', 'Inter', sans-serif;
     --font-h: 'Open Sans', system-ui;
     --monospace: 'DM Mono', monospace;
     --color-border: #e4e4e7;
 }
 
 body {
-    font: 400 1rem /32px var(--font);
+    font: 400 1.2em /32px var(--font);
     margin: 0 auto;
 }
 
