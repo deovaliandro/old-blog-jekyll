@@ -2,17 +2,10 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-time      : 2021-15-13
-:toc-title      : 
 :page-math      : true
-
-:toc:
+:page-desc      : Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure object-oriented language karena masih mendukung primitive data types seperti int, char, dll.
 
 == Struktur Dasar
-
-Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
-dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
-object-oriented language karena masih mendukung primitive data types seperti
-int, char, dll. 
 
 Sintaks Java mirip dengan `C/C++`, tetapi Java tidak support dengan low-level
 programming seperti pointer (sebenarnya Java punya pointer, semua turunan object

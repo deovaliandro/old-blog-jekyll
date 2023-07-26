@@ -1,28 +1,57 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;1,400&family=Inter:wght@400;700&family=EB+Garamond:ital,wght@0,500;1,500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import 'font';
 
 :root {
     --width: 80ch;
-    --font: 'Iosevka Aile Web', 'Inter', sans-serif;
+    --font: 'Source Serif Pro', 'EB Garamond', 'Iosevka Aile Web', 'Inter', sans-serif;
     --font-h: 'Open Sans', system-ui;
     --monospace: 'DM Mono', monospace;
     --color-border: #e4e4e7;
 }
 
 body {
-    font: 400 1.2em /32px var(--font);
+    font: 400 1.2rem /32px var(--font);
     margin: 0 auto;
+    text-align: justify;
+    hyphens: auto;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.desc::first-letter {
+    font-size: 5em;
+    font-family: 'DeutscheZierschrift';
+    float: left;
+    padding-right: .2ch;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-h);
-    border-bottom: 1px solid var(--color-border);
+    font-family: 'Source Serif Pro';
+    border-bottom: 1px solid #888;
+    font-variant-caps: small-caps;
+    font-weight: 600;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+    letter-spacing: -.75px;
+    border-bottom: none;
+}
+
+h2 {
+    font-size: 2em;
+    text-align: right;
+    letter-spacing: -.75px;
+    line-height: 1;
+}
+
+h3, h4 {
+    border-bottom: 1px dotted #888;
 }
 
 a {
     text-decoration: none;
     color: black;
-    border-bottom: 1px solid red;
+    border-bottom: 1px dotted #888;
 }
 
 @media only screen and (max-width: 960px) {
@@ -92,6 +121,15 @@ footer {
     width: 119px;
 }
 
+#list-post {
+    line-height: 2.2rem;
+}
+
+.signed-by {
+    font-style: italic;
+    text-align: center;
+}
+
 .time-right {
     float: right;
     font-variant-numeric: tabular-nums;
@@ -99,6 +137,7 @@ footer {
 
 code, pre {
     font-family: var(--monospace);
+    font-size: 1rem;
 }
 
 code:not(pre>code) {
@@ -147,7 +186,7 @@ td {
 kbd {
     color: #444;
     border: 1px solid #444;
-    border-bottom: .5ch solid #444;
+    border-bottom: .3ch solid #444;
     border-radius: 5px;
     padding: 0.1rem 0.4rem;
 }

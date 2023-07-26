@@ -2,9 +2,10 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-time      : 2022-02-22T15:00:10
+:page-desc      : Didalam pemrograman berbasis objek terdapat prinsip bernama SOLID, yang bertujuan untuk membantu kalian dalam membuat program yang mudah pahami dan dikelola.
 
-
-Ini adalah rangkuman tentang SOLID yang saya pelajari di Dicoding.
+Ini adalah rangkuman tentang SOLID yang saya pelajari di
+https://www.dicoding.com/academies/169[Dicoding].
 
 . Single Responsibility Principle (SRP),
 Sebuah class hanya melalukan satu tugas tertentu. Jika terdapat satu class yang
