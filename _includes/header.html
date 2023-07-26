@@ -8,10 +8,9 @@
   <meta name="description"
     content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
   <link href="/logo.svg" rel="shortcut icon" type="image/svg+xml" />
-  <link rel="self" type="application/atom+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl |
-    prepend: site.url }}">
+  <link rel="self" type="application/atom+xml" title="{{ site.title }}"
+    href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <link rel="stylesheet" href="https://wiki.systemcrafters.net/fonts/iosevka-aile/iosevka-aile.css"/>
 
   <!-- mathjax -->
   {% if page.math %}
@@ -31,8 +30,8 @@
   <h1>{{ page.title }}</h1>
   {% if page.signed-by %}
   <p class="signed-by">
-      Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
-      Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
+    Ditulis oleh {{ page.signed-by }} pada {{ page.date | date: "%-d %B %Y" }}{% if page.update %}.
+    Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
   </p>
   {% endif %}
   <main>

@@ -2,9 +2,9 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-layout    : default
 :page-time      : 2021-11-11T12:10:12
+:page-desc      : GNU Privacy Guard (GPG) adalah implementasi dari OpenPGP yang mengacu pada standar RFC4880. GNU Privacy Guard (GPG) memungkinkan anda bisa melakukan Data Encryption dan Digital Signing pada data dan komunikasi anda.
 
-
-Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file &#128272;,
+Demi menjaga keamanan data, saya berencana mengenkripsi beberapa file 🔑,
 salah satu caranya adalah dengan menggunakan https://gnupg.org/[GPG].
 
 == Kompresi dan Enkripsi

@@ -1,0 +1,39 @@
+.pdf::after {
+  content: url("/assets/img/icons.svg#pdf");
+  display: inline-block;
+  opacity: 0.6;
+  position: relative;
+  width: .6em;
+  top: -.2em;
+  margin-left: .1em;
+}
+
+.python::after {
+  content: url("/assets/img/icons.svg#python");
+  display: inline-block;
+  opacity: 0.6;
+  position: relative;
+  width: .8em;
+  top: -.2em;
+  margin-left: .1em;
+}
+
+.wikipedia::after {
+  content: url("/assets/img/icons.svg#wikipedia");
+  display: inline-block;
+  opacity: 0.6;
+  position: relative;
+  width: .8em;
+  top: -.2em;
+  margin-left: .1em;
+}
+
+.github::after {
+  content: url("/assets/img/icons.svg#github");
+  display: inline-block;
+  opacity: 0.6;
+  position: relative;
+  width: .8em;
+  top: -.2em;
+  margin-left: .1em;
+}
