@@ -37,3 +37,23 @@
   top: -.2em;
   margin-left: .1em;
 }
+
+.java::after {
+  content: url("/assets/img/icons.svg#java");
+  display: inline-block;
+  opacity: 0.6;
+  position: relative;
+  width: .8em;
+  top: -.2em;
+  margin-left: .1em;
+}
+
+.pencil::after {
+  content: url("/assets/img/icons.svg#pencil");
+  display: inline-block;
+  opacity: 0.6;
+  position: relative;
+  width: .8em;
+  top: -.2em;
+  // margin-left: .1em;
+}

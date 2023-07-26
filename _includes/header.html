@@ -34,6 +34,22 @@
     Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
   </p>
   {% endif %}
+
+  {% if page.desc %}
+  <p class="desc">
+      {{ page.desc }}
+  </p>
+  {% endif %}
+
+  <div class="edit">
+    <h3>Edit</h3>
+    <p class="pencil">
+      <a href="https://github.com/deovaliandro/deovaliandro.github.io/{{ page.path }}">
+        https://github.com/deovaliandro/deovaliandro.github.io/{{ page.path }}
+      </a>
+    </p>
+  </div>
+
   <main>
     <nav>
       <ul>

@@ -1,9 +1,21 @@
-:page-title     : Pengantar Pemrograman dengan Java
-:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout    : default
-:page-time      : 2021-15-13
-:page-math      : true
-:page-desc      : Java adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure object-oriented language karena masih mendukung primitive data types seperti int, char, dll.
+---
+title     : Pengantar Pemrograman dengan Java
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+layout    : default
+time      : 2021-15-13
+math      : true
+desc      : >
+    Pengantar pemrograman adalah mata kuliah pertama yang biasanya ditemukan
+    di perkuliahan Ilmu Komputer. Java banyak digunakan sebagai bahasa
+    pemrograman untuk mata kuliah ini. Tulisan ini merupakan rangkuman dari mata
+    kuliah Pengantar Pemrograman yang pernah saya pelajari.
+---
+
+[.wikipedia]#https://en.wikipedia.org/wiki/Java_(programming_language)[Java]#
+adalah bahasa pemrograman level tinggi, robust (mempunyai Garbage Collector
+dan Exception Handling), object-oriented dan secure/stable tetapi tidak pure
+object-oriented language karena masih mendukung primitive data types seperti
+int, char, dll.
 
 == Struktur Dasar
 

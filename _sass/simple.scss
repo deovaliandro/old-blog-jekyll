@@ -8,6 +8,7 @@
     --font-h: 'Open Sans', system-ui;
     --monospace: 'DM Mono', monospace;
     --color-border: #e4e4e7;
+    font-variant-ligatures: none;
 }
 
 body {
@@ -21,14 +22,21 @@ body {
     text-rendering: geometricPrecision;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Source Serif Pro';
     border-bottom: 1px solid #888;
     font-variant-caps: small-caps;
     font-weight: 600;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
     border-bottom: 1px dotted #888;
 }
 
@@ -38,6 +46,8 @@ h1 {
     letter-spacing: -.75px;
     border-bottom: none;
     line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 h2 {
@@ -47,7 +57,8 @@ h2 {
     line-height: 1;
 }
 
-h3, h4 {
+h3,
+h4 {
     border-bottom: 1px dotted #888;
 }
 
@@ -58,9 +69,24 @@ a {
 }
 
 @media only screen and (max-width: 960px) {
+    body {
+        margin: 2ch;
+    }
+    
     nav {
         flex-grow: 1;
         text-align: left !important;
+
+        ul {
+            li {
+                list-style: none;
+                
+                a {
+                    border-bottom: 1px dotted #888;
+                    font-variant-caps: small-caps;
+                }
+            }
+        }
     }
 
     .time-right {
@@ -83,6 +109,11 @@ nav {
     ul {
         li {
             list-style: none;
+            
+            a {
+                border-bottom: 1px dotted #888;
+                font-variant-caps: small-caps;
+            }
         }
     }
 }
@@ -110,15 +141,16 @@ blockquote {
 }
 
 .quoteblock {
-    padding: 1ch 2ch;
+    padding: 1ch 4ch;
     border-left: 4px solid #e5e5e5;
-    color: #858585;
     font-style: italic;
     box-shadow: 0 0 2px #3c4858;
 
     .attribution {
         font-size: .8em;
         font-style: normal;
+        padding-bottom: 2ch;
+        text-align: right;
 
         a {
             border-bottom: none;
@@ -141,9 +173,32 @@ footer {
     line-height: 2.2rem;
 }
 
-.signed-by {
+.signed-by, .desc {
     font-style: italic;
     text-align: center;
+    width: 100ch;
+    margin: 0 auto;
+}
+
+.edit {
+    text-align: center;
+
+    h3 {
+        border-bottom: none;
+        margin: 1ch 0 0 0;
+    }
+
+    p {
+        margin: 0 0 4ch 0;
+    }
+
+    a {
+        border-bottom: 1px solid red;
+    }
+}
+
+.signed-by {
+    margin-bottom: 2ch;
 }
 
 .time-right {
@@ -151,7 +206,8 @@ footer {
     font-variant-numeric: tabular-nums;
 }
 
-code, pre {
+code,
+pre {
     font-family: var(--monospace);
     font-size: 1rem;
 }
@@ -174,6 +230,10 @@ table {
     margin: 1.5rem 0;
     overflow: auto;
     width: 100%;
+
+    tr {
+        text-align: center;
+    }
 
     >tbody>tr>td>p {
         padding: 0;
@@ -214,4 +274,12 @@ kbd {
     background-color: #f8f8f8;
     border-radius: 5px;
     overflow-x: auto;
+}
+
+img, video {
+    display: block;
+    height: auto;
+    margin: auto;
+
+    width: 80%;
 }

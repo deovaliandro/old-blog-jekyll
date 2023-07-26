@@ -3,9 +3,11 @@
 :page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
 :page-time      : 2023-07-11
 
-Python adalah bahasa pemrograman *high-level* yang mudah dipelajari tetapi
-merupakan bahasa yang poweful. Dalam tulisan ini, kami akan menggunakan
-[.python]#https://www.python.org/[Python 3.11]#.
+Python adalah bahasa pemrograman
+[.wikipedia]#https://en.wikipedia.org/wiki/High-level_programming_language[high-level]#
+yang mudah dipelajari tetapi merupakan bahasa yang poweful. Dalam tulisan ini,
+kami akan menggunakan [.python]#https://www.python.org/[Python 3.10]#.
+
 
 == hello world
 
@@ -14,10 +16,13 @@ Hello world menandakan kelahiran:
 [source, python]
 print("Meoworld!")
 
+image:/assets/img/ss-py-meoworld.png[]
+
 == variabel
 
-Nama variabel haruslah ##lowercase##, jika lebih dari satu kata maka dipisahkan
-dengan kbd:[_]. Hindari menggunakan nama variabel yang ambigu.
+Nama variabel haruslah [.wikipedia]#https://en.wikipedia.org/wiki/Letter_case[lowercase]#,
+jika lebih dari satu kata maka dipisahkan dengan kbd:[_]. Hindari menggunakan
+nama variabel yang ambigu.
 
 Contoh yang baik:
 
@@ -32,23 +37,19 @@ address = "Makassar"
 
 === bilangan
 
-Python bersifat strongly typed dan dynamic typed.
+Python bersifat [.wikipedia]#https://en.wikipedia.org/wiki/Strong_and_weak_typing[strongly typed]#
+dan [.wikipedia]#https://en.wikipedia.org/wiki/Type_system#Dynamic_type_checking_and_runtime_type_information[dynamic typed]#.
 
 [source, python]
 ----
 print(type(10))
-print(type(3.14)
-print(type(1j)
+print(type(3.14))
+print(type(1j))
 ----
 
 Menghasilkan:
 
-[source, bash]
-----
-<class 'int'>
-<class 'float'>
-<class 'complex'>
-----
+image:/assets/img/ss-py-typed.png[]
 
 === string
 
@@ -57,11 +58,15 @@ Karena array, maka segala jenis operasi array dapat digunakan.
 
 [source, python]
 ----
-name = "Deo Valiandro"
+name = "Gintoki Sakata"
 
 print(name[1])
 print(name[:3])
 ----
+
+Menghasilkan:
+
+image:/assets/img/ss-py-string.png[]
 
 === list
 

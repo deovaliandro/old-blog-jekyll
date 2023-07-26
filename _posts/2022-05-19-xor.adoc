@@ -1,15 +1,22 @@
-:page-title     : Exclusive-or (XOR)
-:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout    : default
-:page-time      : 2022-05-19
-:page-math      : true
+---
+title     : Exclusive-or (XOR)
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+layout    : default
+time      : 2022-05-19
+math      : true
+desc      : >
+    Exclusive-or (XOR) adalah satu satu gerbang logika yang didasarkan pada
+    aljabar boolean.
+---
 
+Gerbang [.wikipedia]#https://en.wikipedia.org/wiki/XOR_gate[XOR]# adalah
+gabungan dari gerbang NOT, AND, dan OR. Selain dari ketiga
+gabungan tersebut, gerbang logika XOR juga bisa menggunakan gabungan gerbang
+logika yang lain. Karena bisa bergabung oleh banyak gerbang logika, maka gerbang
+logika XOR disebut juga dengan gerbang eksklusif.
 
 > "Never trust anyone too much, remember the devil was once an angel."
 > -- Ken Kaneki
-
-Exclusive-or (XOR) adalah satu satu gerbang logika yang didasarkan pada aljabar
-boolean.
 
 Jika Or $\equiv$ penjumlahan, and $\equiv$ perkalian, maka XOR ($\oplus$) adalah
 gabungan dari _or_, _and_ dan _not_.
