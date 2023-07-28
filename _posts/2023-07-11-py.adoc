@@ -1,7 +1,10 @@
-:page-title     : Pengantar Python
-:page-layout    : default
-:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
-:page-time      : 2023-07-11
+---
+title     : Pengantar Python
+layout    : default
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+time      : 2023-07-11
+---
+
 
 Python adalah bahasa pemrograman
 [.wikipedia]#https://en.wikipedia.org/wiki/High-level_programming_language[high-level]#
