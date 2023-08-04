@@ -2,6 +2,9 @@
 :page-template	: default
 :page-time	: 2023-07-12
 
+Python bukanlah bahasa yang OOP murni. Kita akan mencoba mendekati OOP dengan
+pendekatan bahasa Python.
+
 == Class dan Object
 
 Class adalah, object adalah
