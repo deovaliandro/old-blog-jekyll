@@ -5,12 +5,12 @@
 Beberapa waktu lalu saya melihat sebuah web yang keren. Idenya saya curi tapi
 dengan menggunakan kode sendiri. Semoga berhasil. :D
 
-[.pdf]#pdf# [.py]#python# [.wiki]#wikipedia#
+Beberapa ikon yang sudah berhasil dibuat:
 
-[.id]#Indonesia#
-
-[.yt]#Yt#
-
-[.google]#Goooo#
-
-[.edit]#Edit#
+1. [.pdf]#pdf#
+2. [.py]#python#
+3. [.wiki]#wikipedia#
+4. [.id]#Indonesia#
+5. [.yt]#Yt#
+6. [.google]#Goooo#
+7. [.edit]#Edit#
