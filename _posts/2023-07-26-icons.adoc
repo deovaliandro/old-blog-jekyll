@@ -5,7 +5,7 @@
 Beberapa waktu lalu saya melihat sebuah web yang keren. Idenya saya curi tapi
 dengan menggunakan kode sendiri. Semoga berhasil. :D
 
-[.pdf]#pdf# [.python]#python# [.wikipedia]#wikipedia#
+[.pdf]#pdf# [.py]#python# [.wiki]#wikipedia#
 
 [.id]#Indonesia#
 
