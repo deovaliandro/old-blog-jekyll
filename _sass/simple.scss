@@ -2,13 +2,14 @@
 @import 'rougify';
 @import 'icons';
 
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400;1,8..60,700&display=swap');
+
 :root {
     --width: 80ch;
-    --font: 'Source Serif Pro', sans-serif;
+    --font: 'Source Serif 4', sans-serif;
     --font-h: 'Open Sans', system-ui;
     --monospace: 'DM Mono', monospace;
     --color-border: #e4e4e7;
-    font-variant-ligatures: none;
 }
 
 body {
@@ -16,10 +17,16 @@ body {
     font: 400 1.2rem /32px var(--font);
     margin: 0 auto;
     text-align: justify;
-    hyphens: auto;
-    font-variant-numeric: tabular-nums;
-    word-break: break-word;
+    font-variant-ligatures: none;
     text-rendering: geometricPrecision;
+    font-variant-numeric: tabular-nums;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    hyphens: none;
+}
+
+code {
+    text-align: left;
 }
 
 h1,
@@ -280,6 +287,5 @@ img, video {
     display: block;
     height: auto;
     margin: auto;
-
     width: 80%;
 }

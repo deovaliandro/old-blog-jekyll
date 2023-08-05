@@ -1,7 +1,9 @@
-:page-title     : CSS
-:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout    : default
-:page-time      : 2016-09-01
+---
+title       : CSS
+signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+layout      : default
+time        : 2016-09-01
+---
 
 
 Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
@@ -13,20 +15,29 @@ Rancangan CSS ini akan diperbaharui kedepannya.
 Saya pribadi pikir kita tidak perlu memuat terlalu banyak font, memberatkan
 website saja. Yang pasti tulisan bisa dibaca dengan jelas.
 
-Saya akhirnya menggunakan font https://rsms.me/inter/[Inter] untuk paragraf,
-https://fonts.google.com/specimen/DM+Serif+Display[DM Serif Display] untuk
-header dan https://fonts.google.com/specimen/DM+Mono[DM Mono] untuk monospace.
+Saya akhirnya menggunakan font [.link]#https://rsms.me/inter/[Inter]#
+footnote:[Inter a trademark of Rasmus Andersson. Font vendor ID: RSMS] untuk paragraf,
+[.google]#https://fonts.google.com/specimen/DM+Serif+Display[DM Serif Display]# 
+untuk header dan
+[.google]#https://fonts.google.com/specimen/DM+Mono[DM Mono]# untuk monospace.
+
+=== Update
+
+Saya kemudian mengganti dengan menggunakan beberapa font baru,
+
+1. [.google]#https://fonts.google.com/specimen/Source+Serif+4[Source Serif]#
+2. Deutsche Zierschrift
 
 == Width
 
-Saya selalu mengikuti https://en.wikipedia.org/wiki/Characters_per_line[CPL]
+Saya selalu mengikuti [.wikipedia]#https://en.wikipedia.org/wiki/Characters_per_line[CPL]#
 yaitu 80 karakter per baris.
 
 == Highlight
 
 Untuk urusan highlight code, saya serahkan ke
-https://github.com/rouge-ruby/rouge[rouge]. Saya menggunakan ##gruvbox.light##
-dengan beberapa customisasi.
+[.github]#https://github.com/rouge-ruby/rouge[rouge]#. Saya menggunakan
+##gruvbox.light## dengan beberapa customisasi.
 
 Contohnya saja:
 
