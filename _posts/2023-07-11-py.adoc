@@ -12,7 +12,7 @@ desc        : >
     Carnegie Mellon University yang merupakan dua kampus Ilmu Komputer terbaik.
     Tulisan ini merupakan rangkuman dari mata kuliah Pengantar Pemrograman yang
     pernah saya pelajari.
-is-finish   : draft
+finish      : draft
 ---
 
 :toc:

@@ -129,14 +129,17 @@ main {
   text-align: justify;
 }
 
-li {
-  p {
-    padding-left: 1ch;
-  }
+li p {
+  padding-left: 1ch;
 }
 
 li::marker {
   content: "⦿";
+}
+
+#list-post > li {
+  padding-left: 1ch;
+  margin-bottom: 1ch;
 }
 
 .footnote {
