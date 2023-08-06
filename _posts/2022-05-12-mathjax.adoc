@@ -1,14 +1,16 @@
-:page-title     : Pindah ke MathJax
-:page-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
-:page-layout    : default
-:page-time      : 2022-05-12
+---
+title     : Pindah ke MathJax
+signed-by : Deo Valiandro. M <valiandrod@gmail.com>
+layout    : default
+time      : 2022-05-12
+---
 
-
-> If it isn't documented, it doesn't exist
-> -- anonymous
 
 Karena alasan kompatibilitas, akhirnya saya pindah ke MathJax setelah sekian
 lama menggunakan KaTeX.
+
+> If it isn't documented, it doesn't exist
+> -- anonymous
 
 Import dengan:
 

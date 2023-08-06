@@ -1,12 +1,20 @@
 .id, .yt, .wiki, .pdf, .py, .google, .edit, .github {
-  &::after { content: ""; width: 1em; height: 1em; display: inline-block; opacity: 0.6; position: relative; top: -.1em; margin-left: .1em; }
+  &::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    display: inline-block;
+    opacity: 0.6;
+    position: relative;
+    top: 1px;
+  }
 }
 
 .id::after { background: url("/assets/img/ico.svg#id"); }
 .yt::after { background: url("/assets/img/ico.svg#yt"); }
-.wiki::after { background: url("/assets/img/ico.svg#wikipedia"); }
-.pdf::after { background: url("/assets/img/ico.svg#pdf"); }
-.py::after { background: url("/assets/img/ico.svg#python"); }
+.wiki::after { background: url("/assets/img/ico.svg#wikipedia"); height: 1.4rem; width: 1.4rem; top: 3px;}
+.pdf::after { background: url("/assets/img/ico.svg#pdf"); height: 1.4rem; width: 1.4rem; top: 4px;}
+.py::after { background: url("/assets/img/ico.svg#python"); height: 1.4rem; width: 1.4rem; top: 4px;}
 .google::after { background: url("/assets/img/ico.svg#google"); }
 .link::after { background: url("/assets/img/ico.svg#link"); }
 .edit::after { background: url("/assets/img/ico.svg#pencil"); }

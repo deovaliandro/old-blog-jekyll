@@ -1,6 +1,8 @@
-:page-name      : Icon pada web ini
-:page-template  : default
-:page-time      : 2023-07-26
+---
+name      : Icon pada web ini
+template  : default
+time      : 2023-07-26
+---
 
 Beberapa waktu lalu saya melihat sebuah web yang keren. Idenya saya curi tapi
 dengan menggunakan kode sendiri. Semoga berhasil. :D
