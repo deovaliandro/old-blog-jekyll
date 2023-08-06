@@ -1,15 +1,27 @@
 ---
-title     : Pengantar Python
-layout    : default
-signed-by : Deo Valiandro. M <valiandrod@gmail.com>
-time      : 2023-07-11
+title       : Pengantar Python
+signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+layout      : post
+time        : 2023-07-11
+math        : true
+permalink   : /pp-python/
+desc        : >
+    Pengantar pemrograman adalah mata kuliah pertama yang biasanya ditemukan
+    di perkuliahan Ilmu Komputer. Python banyak digunakan sebagai bahasa
+    pemrograman untuk mata kuliah ini, misalnya saja pada kampus MIT dan
+    Carnegie Mellon University yang merupakan dua kampus Ilmu Komputer terbaik.
+    Tulisan ini merupakan rangkuman dari mata kuliah Pengantar Pemrograman yang
+    pernah saya pelajari.
+is-finish   : draft
 ---
+
+:toc:
 
 
 Python adalah bahasa pemrograman
-[.wikipedia]#https://en.wikipedia.org/wiki/High-level_programming_language[high-level]#
+[.wiki]#https://en.wikipedia.org/wiki/High-level_programming_language[high-level]#
 yang mudah dipelajari tetapi merupakan bahasa yang poweful. Dalam tulisan ini,
-kami akan menggunakan [.python]#https://www.python.org/[Python 3.10]#.
+kami akan menggunakan [.py]#https://www.python.org/[Python 3.10]#.
 
 
 == hello world
@@ -23,7 +35,7 @@ image:/assets/img/ss-py-meoworld.png[]
 
 == variabel
 
-Nama variabel haruslah [.wikipedia]#https://en.wikipedia.org/wiki/Letter_case[lowercase]#,
+Nama variabel haruslah [.wiki]#https://en.wikipedia.org/wiki/Letter_case[lowercase]#,
 jika lebih dari satu kata maka dipisahkan dengan kbd:[_]. Hindari menggunakan
 nama variabel yang ambigu.
 
@@ -40,8 +52,10 @@ address = "Makassar"
 
 === bilangan
 
-Python bersifat [.wikipedia]#https://en.wikipedia.org/wiki/Strong_and_weak_typing[strongly typed]#
-dan [.wikipedia]#https://en.wikipedia.org/wiki/Type_system#Dynamic_type_checking_and_runtime_type_information[dynamic typed]#.
+Python bersifat
+[.wiki]#https://en.wikipedia.org/wiki/Strong_and_weak_typing[strongly typed]#
+dan
+[.wiki]#https://en.wikipedia.org/wiki/Type_system#Dynamic_type_checking_and_runtime_type_information[dynamic typed]#.
 
 [source, python]
 ----

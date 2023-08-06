@@ -1,25 +1,26 @@
 ---
 title       : CSS
 signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
-layout      : default
+layout      : post
 time        : 2016-09-01
+finish      : Mungkin akan lama baru selesai
+desc        : >-
+    Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
+    maka sebagai bahan pelajaran, kami mencoba membuat css sangat sederhana.
+    Rancangan CSS ini akan diperbaharui kedepannya.
 ---
 
-
-Bermula dari pelajaran CSS yang didapatkan di mata kuliah Pengantar Pemrograman,
-maka sebagai bahan pelajaran, kami mencoba membuat css sangat sederhana.
-Rancangan CSS ini akan diperbaharui kedepannya.
 
 == Font
 
 Saya pribadi pikir kita tidak perlu memuat terlalu banyak font, memberatkan
 website saja. Yang pasti tulisan bisa dibaca dengan jelas.
 
-Saya akhirnya menggunakan font [.link]#https://rsms.me/inter/[Inter]#
-footnote:[Inter a trademark of Rasmus Andersson. Font vendor ID: RSMS] untuk paragraf,
-[.google]#https://fonts.google.com/specimen/DM+Serif+Display[DM Serif Display]# 
-untuk header dan
-[.google]#https://fonts.google.com/specimen/DM+Mono[DM Mono]# untuk monospace.
+Saya akhirnya menggunakan font 
+
+. [.link]#https://rsms.me/inter/[Inter]# footnote:[Inter a trademark of Rasmus Andersson. Font vendor ID: RSMS] untuk paragraf,
+. [.google]#https://fonts.google.com/specimen/DM+Serif+Display[DM Serif Display]# untuk header dan
+. [.google]#https://fonts.google.com/specimen/DM+Mono[DM Mono]# untuk monospace.
 
 === Update
 

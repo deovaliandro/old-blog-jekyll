@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description"
+    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+  <link href="/logo.svg" rel="shortcut icon" type="image/svg+xml" />
+
+  <!-- style -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+  <!-- mathjax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$']],
+        displayMath: [['$$', '$']]
+      }
+    };
+  </script>
+
+</head>
+
+<body>
+
+  <!-- navigator -->
+  <nav>
+    <a href="/">Home</a>
+    <a href="/aboutme">About</a>
+    <a href="/design.html">Design</a>
+    <a href="/changelog">Log</a>
+  </nav>
+
+  <!-- judul utama -->
+  <h1>{{ page.title }}</h1>
+
+  <!-- signed-by (penulis utama) -->
+  {% if page.signed-by %}
+  <span class="signed-by">
+    Ditulis oleh {{ page.signed-by }} pada {% if page.time %}{{ page.date | date: "%-d %B %Y" }}{% else %}∞{% endif %}.
+    {% if page.update %} Diperbaharui pada {{ page.update | date: "%-d %B %Y" }}.{% endif %}
+  </span>
+  {% endif %}
+
+  <!-- data penulis dan info lainnya -->
+  <span class="date">
+    <i>{% if page.time %}{{ page.date | date: "%F" }}{% else %}∞{% endif %} — {{ site.time | date: "%F" }}</i> $\cdot$
+    <i>{{ page.finish }}</i> $\cdot$ <a href="{{ page.link }}#bibliography">bibliography</a> $\cdot$ <a
+      href="{{ page.link }}#footnotes">footnote</a>
+  </span>
+
+  <!-- toc dan summary -->
+  <aside>
+    <div class="toc">
+      <details>
+        <summary>Daftar Isi</summary>
+        {% if page.document %}
+        {% capture toc %}{{ page.document | tocify_asciidoc }}{% endcapture %}{% if toc != '' %}<div class="toc">
+          {{ toc }}
+        </div>{% endif %}
+        {% endif %}
+      </details>
+    </div>
+    <div class="pengantar">
+      {{ page.desc }}
+    </div>
+  </aside>
+
+  <!-- isi tulisan -->
+  <main>
+    {{ content }}
+  </main>
+
+  <!-- footer -->
+  <footer>
+    <hr>
+    <span>
+      Website ini dibuat dengan Jekyll, menggunakan GitHub page dan bantuan dari
+      cloudflare.
+    </span>
+    <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+      CC BY-NC-SA 4.0</a>, sejak 2016 &copy;
+    <a target="_blank" href="https://github.com/deovaliandro" class="github">Deo Valiandro. M</a>,
+    <span id="love">🌱</span> dengan <span id="love">❤️</span> dari
+    <span id="love">🇮🇩</span>
+  </footer>
+
+</body>

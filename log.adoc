@@ -1,0 +1,25 @@
+---
+title       : Changelog
+signed-by   : Deo Valiandro. M <valiandrod@gmail.com>
+layout      : post
+math        : true
+permalink   : /changelog/
+desc        : >
+    Daftar perubahan dan pembaharuan web ini.
+is-finish   : draft
+---
+
+Setelah sekian lama bikin blog, akhirnya punya ide juga untuk membuat log untuk
+setiap perubahan pada website ini.
+
+== 2023
+
+=== Agustus 2023
+
+. Ganti icon untuk link menjadi svg bertumpuk,
+. Tambahkan toc
+
+
+=== Juli 2023
+
+. Rubah desain total, dari sederhana menjadi lebih banyak editan

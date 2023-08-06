@@ -12,10 +12,10 @@
 
 .id::after { background: url("/assets/img/ico.svg#id"); }
 .yt::after { background: url("/assets/img/ico.svg#yt"); }
-.wiki::after { background: url("/assets/img/ico.svg#wikipedia"); height: 1.4rem; width: 1.4rem; top: 3px;}
+.wiki::after { background: url("/assets/img/ico.svg#wikipedia"); height: 1.4rem; width: 1.4rem; top: -3px; margin-left: 3px;}
 .pdf::after { background: url("/assets/img/ico.svg#pdf"); height: 1.4rem; width: 1.4rem; top: 4px;}
-.py::after { background: url("/assets/img/ico.svg#python"); height: 1.4rem; width: 1.4rem; top: 4px;}
+.py::after { background: url("/assets/img/ico.svg#python"); height: 1.4rem; width: 1.4rem; top: -2px;}
 .google::after { background: url("/assets/img/ico.svg#google"); }
 .link::after { background: url("/assets/img/ico.svg#link"); }
 .edit::after { background: url("/assets/img/ico.svg#pencil"); }
-.github::after { background: url("/assets/img/ico.svg#github"); }
+.github::after { background: url("/assets/img/ico.svg#github"); height: 1.4rem; width: 1.4rem; top: -2px;}
