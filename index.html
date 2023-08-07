@@ -4,7 +4,21 @@ layout  : default
 math    : true
 ---
 
-<ol id="list-post">{% for post in site.posts %}
+<p>
+  Website punya <span class="small-caps"><b>Deo Valiandro</b></span>, tempat
+  saya menyimpan catatan-catatan pelajaran yang sebelumnya pernah saya pelajari,
+  khususnya ketika saya masih berkuliah. Jika terdapat kekelirian mohon
+  dikoreksi. Saya sering memperbaharui tulisan untuk memperbaiki kesalahan dan
+  informasi yang sudah tidak relevan, jadi tolong jangan ambil semuanya begitu
+  saja. Semua tulisan yang ada di sini adalah tulisan saya sendiri, tidak
+  mewakili orang/organisasi tertentu.
+</p>
+
+<h2>
+  Tulisan terbaru
+</h2>
+
+<ol id="list-post">{% for post in site.posts | limit:10 %}
   <li class="post">
     <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
       {{ post.title }}</a>

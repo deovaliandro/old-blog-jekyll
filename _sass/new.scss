@@ -127,6 +127,7 @@ aside {
 
 main {
   text-align: justify;
+  display: inline !important;
 }
 
 li p {
@@ -137,7 +138,12 @@ li::marker {
   content: "⦿";
 }
 
-#list-post > li {
+.post::marker {
+  content: "λ";
+  font-size: 1.4rem;
+}
+
+#list-post>li {
   padding-left: 1ch;
   margin-bottom: 1ch;
 }
@@ -278,4 +284,8 @@ footer {
 .date {
   text-align: center;
   margin-bottom: 4ch;
+}
+
+.small-caps {
+  font-variant-caps: small-caps;
 }

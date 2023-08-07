@@ -1,0 +1,14 @@
+---
+title   : All Notes
+layout  : default
+math    : true
+---
+
+
+<ol id="list-post">{% for post in site.posts %}
+  <li class="post">
+    <a href="{{ post.url }}" title="{{ site.url }}{{ post.url }}">
+      {{ post.title }}</a>
+    <time class="time-right">{{ post.time | date: "%d-%m-%Y" }}</time>
+  </li>{% endfor %}
+</ol>
