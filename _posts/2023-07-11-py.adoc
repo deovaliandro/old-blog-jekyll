@@ -31,7 +31,14 @@ Hello world menandakan kelahiran:
 [source, python]
 print("Meoworld!")
 
-image:/assets/img/ss-py-meoworld.png[]
+.Hasilnya
+[%collapsible]
+====
+[source, bash]
+----
+Meoworld!
+----
+====
 
 == variabel
 

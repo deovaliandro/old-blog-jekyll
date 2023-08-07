@@ -156,6 +156,10 @@ hr {
   border: .1px solid #d8dae1;
 }
 
+details {
+  cursor: pointer;
+}
+
 blockquote {
   margin: 1rem auto;
   font-size: inherit;

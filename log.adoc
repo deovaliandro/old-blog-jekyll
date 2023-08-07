@@ -18,6 +18,8 @@ setiap perubahan pada website ini.
 
 . Ganti icon untuk link menjadi svg bertumpuk,
 . Tambahkan toc
+. Ganti logo dengan logo yang lebih baik
+. Ganti gambar hasil run code dengan <details>
 
 
 === Juli 2023
