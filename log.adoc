@@ -20,6 +20,7 @@ setiap perubahan pada website ini.
 . Tambahkan toc
 . Ganti logo dengan logo yang lebih baik
 . Ganti gambar hasil run code dengan <details>
+. Fix logo yang tidak muncul
 
 
 === Juli 2023
